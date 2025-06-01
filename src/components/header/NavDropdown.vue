@@ -6,7 +6,7 @@
     @mouseenter="handleMouseEnter"
     @mouseleave="handleMouseLeave"
   >
-    <button class="nav-link flex items-center group-hover:text-blue-600 py-4">
+    <button class="nav-link dropdown-button flex items-center group-hover:text-blue-600 py-2">
       {{ title }}
       <svg
         class="w-4 h-4 ml-1 transform transition-transform duration-300"
@@ -88,6 +88,33 @@ const handleMouseEnter = () => {
 </script>
 
 <style scoped>
+/* Dropdown Button Styles - Match the nav-link styles */
+.dropdown-button {
+  @apply text-gray-700 font-medium relative;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.2s ease;
+  /* Remove any default button styling */
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+.dropdown-button::after {
+  content: '';
+  @apply absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-blue-600;
+  transition: width 0.2s ease;
+}
+
+.dropdown-button:hover {
+  @apply text-blue-600;
+}
+
+.dropdown-button:hover::after {
+  @apply w-full;
+}
+
 /* Dropdown Menu Styles - Fixed positioning and z-index */
 .dropdown-menu {
   @apply absolute left-0 w-56 bg-white rounded-xl shadow-2xl z-50;
