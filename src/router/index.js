@@ -9,7 +9,26 @@ const router = createRouter({
       name: 'home',
       component: HomeView,
     },
-    // Removed the about route
+    {
+      path: '/live-sessions',
+      name: 'live-sessions',
+      component: () => import('../views/LiveSessionsComponent.vue'),
+    },
+    {
+      path: '/publications',
+      name: 'publications',
+      component: () => import('../views/PublicationsComponent.vue'),
+    },
+    {
+      path: '/about',
+      name: 'about',
+      component: () => import('../views/AboutUsComponent.vue'),
+    },
+    {
+      path: '/contacts',
+      name: 'contacts',
+      component: () => import('../views/ContactsComponent.vue'),
+    },
   ],
 })
 
