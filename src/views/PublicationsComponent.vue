@@ -17,22 +17,14 @@
     <!-- Statistics Overview -->
     <section v-if="!loading && publications.length > 0" class="bg-white border-b">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div class="flex justify-center gap-16">
           <div class="text-center">
             <div class="text-3xl font-bold text-blue-600">{{ publications.length }}</div>
             <div class="text-sm text-gray-600 mt-1">Total Publications</div>
           </div>
           <div class="text-center">
-            <div class="text-3xl font-bold text-green-600">{{ uniqueJournals }}</div>
-            <div class="text-sm text-gray-600 mt-1">Journals</div>
-          </div>
-          <div class="text-center">
             <div class="text-3xl font-bold text-purple-600">{{ yearRange }}</div>
             <div class="text-sm text-gray-600 mt-1">Years Active</div>
-          </div>
-          <div class="text-center">
-            <div class="text-3xl font-bold text-orange-600">{{ publicationsWithDOI }}</div>
-            <div class="text-sm text-gray-600 mt-1">With DOI</div>
           </div>
         </div>
       </div>
@@ -430,139 +422,7 @@ import { ref, computed, onMounted, watch } from 'vue'
 import Papa from 'papaparse'
 import HeaderComponent from '@/components/HeaderComponent.vue'
 import FooterComponent from '@/components/FooterComponent.vue'
-// Import PublicationCard component - make sure to create this file at src/components/PublicationCard.vue
-// For now, we'll define it inline below
-
-// Inline PublicationCard component (move to separate file for production)
-const PublicationCard = {
-  props: {
-    publication: {
-      type: Object,
-      required: true,
-    },
-  },
-  setup(props) {
-    const copied = ref(false)
-
-    const formatAuthors = (authors) => {
-      if (!authors) return ''
-      const authorList = authors.split(',').map((a) => a.trim())
-      if (authorList.length > 6) {
-        return authorList.slice(0, 3).join(', ') + ', et al.'
-      }
-      return authors
-    }
-
-    const formatCitation = (citation) => {
-      if (!citation) return ''
-      return citation
-        .replace(/doi:.*$/i, '')
-        .replace(/Epub.*$/i, '')
-        .trim()
-    }
-
-    const copyCitation = async () => {
-      const citationText = `${props.publication.Authors}. ${props.publication.Title}. ${props.publication['Journal/Book']}. ${props.publication['Publication Year']};${props.publication.Citation}${props.publication.DOI ? ` doi: ${props.publication.DOI}` : ''}`
-
-      try {
-        await navigator.clipboard.writeText(citationText)
-        copied.value = true
-        setTimeout(() => {
-          copied.value = false
-        }, 2000)
-      } catch (err) {
-        console.error('Failed to copy citation:', err)
-      }
-    }
-
-    return {
-      copied,
-      formatAuthors,
-      formatCitation,
-      copyCitation,
-    }
-  },
-  template: `
-    <article class="bg-white rounded-lg shadow-md hover:shadow-lg transition-all duration-300 p-6 border border-gray-100 hover:-translate-y-0.5">
-      <div class="flex flex-col lg:flex-row lg:items-start gap-4">
-        <div class="flex-1">
-          <h3 class="text-lg font-semibold text-gray-900 mb-2 leading-tight">
-            {{ publication.Title }}
-          </h3>
-          <p class="text-sm text-gray-600 mb-3 leading-relaxed">
-            {{ formatAuthors(publication.Authors) }}
-          </p>
-          <div class="flex flex-wrap items-center gap-2 mb-3 text-sm">
-            <span class="font-medium text-gray-700">{{ publication['Journal/Book'] }}</span>
-            <span class="text-gray-400">•</span>
-            <span class="text-gray-600">{{ publication['Publication Year'] }}</span>
-            <span v-if="publication.Citation" class="text-gray-400">•</span>
-            <span v-if="publication.Citation" class="text-gray-600 italic">{{
-              formatCitation(publication.Citation)
-            }}</span>
-          </div>
-          <div class="flex flex-wrap gap-3">
-            <a
-              v-if="publication.PMID"
-              :href="\`https://pubmed.ncbi.nlm.nih.gov/\${publication.PMID}/\`"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="inline-flex items-center text-sm font-medium text-blue-600 hover:text-blue-800 transition-colors"
-            >
-              <svg class="w-4 h-4 mr-1.5" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z"></path>
-                <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z"></path>
-              </svg>
-              PubMed
-            </a>
-            <a
-              v-if="publication.PMCID"
-              :href="\`https://www.ncbi.nlm.nih.gov/pmc/articles/\${publication.PMCID}/\`"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="inline-flex items-center text-sm font-medium text-green-600 hover:text-green-800 transition-colors"
-            >
-              <svg class="w-4 h-4 mr-1.5" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M9 4.804A7.968 7.968 0 005.5 4c-1.255 0-2.443.29-3.5.804v10A7.969 7.969 0 015.5 14c1.669 0 3.218.51 4.5 1.385A7.962 7.962 0 0114.5 14c1.255 0 2.443.29 3.5.804v-10A7.968 7.968 0 0014.5 4c-1.255 0-2.443.29-3.5.804V12a1 1 0 11-2 0V4.804z"></path>
-              </svg>
-              Full Text
-            </a>
-            <a
-              v-if="publication.DOI"
-              :href="\`https://doi.org/\${publication.DOI}\`"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="inline-flex items-center text-sm font-medium text-purple-600 hover:text-purple-800 transition-colors"
-            >
-              <svg class="w-4 h-4 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path>
-              </svg>
-              DOI
-            </a>
-            <button
-              @click="copyCitation"
-              class="inline-flex items-center text-sm font-medium text-gray-600 hover:text-gray-800 transition-colors"
-              :title="copied ? 'Copied!' : 'Copy citation'"
-            >
-              <svg v-if="!copied" class="w-4 h-4 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"></path>
-              </svg>
-              <svg v-else class="w-4 h-4 mr-1.5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-              </svg>
-              {{ copied ? 'Copied!' : 'Copy' }}
-            </button>
-          </div>
-        </div>
-        <div class="lg:w-24 lg:text-right">
-          <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-800">
-            {{ publication['Publication Year'] || 'N/A' }}
-          </span>
-        </div>
-      </div>
-    </article>
-  `,
-}
+import PublicationCard from '@/components/PublicationCard.vue'
 
 // State
 const publications = ref([])
@@ -611,19 +471,11 @@ const availableJournals = computed(() => {
   return journals
 })
 
-const uniqueJournals = computed(() => {
-  return availableJournals.value.length
-})
-
 const yearRange = computed(() => {
   if (publications.value.length === 0) return '0'
   const years = availableYears.value
   if (years.length === 0) return '0'
   return `${years[years.length - 1]}-${years[0]}`
-})
-
-const publicationsWithDOI = computed(() => {
-  return publications.value.filter((pub) => pub.DOI).length
 })
 
 const totalPages = computed(() => {
@@ -693,7 +545,7 @@ const loadPublications = async () => {
   error.value = ''
 
   try {
-    const response = await fetch('/csv-BusinMassiset.csv')
+    const response = await fetch('/scopus.csv')
     if (!response.ok) {
       throw new Error('Failed to fetch CSV file')
     }
@@ -716,22 +568,26 @@ const loadPublications = async () => {
       console.warn('CSV parsing warnings:', result.errors)
     }
 
-    // Process and clean data
+    // Process and clean data - map Scopus columns to our format
     publications.value = result.data
       .filter((pub) => pub && pub.Title)
       .map((pub) => ({
         ...pub,
         Title: (pub.Title || '').trim(),
         Authors: (pub.Authors || '').trim(),
-        'Journal/Book': (pub['Journal/Book'] || '').trim(),
-        Citation: (pub.Citation || '').trim(),
+        'Journal/Book': (pub['Source title'] || '').trim(),
+        'Publication Year': pub.Year ? parseInt(pub.Year.toString()) : null,
         DOI: (pub.DOI || '').trim(),
-        PMID: (pub.PMID || '').trim(),
-        PMCID: (pub.PMCID || '').trim(),
-        'Publication Year': pub['Publication Year']
-          ? parseInt(pub['Publication Year'].toString())
-          : null,
+        CitedBy: pub['Cited by'] ? parseInt(pub['Cited by'].toString()) : 0,
+        DocumentType: (pub['Document Type'] || '').trim(),
+        Volume: pub.Volume || '',
+        Issue: pub.Issue || '',
+        PageStart: pub['Page start'] || '',
+        PageEnd: pub['Page end'] || '',
+        OpenAccess: pub['Open Access'] || '',
       }))
+
+    console.log('Loaded', publications.value.length, 'publications from Scopus')
 
     // Sort by year (newest first)
     publications.value.sort((a, b) => {
