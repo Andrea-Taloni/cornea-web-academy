@@ -19,7 +19,7 @@
 
           <!-- Surgery Dropdown -->
           <div class="relative group">
-            <button class="nav-link flex items-center group">
+            <button class="nav-link flex items-center group py-4">
               Surgery
               <svg
                 class="w-4 h-4 ml-1 transform group-hover:rotate-180 transition-transform duration-300"
@@ -60,8 +60,14 @@
 
         <!-- Auth Buttons -->
         <div class="hidden md:flex items-center space-x-4">
-          <button class="auth-button-outline">Login</button>
-          <button class="auth-button-filled">Register</button>
+          <button class="login-button">
+            <span class="button-text">Login</span>
+            <div class="button-border"></div>
+          </button>
+          <button class="register-button">
+            <span class="button-text">Register</span>
+            <div class="button-glow"></div>
+          </button>
         </div>
 
         <!-- Mobile Menu Button -->
@@ -162,8 +168,8 @@
             </router-link>
 
             <div class="pt-4 space-y-2">
-              <button class="mobile-auth-button-outline">Login</button>
-              <button class="mobile-auth-button-filled">Register</button>
+              <button class="mobile-login-button">Login</button>
+              <button class="mobile-register-button">Register</button>
             </div>
           </div>
         </div>
@@ -218,9 +224,16 @@ const toggleMobileMenu = () => {
 
 /* Dropdown Menu Styles with Smooth Animation */
 .dropdown-menu {
-  @apply absolute left-0 mt-2 w-56 bg-white rounded-xl shadow-2xl opacity-0 invisible
+  @apply absolute left-0 top-full w-56 bg-white rounded-xl shadow-2xl opacity-0 invisible
          transform -translate-y-4 transition-all duration-300 ease-out z-50;
   border: 1px solid rgba(0, 0, 0, 0.08);
+  padding-top: 0.5rem;
+}
+
+/* Pseudo-element to bridge the gap */
+.dropdown-menu::before {
+  content: '';
+  @apply absolute -top-2 left-0 right-0 h-2;
 }
 
 /* Show dropdown on hover with bounce effect */
@@ -292,66 +305,136 @@ const toggleMobileMenu = () => {
   animation: fadeInSlide 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
-/* Auth Button Styles with Modern Effects */
-.auth-button-outline {
-  @apply px-5 py-2.5 text-gray-700 border-2 border-gray-300 rounded-lg font-medium relative overflow-hidden;
+/* Modern Login Button with Magnetic Border Effect */
+.login-button {
+  @apply relative px-6 py-2.5 text-gray-700 font-medium overflow-hidden;
+  background: transparent;
+  border: none;
+  cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.auth-button-outline::before {
+.login-button .button-text {
+  @apply relative z-10;
+  transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.login-button .button-border {
+  position: absolute;
+  inset: 0;
+  border-radius: 0.5rem;
+  padding: 2px;
+  background: linear-gradient(45deg, #e5e7eb, #e5e7eb);
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.login-button::before {
   content: '';
-  @apply absolute inset-0 bg-gray-900;
-  transform: translateY(100%);
-  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: absolute;
+  inset: 0;
+  border-radius: 0.5rem;
+  background: linear-gradient(45deg, #3b82f6, #8b5cf6, #ec4899, #3b82f6);
+  background-size: 300% 300%;
+  opacity: 0;
+  transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 1;
 }
 
-.auth-button-outline:hover {
-  @apply text-white border-gray-900;
+.login-button:hover::before {
+  opacity: 0.1;
+  animation: gradientShift 3s ease infinite;
 }
 
-.auth-button-outline:hover::before {
+.login-button:hover .button-border {
+  padding: 2px;
+  background: linear-gradient(45deg, #3b82f6, #8b5cf6, #ec4899, #3b82f6);
+  background-size: 300% 300%;
+  animation: gradientShift 3s ease infinite;
+}
+
+.login-button:hover .button-text {
+  @apply text-blue-600;
+}
+
+.login-button:hover {
+  transform: translateY(-2px);
+}
+
+.login-button:active {
   transform: translateY(0);
 }
 
-.auth-button-outline span {
+@keyframes gradientShift {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Modern Register Button with Shimmer Effect */
+.register-button {
+  @apply relative px-6 py-2.5 font-medium text-white overflow-hidden;
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+}
+
+.register-button .button-text {
   @apply relative z-10;
 }
 
-/* Filled button with glow effect */
-.auth-button-filled {
-  @apply px-5 py-2.5 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-lg font-medium relative overflow-hidden;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
-}
-
-.auth-button-filled::before {
+.register-button::before {
   content: '';
-  @apply absolute inset-0 bg-gradient-to-r from-blue-700 to-blue-800 opacity-0;
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.register-button .button-glow {
+  position: absolute;
+  inset: -2px;
+  border-radius: 0.5rem;
+  background: linear-gradient(45deg, #3b82f6, #8b5cf6, #ec4899, #3b82f6);
+  background-size: 300% 300%;
+  opacity: 0;
+  filter: blur(10px);
   transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: -1;
+  animation: gradientShift 3s ease infinite;
 }
 
-.auth-button-filled:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
+.register-button:hover::before {
+  left: 100%;
 }
 
-.auth-button-filled:hover::before {
-  @apply opacity-100;
+.register-button:hover .button-glow {
+  opacity: 0.6;
 }
 
-.auth-button-filled:active {
-  transform: translateY(0);
+.register-button:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 6px 25px rgba(59, 130, 246, 0.4);
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+}
+
+.register-button:active {
+  transform: translateY(-1px) scale(1);
   box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
-}
-
-/* Logo hover effect */
-.logo-hover {
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.logo-hover:hover {
-  transform: scale(1.05) rotateZ(-1deg);
-  filter: brightness(1.1);
 }
 
 /* Mobile Navigation Styles with Slide Effect */
@@ -385,24 +468,57 @@ const toggleMobileMenu = () => {
 }
 
 /* Mobile Auth Button Styles */
-.mobile-auth-button-outline {
-  @apply w-full px-4 py-2 text-gray-700 border-2 border-gray-300 rounded-lg font-medium;
+.mobile-login-button {
+  @apply w-full px-4 py-2.5 text-gray-700 font-medium rounded-lg relative overflow-hidden;
+  background: white;
+  border: 2px solid #e5e7eb;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.mobile-auth-button-outline:hover {
-  @apply bg-gray-900 text-white border-gray-900;
+.mobile-login-button::before {
+  content: '';
+  @apply absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600;
+  transform: translateY(100%);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.mobile-auth-button-filled {
-  @apply w-full px-4 py-2 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-lg font-medium;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+.mobile-login-button:hover {
+  @apply text-white border-transparent;
+}
+
+.mobile-login-button:hover::before {
+  transform: translateY(0);
+}
+
+.mobile-login-button span {
+  @apply relative z-10;
+}
+
+.mobile-register-button {
+  @apply w-full px-4 py-2.5 text-white font-medium rounded-lg relative overflow-hidden;
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
   box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.mobile-auth-button-filled:hover {
-  @apply from-blue-700 to-blue-800;
+.mobile-register-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mobile-register-button:hover::before {
+  left: 100%;
+}
+
+.mobile-register-button:hover {
   box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
 }
 
 /* Router Link Active State */
@@ -418,10 +534,5 @@ const toggleMobileMenu = () => {
 /* Smooth color transition for SVG icons */
 .nav-link svg {
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-/* Mobile menu button animation */
-.menu-icon-line {
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 </style>
