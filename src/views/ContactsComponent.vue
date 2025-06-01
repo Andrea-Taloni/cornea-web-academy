@@ -118,8 +118,8 @@
                     <h4 class="font-semibold mb-1">Address</h4>
                     <p class="text-gray-600">
                       Villa Igea Hospital<br />
-                      Via Marcona 69<br />
-                      47121 Forlì, Italy
+                      Viale Antonio Gramsci, 42<br />
+                      47122 Forlì, Italy
                     </p>
                   </div>
                 </div>
@@ -140,27 +140,7 @@
                   </svg>
                   <div>
                     <h4 class="font-semibold mb-1">Phone</h4>
-                    <p class="text-gray-600">+39 0543 419511</p>
-                  </div>
-                </div>
-
-                <div class="flex items-start">
-                  <svg
-                    class="w-6 h-6 text-blue-600 mr-3 mt-1"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                    ></path>
-                  </svg>
-                  <div>
-                    <h4 class="font-semibold mb-1">Email</h4>
-                    <p class="text-gray-600">info@corneawebacademy.com</p>
+                    <p class="text-gray-600">+39 0543 454111</p>
                   </div>
                 </div>
               </div>
@@ -169,59 +149,23 @@
             <!-- Map -->
             <div class="bg-white rounded-lg shadow-lg p-8">
               <h3 class="text-xl font-bold mb-4">Location</h3>
-              <div class="h-64 bg-gray-300 rounded-lg flex items-center justify-center">
-                <span class="text-gray-500">Map Integration</span>
-              </div>
-            </div>
-
-            <!-- Office Hours -->
-            <div class="bg-blue-50 rounded-lg p-6 mt-6">
-              <h4 class="font-semibold mb-3">Office Hours</h4>
-              <div class="space-y-1 text-sm">
-                <p>Monday - Friday: 9:00 AM - 6:00 PM CET</p>
-                <p>Saturday: 9:00 AM - 1:00 PM CET</p>
-                <p>Sunday: Closed</p>
+              <div class="h-96 rounded-lg overflow-hidden">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2876.8098!2d12.0486!3d44.2228!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x132ca49e5bbba7ab%3A0xef5e75c30e1e5e3f!2sVilla%20Igea%20Hospital!5e0!3m2!1sen!2sit!4v1234567890123"
+                  width="100%"
+                  height="100%"
+                  style="border: 0"
+                  allowfullscreen=""
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                  title="Villa Igea Hospital - Via Marcona 69, 47121 Forlì, Italy"
+                ></iframe>
               </div>
             </div>
           </div>
         </div>
       </div>
     </section>
-
-    <!-- FAQ Section -->
-    <section class="py-16 bg-gray-100">
-      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-3xl font-bold text-center mb-12">Frequently Asked Questions</h2>
-        <div class="space-y-4">
-          <div v-for="(faq, index) in faqs" :key="index" class="bg-white rounded-lg shadow">
-            <button
-              @click="toggleFaq(index)"
-              class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 transition"
-            >
-              <span class="font-medium">{{ faq.question }}</span>
-              <svg
-                class="w-5 h-5 transform transition-transform"
-                :class="{ 'rotate-180': faq.open }"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M19 9l-7 7-7-7"
-                ></path>
-              </svg>
-            </button>
-            <div v-show="faq.open" class="px-6 pb-4">
-              <p class="text-gray-600">{{ faq.answer }}</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <FooterComponent />
   </div>
 </template>
@@ -238,37 +182,6 @@ const form = ref({
   subject: '',
   message: '',
 })
-
-const faqs = ref([
-  {
-    question: 'How can I register for CWA?',
-    answer:
-      'You can register by clicking the "Register" button in the header and filling out the registration form. Membership is available for ophthalmologists and residents.',
-    open: false,
-  },
-  {
-    question: 'Are the live surgery sessions free?',
-    answer:
-      'Some sessions are free for registered members, while premium content requires a subscription. Check our membership plans for more details.',
-    open: false,
-  },
-  {
-    question: 'Can I interact during live surgeries?',
-    answer:
-      'Yes! Our platform allows real-time interaction via audio and chat. You can ask questions directly to the surgeon during the procedure.',
-    open: false,
-  },
-  {
-    question: 'Are recordings available after live sessions?',
-    answer:
-      'Yes, all live sessions are recorded and available in our archive for registered members to review at any time.',
-    open: false,
-  },
-])
-
-const toggleFaq = (index) => {
-  faqs.value[index].open = !faqs.value[index].open
-}
 
 const handleSubmit = () => {
   // Handle form submission

@@ -24,7 +24,18 @@
     <div class="flex flex-col gap-3 pr-20">
       <!-- Title -->
       <h3 class="text-lg font-semibold text-gray-900 line-clamp-2">
-        {{ publication.Title }}
+        <a
+          v-if="publication.DOI"
+          :href="`https://doi.org/${publication.DOI}`"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="hover:text-blue-600 transition-colors duration-200 cursor-pointer"
+        >
+          {{ publication.Title }}
+        </a>
+        <span v-else>
+          {{ publication.Title }}
+        </span>
       </h3>
 
       <!-- Authors - Full List -->
@@ -204,6 +215,27 @@ const copyCitation = async () => {
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
+}
+
+/* Title link styling */
+h3 a {
+  text-decoration: none;
+  position: relative;
+}
+
+h3 a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 1px;
+  bottom: -2px;
+  left: 0;
+  background-color: #2563eb;
+  transition: width 0.2s ease;
+}
+
+h3 a:hover::after {
+  width: 100%;
 }
 
 /* Smooth hover effect */
