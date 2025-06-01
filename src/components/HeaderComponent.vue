@@ -19,8 +19,9 @@
 
           <!-- Surgery Dropdown -->
           <div
+            ref="surgeryDropdown"
             class="relative group"
-            @mouseenter="showDropdown = true"
+            @mouseenter="handleMouseEnter"
             @mouseleave="handleMouseLeave"
           >
             <button class="nav-link flex items-center group-hover:text-blue-600 py-4">
@@ -50,7 +51,7 @@
               leave-from-class="opacity-100 translate-y-0"
               leave-to-class="opacity-0 -translate-y-2"
             >
-              <div v-show="showDropdown" class="dropdown-menu">
+              <div v-show="showDropdown" class="dropdown-menu" :style="dropdownStyle">
                 <div class="py-1">
                   <a
                     v-for="(surgery, index) in surgeryTypes"
@@ -76,11 +77,9 @@
         <div class="hidden md:flex items-center space-x-4">
           <button class="login-button">
             <span class="button-text">Login</span>
-            <div class="button-border"></div>
           </button>
           <button class="register-button">
             <span class="button-text">Register</span>
-            <div class="button-glow"></div>
           </button>
         </div>
 
