@@ -8,7 +8,7 @@
         <div class="text-center">
           <h1 class="text-4xl md:text-5xl font-bold mb-4">Publications</h1>
           <p class="text-xl max-w-3xl mx-auto">
-            Explore the extensive research contributions from Prof. Massimo Busin and the CWA team
+            Explore the extensive research contributions from Prof. Massimo Busin and collegues.
           </p>
         </div>
       </div>
@@ -16,15 +16,36 @@
 
     <!-- Statistics Overview -->
     <section v-if="!loading && publications.length > 0" class="bg-white border-b">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div class="flex justify-center gap-16">
-          <div class="text-center">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <h2 class="text-2xl font-bold text-gray-800 text-center mb-8">Scopus Metrics</h2>
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+          <div class="text-center p-4 bg-blue-50 rounded-lg">
             <div class="text-3xl font-bold text-blue-600">{{ publications.length }}</div>
             <div class="text-sm text-gray-600 mt-1">Total Publications</div>
           </div>
-          <div class="text-center">
+          <div class="text-center p-4 bg-purple-50 rounded-lg">
             <div class="text-3xl font-bold text-purple-600">{{ yearRange }}</div>
             <div class="text-sm text-gray-600 mt-1">Years Active</div>
+          </div>
+          <div class="text-center p-4 bg-green-50 rounded-lg">
+            <div class="text-3xl font-bold text-green-600">
+              {{ hIndex }}
+            </div>
+            <div class="text-sm text-gray-600 mt-1">h-index</div>
+          </div>
+          <div class="text-center p-4 bg-orange-50 rounded-lg">
+            <div class="text-3xl font-bold text-orange-600">
+              {{ totalCitations.toLocaleString() }}
+            </div>
+            <div class="text-sm text-gray-600 mt-1">Total Citations</div>
+          </div>
+          <div class="text-center p-4 bg-red-50 rounded-lg">
+            <div class="text-3xl font-bold text-red-600">{{ avgCitationsPerPub }}</div>
+            <div class="text-sm text-gray-600 mt-1">Avg. Citations/Paper</div>
+          </div>
+          <div class="text-center p-4 bg-teal-50 rounded-lg">
+            <div class="text-3xl font-bold text-teal-600">{{ uniqueCoAuthors }}</div>
+            <div class="text-sm text-gray-600 mt-1">Co-authors</div>
           </div>
         </div>
       </div>
@@ -210,11 +231,6 @@
             Journal: {{ truncateText(selectedJournal, 30) }}
           </span>
         </div>
-
-        <!-- Results Count -->
-        <div class="mt-3 text-sm text-gray-600">
-          Showing {{ filteredPublications.length }} of {{ publications.length }} publications
-        </div>
       </div>
     </section>
 
@@ -345,18 +361,7 @@
                 Next
               </button>
             </div>
-            <div class="hidden sm:flex-1 sm:flex sm:items-center sm:justify-between">
-              <div>
-                <p class="text-sm text-gray-700">
-                  Showing
-                  <span class="font-medium">{{ paginationStart }}</span>
-                  to
-                  <span class="font-medium">{{ paginationEnd }}</span>
-                  of
-                  <span class="font-medium">{{ filteredPublications.length }}</span>
-                  results
-                </p>
-              </div>
+            <div class="hidden sm:flex-1 sm:flex sm:items-center sm:justify-end">
               <div>
                 <nav class="relative z-0 inline-flex rounded-md shadow-sm -space-x-px">
                   <button
@@ -476,6 +481,48 @@ const yearRange = computed(() => {
   const years = availableYears.value
   if (years.length === 0) return '0'
   return `${years[years.length - 1]}-${years[0]}`
+})
+
+const totalCitations = computed(() => {
+  return publications.value.reduce((sum, pub) => sum + (pub.CitedBy || 0), 0)
+})
+
+const hIndex = computed(() => {
+  // Calculate h-index: h papers with at least h citations each
+  const sortedByCitations = [...publications.value].sort(
+    (a, b) => (b.CitedBy || 0) - (a.CitedBy || 0),
+  )
+
+  let h = 0
+  for (let i = 0; i < sortedByCitations.length; i++) {
+    const citations = sortedByCitations[i].CitedBy || 0
+    if (citations >= i + 1) {
+      h = i + 1
+    } else {
+      break
+    }
+  }
+  return h
+})
+
+const avgCitationsPerPub = computed(() => {
+  if (publications.value.length === 0) return '0'
+  const avg = totalCitations.value / publications.value.length
+  return avg.toFixed(1)
+})
+
+const uniqueCoAuthors = computed(() => {
+  const allAuthors = new Set()
+  publications.value.forEach((pub) => {
+    if (pub.Authors) {
+      // Split authors by semicolon or comma
+      const authors = pub.Authors.split(/[;,]/)
+        .map((a) => a.trim())
+        .filter((a) => a)
+      authors.forEach((author) => allAuthors.add(author))
+    }
+  })
+  return allAuthors.size
 })
 
 const totalPages = computed(() => {

@@ -4,18 +4,21 @@
   >
     <!-- Citation Count in Top Right -->
     <div v-if="publication.CitedBy !== undefined" class="absolute top-4 right-4">
-      <span
-        class="inline-flex items-center px-3 py-1 text-sm font-medium rounded-full"
-        :class="citationBadgeClass"
-      >
-        <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
-          <path
-            d="M2 5a2 2 0 012-2h8a2 2 0 012 2v10a2 2 0 002 2H4a2 2 0 01-2-2V5zm3 1h6v4H5V6zm6 6H5v2h6v-2z"
-          />
-          <path d="M15 7h1a2 2 0 012 2v5.5a1.5 1.5 0 01-3 0V7z" />
-        </svg>
-        {{ publication.CitedBy }}
-      </span>
+      <div class="citation-badge-wrapper">
+        <span
+          class="inline-flex items-center px-3 py-1 text-sm font-medium rounded-full cursor-default"
+          :class="citationBadgeClass"
+        >
+          <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
+            <path
+              d="M2 5a2 2 0 012-2h8a2 2 0 012 2v10a2 2 0 002 2H4a2 2 0 01-2-2V5zm3 1h6v4H5V6zm6 6H5v2h6v-2z"
+            />
+            <path d="M15 7h1a2 2 0 012 2v5.5a1.5 1.5 0 01-3 0V7z" />
+          </svg>
+          {{ publication.CitedBy }}
+        </span>
+        <span class="citation-tooltip">Citations</span>
+      </div>
     </div>
 
     <div class="flex flex-col gap-3 pr-20">
@@ -66,11 +69,6 @@
             />
           </svg>
           Open Access
-        </span>
-
-        <!-- Volume/Issue Info -->
-        <span v-if="volumeInfo" class="text-sm text-gray-500">
-          {{ volumeInfo }}
         </span>
       </div>
 
@@ -148,7 +146,7 @@
               d="M5 13l4 4L19 7"
             />
           </svg>
-          {{ copied ? 'Copied!' : 'Copy' }}
+          {{ copied ? 'Copied!' : 'Copy citation' }}
         </button>
       </div>
     </div>
@@ -166,29 +164,6 @@ const props = defineProps({
 })
 
 const copied = ref(false)
-
-// Build volume/issue/pages info
-const volumeInfo = computed(() => {
-  const { Volume, Issue, PageStart, PageEnd } = props.publication
-  let info = ''
-
-  if (Volume) {
-    info += Volume
-    if (Issue) {
-      info += `(${Issue})`
-    }
-  }
-
-  if (PageStart) {
-    if (info) info += ':'
-    info += PageStart
-    if (PageEnd && PageEnd !== PageStart) {
-      info += `-${PageEnd}`
-    }
-  }
-
-  return info
-})
 
 // Determine citation badge color based on count
 const citationBadgeClass = computed(() => {
@@ -208,7 +183,7 @@ const copyCitation = async () => {
     'Publication Year': year,
     DOI,
   } = props.publication
-  const citation = `${Authors}. ${Title}. ${journal}. ${year}${volumeInfo.value ? ';' + volumeInfo.value : ''}${DOI ? `. doi: ${DOI}` : ''}`
+  const citation = `${Authors}. ${Title}. ${journal}. ${year}${DOI ? `. doi: ${DOI}` : ''}`
 
   try {
     await navigator.clipboard.writeText(citation)
@@ -254,5 +229,55 @@ a::after {
 
 a:hover::after {
   width: 100%;
+}
+
+/* Citation Badge Tooltip */
+.citation-badge-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.citation-tooltip {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 4px;
+  padding: 6px 12px;
+  background-color: rgba(31, 41, 55, 0.95);
+  color: white;
+  font-size: 12px;
+  font-weight: 500;
+  border-radius: 6px;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-2px);
+  transition: all 0.2s ease;
+  pointer-events: none;
+  z-index: 10;
+}
+
+/* Tooltip arrow */
+.citation-tooltip::before {
+  content: '';
+  position: absolute;
+  bottom: 100%;
+  right: 16px;
+  border-style: solid;
+  border-width: 0 6px 6px 6px;
+  border-color: transparent transparent rgba(31, 41, 55, 0.95) transparent;
+}
+
+/* Show tooltip on hover */
+.citation-badge-wrapper:hover .citation-tooltip {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Add subtle hover effect to badge itself */
+.citation-badge-wrapper:hover > span:first-child {
+  transform: scale(1.05);
+  transition: transform 0.2s ease;
 }
 </style>
