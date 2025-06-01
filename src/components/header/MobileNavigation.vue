@@ -81,7 +81,7 @@
 import { ref } from 'vue'
 import AuthButtons from './AuthButtons.vue'
 
-const props = defineProps({
+defineProps({
   open: {
     type: Boolean,
     default: false,
