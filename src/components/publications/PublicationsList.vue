@@ -3,25 +3,7 @@
   <section class="py-8">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <!-- Publications Display -->
-      <div v-if="groupByYear" class="space-y-8">
-        <!-- Grouped by Year -->
-        <div v-for="yearGroup in groupedPublications" :key="yearGroup.year">
-          <h2 class="text-2xl font-bold text-gray-800 mb-4 flex items-center">
-            <span>{{ yearGroup.year }}</span>
-            <span class="ml-3 text-sm font-normal text-gray-500"
-              >({{ yearGroup.publications.length }} publications)</span
-            >
-          </h2>
-          <div class="space-y-4">
-            <PublicationCard
-              v-for="pub in yearGroup.publications"
-              :key="pub.PMID"
-              :publication="pub"
-            />
-          </div>
-        </div>
-      </div>
-      <div v-else class="space-y-4">
+      <div class="space-y-4">
         <!-- Flat List with Pagination -->
         <PublicationCard v-for="pub in paginatedPublications" :key="pub.PMID" :publication="pub" />
       </div>
@@ -45,9 +27,9 @@
         <p class="mt-1 text-sm text-gray-500">Try adjusting your search or filter criteria.</p>
       </div>
 
-      <!-- Pagination (only when not grouped) -->
+      <!-- Pagination -->
       <PaginationControls
-        v-if="!groupByYear && totalPages > 1"
+        v-if="totalPages > 1"
         :currentPage="currentPage"
         :totalPages="totalPages"
         @page-change="handlePageChange"
@@ -64,10 +46,6 @@ import PaginationControls from './PaginationControls.vue'
 const props = defineProps({
   filteredPublications: {
     type: Array,
-    required: true,
-  },
-  groupByYear: {
-    type: Boolean,
     required: true,
   },
   currentPage: {
@@ -87,30 +65,9 @@ const totalPages = computed(() => {
 })
 
 const paginatedPublications = computed(() => {
-  if (props.groupByYear) return []
   const start = (props.currentPage - 1) * props.itemsPerPage
   const end = start + props.itemsPerPage
   return props.filteredPublications.slice(start, end)
-})
-
-const groupedPublications = computed(() => {
-  if (!props.groupByYear) return []
-
-  const grouped = {}
-  props.filteredPublications.forEach((pub) => {
-    const year = pub['Publication Year'] || 'Unknown'
-    if (!grouped[year]) {
-      grouped[year] = []
-    }
-    grouped[year].push(pub)
-  })
-
-  return Object.keys(grouped)
-    .sort((a, b) => (b === 'Unknown' ? 1 : a === 'Unknown' ? -1 : b - a))
-    .map((year) => ({
-      year,
-      publications: grouped[year],
-    }))
 })
 
 const handlePageChange = (page) => {

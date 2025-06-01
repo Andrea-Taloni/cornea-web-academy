@@ -22,12 +22,14 @@
       v-model:searchQuery="searchQuery"
       v-model:selectedYear="selectedYear"
       v-model:selectedJournal="selectedJournal"
-      v-model:groupByYear="groupByYear"
+      v-model:sortBy="sortBy"
+      v-model:sortOrder="sortOrder"
       :availableYears="availableYears"
       :availableJournals="availableJournals"
       :hasActiveFilters="hasActiveFilters"
       @search="debouncedSearch"
       @filter="filterPublications"
+      @sort="filterPublications"
       @clear-filters="clearFilters"
     />
 
@@ -74,7 +76,6 @@
     <PublicationsList
       v-else
       :filteredPublications="filteredPublications"
-      :groupByYear="groupByYear"
       :currentPage="currentPage"
       :itemsPerPage="itemsPerPage"
       @page-change="handlePageChange"
@@ -100,12 +101,15 @@ const loading = ref(true)
 const error = ref('')
 const currentPage = ref(1)
 const itemsPerPage = 20
-const groupByYear = ref(false)
 
 // Filters
 const searchQuery = ref('')
 const selectedYear = ref(null)
 const selectedJournal = ref(null)
+
+// Sorting
+const sortBy = ref('year')
+const sortOrder = ref('desc')
 
 // Computed properties
 const hasActiveFilters = computed(() => {
@@ -176,14 +180,8 @@ const loadPublications = async () => {
 
     console.log('Loaded', publications.value.length, 'publications from Scopus')
 
-    // Sort by year (newest first)
-    publications.value.sort((a, b) => {
-      const yearA = a['Publication Year'] || 0
-      const yearB = b['Publication Year'] || 0
-      return yearB - yearA
-    })
-
-    filteredPublications.value = [...publications.value]
+    // Apply initial sorting
+    filteredPublications.value = sortPublications([...publications.value])
   } catch (err) {
     console.error('Error loading publications:', err)
     error.value = 'Failed to load publication data. Please try again.'
@@ -218,8 +216,54 @@ const filterPublications = () => {
     })
   }
 
+  // Apply sorting
+  filtered = sortPublications(filtered)
+
   filteredPublications.value = filtered
   currentPage.value = 1
+}
+
+// Sorting function
+const sortPublications = (pubs) => {
+  const sorted = [...pubs]
+
+  switch (sortBy.value) {
+    case 'year':
+      sorted.sort((a, b) => {
+        const yearA = a['Publication Year'] || 0
+        const yearB = b['Publication Year'] || 0
+        return sortOrder.value === 'desc' ? yearB - yearA : yearA - yearB
+      })
+      break
+
+    case 'citations':
+      sorted.sort((a, b) => {
+        const citA = a.CitedBy || 0
+        const citB = b.CitedBy || 0
+        return sortOrder.value === 'desc' ? citB - citA : citA - citB
+      })
+      break
+
+    case 'title':
+      sorted.sort((a, b) => {
+        const titleA = a.Title.toLowerCase()
+        const titleB = b.Title.toLowerCase()
+        const comparison = titleA.localeCompare(titleB)
+        return sortOrder.value === 'desc' ? -comparison : comparison
+      })
+      break
+
+    case 'journal':
+      sorted.sort((a, b) => {
+        const journalA = (a['Journal/Book'] || '').toLowerCase()
+        const journalB = (b['Journal/Book'] || '').toLowerCase()
+        const comparison = journalA.localeCompare(journalB)
+        return sortOrder.value === 'desc' ? -comparison : comparison
+      })
+      break
+  }
+
+  return sorted
 }
 
 // Debounced search
@@ -235,6 +279,8 @@ const clearFilters = () => {
   searchQuery.value = ''
   selectedYear.value = null
   selectedJournal.value = null
+  sortBy.value = 'year'
+  sortOrder.value = 'desc'
   filterPublications()
 }
 
@@ -244,6 +290,11 @@ const handlePageChange = (page) => {
 
 // Watch for filter changes
 watch([selectedYear, selectedJournal], () => {
+  filterPublications()
+})
+
+// Watch for sort changes
+watch([sortBy, sortOrder], () => {
   filterPublications()
 })
 

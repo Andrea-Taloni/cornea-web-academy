@@ -266,51 +266,6 @@
           </button>
         </div>
       </div>
-
-      <!-- Active Filters Display -->
-      <div v-if="hasActiveFilters || sortBy !== 'year'" class="mt-3 flex flex-wrap gap-2">
-        <span class="text-sm text-gray-600">Active settings:</span>
-        <span
-          v-if="sortBy !== 'year' || sortOrder !== 'desc'"
-          class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800"
-        >
-          Sort: {{ getSortLabel(sortBy, sortOrder) }}
-        </span>
-        <span
-          v-if="searchQuery"
-          class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-blue-100 text-blue-800"
-        >
-          Search: "{{ truncateText(searchQuery, 30) }}"
-        </span>
-        <span
-          v-if="selectedYear"
-          class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800"
-        >
-          Year: {{ selectedYear }}
-        </span>
-        <span
-          v-if="selectedJournal"
-          class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-purple-100 text-purple-800"
-        >
-          Journal: {{ truncateText(selectedJournal, 30) }}
-        </span>
-      </div>
-
-      <!-- Group by Year Toggle -->
-      <div class="mt-6 flex justify-end">
-        <label class="flex items-center cursor-pointer">
-          <input
-            :checked="groupByYear"
-            @change="updateGroupByYear"
-            type="checkbox"
-            class="sr-only peer"
-          />
-          <div
-            class="relative w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600"
-          ></div>
-          <span class="ml-3 text-sm font-medium text-gray-700">Group by year</span>
-        </label>
-      </div>
     </div>
   </section>
 </template>
@@ -339,10 +294,6 @@ defineProps({
     type: String,
     default: 'desc',
   },
-  groupByYear: {
-    type: Boolean,
-    required: true,
-  },
   availableYears: {
     type: Array,
     required: true,
@@ -363,7 +314,6 @@ const emit = defineEmits([
   'update:selectedJournal',
   'update:sortBy',
   'update:sortOrder',
-  'update:groupByYear',
   'search',
   'filter',
   'sort',
@@ -432,10 +382,6 @@ const selectSort = (field, order) => {
   emit('update:sortOrder', order)
   showSortFilter.value = false
   emit('sort')
-}
-
-const updateGroupByYear = (event) => {
-  emit('update:groupByYear', event.target.checked)
 }
 
 const clearAllFilters = () => {
