@@ -189,3 +189,91 @@ const toggleMobileMenu = () => {
   }
 }
 </script>
+
+<style scoped>
+/* Navigation Link Styles */
+.nav-link {
+  @apply text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200 py-2;
+}
+
+/* Dropdown Menu Styles */
+.dropdown-menu {
+  @apply absolute left-0 mt-2 w-48 bg-white rounded-lg shadow-lg opacity-0 invisible
+         transform -translate-y-2 transition-all duration-200 ease-out z-50;
+}
+
+/* Show dropdown on hover */
+.group:hover .dropdown-menu {
+  @apply opacity-100 visible translate-y-0;
+}
+
+/* Dropdown Item Styles */
+.dropdown-item {
+  @apply block px-4 py-3 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600
+         transition-all duration-200 relative overflow-hidden;
+}
+
+/* Dropdown item animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.group:hover .dropdown-item {
+  animation: fadeInUp 0.3s ease-out forwards;
+}
+
+/* Dropdown item hover effect */
+.dropdown-item::before {
+  content: '';
+  @apply absolute left-0 top-0 h-full w-0 bg-blue-100 transition-all duration-300 -z-10;
+}
+
+.dropdown-item:hover::before {
+  @apply w-full;
+}
+
+/* Auth Button Styles */
+.auth-button-outline {
+  @apply px-4 py-2 text-gray-700 border border-gray-300 rounded-lg hover:bg-gray-50
+         transition-all duration-200 font-medium;
+}
+
+.auth-button-filled {
+  @apply px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700
+         transition-all duration-200 font-medium transform hover:scale-105;
+}
+
+/* Mobile Navigation Styles */
+.mobile-nav-link {
+  @apply block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-600
+         hover:bg-gray-50 rounded-md transition-colors duration-200;
+}
+
+.mobile-dropdown-item {
+  @apply block py-2 text-sm text-gray-600 hover:text-blue-600 hover:bg-gray-50
+         rounded-md transition-colors duration-200;
+}
+
+/* Mobile Auth Button Styles */
+.mobile-auth-button-outline {
+  @apply w-full px-4 py-2 text-gray-700 border border-gray-300 rounded-lg
+         hover:bg-gray-50 transition-colors duration-200 font-medium;
+}
+
+.mobile-auth-button-filled {
+  @apply w-full px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700
+         transition-colors duration-200 font-medium;
+}
+
+/* Router Link Active State */
+.router-link-active {
+  @apply text-blue-600;
+}
+</style>
