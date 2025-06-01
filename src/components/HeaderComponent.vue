@@ -51,17 +51,18 @@
               leave-from-class="opacity-100 translate-y-0"
               leave-to-class="opacity-0 -translate-y-2"
             >
-              <div v-show="showDropdown" class="dropdown-menu" :style="dropdownStyle">
+              <div v-show="showDropdown" class="dropdown-menu">
                 <div class="py-1">
-                  <a
+                  <router-link
                     v-for="(surgery, index) in surgeryTypes"
-                    :key="surgery"
-                    href="#"
+                    :key="surgery.name"
+                    :to="surgery.path"
                     class="dropdown-item"
                     :style="{ animationDelay: `${index * 50}ms` }"
+                    @click.prevent="navigateToSurgery(surgery.path)"
                   >
-                    <span class="relative z-10">{{ surgery }}</span>
-                  </a>
+                    <span class="relative z-10">{{ surgery.name }}</span>
+                  </router-link>
                 </div>
               </div>
             </transition>
@@ -151,14 +152,15 @@
                 leave-to-class="opacity-0 -translate-y-1"
               >
                 <div v-show="mobileSurgeryOpen" class="pl-6 space-y-1 mt-1">
-                  <a
+                  <router-link
                     v-for="surgery in surgeryTypes"
-                    :key="surgery"
-                    href="#"
+                    :key="surgery.name"
+                    :to="surgery.path"
                     class="mobile-dropdown-item"
+                    @click.prevent="navigateToSurgery(surgery.path)"
                   >
-                    {{ surgery }}
-                  </a>
+                    {{ surgery.name }}
+                  </router-link>
                 </div>
               </transition>
             </div>
@@ -193,8 +195,10 @@
 
 <script setup>
 import { ref } from 'vue'
-import { RouterLink } from 'vue-router'
+import { useRouter } from 'vue-router'
 import logoImage from '@/assets/images/cwa-logo.png'
+
+const router = useRouter()
 
 const mobileMenuOpen = ref(false)
 const mobileSurgeryOpen = ref(false)
@@ -202,7 +206,20 @@ const showDropdown = ref(false)
 
 let dropdownTimeout = null
 
-const surgeryTypes = ref(['DALK', 'DMEK', 'DSAEK', 'UT-DSAEK', 'SALK'])
+const surgeryTypes = ref([
+  { name: 'DALK', path: '/surgery/dalk' },
+  { name: 'DMEK', path: '/surgery/dmek' },
+  { name: 'DSAEK', path: '/surgery/dsaek' },
+  { name: 'UT-DSAEK', path: '/surgery/ut-dsaek' },
+  { name: 'SALK', path: '/surgery/salk' },
+])
+
+const navigateToSurgery = (path) => {
+  router.push(path)
+  showDropdown.value = false
+  mobileMenuOpen.value = false
+  mobileSurgeryOpen.value = false
+}
 
 const toggleMobileMenu = () => {
   mobileMenuOpen.value = !mobileMenuOpen.value
