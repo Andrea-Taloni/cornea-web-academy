@@ -191,89 +191,237 @@ const toggleMobileMenu = () => {
 </script>
 
 <style scoped>
-/* Navigation Link Styles */
+/* Navigation Link Styles with Animated Underline */
 .nav-link {
-  @apply text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200 py-2;
+  @apply text-gray-700 font-medium py-2 relative;
+  transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Dropdown Menu Styles */
+.nav-link::after {
+  content: '';
+  @apply absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-blue-600;
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-link:hover {
+  @apply text-blue-600;
+}
+
+.nav-link:hover::after {
+  @apply w-full;
+}
+
+/* Active link with persistent underline */
+.router-link-active.nav-link::after {
+  @apply w-full bg-gradient-to-r from-blue-500 to-blue-700;
+}
+
+/* Dropdown Menu Styles with Smooth Animation */
 .dropdown-menu {
-  @apply absolute left-0 mt-2 w-48 bg-white rounded-lg shadow-lg opacity-0 invisible
-         transform -translate-y-2 transition-all duration-200 ease-out z-50;
+  @apply absolute left-0 mt-2 w-56 bg-white rounded-xl shadow-2xl opacity-0 invisible
+         transform -translate-y-4 transition-all duration-300 ease-out z-50;
+  border: 1px solid rgba(0, 0, 0, 0.08);
 }
 
-/* Show dropdown on hover */
+/* Show dropdown on hover with bounce effect */
 .group:hover .dropdown-menu {
   @apply opacity-100 visible translate-y-0;
+  animation: dropdownBounce 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
-/* Dropdown Item Styles */
-.dropdown-item {
-  @apply block px-4 py-3 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600
-         transition-all duration-200 relative overflow-hidden;
-}
-
-/* Dropdown item animation */
-@keyframes fadeInUp {
-  from {
+@keyframes dropdownBounce {
+  0% {
     opacity: 0;
-    transform: translateY(10px);
+    transform: translateY(-10px);
   }
-  to {
+  50% {
+    transform: translateY(2px);
+  }
+  100% {
     opacity: 1;
     transform: translateY(0);
   }
 }
 
-.group:hover .dropdown-item {
-  animation: fadeInUp 0.3s ease-out forwards;
+/* Dropdown Item Styles with Sliding Effect */
+.dropdown-item {
+  @apply block px-5 py-3 text-sm text-gray-700 relative overflow-hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Dropdown item hover effect */
+/* Gradient background animation on hover */
 .dropdown-item::before {
   content: '';
-  @apply absolute left-0 top-0 h-full w-0 bg-blue-100 transition-all duration-300 -z-10;
+  @apply absolute inset-0 bg-gradient-to-r from-blue-50 via-blue-100 to-blue-50;
+  transform: translateX(-100%);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .dropdown-item:hover::before {
-  @apply w-full;
+  transform: translateX(0);
 }
 
-/* Auth Button Styles */
+.dropdown-item:hover {
+  @apply text-blue-700 pl-7;
+}
+
+/* Arrow animation for dropdown items */
+.dropdown-item::after {
+  content: '→';
+  @apply absolute right-4 top-1/2 -translate-y-1/2 opacity-0 text-blue-600;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dropdown-item:hover::after {
+  @apply opacity-100 right-5;
+}
+
+/* Dropdown item stagger animation */
+@keyframes fadeInSlide {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.group:hover .dropdown-item {
+  animation: fadeInSlide 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* Auth Button Styles with Modern Effects */
 .auth-button-outline {
-  @apply px-4 py-2 text-gray-700 border border-gray-300 rounded-lg hover:bg-gray-50
-         transition-all duration-200 font-medium;
+  @apply px-5 py-2.5 text-gray-700 border-2 border-gray-300 rounded-lg font-medium relative overflow-hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.auth-button-outline::before {
+  content: '';
+  @apply absolute inset-0 bg-gray-900;
+  transform: translateY(100%);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.auth-button-outline:hover {
+  @apply text-white border-gray-900;
+}
+
+.auth-button-outline:hover::before {
+  transform: translateY(0);
+}
+
+.auth-button-outline span {
+  @apply relative z-10;
+}
+
+/* Filled button with glow effect */
 .auth-button-filled {
-  @apply px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700
-         transition-all duration-200 font-medium transform hover:scale-105;
+  @apply px-5 py-2.5 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-lg font-medium relative overflow-hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
 }
 
-/* Mobile Navigation Styles */
+.auth-button-filled::before {
+  content: '';
+  @apply absolute inset-0 bg-gradient-to-r from-blue-700 to-blue-800 opacity-0;
+  transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.auth-button-filled:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
+}
+
+.auth-button-filled:hover::before {
+  @apply opacity-100;
+}
+
+.auth-button-filled:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+}
+
+/* Logo hover effect */
+.logo-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.logo-hover:hover {
+  transform: scale(1.05) rotateZ(-1deg);
+  filter: brightness(1.1);
+}
+
+/* Mobile Navigation Styles with Slide Effect */
 .mobile-nav-link {
-  @apply block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-600
-         hover:bg-gray-50 rounded-md transition-colors duration-200;
+  @apply block px-3 py-2 text-base font-medium text-gray-700 rounded-md relative overflow-hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mobile-nav-link::before {
+  content: '';
+  @apply absolute left-0 top-0 bottom-0 w-1 bg-blue-600;
+  transform: translateX(-100%);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mobile-nav-link:hover {
+  @apply text-blue-600 bg-blue-50 pl-5;
+}
+
+.mobile-nav-link:hover::before {
+  transform: translateX(0);
 }
 
 .mobile-dropdown-item {
-  @apply block py-2 text-sm text-gray-600 hover:text-blue-600 hover:bg-gray-50
-         rounded-md transition-colors duration-200;
+  @apply block py-2 text-sm text-gray-600 rounded-md pl-4 relative;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mobile-dropdown-item:hover {
+  @apply text-blue-600 bg-blue-50 pl-6;
 }
 
 /* Mobile Auth Button Styles */
 .mobile-auth-button-outline {
-  @apply w-full px-4 py-2 text-gray-700 border border-gray-300 rounded-lg
-         hover:bg-gray-50 transition-colors duration-200 font-medium;
+  @apply w-full px-4 py-2 text-gray-700 border-2 border-gray-300 rounded-lg font-medium;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mobile-auth-button-outline:hover {
+  @apply bg-gray-900 text-white border-gray-900;
 }
 
 .mobile-auth-button-filled {
-  @apply w-full px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700
-         transition-colors duration-200 font-medium;
+  @apply w-full px-4 py-2 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-lg font-medium;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+}
+
+.mobile-auth-button-filled:hover {
+  @apply from-blue-700 to-blue-800;
+  box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
 }
 
 /* Router Link Active State */
 .router-link-active {
   @apply text-blue-600;
+}
+
+/* Additional hover effect for dropdown trigger */
+.group:hover > .nav-link {
+  @apply text-blue-600;
+}
+
+/* Smooth color transition for SVG icons */
+.nav-link svg {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Mobile menu button animation */
+.menu-icon-line {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 </style>
