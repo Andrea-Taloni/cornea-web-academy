@@ -261,9 +261,10 @@ const handleMouseEnter = () => {
 /* Dropdown Menu Styles - Fixed positioning and z-index */
 .dropdown-menu {
   @apply absolute left-0 w-56 bg-white rounded-xl shadow-2xl z-50;
-  top: calc(100% - 0.5rem);
+  top: 100%;
   border: 1px solid rgba(0, 0, 0, 0.08);
   padding-top: 0.5rem;
+  margin-top: 0.25rem;
 }
 
 /* Invisible bridge to maintain hover state */
@@ -381,11 +382,9 @@ const handleMouseEnter = () => {
 }
 
 .login-button:hover {
-  transform: translateY(-2px);
 }
 
 .login-button:active {
-  transform: translateY(0);
 }
 
 @keyframes gradientShift {
@@ -446,13 +445,11 @@ const handleMouseEnter = () => {
 }
 
 .register-button:hover {
-  transform: translateY(-3px) scale(1.02);
   box-shadow: 0 6px 25px rgba(59, 130, 246, 0.4);
   background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
 }
 
 .register-button:active {
-  transform: translateY(-1px) scale(1);
   box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
 }
 
