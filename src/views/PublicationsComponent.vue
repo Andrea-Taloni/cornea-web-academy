@@ -8,73 +8,230 @@
         <div class="text-center">
           <h1 class="text-4xl md:text-5xl font-bold mb-4">Publications</h1>
           <p class="text-xl max-w-3xl mx-auto">
-            Scientific publications and research from Prof. Massimo Busin and the CWA team
+            Explore the extensive research contributions from Prof. Massimo Busin and the CWA team
           </p>
         </div>
       </div>
     </section>
 
-    <!-- Filter Section -->
-    <section class="bg-white border-b py-6">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex flex-wrap gap-4 items-center">
-          <select
-            v-model="selectedYear"
-            @change="filterPublications"
-            class="px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-          >
-            <option value="">All Years</option>
-            <option v-for="year in availableYears" :key="year" :value="year">{{ year }}</option>
-          </select>
-          <select
-            v-model="selectedJournal"
-            @change="filterPublications"
-            class="px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-          >
-            <option value="">All Journals</option>
-            <option v-for="journal in availableJournals" :key="journal" :value="journal">
-              {{ journal }}
-            </option>
-          </select>
-          <input
-            v-model="searchQuery"
-            @input="filterPublications"
-            type="text"
-            placeholder="Search publications..."
-            class="flex-1 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
+    <!-- Statistics Overview -->
+    <section v-if="!loading && publications.length > 0" class="bg-white border-b">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div class="text-center">
+            <div class="text-3xl font-bold text-blue-600">{{ publications.length }}</div>
+            <div class="text-sm text-gray-600 mt-1">Total Publications</div>
+          </div>
+          <div class="text-center">
+            <div class="text-3xl font-bold text-green-600">{{ uniqueJournals }}</div>
+            <div class="text-sm text-gray-600 mt-1">Journals</div>
+          </div>
+          <div class="text-center">
+            <div class="text-3xl font-bold text-purple-600">{{ yearRange }}</div>
+            <div class="text-sm text-gray-600 mt-1">Years Active</div>
+          </div>
+          <div class="text-center">
+            <div class="text-3xl font-bold text-orange-600">{{ publicationsWithDOI }}</div>
+            <div class="text-sm text-gray-600 mt-1">With DOI</div>
+          </div>
         </div>
-        <div class="mt-4 text-sm text-gray-600">
-          Showing {{ paginatedPublications.length }} of
-          {{ filteredPublications.length }} publications
+      </div>
+    </section>
+
+    <!-- Filters Section -->
+    <section class="bg-white shadow-sm sticky top-0 z-40">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+        <!-- Search and Filters -->
+        <div class="flex flex-col lg:flex-row gap-4">
+          <!-- Search Bar -->
+          <div class="flex-1">
+            <div class="relative">
+              <svg
+                class="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                ></path>
+              </svg>
+              <input
+                v-model="searchQuery"
+                type="text"
+                placeholder="Search publications by title, authors, or journal..."
+                class="w-full pl-10 pr-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                @input="debouncedSearch"
+              />
+            </div>
+          </div>
+
+          <!-- Filter Buttons -->
+          <div class="flex gap-2">
+            <!-- Year Filter -->
+            <div class="relative">
+              <button
+                @click="showYearFilter = !showYearFilter"
+                class="px-4 py-2 bg-white border rounded-lg hover:bg-gray-50 flex items-center gap-2"
+              >
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                  ></path>
+                </svg>
+                {{ selectedYear || 'All Years' }}
+                <svg
+                  class="w-4 h-4"
+                  :class="{ 'rotate-180': showYearFilter }"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"
+                  ></path>
+                </svg>
+              </button>
+              <!-- Year Dropdown -->
+              <div
+                v-if="showYearFilter"
+                class="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg border z-50 max-h-64 overflow-y-auto"
+              >
+                <button
+                  @click="selectYear(null)"
+                  class="w-full text-left px-4 py-2 hover:bg-gray-100"
+                >
+                  All Years
+                </button>
+                <button
+                  v-for="year in availableYears"
+                  :key="year"
+                  @click="selectYear(year)"
+                  class="w-full text-left px-4 py-2 hover:bg-gray-100"
+                  :class="{ 'bg-blue-50 text-blue-600': selectedYear === year }"
+                >
+                  {{ year }}
+                </button>
+              </div>
+            </div>
+
+            <!-- Journal Filter -->
+            <div class="relative">
+              <button
+                @click="showJournalFilter = !showJournalFilter"
+                class="px-4 py-2 bg-white border rounded-lg hover:bg-gray-50 flex items-center gap-2"
+              >
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+                  ></path>
+                </svg>
+                {{ selectedJournal ? truncateText(selectedJournal, 20) : 'All Journals' }}
+                <svg
+                  class="w-4 h-4"
+                  :class="{ 'rotate-180': showJournalFilter }"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"
+                  ></path>
+                </svg>
+              </button>
+              <!-- Journal Dropdown -->
+              <div
+                v-if="showJournalFilter"
+                class="absolute right-0 mt-2 w-64 bg-white rounded-lg shadow-lg border z-50 max-h-64 overflow-y-auto"
+              >
+                <button
+                  @click="selectJournal(null)"
+                  class="w-full text-left px-4 py-2 hover:bg-gray-100"
+                >
+                  All Journals
+                </button>
+                <button
+                  v-for="journal in availableJournals"
+                  :key="journal"
+                  @click="selectJournal(journal)"
+                  class="w-full text-left px-4 py-2 hover:bg-gray-100"
+                  :class="{ 'bg-blue-50 text-blue-600': selectedJournal === journal }"
+                >
+                  {{ journal }}
+                </button>
+              </div>
+            </div>
+
+            <!-- Clear Filters -->
+            <button
+              v-if="hasActiveFilters"
+              @click="clearFilters"
+              class="px-4 py-2 bg-red-50 text-red-600 rounded-lg hover:bg-red-100 flex items-center gap-2"
+            >
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M6 18L18 6M6 6l12 12"
+                ></path>
+              </svg>
+              Clear
+            </button>
+          </div>
+        </div>
+
+        <!-- Active Filters Display -->
+        <div v-if="hasActiveFilters" class="mt-3 flex flex-wrap gap-2">
+          <span class="text-sm text-gray-600">Active filters:</span>
+          <span
+            v-if="searchQuery"
+            class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-blue-100 text-blue-800"
+          >
+            Search: "{{ truncateText(searchQuery, 30) }}"
+          </span>
+          <span
+            v-if="selectedYear"
+            class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800"
+          >
+            Year: {{ selectedYear }}
+          </span>
+          <span
+            v-if="selectedJournal"
+            class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-purple-100 text-purple-800"
+          >
+            Journal: {{ truncateText(selectedJournal, 30) }}
+          </span>
+        </div>
+
+        <!-- Results Count -->
+        <div class="mt-3 text-sm text-gray-600">
+          Showing {{ filteredPublications.length }} of {{ publications.length }} publications
         </div>
       </div>
     </section>
 
     <!-- Loading State -->
     <section v-if="loading" class="py-16">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <div class="inline-flex items-center">
-          <svg
-            class="animate-spin -ml-1 mr-3 h-5 w-5 text-blue-600"
-            fill="none"
-            viewBox="0 0 24 24"
-          >
-            <circle
-              class="opacity-25"
-              cx="12"
-              cy="12"
-              r="10"
-              stroke="currentColor"
-              stroke-width="4"
-            ></circle>
-            <path
-              class="opacity-75"
-              fill="currentColor"
-              d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-            ></path>
-          </svg>
-          <span>Loading publications...</span>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col items-center justify-center">
+          <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"></div>
+          <p class="mt-4 text-gray-600">Loading publications...</p>
         </div>
       </div>
     </section>
@@ -83,7 +240,21 @@
     <section v-else-if="error" class="py-16">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="bg-red-50 border border-red-200 rounded-lg p-6 text-center">
-          <p class="text-red-600">{{ error }}</p>
+          <svg
+            class="mx-auto h-12 w-12 text-red-400"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+            ></path>
+          </svg>
+          <h3 class="mt-2 text-lg font-medium text-red-800">Error Loading Publications</h3>
+          <p class="mt-1 text-sm text-red-600">{{ error }}</p>
           <button
             @click="loadPublications"
             class="mt-4 px-4 py-2 bg-red-600 text-white rounded hover:bg-red-700"
@@ -95,125 +266,156 @@
     </section>
 
     <!-- Publications List -->
-    <section v-else class="py-16">
+    <section v-else class="py-8">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="space-y-6">
-          <!-- Publication Item -->
-          <article
+        <!-- Group by Year Toggle -->
+        <div class="mb-6 flex justify-end">
+          <label class="flex items-center cursor-pointer">
+            <input
+              v-model="groupByYear"
+              type="checkbox"
+              class="sr-only peer"
+              @change="handleGroupingChange"
+            />
+            <div
+              class="relative w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600"
+            ></div>
+            <span class="ml-3 text-sm font-medium text-gray-700">Group by year</span>
+          </label>
+        </div>
+
+        <!-- Publications Display -->
+        <div v-if="groupByYear" class="space-y-8">
+          <!-- Grouped by Year -->
+          <div v-for="yearGroup in groupedPublications" :key="yearGroup.year">
+            <h2 class="text-2xl font-bold text-gray-800 mb-4 flex items-center">
+              <span>{{ yearGroup.year }}</span>
+              <span class="ml-3 text-sm font-normal text-gray-500"
+                >({{ yearGroup.publications.length }} publications)</span
+              >
+            </h2>
+            <div class="space-y-4">
+              <PublicationCard
+                v-for="pub in yearGroup.publications"
+                :key="pub.PMID"
+                :publication="pub"
+              />
+            </div>
+          </div>
+        </div>
+        <div v-else class="space-y-4">
+          <!-- Flat List with Pagination -->
+          <PublicationCard
             v-for="pub in paginatedPublications"
             :key="pub.PMID"
-            class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow"
-          >
-            <div class="flex flex-col md:flex-row md:items-start gap-4">
-              <div class="flex-1">
-                <h3 class="text-xl font-bold mb-2">{{ pub.Title }}</h3>
-                <p class="text-gray-600 mb-2">{{ pub.Authors }}</p>
-                <p class="text-sm text-gray-500 mb-3">
-                  <span class="font-medium">{{ pub['Journal/Book'] }}</span> •
-                  {{ pub['Publication Year'] }}
-                  <span v-if="pub.Citation"> • {{ pub.Citation }}</span>
-                </p>
-                <div class="flex flex-wrap gap-4 text-sm">
-                  <a
-                    v-if="pub.PMID"
-                    :href="`https://pubmed.ncbi.nlm.nih.gov/${pub.PMID}/`"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="text-blue-600 hover:text-blue-800 font-medium flex items-center"
-                  >
-                    <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
-                      <path
-                        d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z"
-                      ></path>
-                      <path
-                        d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z"
-                      ></path>
-                    </svg>
-                    PubMed
-                  </a>
-                  <a
-                    v-if="pub.PMCID"
-                    :href="`https://www.ncbi.nlm.nih.gov/pmc/articles/${pub.PMCID}/`"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="text-blue-600 hover:text-blue-800 font-medium flex items-center"
-                  >
-                    <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
-                      <path
-                        d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z"
-                      ></path>
-                      <path
-                        d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z"
-                      ></path>
-                    </svg>
-                    PMC Full Text
-                  </a>
-                  <a
-                    v-if="pub.DOI"
-                    :href="`https://doi.org/${pub.DOI}`"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="text-blue-600 hover:text-blue-800 font-medium flex items-center"
-                  >
-                    <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
-                      <path
-                        d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z"
-                      ></path>
-                      <path
-                        d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z"
-                      ></path>
-                    </svg>
-                    DOI
-                  </a>
-                </div>
-              </div>
-              <div class="md:w-32 text-center">
-                <div class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">
-                  {{ pub['Publication Year'] }}
-                </div>
-              </div>
-            </div>
-          </article>
+            :publication="pub"
+          />
         </div>
 
         <!-- No Results -->
-        <div v-if="filteredPublications.length === 0 && !loading" class="text-center py-12">
-          <p class="text-gray-500 text-lg">No publications found matching your criteria.</p>
+        <div
+          v-if="filteredPublications.length === 0 && !loading"
+          class="text-center py-12 bg-gray-50 rounded-lg"
+        >
+          <svg
+            class="mx-auto h-12 w-12 text-gray-400"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+            ></path>
+          </svg>
+          <h3 class="mt-2 text-lg font-medium text-gray-900">No publications found</h3>
+          <p class="mt-1 text-sm text-gray-500">Try adjusting your search or filter criteria.</p>
         </div>
 
-        <!-- Pagination -->
-        <div v-if="totalPages > 1" class="mt-12 flex justify-center">
-          <nav class="flex items-center gap-2">
-            <button
-              @click="currentPage = Math.max(1, currentPage - 1)"
-              :disabled="currentPage === 1"
-              class="px-3 py-1 rounded border hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed"
-            >
-              Previous
-            </button>
-
-            <!-- Page numbers -->
-            <template v-for="page in displayedPages" :key="page">
-              <button v-if="page === '...'" class="px-3 py-1" disabled>...</button>
+        <!-- Pagination (only when not grouped) -->
+        <div v-if="!groupByYear && totalPages > 1" class="mt-12">
+          <nav class="flex items-center justify-between">
+            <div class="flex-1 flex justify-between sm:hidden">
               <button
-                v-else
-                @click="currentPage = page"
-                :class="[
-                  'px-3 py-1 rounded border',
-                  currentPage === page ? 'bg-blue-600 text-white' : 'hover:bg-gray-100',
-                ]"
+                @click="previousPage"
+                :disabled="currentPage === 1"
+                class="relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                {{ page }}
+                Previous
               </button>
-            </template>
-
-            <button
-              @click="currentPage = Math.min(totalPages, currentPage + 1)"
-              :disabled="currentPage === totalPages"
-              class="px-3 py-1 rounded border hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed"
-            >
-              Next
-            </button>
+              <button
+                @click="nextPage"
+                :disabled="currentPage === totalPages"
+                class="ml-3 relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                Next
+              </button>
+            </div>
+            <div class="hidden sm:flex-1 sm:flex sm:items-center sm:justify-between">
+              <div>
+                <p class="text-sm text-gray-700">
+                  Showing
+                  <span class="font-medium">{{ paginationStart }}</span>
+                  to
+                  <span class="font-medium">{{ paginationEnd }}</span>
+                  of
+                  <span class="font-medium">{{ filteredPublications.length }}</span>
+                  results
+                </p>
+              </div>
+              <div>
+                <nav class="relative z-0 inline-flex rounded-md shadow-sm -space-x-px">
+                  <button
+                    @click="previousPage"
+                    :disabled="currentPage === 1"
+                    class="relative inline-flex items-center px-2 py-2 rounded-l-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
+                  >
+                    <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
+                      <path
+                        fill-rule="evenodd"
+                        d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                  </button>
+                  <template v-for="page in displayedPages" :key="page">
+                    <span
+                      v-if="page === '...'"
+                      class="relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm font-medium text-gray-700"
+                    >
+                      ...
+                    </span>
+                    <button
+                      v-else
+                      @click="goToPage(page)"
+                      :class="[
+                        'relative inline-flex items-center px-4 py-2 border text-sm font-medium',
+                        currentPage === page
+                          ? 'z-10 bg-blue-50 border-blue-500 text-blue-600'
+                          : 'bg-white border-gray-300 text-gray-500 hover:bg-gray-50',
+                      ]"
+                    >
+                      {{ page }}
+                    </button>
+                  </template>
+                  <button
+                    @click="nextPage"
+                    :disabled="currentPage === totalPages"
+                    class="relative inline-flex items-center px-2 py-2 rounded-r-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
+                  >
+                    <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
+                      <path
+                        fill-rule="evenodd"
+                        d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                  </button>
+                </nav>
+              </div>
+            </div>
           </nav>
         </div>
       </div>
@@ -224,10 +426,143 @@
 </template>
 
 <script setup>
-import { ref, computed, onMounted } from 'vue'
+import { ref, computed, onMounted, watch } from 'vue'
 import Papa from 'papaparse'
 import HeaderComponent from '@/components/HeaderComponent.vue'
 import FooterComponent from '@/components/FooterComponent.vue'
+// Import PublicationCard component - make sure to create this file at src/components/PublicationCard.vue
+// For now, we'll define it inline below
+
+// Inline PublicationCard component (move to separate file for production)
+const PublicationCard = {
+  props: {
+    publication: {
+      type: Object,
+      required: true,
+    },
+  },
+  setup(props) {
+    const copied = ref(false)
+
+    const formatAuthors = (authors) => {
+      if (!authors) return ''
+      const authorList = authors.split(',').map((a) => a.trim())
+      if (authorList.length > 6) {
+        return authorList.slice(0, 3).join(', ') + ', et al.'
+      }
+      return authors
+    }
+
+    const formatCitation = (citation) => {
+      if (!citation) return ''
+      return citation
+        .replace(/doi:.*$/i, '')
+        .replace(/Epub.*$/i, '')
+        .trim()
+    }
+
+    const copyCitation = async () => {
+      const citationText = `${props.publication.Authors}. ${props.publication.Title}. ${props.publication['Journal/Book']}. ${props.publication['Publication Year']};${props.publication.Citation}${props.publication.DOI ? ` doi: ${props.publication.DOI}` : ''}`
+
+      try {
+        await navigator.clipboard.writeText(citationText)
+        copied.value = true
+        setTimeout(() => {
+          copied.value = false
+        }, 2000)
+      } catch (err) {
+        console.error('Failed to copy citation:', err)
+      }
+    }
+
+    return {
+      copied,
+      formatAuthors,
+      formatCitation,
+      copyCitation,
+    }
+  },
+  template: `
+    <article class="bg-white rounded-lg shadow-md hover:shadow-lg transition-all duration-300 p-6 border border-gray-100 hover:-translate-y-0.5">
+      <div class="flex flex-col lg:flex-row lg:items-start gap-4">
+        <div class="flex-1">
+          <h3 class="text-lg font-semibold text-gray-900 mb-2 leading-tight">
+            {{ publication.Title }}
+          </h3>
+          <p class="text-sm text-gray-600 mb-3 leading-relaxed">
+            {{ formatAuthors(publication.Authors) }}
+          </p>
+          <div class="flex flex-wrap items-center gap-2 mb-3 text-sm">
+            <span class="font-medium text-gray-700">{{ publication['Journal/Book'] }}</span>
+            <span class="text-gray-400">•</span>
+            <span class="text-gray-600">{{ publication['Publication Year'] }}</span>
+            <span v-if="publication.Citation" class="text-gray-400">•</span>
+            <span v-if="publication.Citation" class="text-gray-600 italic">{{
+              formatCitation(publication.Citation)
+            }}</span>
+          </div>
+          <div class="flex flex-wrap gap-3">
+            <a
+              v-if="publication.PMID"
+              :href="\`https://pubmed.ncbi.nlm.nih.gov/\${publication.PMID}/\`"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center text-sm font-medium text-blue-600 hover:text-blue-800 transition-colors"
+            >
+              <svg class="w-4 h-4 mr-1.5" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z"></path>
+                <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z"></path>
+              </svg>
+              PubMed
+            </a>
+            <a
+              v-if="publication.PMCID"
+              :href="\`https://www.ncbi.nlm.nih.gov/pmc/articles/\${publication.PMCID}/\`"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center text-sm font-medium text-green-600 hover:text-green-800 transition-colors"
+            >
+              <svg class="w-4 h-4 mr-1.5" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9 4.804A7.968 7.968 0 005.5 4c-1.255 0-2.443.29-3.5.804v10A7.969 7.969 0 015.5 14c1.669 0 3.218.51 4.5 1.385A7.962 7.962 0 0114.5 14c1.255 0 2.443.29 3.5.804v-10A7.968 7.968 0 0014.5 4c-1.255 0-2.443.29-3.5.804V12a1 1 0 11-2 0V4.804z"></path>
+              </svg>
+              Full Text
+            </a>
+            <a
+              v-if="publication.DOI"
+              :href="\`https://doi.org/\${publication.DOI}\`"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center text-sm font-medium text-purple-600 hover:text-purple-800 transition-colors"
+            >
+              <svg class="w-4 h-4 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path>
+              </svg>
+              DOI
+            </a>
+            <button
+              @click="copyCitation"
+              class="inline-flex items-center text-sm font-medium text-gray-600 hover:text-gray-800 transition-colors"
+              :title="copied ? 'Copied!' : 'Copy citation'"
+            >
+              <svg v-if="!copied" class="w-4 h-4 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"></path>
+              </svg>
+              <svg v-else class="w-4 h-4 mr-1.5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              {{ copied ? 'Copied!' : 'Copy' }}
+            </button>
+          </div>
+        </div>
+        <div class="lg:w-24 lg:text-right">
+          <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-800">
+            {{ publication['Publication Year'] || 'N/A' }}
+          </span>
+        </div>
+      </div>
+    </article>
+  `,
+}
 
 // State
 const publications = ref([])
@@ -235,14 +570,33 @@ const filteredPublications = ref([])
 const loading = ref(true)
 const error = ref('')
 const currentPage = ref(1)
-const itemsPerPage = 10
+const itemsPerPage = 20
+const groupByYear = ref(false)
 
 // Filters
-const selectedYear = ref('')
-const selectedJournal = ref('')
 const searchQuery = ref('')
+const selectedYear = ref(null)
+const selectedJournal = ref(null)
+const showYearFilter = ref(false)
+const showJournalFilter = ref(false)
+
+// Close dropdowns when clicking outside
+onMounted(() => {
+  document.addEventListener('click', handleClickOutside)
+})
+
+const handleClickOutside = (e) => {
+  if (!e.target.closest('.relative')) {
+    showYearFilter.value = false
+    showJournalFilter.value = false
+  }
+}
 
 // Computed properties
+const hasActiveFilters = computed(() => {
+  return searchQuery.value || selectedYear.value || selectedJournal.value
+})
+
 const availableYears = computed(() => {
   const years = [...new Set(publications.value.map((pub) => pub['Publication Year']))]
     .filter((year) => year)
@@ -257,14 +611,58 @@ const availableJournals = computed(() => {
   return journals
 })
 
+const uniqueJournals = computed(() => {
+  return availableJournals.value.length
+})
+
+const yearRange = computed(() => {
+  if (publications.value.length === 0) return '0'
+  const years = availableYears.value
+  if (years.length === 0) return '0'
+  return `${years[years.length - 1]}-${years[0]}`
+})
+
+const publicationsWithDOI = computed(() => {
+  return publications.value.filter((pub) => pub.DOI).length
+})
+
 const totalPages = computed(() => {
   return Math.ceil(filteredPublications.value.length / itemsPerPage)
 })
 
 const paginatedPublications = computed(() => {
+  if (groupByYear.value) return []
   const start = (currentPage.value - 1) * itemsPerPage
   const end = start + itemsPerPage
   return filteredPublications.value.slice(start, end)
+})
+
+const groupedPublications = computed(() => {
+  if (!groupByYear.value) return []
+
+  const grouped = {}
+  filteredPublications.value.forEach((pub) => {
+    const year = pub['Publication Year'] || 'Unknown'
+    if (!grouped[year]) {
+      grouped[year] = []
+    }
+    grouped[year].push(pub)
+  })
+
+  return Object.keys(grouped)
+    .sort((a, b) => (b === 'Unknown' ? 1 : a === 'Unknown' ? -1 : b - a))
+    .map((year) => ({
+      year,
+      publications: grouped[year],
+    }))
+})
+
+const paginationStart = computed(() => {
+  return (currentPage.value - 1) * itemsPerPage + 1
+})
+
+const paginationEnd = computed(() => {
+  return Math.min(currentPage.value * itemsPerPage, filteredPublications.value.length)
 })
 
 const displayedPages = computed(() => {
@@ -273,31 +671,16 @@ const displayedPages = computed(() => {
   const current = currentPage.value
 
   if (total <= 7) {
-    // Show all pages if 7 or fewer
     for (let i = 1; i <= total; i++) {
       pages.push(i)
     }
   } else {
-    // Always show first page
     pages.push(1)
-
-    if (current > 3) {
-      pages.push('...')
-    }
-
-    // Show pages around current
-    const start = Math.max(2, current - 1)
-    const end = Math.min(total - 1, current + 1)
-
-    for (let i = start; i <= end; i++) {
+    if (current > 3) pages.push('...')
+    for (let i = Math.max(2, current - 1); i <= Math.min(total - 1, current + 1); i++) {
       pages.push(i)
     }
-
-    if (current < total - 2) {
-      pages.push('...')
-    }
-
-    // Always show last page
+    if (current < total - 2) pages.push('...')
     pages.push(total)
   }
 
@@ -310,84 +693,45 @@ const loadPublications = async () => {
   error.value = ''
 
   try {
-    // Fetch the CSV file from the public directory
-    const response = await fetch('/csvBusinMassiset.csv')
+    const response = await fetch('/csv-BusinMassiset.csv')
     if (!response.ok) {
       throw new Error('Failed to fetch CSV file')
     }
     let csvText = await response.text()
 
-    console.log('CSV loaded, length:', csvText.length)
-
     // Remove BOM if present
     if (csvText.charCodeAt(0) === 0xfeff) {
       csvText = csvText.substring(1)
-      console.log('BOM removed')
     }
 
-    // Log the first line to see what we're dealing with
-    const firstNewline = csvText.indexOf('\n')
-    const firstLine = csvText.substring(0, firstNewline > 0 ? firstNewline : 100)
-    console.log('First line of CSV:', firstLine)
-    console.log(
-      'First line char codes:',
-      firstLine.split('').map((c) => c.charCodeAt(0)),
-    )
-
-    // Parse CSV data with Papaparse - explicitly set comma as delimiter
+    // Parse CSV
     const result = Papa.parse(csvText, {
       header: true,
-      delimiter: ',', // Explicitly set comma as delimiter
-      newline: '\n', // Explicitly set newline
-      quoteChar: '"',
-      escapeChar: '"',
-      dynamicTyping: false, // Keep as strings for now
+      delimiter: ',',
       skipEmptyLines: true,
-      transformHeader: (header) => {
-        // Clean up header names
-        const cleaned = header.trim().replace(/^\uFEFF/, '') // Remove BOM from headers
-        console.log(`Header: "${header}" -> "${cleaned}"`)
-        return cleaned
-      },
+      transformHeader: (header) => header.trim().replace(/^\uFEFF/, ''),
     })
-
-    console.log('Parse result:', result)
-    console.log('Parsed data count:', result.data.length)
-    console.log('Headers found:', result.meta.fields)
-    console.log('First parsed row:', result.data[0])
 
     if (result.errors.length > 0) {
       console.warn('CSV parsing warnings:', result.errors)
-      // Continue processing even with warnings
     }
 
-    // Clean up the data
+    // Process and clean data
     publications.value = result.data
-      .filter((pub) => pub && Object.keys(pub).length > 0) // Filter out empty objects
-      .map((pub, index) => {
-        // Log the first few publications to debug
-        if (index < 3) {
-          console.log(`Publication ${index}:`, pub)
-        }
-
-        // Ensure all fields are properly formatted
-        return {
-          ...pub,
-          Title: (pub.Title || '').toString().trim(),
-          Authors: (pub.Authors || '').toString().trim(),
-          'Journal/Book': (pub['Journal/Book'] || '').toString().trim(),
-          Citation: (pub.Citation || '').toString().trim(),
-          DOI: (pub.DOI || '').toString().trim(),
-          PMID: (pub.PMID || '').toString().trim(),
-          PMCID: (pub.PMCID || '').toString().trim(),
-          'Publication Year': pub['Publication Year']
-            ? parseInt(pub['Publication Year'].toString())
-            : null,
-        }
-      })
-      .filter((pub) => pub.Title && pub.Title.length > 0) // Filter out entries without titles
-
-    console.log('Cleaned publications count:', publications.value.length)
+      .filter((pub) => pub && pub.Title)
+      .map((pub) => ({
+        ...pub,
+        Title: (pub.Title || '').trim(),
+        Authors: (pub.Authors || '').trim(),
+        'Journal/Book': (pub['Journal/Book'] || '').trim(),
+        Citation: (pub.Citation || '').trim(),
+        DOI: (pub.DOI || '').trim(),
+        PMID: (pub.PMID || '').trim(),
+        PMCID: (pub.PMCID || '').trim(),
+        'Publication Year': pub['Publication Year']
+          ? parseInt(pub['Publication Year'].toString())
+          : null,
+      }))
 
     // Sort by year (newest first)
     publications.value.sort((a, b) => {
@@ -397,15 +741,9 @@ const loadPublications = async () => {
     })
 
     filteredPublications.value = [...publications.value]
-
-    if (publications.value.length === 0) {
-      console.warn('No publications found after parsing. Check the CSV format.')
-      error.value = 'No valid publications found in the CSV file.'
-    }
   } catch (err) {
     console.error('Error loading publications:', err)
-    error.value =
-      'Failed to load publication data. Please check if csvBusinMassiset.csv is in the public directory.'
+    error.value = 'Failed to load publication data. Please try again.'
   } finally {
     loading.value = false
   }
@@ -416,7 +754,7 @@ const filterPublications = () => {
 
   // Filter by year
   if (selectedYear.value) {
-    filtered = filtered.filter((pub) => pub['Publication Year'] === parseInt(selectedYear.value))
+    filtered = filtered.filter((pub) => pub['Publication Year'] === selectedYear.value)
   }
 
   // Filter by journal
@@ -431,41 +769,97 @@ const filterPublications = () => {
       return (
         pub.Title.toLowerCase().includes(query) ||
         pub.Authors.toLowerCase().includes(query) ||
-        (pub['Journal/Book'] || '').toLowerCase().includes(query) ||
+        pub['Journal/Book'].toLowerCase().includes(query) ||
         (pub.Citation || '').toLowerCase().includes(query)
       )
     })
   }
 
   filteredPublications.value = filtered
-  currentPage.value = 1 // Reset to first page when filtering
+  currentPage.value = 1
 }
 
-// Add a test button to manually check CSV loading
-const testCSVLoad = async () => {
-  try {
-    const response = await fetch('/csvBusinMassiset.csv')
-    console.log('Response status:', response.status)
-    console.log('Response OK:', response.ok)
+// Debounced search
+let searchTimeout = null
+const debouncedSearch = () => {
+  clearTimeout(searchTimeout)
+  searchTimeout = setTimeout(() => {
+    filterPublications()
+  }, 300)
+}
 
-    const text = await response.text()
-    console.log('==================== RAW CSV CONTENT ====================')
-    console.log(text)
-    console.log('==================== END RAW CONTENT ====================')
-    console.log('Total length:', text.length)
+const selectYear = (year) => {
+  selectedYear.value = year
+  showYearFilter.value = false
+  filterPublications()
+}
 
-    // Check for different line endings
-    const crlfCount = (text.match(/\r\n/g) || []).length
-    const lfCount = (text.match(/\n/g) || []).length
-    const crCount = (text.match(/\r/g) || []).length
-    console.log('Line endings - CRLF:', crlfCount, 'LF:', lfCount, 'CR:', crCount)
+const selectJournal = (journal) => {
+  selectedJournal.value = journal
+  showJournalFilter.value = false
+  filterPublications()
+}
 
-    // Count commas to estimate fields
-    const firstLine = text.split(/[\r\n]+/)[0]
-    const commaCount = (firstLine.match(/,/g) || []).length
-    console.log('Commas in first line:', commaCount)
-  } catch (err) {
-    console.error('Test load error:', err)
+const clearFilters = () => {
+  searchQuery.value = ''
+  selectedYear.value = null
+  selectedJournal.value = null
+  filterPublications()
+}
+
+const handleGroupingChange = () => {
+  currentPage.value = 1
+}
+
+const truncateText = (text, maxLength) => {
+  if (text.length <= maxLength) return text
+  return text.substring(0, maxLength) + '...'
+}
+
+// Pagination methods
+const previousPage = () => {
+  if (currentPage.value > 1) {
+    currentPage.value--
   }
 }
+
+const nextPage = () => {
+  if (currentPage.value < totalPages.value) {
+    currentPage.value++
+  }
+}
+
+const goToPage = (page) => {
+  currentPage.value = page
+}
+
+// Watch for filter changes
+watch([selectedYear, selectedJournal], () => {
+  filterPublications()
+})
+
+// Load publications on mount
+onMounted(() => {
+  loadPublications()
+})
 </script>
+
+<style scoped>
+/* Custom scrollbar for dropdowns */
+.max-h-64::-webkit-scrollbar {
+  width: 6px;
+}
+
+.max-h-64::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.max-h-64::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 3px;
+}
+
+.max-h-64::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+</style>
