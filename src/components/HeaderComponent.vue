@@ -6,7 +6,7 @@
           <img :src="logoImage" alt="CWA Logo" class="h-14 w-auto" />
         </div>
         <nav class="hidden md:flex space-x-8">
-
+          <a
             v-for="link in navLinks"
             :key="link.name"
             :href="link.href"

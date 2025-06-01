@@ -1,10 +1,11 @@
 <template>
   <section
-    class="relative h-[350px] md:h-[450px] lg:h-[550px] bg-black overflow-hidden"
+    class="relative bg-black overflow-hidden"
     @mouseenter="stopSlideshow"
     @mouseleave="startSlideshow"
   >
-    <div class="relative h-full">
+    <!-- Container con larghezza massima -->
+    <div class="max-w-[1920px] mx-auto relative h-[350px] md:h-[450px] lg:h-[550px]">
       <!-- Slides -->
       <div
         v-for="(image, index) in images"
@@ -15,12 +16,15 @@
         ]"
       >
         <img :src="image.src" :alt="image.alt" class="w-full h-full object-cover object-center" />
-        <!-- Optional overlay for better text visibility -->
-        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+
+        <!-- Bottom overlay for text visibility -->
+        <div
+          class="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black/70 to-transparent"
+        ></div>
 
         <!-- Image caption -->
         <div v-if="image.caption" class="absolute bottom-16 left-0 right-0 text-center px-4">
-          <p class="text-white text-lg md:text-xl font-semibold drop-shadow-lg">
+          <p class="text-white text-lg md:text-xl font-semibold drop-shadow-lg max-w-4xl mx-auto">
             {{ image.caption }}
           </p>
         </div>
@@ -138,7 +142,7 @@ const goToPreviousSlide = () => {
 const startSlideshow = () => {
   slideInterval = setInterval(() => {
     nextSlide()
-  }, 6000)
+  }, 7000)
 }
 
 const stopSlideshow = () => {
@@ -162,19 +166,7 @@ onUnmounted(() => {
 </script>
 
 <style scoped>
-@keyframes kenBurns {
-  0% {
-    transform: scale(1) translateY(0);
-  }
-  100% {
-    transform: scale(1.08) translateY(-10px);
-  }
-}
-
-.opacity-100 img {
-  animation: kenBurns 12s ease-out;
-}
-
+/* Solo transizione di dissolvenza, senza animazioni di zoom */
 .transition-opacity {
   transition-property: opacity;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
