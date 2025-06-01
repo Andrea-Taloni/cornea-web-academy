@@ -18,11 +18,16 @@
           <router-link to="/" class="nav-link">Home</router-link>
 
           <!-- Surgery Dropdown -->
-          <div class="relative group">
-            <button class="nav-link flex items-center group py-4">
+          <div
+            class="relative group"
+            @mouseenter="showDropdown = true"
+            @mouseleave="handleMouseLeave"
+          >
+            <button class="nav-link flex items-center group-hover:text-blue-600 py-4">
               Surgery
               <svg
-                class="w-4 h-4 ml-1 transform group-hover:rotate-180 transition-transform duration-300"
+                class="w-4 h-4 ml-1 transform transition-transform duration-300"
+                :class="{ 'rotate-180': showDropdown }"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -37,19 +42,28 @@
             </button>
 
             <!-- Dropdown Menu with Animation -->
-            <div class="dropdown-menu">
-              <div class="py-1">
-                <a
-                  v-for="(surgery, index) in surgeryTypes"
-                  :key="surgery"
-                  href="#"
-                  class="dropdown-item"
-                  :style="{ animationDelay: `${index * 50}ms` }"
-                >
-                  <span class="relative z-10">{{ surgery }}</span>
-                </a>
+            <transition
+              enter-active-class="transition ease-out duration-200"
+              enter-from-class="opacity-0 -translate-y-2"
+              enter-to-class="opacity-100 translate-y-0"
+              leave-active-class="transition ease-in duration-150"
+              leave-from-class="opacity-100 translate-y-0"
+              leave-to-class="opacity-0 -translate-y-2"
+            >
+              <div v-show="showDropdown" class="dropdown-menu">
+                <div class="py-1">
+                  <a
+                    v-for="(surgery, index) in surgeryTypes"
+                    :key="surgery"
+                    href="#"
+                    class="dropdown-item"
+                    :style="{ animationDelay: `${index * 50}ms` }"
+                  >
+                    <span class="relative z-10">{{ surgery }}</span>
+                  </a>
+                </div>
               </div>
-            </div>
+            </transition>
           </div>
 
           <router-link to="/publications" class="nav-link">Publications</router-link>
@@ -185,6 +199,9 @@ import logoImage from '@/assets/images/cwa-logo.png'
 
 const mobileMenuOpen = ref(false)
 const mobileSurgeryOpen = ref(false)
+const showDropdown = ref(false)
+
+let dropdownTimeout = null
 
 const surgeryTypes = ref(['DALK', 'DMEK', 'DSAEK', 'UT-DSAEK', 'SALK'])
 
@@ -194,19 +211,35 @@ const toggleMobileMenu = () => {
     mobileSurgeryOpen.value = false
   }
 }
+
+const handleMouseLeave = () => {
+  // Add a small delay before hiding to prevent flickering
+  dropdownTimeout = setTimeout(() => {
+    showDropdown.value = false
+  }, 100)
+}
+
+// Clear timeout if re-entering before delay expires
+const handleMouseEnter = () => {
+  if (dropdownTimeout) {
+    clearTimeout(dropdownTimeout)
+  }
+  showDropdown.value = true
+}
 </script>
 
 <style scoped>
 /* Navigation Link Styles with Animated Underline */
 .nav-link {
   @apply text-gray-700 font-medium py-2 relative;
-  transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color 0.2s ease;
+  cursor: pointer;
 }
 
 .nav-link::after {
   content: '';
   @apply absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-blue-600;
-  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: width 0.2s ease;
 }
 
 .nav-link:hover {
@@ -218,48 +251,34 @@ const toggleMobileMenu = () => {
 }
 
 /* Active link with persistent underline */
+.router-link-active.nav-link {
+  @apply text-blue-600;
+}
+
 .router-link-active.nav-link::after {
   @apply w-full bg-gradient-to-r from-blue-500 to-blue-700;
 }
 
-/* Dropdown Menu Styles with Smooth Animation */
+/* Dropdown Menu Styles - Fixed positioning and z-index */
 .dropdown-menu {
-  @apply absolute left-0 top-full w-56 bg-white rounded-xl shadow-2xl opacity-0 invisible
-         transform -translate-y-4 transition-all duration-300 ease-out z-50;
+  @apply absolute left-0 w-56 bg-white rounded-xl shadow-2xl z-50;
+  top: calc(100% - 0.5rem);
   border: 1px solid rgba(0, 0, 0, 0.08);
   padding-top: 0.5rem;
 }
 
-/* Pseudo-element to bridge the gap */
-.dropdown-menu::before {
+/* Invisible bridge to maintain hover state */
+.group::before {
   content: '';
-  @apply absolute -top-2 left-0 right-0 h-2;
-}
-
-/* Show dropdown on hover with bounce effect */
-.group:hover .dropdown-menu {
-  @apply opacity-100 visible translate-y-0;
-  animation: dropdownBounce 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-}
-
-@keyframes dropdownBounce {
-  0% {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-  50% {
-    transform: translateY(2px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  @apply absolute left-0 right-0 h-6;
+  top: 100%;
+  z-index: 40;
 }
 
 /* Dropdown Item Styles with Sliding Effect */
 .dropdown-item {
   @apply block px-5 py-3 text-sm text-gray-700 relative overflow-hidden;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.2s ease;
 }
 
 /* Gradient background animation on hover */
@@ -267,7 +286,7 @@ const toggleMobileMenu = () => {
   content: '';
   @apply absolute inset-0 bg-gradient-to-r from-blue-50 via-blue-100 to-blue-50;
   transform: translateX(-100%);
-  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.2s ease;
 }
 
 .dropdown-item:hover::before {
@@ -282,7 +301,7 @@ const toggleMobileMenu = () => {
 .dropdown-item::after {
   content: '→';
   @apply absolute right-4 top-1/2 -translate-y-1/2 opacity-0 text-blue-600;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.2s ease;
 }
 
 .dropdown-item:hover::after {
@@ -301,8 +320,9 @@ const toggleMobileMenu = () => {
   }
 }
 
-.group:hover .dropdown-item {
-  animation: fadeInSlide 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+.dropdown-item {
+  opacity: 0;
+  animation: fadeInSlide 0.3s ease forwards;
 }
 
 /* Modern Login Button with Magnetic Border Effect */
@@ -480,6 +500,7 @@ const toggleMobileMenu = () => {
   @apply absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600;
   transform: translateY(100%);
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 0;
 }
 
 .mobile-login-button:hover {
@@ -488,10 +509,6 @@ const toggleMobileMenu = () => {
 
 .mobile-login-button:hover::before {
   transform: translateY(0);
-}
-
-.mobile-login-button span {
-  @apply relative z-10;
 }
 
 .mobile-register-button {
@@ -521,18 +538,8 @@ const toggleMobileMenu = () => {
   background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
 }
 
-/* Router Link Active State */
-.router-link-active {
-  @apply text-blue-600;
-}
-
-/* Additional hover effect for dropdown trigger */
-.group:hover > .nav-link {
-  @apply text-blue-600;
-}
-
-/* Smooth color transition for SVG icons */
-.nav-link svg {
-  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+/* Router Link Active State for mobile */
+.router-link-active.mobile-nav-link {
+  @apply text-blue-600 bg-blue-50;
 }
 </style>
