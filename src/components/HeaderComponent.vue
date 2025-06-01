@@ -4,16 +4,18 @@
       <div class="flex justify-between items-center h-20">
         <!-- Logo -->
         <div class="flex items-center">
-          <img
-            :src="logoImage"
-            alt="CWA Logo"
-            class="h-14 w-auto transform hover:scale-105 transition-transform duration-300"
-          />
+          <router-link to="/" class="block">
+            <img
+              :src="logoImage"
+              alt="CWA Logo"
+              class="h-14 w-auto transform hover:scale-105 transition-transform duration-300"
+            />
+          </router-link>
         </div>
 
         <!-- Desktop Navigation -->
         <nav class="hidden md:flex items-center space-x-8">
-          <a href="#" class="nav-link">Home</a>
+          <router-link to="/" class="nav-link">Home</router-link>
 
           <!-- Surgery Dropdown -->
           <div class="relative group">
@@ -50,10 +52,10 @@
             </div>
           </div>
 
-          <a href="#" class="nav-link">Publications</a>
-          <a href="#" class="nav-link">Live Sessions</a>
-          <a href="#" class="nav-link">About Us</a>
-          <a href="#" class="nav-link">Contacts</a>
+          <router-link to="/publications" class="nav-link">Publications</router-link>
+          <router-link to="/live-sessions" class="nav-link">Live Sessions</router-link>
+          <router-link to="/about" class="nav-link">About Us</router-link>
+          <router-link to="/contacts" class="nav-link">Contacts</router-link>
         </nav>
 
         <!-- Auth Buttons -->
@@ -95,7 +97,9 @@
       >
         <div v-show="mobileMenuOpen" class="md:hidden border-t border-gray-200 bg-white shadow-lg">
           <div class="px-2 pt-2 pb-3 space-y-1">
-            <a href="#" class="mobile-nav-link"> Home </a>
+            <router-link to="/" class="mobile-nav-link" @click="mobileMenuOpen = false">
+              Home
+            </router-link>
 
             <!-- Mobile Surgery Accordion -->
             <div>
@@ -140,10 +144,22 @@
               </transition>
             </div>
 
-            <a href="#" class="mobile-nav-link"> Publications </a>
-            <a href="#" class="mobile-nav-link"> Live Sessions </a>
-            <a href="#" class="mobile-nav-link"> About Us </a>
-            <a href="#" class="mobile-nav-link"> Contacts </a>
+            <router-link to="/publications" class="mobile-nav-link" @click="mobileMenuOpen = false">
+              Publications
+            </router-link>
+            <router-link
+              to="/live-sessions"
+              class="mobile-nav-link"
+              @click="mobileMenuOpen = false"
+            >
+              Live Sessions
+            </router-link>
+            <router-link to="/about" class="mobile-nav-link" @click="mobileMenuOpen = false">
+              About Us
+            </router-link>
+            <router-link to="/contacts" class="mobile-nav-link" @click="mobileMenuOpen = false">
+              Contacts
+            </router-link>
 
             <div class="pt-4 space-y-2">
               <button class="mobile-auth-button-outline">Login</button>
@@ -158,6 +174,7 @@
 
 <script setup>
 import { ref } from 'vue'
+import { RouterLink } from 'vue-router'
 import logoImage from '@/assets/images/cwa-logo.png'
 
 const mobileMenuOpen = ref(false)
@@ -172,98 +189,3 @@ const toggleMobileMenu = () => {
   }
 }
 </script>
-
-<style scoped>
-/* Desktop Navigation Links */
-.nav-link {
-  @apply text-gray-700 font-medium relative px-1 py-2 transition-all duration-300;
-  @apply hover:text-blue-600;
-}
-
-.nav-link::after {
-  content: '';
-  @apply absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300;
-}
-
-.nav-link:hover::after {
-  @apply w-full;
-}
-
-/* Dropdown Menu */
-.dropdown-menu {
-  @apply absolute top-full left-0 mt-2 w-56 bg-white rounded-lg shadow-lg;
-  @apply opacity-0 invisible translate-y-2 transition-all duration-300;
-  @apply group-hover:opacity-100 group-hover:visible group-hover:translate-y-0;
-  @apply border border-gray-200;
-}
-
-/* Dropdown Items */
-.dropdown-item {
-  @apply relative block px-4 py-3 text-sm text-gray-700 transition-all duration-200;
-  @apply hover:bg-gray-50 hover:text-blue-600;
-  @apply first:rounded-t-lg last:rounded-b-lg;
-  @apply border-l-2 border-transparent hover:border-blue-600;
-  animation: slideIn 0.3s ease-out forwards;
-  opacity: 0;
-}
-
-@keyframes slideIn {
-  from {
-    opacity: 0;
-    transform: translateX(-10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-.dropdown-item::before {
-  content: '';
-  @apply absolute left-0 top-0 bottom-0 w-1 bg-blue-600;
-  @apply transform scale-y-0 transition-transform duration-200 origin-top;
-}
-
-.dropdown-item:hover::before {
-  @apply scale-y-100;
-}
-
-/* Auth Buttons */
-.auth-button-outline {
-  @apply text-gray-700 font-medium px-5 py-2 rounded-lg border-2 border-gray-300;
-  @apply hover:border-blue-600 hover:text-blue-600 hover:shadow-md;
-  @apply transition-all duration-300 transform hover:scale-105;
-}
-
-.auth-button-filled {
-  @apply bg-gradient-to-r from-blue-600 to-blue-700 text-white font-medium px-5 py-2 rounded-lg;
-  @apply hover:from-blue-700 hover:to-blue-800 hover:shadow-lg;
-  @apply transition-all duration-300 transform hover:scale-105;
-}
-
-/* Mobile Navigation */
-.mobile-nav-link {
-  @apply block px-3 py-2 text-base font-medium text-gray-700 rounded-md;
-  @apply hover:text-blue-600 hover:bg-blue-50;
-  @apply transition-all duration-200;
-}
-
-.mobile-dropdown-item {
-  @apply block px-3 py-2 text-sm text-gray-600 rounded-md;
-  @apply hover:text-blue-600 hover:bg-gray-50;
-  @apply transition-all duration-200;
-  @apply border-l-2 border-transparent hover:border-blue-600 ml-2;
-}
-
-.mobile-auth-button-outline {
-  @apply w-full text-left px-3 py-2 text-base font-medium text-gray-700 rounded-md;
-  @apply border-2 border-gray-300 hover:border-blue-600 hover:text-blue-600;
-  @apply transition-all duration-200;
-}
-
-.mobile-auth-button-filled {
-  @apply w-full bg-gradient-to-r from-blue-600 to-blue-700 text-white px-3 py-2 rounded-md;
-  @apply hover:from-blue-700 hover:to-blue-800;
-  @apply transition-all duration-200;
-}
-</style>
