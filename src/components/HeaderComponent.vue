@@ -52,6 +52,7 @@
 
           <a href="#" class="nav-link">Publications</a>
           <a href="#" class="nav-link">Live Sessions</a>
+          <a href="#" class="nav-link">About Us</a>
           <a href="#" class="nav-link">Contacts</a>
         </nav>
 
@@ -141,6 +142,7 @@
 
             <a href="#" class="mobile-nav-link"> Publications </a>
             <a href="#" class="mobile-nav-link"> Live Sessions </a>
+            <a href="#" class="mobile-nav-link"> About Us </a>
             <a href="#" class="mobile-nav-link"> Contacts </a>
 
             <div class="pt-4 space-y-2">
