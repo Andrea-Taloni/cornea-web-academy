@@ -108,10 +108,32 @@
                   </svg>
                   Customize Your Live Surgery Session
                 </h3>
-                <p class="text-sm text-blue-100">
+                <p class="text-sm text-blue-100 mb-4">
                   Book and customize surgeries according to your needs. Choose from available dates,
                   times, and procedure types.
                 </p>
+
+                <div class="bg-white/10 rounded-lg p-4 backdrop-blur-sm border border-white/20">
+                  <h4 class="font-medium mb-2 flex items-center text-white">
+                    Request a Custom Session
+                  </h4>
+                  <p class="text-sm text-blue-100 mb-3">
+                    Choose a technique you would like to see in a surgery session and propose a
+                    date. For each request, a fee of
+                    <span class="font-bold text-white">€ 200,00</span> applies. This includes the
+                    fee due in order to attend the session (in interactive mode).
+                  </p>
+                  <p class="text-sm text-blue-100">
+                    To submit your request, go to the
+                    <router-link
+                      to="/contacts"
+                      class="text-white font-semibold underline hover:text-blue-100"
+                    >
+                      CONTACTS
+                    </router-link>
+                    page and send a message.
+                  </p>
+                </div>
               </div>
 
               <div class="text-center pt-4">

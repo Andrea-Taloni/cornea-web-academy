@@ -11,15 +11,25 @@
         <div class="space-x-4">
           <router-link
             to="/live-surgery"
-            class="inline-block bg-white text-blue-900 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition transform hover:scale-105"
+            class="inline-flex items-center gap-4 bg-white/10 backdrop-blur-sm border-2 border-white/30 text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-blue-900 transition-all duration-300 transform hover:scale-105 group"
           >
-            Live Surgery
-          </router-link>
-          <router-link
-            to="/about"
-            class="inline-block border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-900 transition"
-          >
-            Learn More
+            <span class="text-lg">Explore Live Surgery</span>
+            <div class="flex items-center gap-2">
+              <span class="text-sm opacity-80 group-hover:opacity-100">Learn More</span>
+              <svg
+                class="w-5 h-5 transform transition-transform group-hover:translate-x-1"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M13 7l5 5m0 0l-5 5m5-5H6"
+                ></path>
+              </svg>
+            </div>
           </router-link>
         </div>
       </div>
