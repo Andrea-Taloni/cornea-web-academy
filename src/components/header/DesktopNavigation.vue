@@ -15,7 +15,7 @@
 
 <script setup>
 import { ref } from 'vue'
-import NavDropdown from './NavDropdown.vue'
+import NavDropdown from './SurgeryDropdown.vue'
 
 const surgeryTypes = ref([
   { name: 'DALK', slug: 'dalk' },

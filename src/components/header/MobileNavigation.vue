@@ -79,7 +79,7 @@
 
 <script setup>
 import { ref } from 'vue'
-import AuthButtons from './AuthButtons.vue'
+import AuthButtons from './LoginRegister.vue'
 
 defineProps({
   open: {

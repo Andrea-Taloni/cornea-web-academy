@@ -41,7 +41,7 @@
 <script setup>
 import { computed } from 'vue'
 import PublicationCard from '@/components/PublicationCard.vue'
-import PaginationControls from './PaginationControls.vue'
+import PaginationControls from './PageControls.vue'
 
 const props = defineProps({
   filteredPublications: {

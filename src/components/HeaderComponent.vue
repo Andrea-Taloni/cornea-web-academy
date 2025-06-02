@@ -53,7 +53,7 @@ import { ref } from 'vue'
 import logoImage from '@/assets/images/cwa-logo.png'
 import DesktopNavigation from './header/DesktopNavigation.vue'
 import MobileNavigation from './header/MobileNavigation.vue'
-import AuthButtons from './header/AuthButtons.vue'
+import AuthButtons from './header/LoginRegister.vue'
 
 const mobileMenuOpen = ref(false)
 

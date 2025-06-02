@@ -89,17 +89,17 @@ const images = ref([
   {
     src: slide1,
     alt: 'Advanced surgical microscope and operating room setup',
-    caption: 'Welcome to the official Web site of the Cornea Web Academy',
+    caption: '',
   },
   {
     src: slide2,
-    alt: 'Live eye surgery with streaming equipment',
-    caption: 'Live surgery sessions with Prof. Massimo Busin',
+    alt: 'Eye Stream - High-definition video streaming setup',
+    caption: 'Eye Stream - High-definition video streaming setup',
   },
   {
     src: slide3,
     alt: 'CWA - Cornea Web Academy with Prof. Busin',
-    caption: 'Eye Stream - High-definition video streaming setup',
+    caption: 'Live surgery sessions with Prof. Massimo Busin',
   },
   {
     src: slide4,
