@@ -1,9 +1,6 @@
 <template>
-  <section class="py-16 md:py-20">
+  <section class="py-8 md:py-12">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h3 class="text-3xl font-bold text-center text-gray-900 mb-12">
-        Experience Interactive Surgical Education
-      </h3>
       <div class="grid md:grid-cols-3 gap-8">
         <div
           v-for="feature in features"
