@@ -55,16 +55,38 @@
               </div>
               <div>
                 <p class="text-sm opacity-90 mb-4">In collaboration with:</p>
-                <p class="text-xs opacity-75">
+                <p class="text-xs opacity-75 mb-6">
                   Università degli Studi di Ferrara • Ospedali Privati Forlì • Apollo • IUMC • IIRCO
                   • Moria
                 </p>
+
+                <!-- Sponsor Logos -->
+                <div class="grid grid-cols-3 md:grid-cols-6 gap-4 mt-4">
+                  <div class="bg-white/10 rounded-lg p-3 flex items-center justify-center h-16">
+                    <span class="text-xs text-white/70">Università Ferrara</span>
+                  </div>
+                  <div class="bg-white/10 rounded-lg p-3 flex items-center justify-center h-16">
+                    <span class="text-xs text-white/70">Ospedali Forlì</span>
+                  </div>
+                  <div class="bg-white/10 rounded-lg p-3 flex items-center justify-center h-16">
+                    <span class="text-xs text-white/70">Apollo</span>
+                  </div>
+                  <div class="bg-white/10 rounded-lg p-3 flex items-center justify-center h-16">
+                    <span class="text-xs text-white/70">IUMC</span>
+                  </div>
+                  <div class="bg-white/10 rounded-lg p-3 flex items-center justify-center h-16">
+                    <span class="text-xs text-white/70">IIRCO</span>
+                  </div>
+                  <div class="bg-white/10 rounded-lg p-3 flex items-center justify-center h-16">
+                    <span class="text-xs text-white/70">Moria</span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
 
           <!-- Surgeons Section -->
-          <div>
+          <div class="mt-8">
             <h5 class="text-2xl font-semibold mb-6">Participating Surgeons</h5>
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
               <div class="text-center">
@@ -89,61 +111,20 @@
               </div>
               <div class="text-center">
                 <div class="w-24 h-24 bg-gray-300 rounded-full mx-auto mb-2"></div>
-                <p class="text-sm font-semibold">Nicolo Salgari, MD</p>
+                <p class="text-sm font-semibold">Niccolò Salgari, MD</p>
               </div>
               <div class="text-center">
                 <div class="w-24 h-24 bg-gray-300 rounded-full mx-auto mb-2"></div>
-                <p class="text-sm font-semibold">Angeli Christy Yu, MD</p>
+                <p class="text-sm font-semibold">Angeli Christy Yu, MD, PhD</p>
               </div>
             </div>
           </div>
         </div>
-      </div>
-
-      <!-- Other News Items -->
-      <div class="grid md:grid-cols-3 gap-8">
-        <article
-          v-for="article in newsArticles"
-          :key="article.id"
-          class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition"
-        >
-          <div class="h-48 bg-gray-300"></div>
-          <div class="p-6">
-            <p class="text-sm text-blue-600 mb-2">{{ article.date }}</p>
-            <h4 class="text-xl font-semibold mb-2">{{ article.title }}</h4>
-            <p class="text-gray-600 mb-4">{{ article.excerpt }}</p>
-            <a href="#" class="text-blue-600 font-semibold hover:text-blue-800">Read More →</a>
-          </div>
-        </article>
       </div>
     </div>
   </section>
 </template>
 
 <script setup>
-import { ref } from 'vue'
-
-const newsArticles = ref([
-  {
-    id: 1,
-    date: 'May 28, 2025',
-    title: 'DALK Day Registration Update',
-    excerpt:
-      'Limited spots remaining for the DALK Day Surgeries event on June 4. Secure your place for this educational opportunity.',
-  },
-  {
-    id: 2,
-    date: 'May 15, 2025',
-    title: 'Pre-Event Materials Available',
-    excerpt:
-      'Access preparatory materials including surgical technique overviews, case studies, and DALK procedure guidelines.',
-  },
-  {
-    id: 3,
-    date: 'May 1, 2025',
-    title: 'Complete Faculty Lineup Announced',
-    excerpt:
-      'The full list of participating surgeons for the DALK Day live surgery event has been confirmed. View the complete schedule.',
-  },
-])
+// No data needed for this component
 </script>
