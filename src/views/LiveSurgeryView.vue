@@ -4,24 +4,20 @@
 
     <!-- Hero Section usando il componente riutilizzabile -->
     <PageHero
-      title="Live Surgery Sessions"
+      title="Live Surgery"
       subtitle="Join our interactive live surgical broadcasts and learn from real-time procedures"
     />
 
-    <!-- About Live Sessions Section -->
-    <section class="py-16 bg-white">
+    <!-- About Live Surgery Section -->
+    <section class="py-8 bg-white">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="max-w-4xl mx-auto">
           <div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-8 md:p-12 shadow-lg">
-            <h2 class="text-3xl font-bold text-blue-900 mb-6 text-center">
-              Experience World-Class Surgical Education
-            </h2>
-
             <div class="space-y-6 text-gray-700 leading-relaxed">
               <p class="text-lg">
                 <span class="font-semibold text-blue-900">The Cornea Web Academy (CWA)</span> offers
-                you the unique opportunity to enter the surgical theatre of Prof. Massimo Busin and
-                connect directly with his microscope through high-speed HD video streaming.
+                you the opportunity to enter the surgical theatre of Prof. Massimo Busin and connect
+                directly with his microscope through high-speed HD video streaming.
               </p>
 
               <div class="grid md:grid-cols-2 gap-6">
@@ -43,9 +39,9 @@
                     Live Surgical Broadcasting
                   </h3>
                   <p class="text-sm">
-                    Every session features live surgical interventions performed and discussed in
-                    real-time, perfect for both junior surgeons learning lamellar keratoplasty and
-                    experienced colleagues seeking advanced discussions.
+                    In every session all surgical interventions are performed and discussed live.
+                    The broadcasting is addressed both to junior surgeons and to more experienced
+                    colleagues.
                   </p>
                 </div>
 
@@ -88,12 +84,12 @@
                       d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"
                     ></path>
                   </svg>
-                  Specialized Sessions
+                  Specialized Surgery Topics
                 </h3>
                 <p class="text-sm">
-                  Each session focuses on specific themes including DALK, DMEK, UT-DSAEK, DSAEK in
+                  Each surgery focuses on specific themes including DALK, DMEK, UT-DSAEK, DSAEK in
                   PK, and DALK in PK, with at least 2 procedures performed and discussed per
-                  session.
+                  surgery.
                 </p>
               </div>
 
@@ -107,11 +103,11 @@
                       d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"
                     ></path>
                   </svg>
-                  Customize Your Experience
+                  Customize Your Live Surgery Session
                 </h3>
                 <p class="text-sm text-blue-100">
-                  Book and customize sessions according to your requirements. Choose from available
-                  dates, times, and procedure types to build your ideal learning experience.
+                  Book and customize surgeries according to your needs. Choose from available dates,
+                  times, and procedure types.
                 </p>
               </div>
 
@@ -122,7 +118,7 @@
                 <button
                   class="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-8 py-3 rounded-lg font-semibold hover:from-blue-700 hover:to-blue-800 transition transform hover:scale-105 shadow-lg"
                 >
-                  Register Now
+                  Register
                 </button>
               </div>
             </div>
@@ -157,7 +153,7 @@
                 <button
                   class="bg-red-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-red-700 transition"
                 >
-                  Join Live Session
+                  Join Live Surgery
                 </button>
               </div>
             </div>
@@ -166,28 +162,28 @@
       </div>
     </section>
 
-    <!-- Upcoming Sessions -->
+    <!-- Upcoming Surgeries -->
     <section class="py-16">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-3xl font-bold mb-8">Upcoming Live Sessions</h2>
+        <h2 class="text-3xl font-bold mb-8">Upcoming Live Surgeries</h2>
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           <div
-            v-for="session in upcomingSessions"
-            :key="session.id"
+            v-for="surgery in upcomingSurgeries"
+            :key="surgery.id"
             class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
           >
             <div class="h-48 bg-gray-300 relative">
               <div class="absolute top-4 left-4 bg-blue-600 text-white px-3 py-1 rounded">
-                {{ session.date }}
+                {{ surgery.date }}
               </div>
             </div>
             <div class="p-6">
-              <h3 class="text-xl font-bold mb-2">{{ session.title }}</h3>
-              <p class="text-gray-600 mb-4">{{ session.description }}</p>
+              <h3 class="text-xl font-bold mb-2">{{ surgery.title }}</h3>
+              <p class="text-gray-600 mb-4">{{ surgery.description }}</p>
               <div class="space-y-1 text-sm text-gray-500 mb-4">
-                <p><strong>Time:</strong> {{ session.time }}</p>
-                <p><strong>Duration:</strong> {{ session.duration }}</p>
-                <p><strong>Surgeon:</strong> {{ session.surgeon }}</p>
+                <p><strong>Time:</strong> {{ surgery.time }}</p>
+                <p><strong>Duration:</strong> {{ surgery.duration }}</p>
+                <p><strong>Surgeon:</strong> {{ surgery.surgeon }}</p>
               </div>
               <button
                 class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition"
@@ -200,10 +196,10 @@
       </div>
     </section>
 
-    <!-- Past Sessions -->
+    <!-- Past Surgeries -->
     <section class="py-16 bg-gray-100">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-3xl font-bold mb-8">Past Sessions Archive</h2>
+        <h2 class="text-3xl font-bold mb-8">Past Surgeries Archive</h2>
         <div class="bg-white rounded-lg shadow-lg overflow-hidden">
           <table class="w-full">
             <thead class="bg-gray-50 border-b">
@@ -236,18 +232,18 @@
               </tr>
             </thead>
             <tbody class="divide-y divide-gray-200">
-              <tr v-for="session in pastSessions" :key="session.id" class="hover:bg-gray-50">
+              <tr v-for="surgery in pastSurgeries" :key="surgery.id" class="hover:bg-gray-50">
                 <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                  {{ session.date }}
+                  {{ surgery.date }}
                 </td>
                 <td class="px-6 py-4 text-sm text-gray-900">
-                  {{ session.title }}
+                  {{ surgery.title }}
                 </td>
                 <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                  {{ session.surgeon }}
+                  {{ surgery.surgeon }}
                 </td>
                 <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                  {{ session.duration }}
+                  {{ surgery.duration }}
                 </td>
                 <td class="px-6 py-4 whitespace-nowrap text-sm">
                   <a href="#" class="text-blue-600 hover:text-blue-800"> Watch Recording </a>
@@ -277,7 +273,7 @@ const liveNow = ref({
   startTime: '10:00 AM CET',
 })
 
-const upcomingSessions = ref([
+const upcomingSurgeries = ref([
   {
     id: 1,
     date: 'Jan 15, 2025',
@@ -307,7 +303,7 @@ const upcomingSessions = ref([
   },
 ])
 
-const pastSessions = ref([
+const pastSurgeries = ref([
   {
     id: 1,
     date: '2024-12-20',

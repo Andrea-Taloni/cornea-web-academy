@@ -9,18 +9,24 @@
           video streaming
         </p>
         <div class="space-x-4">
-          <button
-            class="bg-white text-blue-900 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition transform hover:scale-105"
+          <router-link
+            to="/live-surgery"
+            class="inline-block bg-white text-blue-900 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition transform hover:scale-105"
           >
             Live Surgery
-          </button>
-          <button
-            class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-900 transition"
+          </router-link>
+          <router-link
+            to="/about"
+            class="inline-block border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-900 transition"
           >
             Learn More
-          </button>
+          </router-link>
         </div>
       </div>
     </div>
   </section>
 </template>
+
+<script setup>
+// No props or additional logic needed for this component
+</script>

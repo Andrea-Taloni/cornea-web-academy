@@ -10,8 +10,8 @@ const router = createRouter({
       component: HomeView,
     },
     {
-      path: '/live-sessions',
-      name: 'live-sessions',
+      path: '/live-surgery',
+      name: 'live-surgery',
       component: () => import('../views/LiveSurgeryView.vue'),
     },
     {

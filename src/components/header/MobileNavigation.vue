@@ -59,8 +59,8 @@
         <router-link to="/publications" class="mobile-nav-link" @click="handleLinkClick">
           Publications
         </router-link>
-        <router-link to="/live-sessions" class="mobile-nav-link" @click="handleLinkClick">
-          Live Sessions
+        <router-link to="/live-surgery" class="mobile-nav-link" @click="handleLinkClick">
+          Live Surgery
         </router-link>
         <router-link to="/about" class="mobile-nav-link" @click="handleLinkClick">
           About Us
