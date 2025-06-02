@@ -9,23 +9,29 @@
     />
 
     <!-- Live Now Section - Posizionata come primo elemento -->
-    <LiveNowSection :liveSession="liveNow" />
+    <!-- #### <LiveNowSection :liveSession="liveNow" /> #### -->
 
     <!-- About Live Surgery Section -->
     <section class="py-8 bg-white">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="max-w-4xl mx-auto">
-          <div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-8 md:p-12 shadow-lg">
-            <div class="space-y-6 text-gray-700 leading-relaxed">
-              <p class="text-lg">
-                <span class="font-semibold text-blue-900">The Cornea Web Academy (CWA)</span> offers
-                you the opportunity to enter the surgical theatre of Prof. Massimo Busin and connect
-                directly with his microscope through high-speed HD video streaming.
-              </p>
+        <div
+          class="bg-gradient-to-br from-slate-50 to-blue-50 rounded-2xl p-8 md:p-12 shadow-xl border border-blue-100"
+        >
+          <div class="space-y-6 text-gray-800 leading-relaxed">
+            <p class="text-lg">
+              <span class="font-semibold text-blue-900">The Cornea Web Academy (CWA)</span> offers
+              you the opportunity to enter the surgical theatre of Prof. Massimo Busin and connect
+              directly with his microscope through high-speed HD video streaming.
+            </p>
 
-              <div class="grid md:grid-cols-2 gap-6">
-                <div class="bg-white/70 rounded-lg p-6 backdrop-blur-sm">
-                  <h3 class="font-semibold text-blue-900 mb-3 flex items-center">
+            <!-- Grid Layout with Image on Right -->
+            <div class="grid md:grid-cols-2 gap-8 items-start">
+              <!-- Left Side - Info Boxes -->
+              <div class="space-y-4">
+                <div
+                  class="bg-white rounded-xl p-6 border border-gray-200 shadow-sm hover:shadow-md transition-all duration-200"
+                >
+                  <h3 class="font-semibold text-gray-900 mb-3 flex items-center">
                     <svg
                       class="w-5 h-5 mr-2 text-blue-600"
                       fill="none"
@@ -41,15 +47,17 @@
                     </svg>
                     Live Surgical Broadcasting
                   </h3>
-                  <p class="text-sm">
+                  <p class="text-sm text-gray-600 leading-relaxed">
                     In every session all surgical interventions are performed and discussed live.
                     The broadcasting is addressed both to junior surgeons and to more experienced
                     colleagues.
                   </p>
                 </div>
 
-                <div class="bg-white/70 rounded-lg p-6 backdrop-blur-sm">
-                  <h3 class="font-semibold text-blue-900 mb-3 flex items-center">
+                <div
+                  class="bg-white rounded-xl p-6 border border-gray-200 shadow-sm hover:shadow-md transition-all duration-200"
+                >
+                  <h3 class="font-semibold text-gray-900 mb-3 flex items-center">
                     <svg
                       class="w-5 h-5 mr-2 text-blue-600"
                       fill="none"
@@ -65,87 +73,110 @@
                     </svg>
                     Interactive Participation
                   </h3>
-                  <p class="text-sm">
+                  <p class="text-sm text-gray-600 leading-relaxed">
                     Ask questions and receive explanations in real-time directly from the surgeon,
                     or simply observe and listen to the discussion in view-only mode.
                   </p>
                 </div>
-              </div>
 
-              <div class="bg-white/70 rounded-lg p-6 backdrop-blur-sm">
-                <h3 class="font-semibold text-blue-900 mb-3 flex items-center">
-                  <svg
-                    class="w-5 h-5 mr-2 text-blue-600"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"
-                    ></path>
-                  </svg>
-                  Specialized Surgery Topics
-                </h3>
-                <p class="text-sm">
-                  Each surgery focuses on specific themes including DALK, DMEK, UT-DSAEK, DSAEK in
-                  PK, and DALK in PK, with at least 2 procedures performed and discussed per
-                  surgery.
-                </p>
-              </div>
-
-              <div class="bg-gradient-to-r from-blue-600 to-blue-700 rounded-lg p-6 text-white">
-                <h3 class="font-semibold mb-3 flex items-center">
-                  <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"
-                    ></path>
-                  </svg>
-                  Customize Your Live Surgery Session
-                </h3>
-                <p class="text-sm text-blue-100 mb-4">
-                  Book and customize surgeries according to your needs. Choose from available dates,
-                  times, and procedure types.
-                </p>
-
-                <div class="bg-white/10 rounded-lg p-4 backdrop-blur-sm border border-white/20">
-                  <h4 class="font-medium mb-2 flex items-center text-white">
-                    Request a Custom Session
-                  </h4>
-                  <p class="text-sm text-blue-100 mb-3">
-                    Choose a technique you would like to see in a surgery session and propose a
-                    date. For each request, a fee of
-                    <span class="font-bold text-white">€ 200,00</span> applies. This includes the
-                    fee due in order to attend the session (in interactive mode).
-                  </p>
-                  <p class="text-sm text-blue-100">
-                    To submit your request, go to the
-                    <router-link
-                      to="/contacts"
-                      class="text-white font-semibold underline hover:text-blue-100"
+                <div
+                  class="bg-white rounded-xl p-6 border border-gray-200 shadow-sm hover:shadow-md transition-all duration-200"
+                >
+                  <h3 class="font-semibold text-gray-900 mb-3 flex items-center">
+                    <svg
+                      class="w-5 h-5 mr-2 text-blue-600"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
                     >
-                      CONTACTS
-                    </router-link>
-                    page and send a message.
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"
+                      ></path>
+                    </svg>
+                    Specialized Surgery Topics
+                  </h3>
+                  <p class="text-sm text-gray-600 leading-relaxed">
+                    Each surgery focuses on specific themes including DALK, DMEK, UT-DSAEK, DSAEK in
+                    PK, and DALK in PK, with at least 2 procedures performed and discussed per
+                    surgery.
                   </p>
                 </div>
               </div>
 
-              <div class="text-center pt-4">
-                <p class="text-lg font-semibold text-blue-900 mb-4">
-                  Join us for this exciting educational experience!
-                </p>
-                <button
-                  class="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-8 py-3 rounded-lg font-semibold hover:from-blue-700 hover:to-blue-800 transition transform hover:scale-105 shadow-lg"
+              <!-- Right Side - Eye Stream Image -->
+              <div class="flex items-start h-full">
+                <div
+                  class="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden w-full hover:shadow-md transition-all duration-200"
                 >
-                  Register
-                </button>
+                  <img
+                    :src="eyeStreamImage"
+                    alt="Eye Stream - High-definition video streaming setup"
+                    class="w-full h-auto object-cover"
+                    style="max-height: 450px"
+                  />
+                </div>
               </div>
+            </div>
+
+            <div
+              class="bg-white rounded-lg p-6 border-2 border-blue-500 shadow-lg hover:shadow-xl transition-shadow"
+            >
+              <h3 class="font-semibold mb-3 flex items-center text-blue-900">
+                <svg
+                  class="w-5 h-5 mr-2 text-blue-600"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"
+                  ></path>
+                </svg>
+                Customize Your Live Surgery Session
+              </h3>
+              <p class="text-sm text-gray-700 mb-4">
+                Book and customize surgeries according to your needs. Choose from available dates,
+                times, and procedure types.
+              </p>
+
+              <div class="bg-blue-50 rounded-lg p-4 border border-blue-200">
+                <h4 class="font-medium mb-2 flex items-center text-blue-900">
+                  Request a Custom Session
+                </h4>
+                <p class="text-sm text-gray-700 mb-3">
+                  Choose a technique you would like to see in a surgery session and propose a date.
+                  For each request, a fee of
+                  <span class="font-bold text-blue-900">€ 200,00</span> applies. This includes the
+                  fee due in order to attend the session (in interactive mode).
+                </p>
+                <p class="text-sm text-gray-700">
+                  To submit your request, go to the
+                  <router-link
+                    to="/contacts"
+                    class="text-blue-600 font-semibold underline hover:text-blue-800"
+                  >
+                    CONTACTS
+                  </router-link>
+                  page and send a message.
+                </p>
+              </div>
+            </div>
+
+            <div class="text-center pt-4">
+              <p class="text-lg font-semibold text-gray-800 mb-4">
+                Join us for this exciting educational experience!
+              </p>
+              <button
+                class="bg-gradient-to-r from-blue-500 to-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:from-blue-600 hover:to-blue-700 transition-all duration-200 transform hover:scale-105 shadow-md"
+              >
+                Register
+              </button>
             </div>
           </div>
         </div>
@@ -164,14 +195,19 @@ import HeaderComponent from '@/components/HeaderComponent.vue'
 import FooterComponent from '@/components/FooterComponent.vue'
 import PageHero from '@/components/HeroComponent.vue'
 import NewsSection from '@/components/home/NewsSection.vue'
-import LiveNowSection from '@/components/live/LiveNowSection.vue'
+// #### import LiveNowSection from '@/components/live/LiveNowSection.vue' ####
+import eyeStreamImage from '@/assets/images/eyestream.jpg'
 import { ref } from 'vue'
 
-const liveNow = ref({
-  title: 'DMEK Surgery - Complex Case',
-  description: 'Live demonstration of DMEK surgery on a patient with Fuchs endothelial dystrophy',
-  surgeon: 'Prof. Massimo Busin',
-  procedure: 'DMEK',
-  startTime: '10:00 AM CET',
-})
+// #### const liveNow = ref({
+//   title: 'DMEK Surgery - Complex Case',
+//   description: 'Live demonstration of DMEK surgery on a patient with Fuchs endothelial dystrophy',
+//   surgeon: 'Prof. Massimo Busin',
+//   procedure: 'DMEK',
+//   startTime: '10:00 AM CET',
+// }) ####
 </script>
+
+<style scoped>
+/* Add any page-specific styles here if needed */
+</style>
