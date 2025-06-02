@@ -46,11 +46,8 @@
                     rel="noopener noreferrer"
                     class="inline-block bg-white text-blue-700 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition"
                   >
-                    Register Here
+                    Register here or use the QR-code
                   </a>
-                  <span class="inline-block bg-blue-800 px-6 py-3 rounded-lg">
-                    bit.ly/3ZuXNkA
-                  </span>
                   <div class="bg-white p-2 rounded-lg">
                     <img :src="qrCode" alt="Registration QR Code" class="w-24 h-24" />
                   </div>
@@ -60,21 +57,19 @@
                 <p class="text-sm opacity-90 mb-4">In collaboration with:</p>
                 <p class="text-xs opacity-75 mb-6">
                   University of Ferrara • Ospedali Privati Forlì • Istituto internazionale di
-                  Ricerca e Formazione in Oftalmologia • "Magna Graecia" University of Catanzaro •
-                  All India Institute of Medical Sciences (India) • Apollo Hospitals (India) • Moria
-                  Ophthalmic Instruments
+                  Ricerca e Formazione in Oftalmologia • All India Institute of Medical Sciences
+                  (India) • Apollo Hospitals (India) • "Magna Graecia" University of Catanzaro •
+                  Moria Ophthalmic Instruments
                 </p>
 
                 <!-- Sponsor Logos -->
                 <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-4">
                   <div class="bg-white rounded-lg p-4 flex items-center justify-center h-20">
-                    <div class="text-center">
-                      <img
-                        :src="sponsorLogos.UniFe"
-                        alt="Ospedali Privati Forlì"
-                        class="max-h-12 w-auto object-contain"
-                      />
-                    </div>
+                    <img
+                      :src="sponsorLogos.unife"
+                      alt="University of Ferrara"
+                      class="max-h-12 w-auto object-contain"
+                    />
                   </div>
                   <div class="bg-white rounded-lg p-4 flex items-center justify-center h-20">
                     <img
@@ -92,15 +87,8 @@
                   </div>
                   <div class="bg-white rounded-lg p-4 flex items-center justify-center h-20">
                     <img
-                      :src="sponsorLogos.umg"
-                      alt="Università Magna Graecia"
-                      class="max-h-12 w-auto object-contain"
-                    />
-                  </div>
-                  <div class="bg-white rounded-lg p-4 flex items-center justify-center h-20">
-                    <img
                       :src="sponsorLogos.aiims"
-                      alt="Apollo Hospitals"
+                      alt="All India Institute of Medical Sciences"
                       class="max-h-12 w-auto object-contain"
                     />
                   </div>
@@ -108,6 +96,13 @@
                     <img
                       :src="sponsorLogos.apollo"
                       alt="Apollo Hospitals"
+                      class="max-h-12 w-auto object-contain"
+                    />
+                  </div>
+                  <div class="bg-white rounded-lg p-4 flex items-center justify-center h-20">
+                    <img
+                      :src="sponsorLogos.umg"
+                      alt="Università Magna Graecia"
                       class="max-h-12 w-auto object-contain"
                     />
                   </div>
@@ -218,6 +213,8 @@ import angelichristyyu from '@/assets/images/surgeons/angelichristyyu.png'
 // Import sponsor logos
 import apollohospitals from '@/assets/images/sponsors/apollohospitals.png'
 import irfo from '@/assets/images/sponsors/irfo.png'
+import unife from '@/assets/images/sponsors/unife.png'
+import aiims from '@/assets/images/sponsors/aiims.png'
 import moria from '@/assets/images/sponsors/moria.jpg'
 import opf from '@/assets/images/sponsors/opf.jpg'
 import umg from '@/assets/images/sponsors/umg.png'
@@ -236,10 +233,12 @@ const surgeonImages = {
   angelichristyyu,
 }
 
-// Group sponsor logos
+// Group sponsor logos - INCLUDING ALL IMPORTED LOGOS
 const sponsorLogos = {
   apollo: apollohospitals,
   irfo,
+  unife, // Added this
+  aiims, // Added this
   moria,
   opf,
   umg,

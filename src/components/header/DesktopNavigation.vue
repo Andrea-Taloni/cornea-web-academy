@@ -7,7 +7,7 @@
     <NavDropdown title="Surgery" :items="surgeryTypes" baseUrl="/surgery/" />
 
     <router-link to="/publications" class="nav-link">Publications</router-link>
-    <router-link to="/live-sessions" class="nav-link">Live Sessions</router-link>
+    <router-link to="/live-sessions" class="nav-link">Live Surgery</router-link>
     <router-link to="/about" class="nav-link">About Us</router-link>
     <router-link to="/contacts" class="nav-link">Contacts</router-link>
   </nav>
