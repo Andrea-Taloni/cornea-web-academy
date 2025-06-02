@@ -19,11 +19,11 @@ import NavDropdown from './SurgeryDropdown.vue'
 
 const surgeryTypes = ref([
   { name: 'DALK', slug: 'dalk' },
+  { name: 'Mushroom PK', slug: 'mushroom-pk' },
   { name: 'DMEK', slug: 'dmek' },
   { name: 'DSAEK', slug: 'dsaek' },
   { name: 'UT-DSAEK', slug: 'ut-dsaek' },
   { name: 'SALK', slug: 'salk' },
-  { name: 'Mushroom PK', slug: 'mushroom-pk' },
 ])
 </script>
 
