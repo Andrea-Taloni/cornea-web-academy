@@ -107,7 +107,7 @@
 <script setup>
 import HeaderComponent from '@/components/HeaderComponent.vue'
 import FooterComponent from '@/components/FooterComponent.vue'
-import PageHero from '@/components/PageHero.vue'
+import PageHero from '@/components/HeroComponent.vue'
 import { ref } from 'vue'
 
 const teamMembers = ref([

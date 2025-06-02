@@ -40,10 +40,13 @@
                 </p>
                 <p class="text-lg">No registration fee required.</p>
                 <div class="flex flex-wrap items-center gap-4 mt-6">
-                  <a>
-                    href="https://bit.ly/3ZuXNkA" target="_blank" rel="noopener noreferrer"
-                    class="inline-block bg-white text-blue-700 px-6 py-3 rounded-lg font-semibold
-                    hover:bg-gray-100 transition" > Register Here
+                  <a
+                    href="https://bit.ly/3ZuXNkA"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="inline-block bg-white text-blue-700 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition"
+                  >
+                    Register Here
                   </a>
                   <span class="inline-block bg-blue-800 px-6 py-3 rounded-lg">
                     bit.ly/3ZuXNkA
@@ -63,27 +66,47 @@
                 </p>
 
                 <!-- Sponsor Logos -->
-                <div class="grid grid-cols-3 md:grid-cols-6 gap-4 mt-4">
-                  <div class="bg-white/10 rounded-lg p-3 flex items-center justify-center h-16">
-                    <span class="text-xs text-white/70">UniFe</span>
+                <div class="grid grid-cols-3 md:grid-cols-4 gap-4 mt-4">
+                  <div class="bg-white rounded-lg p-3 flex items-center justify-center h-16">
+                    <span class="text-xs text-gray-600 font-semibold">UniFe</span>
                   </div>
-                  <div class="bg-white/10 rounded-lg p-3 flex items-center justify-center h-16">
-                    <span class="text-xs text-white/70">OPF</span>
+                  <div class="bg-white rounded-lg p-3 flex items-center justify-center h-16">
+                    <img
+                      :src="sponsorLogos.opf"
+                      alt="Ospedali Privati Forlì"
+                      class="max-h-full max-w-full object-contain"
+                    />
                   </div>
-                  <div class="bg-white/10 rounded-lg p-3 flex items-center justify-center h-16">
-                    <span class="text-xs text-white/70">IRFO</span>
+                  <div class="bg-white rounded-lg p-3 flex items-center justify-center h-16">
+                    <img
+                      :src="sponsorLogos.irfo"
+                      alt="IRFO"
+                      class="max-h-full max-w-full object-contain"
+                    />
                   </div>
-                  <div class="bg-white/10 rounded-lg p-3 flex items-center justify-center h-16">
-                    <span class="text-xs text-white/70">UMG</span>
+                  <div class="bg-white rounded-lg p-3 flex items-center justify-center h-16">
+                    <img
+                      :src="sponsorLogos.umg"
+                      alt="Università Magna Graecia"
+                      class="max-h-full max-w-full object-contain"
+                    />
                   </div>
-                  <div class="bg-white/10 rounded-lg p-3 flex items-center justify-center h-16">
-                    <span class="text-xs text-white/70">AIIMS</span>
+                  <div class="bg-white rounded-lg p-3 flex items-center justify-center h-16">
+                    <span class="text-xs text-gray-600 font-semibold">AIIMS</span>
                   </div>
-                  <div class="bg-white/10 rounded-lg p-3 flex items-center justify-center h-16">
-                    <span class="text-xs text-white/70">Apollo</span>
+                  <div class="bg-white rounded-lg p-3 flex items-center justify-center h-16">
+                    <img
+                      :src="sponsorLogos.apollo"
+                      alt="Apollo Hospitals"
+                      class="max-h-full max-w-full object-contain"
+                    />
                   </div>
-                  <div class="bg-white/10 rounded-lg p-3 flex items-center justify-center h-16">
-                    <span class="text-xs text-white/70">Moria</span>
+                  <div class="bg-white rounded-lg p-3 flex items-center justify-center h-16">
+                    <img
+                      :src="sponsorLogos.moria"
+                      alt="Moria"
+                      class="max-h-full max-w-full object-contain"
+                    />
                   </div>
                 </div>
               </div>
@@ -182,6 +205,13 @@ import vincenzoscorcia from '@/assets/images/surgeons/vincenzoscorcia.png'
 import niccolosalgari from '@/assets/images/surgeons/niccolosalgari.png'
 import angelichristyyu from '@/assets/images/surgeons/angelichristyyu.png'
 
+// Import sponsor logos
+import apollohospitals from '@/assets/images/sponsors/apollohospitals.png'
+import irfo from '@/assets/images/sponsors/irfo.png'
+import moria from '@/assets/images/sponsors/moria.jpg'
+import opf from '@/assets/images/sponsors/opf.jpg'
+import umg from '@/assets/images/sponsors/umg.png'
+
 // Import QR code
 import qrCode from '@/assets/images/qrcodes/qrcode-dalkday-040625.png'
 
@@ -194,5 +224,14 @@ const surgeonImages = {
   vincenzoscorcia,
   niccolosalgari,
   angelichristyyu,
+}
+
+// Group sponsor logos
+const sponsorLogos = {
+  apollo: apollohospitals,
+  irfo,
+  moria,
+  opf,
+  umg,
 }
 </script>
