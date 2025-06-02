@@ -66,46 +66,56 @@
                 </p>
 
                 <!-- Sponsor Logos -->
-                <div class="grid grid-cols-3 md:grid-cols-4 gap-4 mt-4">
-                  <div class="bg-white rounded-lg p-3 flex items-center justify-center h-16">
-                    <span class="text-xs text-gray-600 font-semibold">UniFe</span>
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-4">
+                  <div class="bg-white rounded-lg p-4 flex items-center justify-center h-20">
+                    <div class="text-center">
+                      <img
+                        :src="sponsorLogos.UniFe"
+                        alt="Ospedali Privati Forlì"
+                        class="max-h-12 w-auto object-contain"
+                      />
+                    </div>
                   </div>
-                  <div class="bg-white rounded-lg p-3 flex items-center justify-center h-16">
+                  <div class="bg-white rounded-lg p-4 flex items-center justify-center h-20">
                     <img
                       :src="sponsorLogos.opf"
                       alt="Ospedali Privati Forlì"
-                      class="max-h-full max-w-full object-contain"
+                      class="max-h-12 w-auto object-contain"
                     />
                   </div>
-                  <div class="bg-white rounded-lg p-3 flex items-center justify-center h-16">
+                  <div class="bg-white rounded-lg p-4 flex items-center justify-center h-20">
                     <img
                       :src="sponsorLogos.irfo"
                       alt="IRFO"
-                      class="max-h-full max-w-full object-contain"
+                      class="max-h-12 w-auto object-contain"
                     />
                   </div>
-                  <div class="bg-white rounded-lg p-3 flex items-center justify-center h-16">
+                  <div class="bg-white rounded-lg p-4 flex items-center justify-center h-20">
                     <img
                       :src="sponsorLogos.umg"
                       alt="Università Magna Graecia"
-                      class="max-h-full max-w-full object-contain"
+                      class="max-h-12 w-auto object-contain"
                     />
                   </div>
-                  <div class="bg-white rounded-lg p-3 flex items-center justify-center h-16">
-                    <span class="text-xs text-gray-600 font-semibold">AIIMS</span>
+                  <div class="bg-white rounded-lg p-4 flex items-center justify-center h-20">
+                    <img
+                      :src="sponsorLogos.aiims"
+                      alt="Apollo Hospitals"
+                      class="max-h-12 w-auto object-contain"
+                    />
                   </div>
-                  <div class="bg-white rounded-lg p-3 flex items-center justify-center h-16">
+                  <div class="bg-white rounded-lg p-4 flex items-center justify-center h-20">
                     <img
                       :src="sponsorLogos.apollo"
                       alt="Apollo Hospitals"
-                      class="max-h-full max-w-full object-contain"
+                      class="max-h-12 w-auto object-contain"
                     />
                   </div>
-                  <div class="bg-white rounded-lg p-3 flex items-center justify-center h-16">
+                  <div class="bg-white rounded-lg p-4 flex items-center justify-center h-20">
                     <img
                       :src="sponsorLogos.moria"
                       alt="Moria"
-                      class="max-h-full max-w-full object-contain"
+                      class="max-h-12 w-auto object-contain"
                     />
                   </div>
                 </div>
