@@ -40,7 +40,7 @@
 
 <script setup>
 import { computed } from 'vue'
-import PublicationCard from '@/components/PublicationCard.vue'
+import PublicationCard from '@/components/publications/PublicationCard.vue'
 import PaginationControls from './PageControls.vue'
 
 const props = defineProps({
