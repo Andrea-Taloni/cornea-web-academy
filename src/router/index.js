@@ -55,6 +55,11 @@ const router = createRouter({
       name: 'salk',
       component: () => import('../views/surgery/SALKView.vue'),
     },
+    {
+      path: '/surgery/mushroom-pk',
+      name: 'mushroom-pk',
+      component: () => import('../views/surgery/MushroomPKView.vue'),
+    },
   ],
 })
 

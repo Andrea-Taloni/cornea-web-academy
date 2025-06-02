@@ -197,7 +197,6 @@ import PageHero from '@/components/HeroComponent.vue'
 import NewsSection from '@/components/home/NewsSection.vue'
 // #### import LiveNowSection from '@/components/live/LiveNowSection.vue' ####
 import eyeStreamImage from '@/assets/images/eyestream.jpg'
-import { ref } from 'vue'
 
 // #### const liveNow = ref({
 //   title: 'DMEK Surgery - Complex Case',

@@ -23,6 +23,7 @@ const surgeryTypes = ref([
   { name: 'DSAEK', slug: 'dsaek' },
   { name: 'UT-DSAEK', slug: 'ut-dsaek' },
   { name: 'SALK', slug: 'salk' },
+  { name: 'Mushroom PK', slug: 'mushroom-pk' },
 ])
 </script>
 
