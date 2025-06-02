@@ -12,48 +12,48 @@ const router = createRouter({
     {
       path: '/live-sessions',
       name: 'live-sessions',
-      component: () => import('../views/LiveSessionsComponent.vue'),
+      component: () => import('../views/LiveSurgeryView.vue'),
     },
     {
       path: '/publications',
       name: 'publications',
-      component: () => import('../views/PublicationsComponent.vue'),
+      component: () => import('../views/PublicationsView.vue'),
     },
     {
       path: '/about',
       name: 'about',
-      component: () => import('../views/AboutUsComponent.vue'),
+      component: () => import('../views/AboutUsView.vue'),
     },
     {
       path: '/contacts',
       name: 'contacts',
-      component: () => import('../views/ContactsComponent.vue'),
+      component: () => import('../views/ContactsView.vue'),
     },
     // Surgery Routes
     {
       path: '/surgery/dalk',
       name: 'dalk',
-      component: () => import('../views/surgery/DALKComponent.vue'),
+      component: () => import('../views/surgery/DALKView.vue'),
     },
     {
       path: '/surgery/dmek',
       name: 'dmek',
-      component: () => import('../views/surgery/DMEKComponent.vue'),
+      component: () => import('../views/surgery/DMEKView.vue'),
     },
     {
       path: '/surgery/dsaek',
       name: 'dsaek',
-      component: () => import('../views/surgery/DSAEKComponent.vue'),
+      component: () => import('../views/surgery/DSAEKView.vue'),
     },
     {
       path: '/surgery/ut-dsaek',
       name: 'ut-dsaek',
-      component: () => import('../views/surgery/UTDSAEKComponent.vue'),
+      component: () => import('../views/surgery/UTDSAEKView.vue'),
     },
     {
       path: '/surgery/salk',
       name: 'salk',
-      component: () => import('../views/surgery/SALKComponent.vue'),
+      component: () => import('../views/surgery/SALKView.vue'),
     },
   ],
 })
