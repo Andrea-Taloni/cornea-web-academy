@@ -39,43 +39,48 @@
                   experienced surgeons.
                 </p>
                 <p class="text-lg">No registration fee required.</p>
-                <div class="flex flex-wrap gap-3 mt-6">
-                  <a
-                    href="https://bit.ly/3ZuXNkA"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="inline-block bg-white text-blue-700 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition"
-                  >
-                    Register Here
+                <div class="flex flex-wrap items-center gap-4 mt-6">
+                  <a>
+                    href="https://bit.ly/3ZuXNkA" target="_blank" rel="noopener noreferrer"
+                    class="inline-block bg-white text-blue-700 px-6 py-3 rounded-lg font-semibold
+                    hover:bg-gray-100 transition" > Register Here
                   </a>
                   <span class="inline-block bg-blue-800 px-6 py-3 rounded-lg">
                     bit.ly/3ZuXNkA
                   </span>
+                  <div class="bg-white p-2 rounded-lg">
+                    <img :src="qrCode" alt="Registration QR Code" class="w-24 h-24" />
+                  </div>
                 </div>
               </div>
               <div>
                 <p class="text-sm opacity-90 mb-4">In collaboration with:</p>
                 <p class="text-xs opacity-75 mb-6">
-                  Università degli Studi di Ferrara • Ospedali Privati Forlì • Apollo • IUMC • IIRCO
-                  • Moria
+                  University of Ferrara • Ospedali Privati Forlì • Istituto internazionale di
+                  Ricerca e Formazione in Oftalmologia • "Magna Graecia" University of Catanzaro •
+                  All India Institute of Medical Sciences (India) • Apollo Hospitals (India) • Moria
+                  Ophthalmic Instruments
                 </p>
 
                 <!-- Sponsor Logos -->
                 <div class="grid grid-cols-3 md:grid-cols-6 gap-4 mt-4">
                   <div class="bg-white/10 rounded-lg p-3 flex items-center justify-center h-16">
-                    <span class="text-xs text-white/70">Università Ferrara</span>
+                    <span class="text-xs text-white/70">UniFe</span>
                   </div>
                   <div class="bg-white/10 rounded-lg p-3 flex items-center justify-center h-16">
-                    <span class="text-xs text-white/70">Ospedali Forlì</span>
+                    <span class="text-xs text-white/70">OPF</span>
+                  </div>
+                  <div class="bg-white/10 rounded-lg p-3 flex items-center justify-center h-16">
+                    <span class="text-xs text-white/70">IRFO</span>
+                  </div>
+                  <div class="bg-white/10 rounded-lg p-3 flex items-center justify-center h-16">
+                    <span class="text-xs text-white/70">UMG</span>
+                  </div>
+                  <div class="bg-white/10 rounded-lg p-3 flex items-center justify-center h-16">
+                    <span class="text-xs text-white/70">AIIMS</span>
                   </div>
                   <div class="bg-white/10 rounded-lg p-3 flex items-center justify-center h-16">
                     <span class="text-xs text-white/70">Apollo</span>
-                  </div>
-                  <div class="bg-white/10 rounded-lg p-3 flex items-center justify-center h-16">
-                    <span class="text-xs text-white/70">IUMC</span>
-                  </div>
-                  <div class="bg-white/10 rounded-lg p-3 flex items-center justify-center h-16">
-                    <span class="text-xs text-white/70">IIRCO</span>
                   </div>
                   <div class="bg-white/10 rounded-lg p-3 flex items-center justify-center h-16">
                     <span class="text-xs text-white/70">Moria</span>
@@ -90,31 +95,73 @@
             <h5 class="text-2xl font-semibold mb-6">Participating Surgeons</h5>
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
               <div class="text-center">
-                <div class="w-24 h-24 bg-gray-300 rounded-full mx-auto mb-2"></div>
+                <div class="w-24 h-24 rounded-full mx-auto mb-2 overflow-hidden bg-white">
+                  <img
+                    :src="surgeonImages.massimobusin"
+                    alt="Massimo Busin"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
                 <p class="text-sm font-semibold">Massimo Busin, MD</p>
               </div>
               <div class="text-center">
-                <div class="w-24 h-24 bg-gray-300 rounded-full mx-auto mb-2"></div>
+                <div class="w-24 h-24 rounded-full mx-auto mb-2 overflow-hidden bg-white">
+                  <img
+                    :src="surgeonImages.namratasharma"
+                    alt="Namrata Sharma"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
                 <p class="text-sm font-semibold">Namrata Sharma, MD</p>
               </div>
               <div class="text-center">
-                <div class="w-24 h-24 bg-gray-300 rounded-full mx-auto mb-2"></div>
+                <div class="w-24 h-24 rounded-full mx-auto mb-2 overflow-hidden bg-white">
+                  <img
+                    :src="surgeonImages.rajeshfogla"
+                    alt="Rajesh Fogla"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
                 <p class="text-sm font-semibold">Rajesh Fogla, MD</p>
               </div>
               <div class="text-center">
-                <div class="w-24 h-24 bg-gray-300 rounded-full mx-auto mb-2"></div>
+                <div class="w-24 h-24 rounded-full mx-auto mb-2 overflow-hidden bg-white">
+                  <img
+                    :src="surgeonImages.cristinabovone"
+                    alt="Cristina Bovone"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
                 <p class="text-sm font-semibold">Cristina Bovone, MD</p>
               </div>
               <div class="text-center">
-                <div class="w-24 h-24 bg-gray-300 rounded-full mx-auto mb-2"></div>
+                <div class="w-24 h-24 rounded-full mx-auto mb-2 overflow-hidden bg-white">
+                  <img
+                    :src="surgeonImages.vincenzoscorcia"
+                    alt="Vincenzo Scorcia"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
                 <p class="text-sm font-semibold">Vincenzo Scorcia, MD</p>
               </div>
               <div class="text-center">
-                <div class="w-24 h-24 bg-gray-300 rounded-full mx-auto mb-2"></div>
+                <div class="w-24 h-24 rounded-full mx-auto mb-2 overflow-hidden bg-white">
+                  <img
+                    :src="surgeonImages.niccolosalgari"
+                    alt="Niccolò Salgari"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
                 <p class="text-sm font-semibold">Niccolò Salgari, MD</p>
               </div>
               <div class="text-center">
-                <div class="w-24 h-24 bg-gray-300 rounded-full mx-auto mb-2"></div>
+                <div class="w-24 h-24 rounded-full mx-auto mb-2 overflow-hidden bg-white">
+                  <img
+                    :src="surgeonImages.angelichristyyu"
+                    alt="Angeli Christy Yu"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
                 <p class="text-sm font-semibold">Angeli Christy Yu, MD, PhD</p>
               </div>
             </div>
@@ -126,5 +173,26 @@
 </template>
 
 <script setup>
-// No data needed for this component
+// Import surgeon images
+import massimobusin from '@/assets/images/surgeons/massimobusin.png'
+import namratasharma from '@/assets/images/surgeons/namratasharma.png'
+import rajeshfogla from '@/assets/images/surgeons/rajeshfogla.png'
+import cristinabovone from '@/assets/images/surgeons/cristinabovone.png'
+import vincenzoscorcia from '@/assets/images/surgeons/vincenzoscorcia.png'
+import niccolosalgari from '@/assets/images/surgeons/niccolosalgari.png'
+import angelichristyyu from '@/assets/images/surgeons/angelichristyyu.png'
+
+// Import QR code
+import qrCode from '@/assets/images/qrcodes/qrcode-dalkday-040625.png'
+
+// Group surgeon images for easier reference
+const surgeonImages = {
+  massimobusin,
+  namratasharma,
+  rajeshfogla,
+  cristinabovone,
+  vincenzoscorcia,
+  niccolosalgari,
+  angelichristyyu,
+}
 </script>
