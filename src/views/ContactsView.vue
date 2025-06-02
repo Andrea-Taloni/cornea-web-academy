@@ -2,17 +2,11 @@
   <div class="min-h-screen bg-gray-50">
     <HeaderComponent />
 
-    <!-- Hero Section -->
-    <section class="relative bg-gradient-to-br from-blue-900 to-blue-700 text-white py-16">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center">
-          <h1 class="text-4xl md:text-5xl font-bold mb-4">Contact Us</h1>
-          <p class="text-xl max-w-3xl mx-auto">
-            Get in touch with the CWA team for inquiries, support, or collaboration
-          </p>
-        </div>
-      </div>
-    </section>
+    <!-- Hero Section usando il componente riutilizzabile -->
+    <PageHero
+      title="Contact Us"
+      subtitle="Get in touch with the CWA team for inquiries, support, or collaboration"
+    />
 
     <!-- Contact Content -->
     <section class="py-16">
@@ -269,6 +263,7 @@
 <script setup>
 import HeaderComponent from '@/components/HeaderComponent.vue'
 import FooterComponent from '@/components/FooterComponent.vue'
+import PageHero from '@/components/PageHero.vue'
 import { ref } from 'vue'
 
 const form = ref({

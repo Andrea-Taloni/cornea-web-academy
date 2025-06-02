@@ -2,18 +2,8 @@
   <div class="min-h-screen bg-gray-50">
     <HeaderComponent />
 
-    <!-- Hero Section -->
-    <section class="relative bg-gradient-to-br from-blue-900 to-blue-700 text-white py-16">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center">
-          <h1 class="text-4xl md:text-5xl font-bold mb-4">DSAEK</h1>
-          <p class="text-xl max-w-3xl mx-auto">
-            Descemet's Stripping Automated Endothelial Keratoplasty - Proven endothelial transplant
-            technique with excellent outcomes
-          </p>
-        </div>
-      </div>
-    </section>
+    <!-- Hero Section usando il componente riutilizzabile -->
+    <PageHero title="DSAEK" subtitle="Descemet's Stripping Automated Endothelial Keratoplasty" />
 
     <!-- Overview Section -->
     <section class="py-16">
@@ -564,4 +554,5 @@
 <script setup>
 import HeaderComponent from '@/components/HeaderComponent.vue'
 import FooterComponent from '@/components/FooterComponent.vue'
+import PageHero from '@/components/PageHero.vue'
 </script>
