@@ -89,22 +89,22 @@ const images = ref([
   {
     src: slide1,
     alt: 'Advanced surgical microscope and operating room setup',
-    caption: 'State-of-the-art surgical equipment for precision corneal procedures',
+    caption: 'Welcome to the official Web site of the Cornea Web Academy',
   },
   {
     src: slide2,
     alt: 'Live eye surgery with streaming equipment',
-    caption: 'Interactive live surgery sessions with real-time streaming',
+    caption: 'Live surgery sessions with Prof. Massimo Busin',
   },
   {
     src: slide3,
     alt: 'CWA - Cornea Web Academy with Prof. Busin',
-    caption: "Learn from Prof. Massimo Busin's expertise in corneal surgery",
+    caption: 'Eye Stream - High-definition video streaming setup',
   },
   {
     src: slide4,
     alt: 'Detailed view of corneal surgery with Eye Stream technology',
-    caption: 'High-definition Eye Stream technology for enhanced surgical education',
+    caption: 'Interact via audio or chat and get answers directly from the surgeon',
   },
 ])
 
