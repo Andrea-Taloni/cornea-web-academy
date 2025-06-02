@@ -1,12 +1,8 @@
 <template>
-  <section class="py-16 md:py-20 bg-gray-100">
+  <section class="py-8 md:py-10 bg-gray-100">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h3 class="text-3xl font-bold text-center text-gray-900 mb-12">Latest News and Events</h3>
-
       <!-- Featured Event - DALK Day -->
-      <div
-        class="bg-gradient-to-br from-blue-900 to-blue-700 rounded-lg shadow-xl overflow-hidden mb-12"
-      >
+      <div class="bg-gradient-to-br from-blue-900 to-blue-700 rounded-lg shadow-xl overflow-hidden">
         <div class="p-8 text-white">
           <div class="mb-8">
             <h4 class="text-3xl font-bold mb-4">DALK Day Surgeries</h4>
@@ -237,8 +233,8 @@ const surgeonImages = {
 const sponsorLogos = {
   apollo: apollohospitals,
   irfo,
-  unife, // Added this
-  aiims, // Added this
+  unife,
+  aiims,
   moria,
   opf,
   umg,

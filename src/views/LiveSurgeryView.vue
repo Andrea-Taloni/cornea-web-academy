@@ -196,65 +196,6 @@
       </div>
     </section>
 
-    <!-- Past Surgeries -->
-    <section class="py-16 bg-gray-100">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-3xl font-bold mb-8">Past Surgeries Archive</h2>
-        <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-          <table class="w-full">
-            <thead class="bg-gray-50 border-b">
-              <tr>
-                <th
-                  class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-                >
-                  Date
-                </th>
-                <th
-                  class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-                >
-                  Title
-                </th>
-                <th
-                  class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-                >
-                  Surgeon
-                </th>
-                <th
-                  class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-                >
-                  Duration
-                </th>
-                <th
-                  class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-                >
-                  Action
-                </th>
-              </tr>
-            </thead>
-            <tbody class="divide-y divide-gray-200">
-              <tr v-for="surgery in pastSurgeries" :key="surgery.id" class="hover:bg-gray-50">
-                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                  {{ surgery.date }}
-                </td>
-                <td class="px-6 py-4 text-sm text-gray-900">
-                  {{ surgery.title }}
-                </td>
-                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                  {{ surgery.surgeon }}
-                </td>
-                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                  {{ surgery.duration }}
-                </td>
-                <td class="px-6 py-4 whitespace-nowrap text-sm">
-                  <a href="#" class="text-blue-600 hover:text-blue-800"> Watch Recording </a>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </section>
-
     <FooterComponent />
   </div>
 </template>
@@ -300,30 +241,6 @@ const upcomingSurgeries = ref([
     title: 'Complex Corneal Reconstruction',
     description: 'Multi-step surgical approach for severe corneal disease',
     surgeon: 'Prof. Massimo Busin',
-  },
-])
-
-const pastSurgeries = ref([
-  {
-    id: 1,
-    date: '2024-12-20',
-    title: 'DSAEK for Pseudophakic Bullous Keratopathy',
-    surgeon: 'Prof. Massimo Busin',
-    duration: '75 min',
-  },
-  {
-    id: 2,
-    date: '2024-12-15',
-    title: 'DALK in Keratoconus',
-    surgeon: 'Dr. Paolo Santorum',
-    duration: '90 min',
-  },
-  {
-    id: 3,
-    date: '2024-12-08',
-    title: 'DMEK: Tips and Tricks',
-    surgeon: 'Prof. Massimo Busin',
-    duration: '60 min',
   },
 ])
 </script>
