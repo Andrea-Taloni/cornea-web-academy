@@ -1,4 +1,4 @@
-<!-- src/components/surgery/TechniquesSection.vue -->
+<!-- src/components/surgery/SurgeryComponent.vue -->
 <template>
   <div class="w-full space-y-8">
     <!-- Main Surgical Steps Section -->
@@ -91,7 +91,7 @@
 <script>
 // Export component metadata for CollapsibleSection
 export const techniquesMetadata = {
-  title: 'Surgical Techniques',
+  title: 'Surgical Technique',
   iconPath: 'M14.121 14.121L19 19m-7-7l7-7m-7 7l-2.879 2.879M12 12L9.121 9.121m0 5.758a3 3 0 10-4.243 4.243 3 3 0 004.243-4.243zm0-5.758a3 3 0 10-4.243-4.243 3 3 0 004.243 4.243z',
   colorTheme: 'green',
   defaultExpanded: false,
