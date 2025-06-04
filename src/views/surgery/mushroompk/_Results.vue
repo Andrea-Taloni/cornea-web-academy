@@ -11,6 +11,8 @@
     <OutcomesSection
       :mainTitle="sectionData.mainTitle"
       :mainTable="sectionData.mainTable"
+      :secondaryTitle="sectionData.secondaryTitle"
+      :secondaryTable="sectionData.secondaryTable"
       :keySummary="sectionData.keySummary"
       :sourceCitation="sectionData.sourceCitation"
     />
@@ -33,79 +35,97 @@ defineEmits(['toggle'])
 
 // All section data
 const sectionData = ref({
-  mainTitle: 'Mushroom PK vs Conventional PK: Clinical Outcomes',
+  mainTitle: 'Visual and Refractive Outcomes: 5-Year Results',
   mainTable: {
-    parameterColumnTitle: 'Parameter',
-    comparisonColumns: ['Conventional PK', 'Mushroom PK'],
-    showPValue: true,
-    headerColorTheme: 'purple',
-    alternateRowColors: false,
+    parameterColumnTitle: 'Time Point',
+    comparisonColumns: ['Mean BCVA (Snellen)', 'BCVA ≥20/40', 'BCVA ≥20/20'],
+    showPValue: false,
+    headerColorTheme: 'blue',
+    alternateRowColors: true,
     dataSections: [
       {
-        title: 'Visual Outcomes',
-        colorTheme: 'blue',
         rows: [
           {
-            parameter: 'BCVA ≥20/40 at 1 year',
-            values: ['65-75%', { text: '70-80%', highlight: true }],
-            pValue: '0.042',
+            parameter: 'Preoperative',
+            values: ['20/2224', '0%', '0%'],
           },
           {
-            parameter: 'BCVA ≥20/25 at 2 years',
-            values: ['45-55%', { text: '55-65%', highlight: true }],
-            pValue: '0.038',
+            parameter: '6 Months',
+            values: ['20/38', '73.8%', '0%'],
           },
           {
-            parameter: 'Time to best vision',
-            values: ['18-24 months', { text: '12-18 months', highlight: true }],
-            pValue: '0.021',
+            parameter: '1 Year',
+            values: ['20/33', '83.1%', '11.9%'],
+          },
+          {
+            parameter: '2 Years',
+            values: [{ text: '20/25', highlight: true }, '93.9%', '40.8%'],
+          },
+          {
+            parameter: '3 Years',
+            values: ['20/24', '96.9%', '34.4%'],
+          },
+          {
+            parameter: '4 Years',
+            values: ['20/22', { text: '100%', highlight: true }, '51.9%'],
+          },
+          {
+            parameter: '5 Years',
+            values: [
+              '20/22',
+              { text: '100%', highlight: true },
+              { text: '58.8%', highlight: true },
+            ],
           },
         ],
       },
+    ],
+  },
+  secondaryTitle: 'Refractive Outcomes and Graft Survival',
+  secondaryTable: {
+    parameterColumnTitle: 'Parameter',
+    comparisonColumns: ['6 Months', '1 Year', '5 Years'],
+    showPValue: false,
+    headerColorTheme: 'green',
+    alternateRowColors: false,
+    dataSections: [
       {
         title: 'Refractive Outcomes',
         colorTheme: 'green',
         rows: [
           {
-            parameter: 'Mean postoperative astigmatism',
-            values: ['4.5 ± 2.1 D', { text: '3.0 ± 1.5 D', highlight: true }],
-            pValue: '<0.001',
+            parameter: 'Mean Astigmatism (D)',
+            values: ['3.90 ± 1.94', '3.50 ± 1.87', { text: '3.92 ± 2.26', highlight: true }],
           },
           {
-            parameter: 'Astigmatism >5D',
-            values: ['25-30%', { text: '10-15%', highlight: true }],
-            pValue: '0.008',
+            parameter: 'Astigmatism ≤4.5 D',
+            values: ['56.6%', '73.0%', { text: '81.8%', highlight: true }],
           },
           {
-            parameter: 'Suture removal time',
-            values: ['12-18 months', { text: '8-12 months', highlight: true }],
-            pValue: '0.015',
+            parameter: 'Regular Topographic Pattern',
+            values: ['89.5%', '92.8%', { text: '90.9%', highlight: true }],
           },
         ],
       },
       {
-        title: 'Complications & Survival',
-        colorTheme: 'orange',
+        title: 'Graft Survival & Rejection',
+        colorTheme: 'purple',
         rows: [
           {
-            parameter: 'Wound dehiscence (traumatic)',
-            values: ['2.8-5.5%', { text: '0.5-1.2%', highlight: true }],
-            pValue: '<0.001',
+            parameter: 'Graft Survival (All Eyes)',
+            values: ['98.3%', '98.3%', { text: '95.3%', highlight: true }],
           },
           {
-            parameter: 'Graft survival at 5 years',
-            values: ['85-90%', { text: '90-95%', highlight: true }],
-            pValue: '0.065',
+            parameter: 'Graft Survival (High-Risk)',
+            values: ['96.1%', '96.1%', { text: '93.9%', highlight: true }],
           },
           {
-            parameter: 'Rejection episodes',
-            values: ['15-25%', { text: '15-20%', highlight: false }],
-            pValue: '0.234',
+            parameter: 'Rejection Rate (Overall)',
+            values: ['1.2%', '1.8%', { text: '<5%', highlight: true }],
           },
           {
-            parameter: 'Endothelial cell loss at 5 years',
-            values: ['45-55%', { text: '40-50%', highlight: true }],
-            pValue: '0.089',
+            parameter: 'Endothelial Cell Loss',
+            values: ['26.9%', '35.3%', { text: '47.8%', highlight: true }],
           },
         ],
       },
@@ -113,27 +133,26 @@ const sectionData = ref({
   },
   keySummary: {
     keyFindings: {
-      title: 'Key Advantages of Mushroom PK',
+      title: 'Key Findings from 172 Eyes',
       items: [
-        '**Wound Stability**: 75-80% reduction in traumatic dehiscence risk',
-        '**Optical Quality**: Larger clear optical zone (8.0-8.5mm vs 7.5-8.0mm)',
-        '**Astigmatism**: Average 1.5D less than conventional PK',
-        '**Recovery**: Sutures can be removed 4-6 months earlier',
+        '**Visual Outcomes**: 100% achieved ≥20/40, >50% achieved 20/20 by 5 years',
+        '**Refractive Stability**: Mean astigmatism <4D throughout follow-up',
+        '**Regular Topography**: >90% maintained regular astigmatic patterns',
+        '**Endothelial Survival**: Cell loss stabilized at ~40% after 2 years',
         '',
-        '**Best Candidates**:',
-        'Pediatric patients (high trauma risk)',
-        'Young active adults',
-        'Monocular patients requiring maximum safety',
-        'Combined procedures (PK + cataract/vitrectomy)',
+        '**High-Risk Performance** (76 eyes with vascularization):',
+        'No significant difference in outcomes vs low-risk eyes',
+        'Graft survival 93.9% at 5 years',
+        'Rejection rate only 6.8% despite high-risk status',
       ],
     },
     clinicalImpact: {
       title: 'Clinical Significance',
       description:
-        'The mushroom configuration represents a significant advancement in penetrating keratoplasty, offering superior biomechanical stability without compromising optical outcomes. The technique is particularly valuable in high-risk scenarios where wound integrity is paramount. While technically more demanding, the improved safety profile and faster rehabilitation justify its adoption, especially in pediatric and trauma-prone populations.',
+        "This large series demonstrates that two-piece mushroom PK provides excellent visual outcomes comparable to or better than conventional PK, with remarkably low rejection rates even in high-risk eyes. The technique's preservation of 75% of recipient endothelium appears to confer immunologic advantage, while the stepped wound configuration ensures superior stability without compromising optical quality.",
     },
   },
   sourceCitation:
-    'Data compiled from: Busin et al. Cornea 2010-2020; Comparative studies of mushroom vs conventional PK outcomes',
+    'Data from: Busin M, et al. Trans Am Ophthalmol Soc 2015;113:T1[1-22] - 172 consecutive eyes, 5-year follow-up',
 })
 </script>

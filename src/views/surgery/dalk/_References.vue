@@ -14,7 +14,7 @@
 
 <script setup>
 import CollapsibleSection from '@/components/CollapsibleSection.vue'
-import ReferencesSection, { referencesMetadata } from '@/components/surgery/ReferencesSection.vue'
+import ReferencesSection, { referencesMetadata } from '@/components/surgery/ReferencesComponent.vue'
 
 defineProps({
   isExpanded: {
@@ -37,15 +37,17 @@ const references = [
   },
   {
     authors: 'Busin M, Leon P, Nahum Y, Scorcia V.',
-    title: 'Large (9 mm) Deep Anterior Lamellar Keratoplasty with Clearance of a 6-mm Optical Zone Optimizes Outcomes of Keratoconus Surgery.',
+    title:
+      'Large (9 mm) Deep Anterior Lamellar Keratoplasty with Clearance of a 6-mm Optical Zone Optimizes Outcomes of Keratoconus Surgery.',
     journal: 'Ophthalmology.',
     year: '2017',
     volume: '124(7)',
     pages: '1072-1080',
   },
   {
-    authors: 'Lucisano A, Lionetti G, Yu AC, Giannaccare G, D\'Angelo S, Busin M, et al.',
-    title: 'Outcomes of conventional 8.0-mm versus large 9.0-mm diameter deep anterior lamellar keratoplasty for keratoconus.',
+    authors: "Lucisano A, Lionetti G, Yu AC, Giannaccare G, D'Angelo S, Busin M, et al.",
+    title:
+      'Outcomes of conventional 8.0-mm versus large 9.0-mm diameter deep anterior lamellar keratoplasty for keratoconus.',
     journal: 'Cornea.',
     year: '2023',
     volume: '42(7)',
@@ -53,7 +55,8 @@ const references = [
   },
   {
     authors: 'Myerscough J, Roberts H, Yu AC, Elkadim M, Bovone C, Busin M.',
-    title: 'Five-year outcomes of converted mushroom keratoplasty from intended deep anterior lamellar keratoplasty (DALK) mandate 9-mm diameter DALK as the optimal approach to keratoconus.',
+    title:
+      'Five-year outcomes of converted mushroom keratoplasty from intended deep anterior lamellar keratoplasty (DALK) mandate 9-mm diameter DALK as the optimal approach to keratoconus.',
     journal: 'Am J Ophthalmol.',
     year: '2020',
     volume: '220',
@@ -61,7 +64,7 @@ const references = [
   },
   {
     authors: 'Anwar M, Teichmann KD.',
-    title: 'Big-bubble technique to bare Descemet\'s membrane in anterior lamellar keratoplasty.',
+    title: "Big-bubble technique to bare Descemet's membrane in anterior lamellar keratoplasty.",
     journal: 'J Cataract Refract Surg.',
     year: '2002',
     volume: '28(3)',
@@ -69,7 +72,8 @@ const references = [
   },
   {
     authors: 'Reinhart WJ, et al.',
-    title: 'Deep anterior lamellar keratoplasty as an alternative to penetrating keratoplasty: a report by the American Academy of Ophthalmology.',
+    title:
+      'Deep anterior lamellar keratoplasty as an alternative to penetrating keratoplasty: a report by the American Academy of Ophthalmology.',
     journal: 'Ophthalmology.',
     year: '2011',
     volume: '118(1)',
@@ -85,7 +89,8 @@ const references = [
   },
   {
     authors: 'Busin M, Scorcia V, Leon P, Nahum Y.',
-    title: 'Outcomes of air injection within 2 mm inside a deep trephination for deep anterior lamellar keratoplasty in eyes with keratoconus.',
+    title:
+      'Outcomes of air injection within 2 mm inside a deep trephination for deep anterior lamellar keratoplasty in eyes with keratoconus.',
     journal: 'Am J Ophthalmol.',
     year: '2016',
     volume: '164',
@@ -93,7 +98,8 @@ const references = [
   },
   {
     authors: 'Scorcia V, Giannaccare G, Lucisano A, Soda M, Scalzo GC, Myerscough J, et al.',
-    title: 'Predictors of bubble formation and type obtained with pneumatic dissection during deep anterior lamellar keratoplasty in keratoconus.',
+    title:
+      'Predictors of bubble formation and type obtained with pneumatic dissection during deep anterior lamellar keratoplasty in keratoconus.',
     journal: 'Am J Ophthalmol.',
     year: '2020',
     volume: '212',
@@ -101,7 +107,8 @@ const references = [
   },
   {
     authors: 'Arundhati A, Chew MC, Lim L, Mehta JS, Lang SS, Htoon HM, et al.',
-    title: 'Comparative study of long-term graft survival between penetrating keratoplasty and deep anterior lamellar keratoplasty.',
+    title:
+      'Comparative study of long-term graft survival between penetrating keratoplasty and deep anterior lamellar keratoplasty.',
     journal: 'Am J Ophthalmol.',
     year: '2021',
     volume: '224',

@@ -38,27 +38,19 @@ const complicationsData = ref({
     colorTheme: 'orange',
     complications: [
       {
-        name: 'Incorrect trephination',
+        name: 'Posterior lamella detachment',
         details: [
-          { label: 'Incidence', value: '2-5%' },
-          { label: 'Common causes', value: 'Decentration, wrong diameter selection' },
-          { label: 'Management', value: 'Re-trephination if possible, convert to conventional PK' },
+          { label: 'Incidence', value: '1.2% (2/172 eyes)', highlight: true },
+          { label: 'Timing', value: 'Within 24 hours postop' },
+          { label: 'Management', value: 'Air injection, 100% success rate' },
         ],
       },
       {
-        name: 'Iris prolapse',
+        name: 'Technical challenges',
         details: [
-          { label: 'Incidence', value: '5-10%' },
-          { label: 'Risk factors', value: 'Shallow AC, positive vitreous pressure' },
-          { label: 'Management', value: 'Gentle reposition, peripheral iridectomy if needed' },
-        ],
-      },
-      {
-        name: 'Donor tissue damage',
-        details: [
-          { label: 'Incidence', value: '1-3%' },
-          { label: 'Causes', value: 'Incorrect punching, handling errors' },
-          { label: 'Management', value: 'New donor tissue required' },
+          { label: 'Vascularized corneas', value: '44.2% of cases' },
+          { label: 'Scarred tissue dissection', value: 'Manageable with careful technique' },
+          { label: 'Combined procedures', value: '12.8% required additional surgery' },
         ],
       },
     ],
@@ -68,25 +60,30 @@ const complicationsData = ref({
     colorTheme: 'red',
     sections: [
       {
-        title: 'Early (&lt;1 month)',
+        title: 'Most Common',
         items: [
-          'Wound leak: Less common than conventional PK (2-5%)',
-          'Pupillary block: 3-5% (manage with PI or mydriatics)',
-          'Shallow anterior chamber: Often self-limiting with mushroom design',
-          'Primary graft failure: <1% with good donor selection',
-          'Infection (endophthalmitis): 0.1-0.5%',
-          'Persistent epithelial defects: 5-10%',
+          'High astigmatism (>4.5D): 27% - managed with wound revision (22 eyes), toric IOL (4), or RGP (9)',
+          'Cataract formation: 11.9% of phakic eyes - routine phaco successful',
+          'Immunologic rejection: 3.6% overall (6/172) - mostly reversible with steroids',
+          'Endothelial cell loss: 47.8% at 5 years but stable after 2 years',
         ],
       },
       {
-        title: 'Late (&gt;1 month)',
+        title: 'Serious Complications',
         items: [
-          'Graft rejection: 15-20% over 5 years (similar to conventional PK)',
-          'High astigmatism: Lower incidence (10-15% >5D vs 25-30%)',
-          'Glaucoma: 20-35% (steroid-induced, angle damage)',
-          'Progressive endothelial loss: 3-5% annually',
-          'Suture-related: Loosening, infection, giant papillary conjunctivitis',
-          'Wound dehiscence: Significantly reduced risk (0.5-1.2% vs 2.8-5.5%)',
+          'Graft failure: 3.5% (6/172 eyes) over 5 years',
+          'Herpetic recurrence: 7.3% of herpetic cases (3/43)',
+          'Persistent epithelial defect: 1.7% (3 eyes) - led to early failure',
+          'No wound dehiscence after suture removal (0% vs 2.8-5.5% in conventional PK)',
+        ],
+      },
+      {
+        title: 'Management Outcomes',
+        items: [
+          'Failed grafts successfully regrafted: 4/6 cases',
+          'Wound revision for astigmatism: Mean reduction 4.52D',
+          'All rejection episodes except one reversed with treatment',
+          'Secondary procedures well-tolerated through mushroom wound',
         ],
       },
     ],

@@ -30,59 +30,59 @@ defineEmits(['toggle'])
 
 // Mushroom PK surgical technique data
 const mushroomPKTechnique = {
-  title: 'Mushroom PK Surgical Steps',
+  title: 'Two-Piece Microkeratome-Assisted Mushroom PK Technique',
   steps: [
     {
-      title: 'Recipient Bed Preparation',
+      title: 'Recipient Bed Preparation - Anterior Dissection',
       description:
-        'Mark visual axis and desired diameters. For femtosecond: program anterior diameter 8.0-8.5mm, posterior 7.0-7.5mm, side cut angles 90-135°. For manual: use double-blade trephine or sequential trephination. Create posterior cut first, then anterior cut, ensuring proper centration.',
+        'Under peribulbar anesthesia, create circular incision 9.0mm diameter, ~250μm depth using vacuum trephine centered on corneoscleral limbus. Perform manual lamellar dissection circumferentially 3mm toward center from incision base. Cauterize limbal vessels only if bleeding persists. Remove dissected tissue leaving central 3mm island of full-thickness cornea.',
     },
     {
-      title: 'Donor Tissue Preparation',
+      title: 'Central Full-Thickness Excision',
       description:
-        'Mount donor cornea on artificial chamber or cutting block. Create matching mushroom configuration - punch from endothelial side first with smaller trephine (0.25mm larger than recipient), then anterior side with larger trephine. Maintain proper orientation throughout.',
+        'Using 6.0mm trephine, create full-thickness circular incision in residual central island, carefully centered on pupil (not limbus). Excise central button with corneal scissors. This creates stepped recipient bed: 9mm anterior diameter, 6mm posterior opening.',
     },
     {
-      title: 'Recipient Button Removal',
+      title: 'Donor Tissue Preparation - Microkeratome Dissection',
       description:
-        'Enter anterior chamber at junction of two diameters. Use corneal scissors to complete excision following pre-cut edges. Remove tissue carefully to preserve wound architecture. Note stepped configuration provides immediate stability even before suturing.',
+        'Mount donor cornea on ALTK artificial anterior chamber. Use 200μm microkeratome head to split donor into anterior and posterior lamellae (actual depth ~240μm due to 20% deeper cut). This thickness optimally matches removed recipient tissue.',
+    },
+    {
+      title: 'Donor Punching',
+      description:
+        'Punch both lamellae to match recipient bed dimensions: anterior lamella to 9.0mm, posterior lamella to 6.0mm. Same size punches used as recipient bed to ensure proper fit. Mark orientation if needed.',
     },
     {
       title: 'Graft Placement & Initial Fixation',
       description:
-        "Transfer donor graft maintaining proper orientation (mark with gentian violet if needed). Place four cardinal 10-0 nylon sutures at 12, 3, 6, 9 o'clock positions. Ensure graft seats properly with smaller posterior portion fitting into recipient opening.",
+        "Place posterior lamella (endothelium + deep stroma) into central 6mm opening without sutures - self-retaining fit. Position anterior lamella on top, secure with 4 cardinal 10-0 nylon sutures at 12, 3, 6, 9 o'clock. Ensure proper alignment.",
     },
     {
-      title: 'Final Suturing',
+      title: 'Final Suturing & Closure',
       description:
-        'Complete suturing with 16 interrupted 10-0 nylon sutures (fewer than conventional PK due to inherent stability). Alternatively, use combined technique: 8 interrupted + 16-bite continuous suture. Adjust tension using keratoscope or intraoperative topography to minimize astigmatism.',
-    },
-    {
-      title: 'Wound Verification & Closure',
-      description:
-        'Test wound integrity with fluorescein - mushroom configuration typically self-sealing. Reform anterior chamber completely, check for leaks. Remove viscoelastic if used. Subconjunctival injection: dexamethasone + antibiotic. Consider bandage contact lens for epithelial protection.',
+        'Complete with double running 10-0 nylon suture or 16 interrupted sutures. Suture bites pass only through anterior lamella, leaving posterior button free to adapt. Fill AC with BSS via limbal paracentesis. Subconjunctival: gentamicin 40mg + methylprednisolone 40mg. Apply tobramycin-dexamethasone ointment.',
     },
   ],
 }
 
 // Alternative approaches data
 const alternativeApproaches = {
-  title: 'Technical Variations',
+  title: 'Technical Considerations',
   techniques: [
     {
-      title: 'Femtosecond Laser-Assisted',
+      title: 'Combined Procedures',
       description:
-        'Precise, programmable cuts with customizable diameters and angles. Enables perfect donor-recipient matching. Smooth interfaces promote better healing. OCT-guided for optimal depth. Reduced open-sky time but higher cost.',
+        'Open-sky approach through 6mm opening allows ECCE + IOL (performed in 7.6% of cases), pupilloplasty, synechiolysis, or anterior vitrectomy. Smaller opening than conventional PK provides better anterior chamber control.',
     },
     {
-      title: 'Manual Double-Blade',
+      title: 'High-Risk Modifications',
       description:
-        'Specialized trephines create both cuts simultaneously. Good centration but requires specific instrumentation. Less precise depth control than laser. Cost-effective option for experienced surgeons.',
+        'For vascularized corneas (44.2% in series): careful limbal cautery, meticulous dissection through scarred tissue. Systemic steroids (prednisone 1.5mg/kg) started 3 days preop for high-risk cases.',
     },
     {
-      title: 'Hybrid Technique',
+      title: 'Pediatric Adaptations',
       description:
-        'Femtosecond for recipient, manual for donor preparation. Balances precision with cost considerations. Useful when laser time is limited. Maintains advantages of precise recipient bed.',
+        'Successfully performed in patients ≥2 years old. Lateral tarsorrhaphy considered for lagophthalmos. General anesthesia required for uncooperative patients. Enhanced wound stability crucial for active children.',
     },
   ],
 }

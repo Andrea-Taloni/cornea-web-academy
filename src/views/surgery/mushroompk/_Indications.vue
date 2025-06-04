@@ -33,59 +33,57 @@ defineEmits(['toggle'])
 
 // Key requirements data
 const keyRequirements = [
-  'Full-thickness corneal pathology',
-  'Need for enhanced wound stability',
-  'High-risk eyes (pediatric, trauma, etc.)',
+  'Full-thickness central corneal opacity',
+  'Healthy peripheral endothelium',
+  'Need for complete corneal replacement',
 ]
 
 // Indications data
 const indications = [
   {
-    title: 'Advanced Keratoconus',
-    subtitle: '(with scarring/hydrops)',
+    title: 'Keratoconus',
+    subtitle: '',
     description:
-      'Severe keratoconus with central scarring or acute hydrops not amenable to DALK. Mushroom configuration ideal for enhanced stability.',
+      'Advanced disease with hydrops, central scarring, or deep stromal involvement. Most common indication for mushroom PK.',
   },
   {
-    title: 'Full-Thickness Corneal Scars',
+    title: 'Post-Infectious Scars',
+    subtitle: '(includes herpetic and non-herpetic)',
     description:
-      'Deep corneal scarring involving all layers including endothelium. Superior wound stability compared to conventional PK.',
+      'Herpetic scars, bacterial/fungal/protozoal scars. Requires months without reactivation before surgery.',
   },
   {
-    title: 'Failed Previous Grafts',
+    title: 'Traumatic Scars',
+    subtitle: '',
     description:
-      'Failed DALK, DSAEK, DMEK, or previous PK requiring full-thickness replacement. Better stability for repeat grafts.',
+      'Full-thickness scars from perforating or non-perforating trauma with healthy peripheral endothelium.',
   },
   {
-    title: 'Corneal Perforations',
+    title: 'Corneal Dystrophies',
+    subtitle: '',
     description:
-      'Active or impending perforations requiring urgent intervention. Self-sealing design provides immediate stability.',
+      'Stromal dystrophies affecting full corneal thickness but with preserved peripheral endothelial function.',
   },
   {
-    title: 'Combined Procedures',
+    title: 'Other Indications',
     description:
-      'When PK is combined with cataract surgery, vitrectomy, or glaucoma procedures. Enhanced stability crucial for complex surgeries.',
-  },
-  {
-    title: 'Pediatric Keratoplasty',
-    description:
-      'Children requiring PK benefit from superior wound strength. Reduced risk of traumatic dehiscence in active patients.',
+      'Interstitial keratitis, exposure keratopathy with lagophthalmos, acne rosacea, chemical burns.',
   },
 ]
 
 // Contraindications data
 const contraindications = {
   absolute: [
-    'Severe limbal stem cell deficiency',
-    'Uncontrolled glaucoma',
+    'Unhealthy peripheral endothelium',
     'Active ocular infection',
-    'Severe dry eye with melting',
+    'Uncontrolled ocular surface disease',
+    'Poor compliance potential',
   ],
   relative: [
-    'Extensive peripheral anterior synechiae',
-    'Significant iris abnormalities',
-    'Previous vitrectomy with silicone oil',
-    'Poor compliance potential',
+    'Extensive limbal stem cell deficiency',
+    'Severe dry eye',
+    'Uncontrolled glaucoma',
+    'Multiple previous graft failures',
   ],
 }
 </script>
