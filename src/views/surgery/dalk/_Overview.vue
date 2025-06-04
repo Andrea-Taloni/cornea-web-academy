@@ -1,11 +1,11 @@
 <!-- src/views/surgery/dalk/_Overview.vue -->
 <template>
   <CollapsibleSection
-    title="Clinical Overview"
-    iconPath="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-    colorTheme="sky"
+    :title="overviewMetadata.title"
+    :iconPath="overviewMetadata.iconPath"
+    :colorTheme="overviewMetadata.colorTheme"
     :isExpanded="isExpanded"
-    maxHeight="3000px"
+    :maxHeight="overviewMetadata.maxHeight"
     @toggle="$emit('toggle')"
   >
     <OverviewSection :image="overviewImage" :paragraphs="paragraphs" />
@@ -14,7 +14,7 @@
 
 <script setup>
 import CollapsibleSection from '@/components/CollapsibleSection.vue'
-import OverviewSection from '@/components/surgery/OverviewSection.vue'
+import OverviewSection, { overviewMetadata } from '@/components/surgery/OverviewSection.vue'
 import dalkImage from '@/assets/images/surgery/dalk.png'
 
 defineProps({
