@@ -83,18 +83,6 @@
         <PostopSection />
       </CollapsibleSection>
 
-      <!-- Advantages of Busin Modification Section -->
-      <CollapsibleSection
-        title="Advantages of the Busin Modification"
-        iconPath="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-        colorTheme="indigo"
-        :isExpanded="expandedSections.advantages"
-        @toggle="toggleSection('advantages')"
-        maxHeight="2000px"
-      >
-        <AdvantagesSection />
-      </CollapsibleSection>
-
       <!-- References Section -->
       <CollapsibleSection
         title="References"
@@ -126,7 +114,6 @@ import TechniquesSection from './dalk/_Techniques.vue'
 import OutcomesSection from './dalk/_Outcomes.vue'
 import ComplicationsSection from './dalk/_Complications.vue'
 import PostopSection from './dalk/_Postop.vue'
-import AdvantagesSection from './dalk/_Advantages.vue'
 import ReferencesSection from './dalk/_References.vue'
 
 // Reactive state for expanded sections
@@ -137,7 +124,6 @@ const expandedSections = ref({
   outcomes: false,
   complications: false,
   postop: false,
-  advantages: false,
   references: false,
 })
 

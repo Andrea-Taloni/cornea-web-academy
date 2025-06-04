@@ -19,7 +19,7 @@ const indications = [
     title: 'Keratoconus',
     subtitle: '(70-80% of cases)',
     description:
-      'Progressive/advanced disease, contact lens intolerance, central scarring, thickness <400μm. Busin modification ideal for broad-base cases.',
+      'Progressive/advanced disease, contact lens intolerance, central scarring, thickness <400μm. Large diameter technique ideal for broad-base cases.',
   },
   {
     title: 'Corneal Stromal Dystrophies',
