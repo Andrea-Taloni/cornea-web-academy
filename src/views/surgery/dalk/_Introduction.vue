@@ -14,7 +14,7 @@
 
 <script setup>
 import CollapsibleSection from '@/components/CollapsibleSection.vue'
-import OverviewSection, { overviewMetadata } from '@/components/surgery/OverviewSection.vue'
+import OverviewSection, { overviewMetadata } from '@/components/surgery/IntroductionComponent.vue'
 import dalkImage from '@/assets/images/surgery/dalk.png'
 
 defineProps({

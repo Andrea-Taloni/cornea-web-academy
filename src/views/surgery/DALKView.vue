@@ -56,10 +56,10 @@ import FooterComponent from '@/components/FooterComponent.vue'
 import PageHero from '@/components/HeroComponent.vue'
 
 // Import all DALK section components - each includes its own CollapsibleSection
-import OverviewSection from './dalk/_Overview.vue'
+import OverviewSection from './dalk/_Introduction.vue'
 import IndicationsSection from './dalk/_Indications.vue'
 import TechniquesSection from './dalk/_Techniques.vue'
-import OutcomesSection from './dalk/_Outcomes.vue'
+import OutcomesSection from './dalk/_Results.vue'
 import ComplicationsSection from './dalk/_Complications.vue'
 import PostopSection from './dalk/_Postop.vue'
 import ReferencesSection from './dalk/_References.vue'

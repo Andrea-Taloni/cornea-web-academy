@@ -18,7 +18,7 @@
 
 <script setup>
 import CollapsibleSection from '@/components/CollapsibleSection.vue'
-import IndicationsSection, { indicationsMetadata } from '@/components/surgery/IndicationsSection.vue'
+import IndicationsSection, { indicationsMetadata } from '@/components/surgery/IndicationsComponent.vue'
 
 defineProps({
   isExpanded: {

@@ -1,25 +1,23 @@
 <!-- src/views/surgery/dalk/_Techniques.vue -->
 <template>
   <CollapsibleSection
-    title="Surgical Techniques"
-    iconPath="M14.121 14.121L19 19m-7-7l7-7m-7 7l-2.879 2.879M12 12L9.121 9.121m0 5.758a3 3 0 10-4.243 4.243 3 3 0 004.243-4.243zm0-5.758a3 3 0 10-4.243-4.243 3 3 0 004.243 4.243z"
-    colorTheme="green"
+    :title="techniquesMetadata.title"
+    :iconPath="techniquesMetadata.iconPath"
+    :colorTheme="techniquesMetadata.colorTheme"
     :isExpanded="isExpanded"
-    maxHeight="2500px"
+    :maxHeight="techniquesMetadata.maxHeight"
     @toggle="$emit('toggle')"
   >
-    <!-- Large Diameter Big-Bubble Technique -->
-    <SurgicalSteps :title="largeDiameterTechnique.title" :steps="largeDiameterTechnique.steps" />
-
-    <!-- Alternative Dissection Strategies -->
-    <AlternativeTechniques :techniques="alternativeTechniques" />
+    <TechniquesSection
+      :mainSteps="largeDiameterTechnique"
+      :alternativeTechniques="alternativeTechniquesData"
+    />
   </CollapsibleSection>
 </template>
 
 <script setup>
 import CollapsibleSection from '@/components/CollapsibleSection.vue'
-import SurgicalSteps from '@/components/surgery/SurgicalSteps.vue'
-import AlternativeTechniques from '@/components/surgery/AlternativeTechniques.vue'
+import TechniquesSection, { techniquesMetadata } from '@/components/surgery/TechniquesSection.vue'
 
 defineProps({
   isExpanded: {
@@ -79,24 +77,27 @@ const largeDiameterTechnique = {
 }
 
 // Alternative dissection strategies data
-const alternativeTechniques = [
-  {
-    title: 'Manual Layer-by-Layer (Melles)',
-    description: `Sequential lamellar dissection when pneumatic separation fails. Begin with superficial plane using
-      crescent blade, progress deeper with specialized spatulas. Identify tissue planes by color/texture changes.
-      Continue until reaching characteristic pre-Descemetic plane appearance. Requires experience to avoid perforation.`,
-  },
-  {
-    title: 'Femtosecond Laser-Assisted',
-    description: `Computer-controlled lamellar cuts at predetermined depth/diameter. Spiral or raster patterns create
-      smooth interface. Requires docking with patient interface. Limited by corneal opacity preventing laser
-      transmission. Post-laser manual dissection often needed to complete separation.`,
-  },
-  {
-    title: 'Viscoelastic-Assisted Dissection',
-    description: `Alternative when air injection unsuccessful. Inject high molecular weight OVD (Healon GV, Viscoat)
-      through small stromal pocket. Multiple injection sites may be required for complete separation.
-      Creates hydrodissection plane. Requires thorough irrigation to remove all viscoelastic material.`,
-  },
-]
+const alternativeTechniquesData = {
+  title: 'Alternative Dissection Strategies',
+  techniques: [
+    {
+      title: 'Manual Layer-by-Layer (Melles)',
+      description: `Sequential lamellar dissection when pneumatic separation fails. Begin with superficial plane using
+        crescent blade, progress deeper with specialized spatulas. Identify tissue planes by color/texture changes.
+        Continue until reaching characteristic pre-Descemetic plane appearance. Requires experience to avoid perforation.`,
+    },
+    {
+      title: 'Femtosecond Laser-Assisted',
+      description: `Computer-controlled lamellar cuts at predetermined depth/diameter. Spiral or raster patterns create
+        smooth interface. Requires docking with patient interface. Limited by corneal opacity preventing laser
+        transmission. Post-laser manual dissection often needed to complete separation.`,
+    },
+    {
+      title: 'Viscoelastic-Assisted Dissection',
+      description: `Alternative when air injection unsuccessful. Inject high molecular weight OVD (Healon GV, Viscoat)
+        through small stromal pocket. Multiple injection sites may be required for complete separation.
+        Creates hydrodissection plane. Requires thorough irrigation to remove all viscoelastic material.`,
+    },
+  ],
+}
 </script>
