@@ -1,11 +1,30 @@
 <!-- src/views/surgery/dalk/_Overview.vue -->
 <template>
-  <OverviewSection :image="overviewImage" :paragraphs="paragraphs" />
+  <CollapsibleSection
+    title="Clinical Overview"
+    iconPath="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+    colorTheme="sky"
+    :isExpanded="isExpanded"
+    maxHeight="3000px"
+    @toggle="$emit('toggle')"
+  >
+    <OverviewSection :image="overviewImage" :paragraphs="paragraphs" />
+  </CollapsibleSection>
 </template>
 
 <script setup>
+import CollapsibleSection from '@/components/CollapsibleSection.vue'
 import OverviewSection from '@/components/surgery/OverviewSection.vue'
 import dalkImage from '@/assets/images/surgery/dalk.png'
+
+defineProps({
+  isExpanded: {
+    type: Boolean,
+    default: true,
+  },
+})
+
+defineEmits(['toggle'])
 
 const overviewImage = {
   src: dalkImage,

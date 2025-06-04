@@ -1,15 +1,34 @@
 <!-- src/views/surgery/dalk/_Techniques.vue -->
 <template>
-  <!-- Large Diameter Big-Bubble Technique -->
-  <SurgicalSteps :title="largeDiameterTechnique.title" :steps="largeDiameterTechnique.steps" />
+  <CollapsibleSection
+    title="Surgical Techniques"
+    iconPath="M14.121 14.121L19 19m-7-7l7-7m-7 7l-2.879 2.879M12 12L9.121 9.121m0 5.758a3 3 0 10-4.243 4.243 3 3 0 004.243-4.243zm0-5.758a3 3 0 10-4.243-4.243 3 3 0 004.243 4.243z"
+    colorTheme="green"
+    :isExpanded="isExpanded"
+    maxHeight="2500px"
+    @toggle="$emit('toggle')"
+  >
+    <!-- Large Diameter Big-Bubble Technique -->
+    <SurgicalSteps :title="largeDiameterTechnique.title" :steps="largeDiameterTechnique.steps" />
 
-  <!-- Alternative Dissection Strategies -->
-  <AlternativeTechniques :techniques="alternativeTechniques" />
+    <!-- Alternative Dissection Strategies -->
+    <AlternativeTechniques :techniques="alternativeTechniques" />
+  </CollapsibleSection>
 </template>
 
 <script setup>
+import CollapsibleSection from '@/components/CollapsibleSection.vue'
 import SurgicalSteps from '@/components/surgery/SurgicalSteps.vue'
 import AlternativeTechniques from '@/components/surgery/AlternativeTechniques.vue'
+
+defineProps({
+  isExpanded: {
+    type: Boolean,
+    default: false,
+  },
+})
+
+defineEmits(['toggle'])
 
 // Large Diameter Big-Bubble Technique data
 const largeDiameterTechnique = {

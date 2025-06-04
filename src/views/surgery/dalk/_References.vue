@@ -1,56 +1,74 @@
 <!-- src/views/surgery/dalk/_References.vue -->
 <template>
-  <div class="max-w-4xl mx-auto">
-    <div class="space-y-4">
-      <div
-        class="p-6 bg-white rounded-xl shadow-md border border-gray-200 hover:shadow-lg transition-shadow"
-      >
-        <p class="text-gray-700 text-base">
-          1. Busin M, Leon P, Nahum Y, Scorcia V. Large (9 mm) Deep Anterior Lamellar Keratoplasty
-          with Clearance of a 6-mm Optical Zone Optimizes Outcomes of Keratoconus Surgery.
-          <em class="text-gray-600">Ophthalmology.</em> 2017;124(7):1-9.
-        </p>
-      </div>
-      <div
-        class="p-6 bg-white rounded-xl shadow-md border border-gray-200 hover:shadow-lg transition-shadow"
-      >
-        <p class="text-gray-700 text-base">
-          2. Anwar M, Teichmann KD. Big-bubble technique to bare Descemet's membrane in anterior
-          lamellar keratoplasty.
-          <em class="text-gray-600">J Cataract Refract Surg.</em> 2002;28(3):398-403.
-        </p>
-      </div>
-      <div
-        class="p-6 bg-white rounded-xl shadow-md border border-gray-200 hover:shadow-lg transition-shadow"
-      >
-        <p class="text-gray-700 text-base">
-          3. Reinhart WJ, et al. Deep anterior lamellar keratoplasty as an alternative to
-          penetrating keratoplasty: a report by the American Academy of Ophthalmology.
-          <em class="text-gray-600">Ophthalmology.</em> 2011;118(1):209-218.
-        </p>
-      </div>
-      <div
-        class="p-6 bg-white rounded-xl shadow-md border border-gray-200 hover:shadow-lg transition-shadow"
-      >
-        <p class="text-gray-700 text-base">
-          4. Borderie VM, et al. Long-term results of deep anterior lamellar versus penetrating
-          keratoplasty.
-          <em class="text-gray-600">Ophthalmology.</em> 2012;119(2):249-255.
-        </p>
-      </div>
-      <div
-        class="p-6 bg-white rounded-xl shadow-md border border-gray-200 hover:shadow-lg transition-shadow"
-      >
-        <p class="text-gray-700 text-base">
-          5. Busin M, Scorcia V, Leon P, Nahum Y. Outcomes of air injection within 2 mm inside a
-          deep trephination for deep anterior lamellar keratoplasty in eyes with keratoconus.
-          <em class="text-gray-600">Am J Ophthalmol.</em> 2016;164:6-13.
-        </p>
+  <CollapsibleSection
+    title="References"
+    iconPath="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+    colorTheme="gray"
+    :isExpanded="isExpanded"
+    maxHeight="1500px"
+    @toggle="$emit('toggle')"
+  >
+    <div class="max-w-4xl mx-auto">
+      <div class="space-y-4">
+        <div
+          class="p-6 bg-white rounded-xl shadow-md border border-gray-200 hover:shadow-lg transition-shadow"
+        >
+          <p class="text-gray-700 text-base">
+            1. Busin M, Leon P, Nahum Y, Scorcia V. Large (9 mm) Deep Anterior Lamellar Keratoplasty
+            with Clearance of a 6-mm Optical Zone Optimizes Outcomes of Keratoconus Surgery.
+            <em class="text-gray-600">Ophthalmology.</em> 2017;124(7):1-9.
+          </p>
+        </div>
+        <div
+          class="p-6 bg-white rounded-xl shadow-md border border-gray-200 hover:shadow-lg transition-shadow"
+        >
+          <p class="text-gray-700 text-base">
+            2. Anwar M, Teichmann KD. Big-bubble technique to bare Descemet's membrane in anterior
+            lamellar keratoplasty.
+            <em class="text-gray-600">J Cataract Refract Surg.</em> 2002;28(3):398-403.
+          </p>
+        </div>
+        <div
+          class="p-6 bg-white rounded-xl shadow-md border border-gray-200 hover:shadow-lg transition-shadow"
+        >
+          <p class="text-gray-700 text-base">
+            3. Reinhart WJ, et al. Deep anterior lamellar keratoplasty as an alternative to
+            penetrating keratoplasty: a report by the American Academy of Ophthalmology.
+            <em class="text-gray-600">Ophthalmology.</em> 2011;118(1):209-218.
+          </p>
+        </div>
+        <div
+          class="p-6 bg-white rounded-xl shadow-md border border-gray-200 hover:shadow-lg transition-shadow"
+        >
+          <p class="text-gray-700 text-base">
+            4. Borderie VM, et al. Long-term results of deep anterior lamellar versus penetrating
+            keratoplasty.
+            <em class="text-gray-600">Ophthalmology.</em> 2012;119(2):249-255.
+          </p>
+        </div>
+        <div
+          class="p-6 bg-white rounded-xl shadow-md border border-gray-200 hover:shadow-lg transition-shadow"
+        >
+          <p class="text-gray-700 text-base">
+            5. Busin M, Scorcia V, Leon P, Nahum Y. Outcomes of air injection within 2 mm inside a
+            deep trephination for deep anterior lamellar keratoplasty in eyes with keratoconus.
+            <em class="text-gray-600">Am J Ophthalmol.</em> 2016;164:6-13.
+          </p>
+        </div>
       </div>
     </div>
-  </div>
+  </CollapsibleSection>
 </template>
 
 <script setup>
-// No imports needed for this partial
+import CollapsibleSection from '@/components/CollapsibleSection.vue'
+
+defineProps({
+  isExpanded: {
+    type: Boolean,
+    default: false,
+  },
+})
+
+defineEmits(['toggle'])
 </script>

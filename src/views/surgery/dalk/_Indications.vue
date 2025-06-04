@@ -1,14 +1,33 @@
 <!-- src/views/surgery/dalk/_Indications.vue -->
 <template>
-  <IndicationsSection
-    :keyRequirements="keyRequirements"
-    :indications="indications"
-    :contraindications="contraindications"
-  />
+  <CollapsibleSection
+    title="Clinical Indications"
+    iconPath="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+    colorTheme="blue"
+    :isExpanded="isExpanded"
+    maxHeight="2000px"
+    @toggle="$emit('toggle')"
+  >
+    <IndicationsSection
+      :keyRequirements="keyRequirements"
+      :indications="indications"
+      :contraindications="contraindications"
+    />
+  </CollapsibleSection>
 </template>
 
 <script setup>
+import CollapsibleSection from '@/components/CollapsibleSection.vue'
 import IndicationsSection from '@/components/surgery/IndicationsSection.vue'
+
+defineProps({
+  isExpanded: {
+    type: Boolean,
+    default: false,
+  },
+})
+
+defineEmits(['toggle'])
 
 // Key requirements data
 const keyRequirements = ['Healthy endothelium', 'No DM involvement', 'Anterior pathology only']
