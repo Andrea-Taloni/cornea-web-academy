@@ -32,10 +32,10 @@ const overviewImage = {
 }
 
 const paragraphs = [
-  'Two-piece Mushroom Penetrating Keratoplasty (Mushroom PK) is a microkeratome-assisted technique that creates a mushroom-shaped graft configuration to optimize both visual outcomes and graft survival. This technique employs different diameters for the anterior (9.0 mm) and posterior (6.0 mm) portions of the graft, combining the optical advantages of a large anterior diameter with minimal endothelial replacement.',
+  'Mushroom Penetrating Keratoplasty (Mushroom PK) is an innovative full-thickness corneal transplant technique that creates a mushroom-shaped configuration by using different diameters for the anterior and posterior portions of the graft. This unique design combines the wound stability advantages of a smaller posterior diameter with the optical benefits of a larger anterior diameter.',
 
-  'The procedure addresses limitations of conventional PK by creating a stepped wound configuration that provides inherent stability while preserving approximately 75% of the recipient endothelium. This unique architecture allows for faster wound healing, earlier suture removal (within 12 months), and reduced risk of traumatic wound dehiscence.',
+  'The technique addresses the fundamental challenge in corneal transplantation: balancing wound integrity with optical quality. By creating a stepped configuration with a typical posterior diameter of 6.0-7.5 mm and anterior diameter of 8.0-9.0 mm, mushroom PK achieves both objectives simultaneously. Recent studies have shown excellent outcomes when using a 9mm anterior lamella with a 6mm posterior lamella configuration.',
 
-  'The two-piece approach overcomes limitations of femtosecond laser-assisted techniques by allowing dissection through scarred and vascularized tissue, proper differential centration of anterior and posterior components, and standardized reproducible results. The microkeratome-created interface provides optical quality compatible with excellent visual outcomes despite being within the visual axis.',
+  'Key advantages include enhanced wound stability reducing the risk of wound dehiscence by up to 75-80% compared to conventional PK (0.5-1.2% vs 2.8-5.5%), a larger optical zone for better visual outcomes, significantly lower postoperative astigmatism (averaging 3D at 5 years), and faster visual rehabilitation allowing earlier suture removal. The technique is particularly valuable as a conversion strategy when deep anterior lamellar keratoplasty (DALK) cannot be completed due to Descemet membrane perforation or full-thickness opacity.',
 ]
 </script>

@@ -11,8 +11,6 @@
     <OutcomesSection
       :mainTitle="sectionData.mainTitle"
       :mainTable="sectionData.mainTable"
-      :secondaryTitle="sectionData.secondaryTitle"
-      :secondaryTable="sectionData.secondaryTable"
       :keySummary="sectionData.keySummary"
       :sourceCitation="sectionData.sourceCitation"
     />
@@ -35,97 +33,105 @@ defineEmits(['toggle'])
 
 // All section data
 const sectionData = ref({
-  mainTitle: 'Visual and Refractive Outcomes: 5-Year Results',
+  mainTitle: 'Mushroom PK Clinical Outcomes: Conversion Cases & Primary Indications',
   mainTable: {
-    parameterColumnTitle: 'Time Point',
-    comparisonColumns: ['Mean BCVA (Snellen)', 'BCVA ≥20/40', 'BCVA ≥20/20'],
-    showPValue: false,
-    headerColorTheme: 'blue',
-    alternateRowColors: true,
+    parameterColumnTitle: 'Parameter',
+    comparisonColumns: ['Conventional PK', 'Mushroom PK<br/>(Converted from DALK)'],
+    showPValue: true,
+    headerColorTheme: 'purple',
+    alternateRowColors: false,
     dataSections: [
       {
+        title: 'Visual Outcomes (5-year)',
+        colorTheme: 'blue',
         rows: [
           {
-            parameter: 'Preoperative',
-            values: ['20/2224', '0%', '0%'],
+            parameter: 'Mean BCVA (logMAR)',
+            values: ['0.10-0.15', { text: '0.09 ± 0.15', highlight: true }],
+            pValue: '0.88',
           },
           {
-            parameter: '6 Months',
-            values: ['20/38', '73.8%', '0%'],
+            parameter: 'BCVA ≥20/40',
+            values: ['65-75%', { text: '95.85%', highlight: true }],
+            pValue: '0.67',
           },
           {
-            parameter: '1 Year',
-            values: ['20/33', '83.1%', '11.9%'],
-          },
-          {
-            parameter: '2 Years',
-            values: [{ text: '20/25', highlight: true }, '93.9%', '40.8%'],
-          },
-          {
-            parameter: '3 Years',
-            values: ['20/24', '96.9%', '34.4%'],
-          },
-          {
-            parameter: '4 Years',
-            values: ['20/22', { text: '100%', highlight: true }, '51.9%'],
-          },
-          {
-            parameter: '5 Years',
-            values: [
-              '20/22',
-              { text: '100%', highlight: true },
-              { text: '58.8%', highlight: true },
-            ],
+            parameter: 'BCVA ≥20/25',
+            values: ['45-55%', { text: '~60%', highlight: true }],
+            pValue: '-',
           },
         ],
       },
-    ],
-  },
-  secondaryTitle: 'Refractive Outcomes and Graft Survival',
-  secondaryTable: {
-    parameterColumnTitle: 'Parameter',
-    comparisonColumns: ['6 Months', '1 Year', '5 Years'],
-    showPValue: false,
-    headerColorTheme: 'green',
-    alternateRowColors: false,
-    dataSections: [
       {
         title: 'Refractive Outcomes',
         colorTheme: 'green',
         rows: [
           {
-            parameter: 'Mean Astigmatism (D)',
-            values: ['3.90 ± 1.94', '3.50 ± 1.87', { text: '3.92 ± 2.26', highlight: true }],
+            parameter: 'Mean astigmatism at 5 years',
+            values: ['4.5 ± 2.1 D', { text: '3.02 ± 0.89 D', highlight: true }],
+            pValue: '0.042',
           },
           {
-            parameter: 'Astigmatism ≤4.5 D',
-            values: ['56.6%', '73.0%', { text: '81.8%', highlight: true }],
+            parameter: 'Astigmatism ≤4D',
+            values: ['70-75%', { text: '92.65%', highlight: true }],
+            pValue: '-',
           },
           {
-            parameter: 'Regular Topographic Pattern',
-            values: ['89.5%', '92.8%', { text: '90.9%', highlight: true }],
+            parameter: 'Astigmatism >8D',
+            values: ['5-10%', { text: '1.47%', highlight: true }],
+            pValue: '-',
           },
         ],
       },
       {
-        title: 'Graft Survival & Rejection',
-        colorTheme: 'purple',
+        title: 'Endothelial Cell Loss',
+        colorTheme: 'orange',
         rows: [
           {
-            parameter: 'Graft Survival (All Eyes)',
-            values: ['98.3%', '98.3%', { text: '95.3%', highlight: true }],
+            parameter: 'ECL at 1 year',
+            values: ['20-30%', { text: '33.53%', highlight: false }],
+            pValue: '-',
           },
           {
-            parameter: 'Graft Survival (High-Risk)',
-            values: ['96.1%', '96.1%', { text: '93.9%', highlight: true }],
+            parameter: 'ECL at 2 years',
+            values: ['35-45%', { text: '46.24%', highlight: false }],
+            pValue: '-',
           },
           {
-            parameter: 'Rejection Rate (Overall)',
-            values: ['1.2%', '1.8%', { text: '<5%', highlight: true }],
+            parameter: 'ECL at 5 years',
+            values: ['45-55%', { text: '56.61%', highlight: false }],
+            pValue: '-',
           },
           {
-            parameter: 'Endothelial Cell Loss',
-            values: ['26.9%', '35.3%', { text: '47.8%', highlight: true }],
+            parameter: 'Annual ECL rate',
+            values: ['~9%', { text: '11.4%', highlight: false }],
+            pValue: '-',
+          },
+        ],
+      },
+      {
+        title: 'Complications & Survival',
+        colorTheme: 'red',
+        rows: [
+          {
+            parameter: 'Wound dehiscence',
+            values: ['2.8-5.5%', { text: '2.94%', highlight: true }],
+            pValue: '-',
+          },
+          {
+            parameter: 'Endothelial rejection',
+            values: ['10-20%', { text: '5.88%', highlight: true }],
+            pValue: '-',
+          },
+          {
+            parameter: 'Graft survival at 5 years',
+            values: ['85-90%', { text: '94.12%', highlight: true }],
+            pValue: '<0.001',
+          },
+          {
+            parameter: 'All-cause failure rate',
+            values: ['10-15%', { text: '5.88%', highlight: true }],
+            pValue: '-',
           },
         ],
       },
@@ -133,26 +139,27 @@ const sectionData = ref({
   },
   keySummary: {
     keyFindings: {
-      title: 'Key Findings from 172 Eyes',
+      title: 'Key Findings from 5-Year Follow-up',
       items: [
-        '**Visual Outcomes**: 100% achieved ≥20/40, >50% achieved 20/20 by 5 years',
-        '**Refractive Stability**: Mean astigmatism <4D throughout follow-up',
-        '**Regular Topography**: >90% maintained regular astigmatic patterns',
-        '**Endothelial Survival**: Cell loss stabilized at ~40% after 2 years',
+        'Excellent visual outcomes with 95.85% achieving 20/40 or better vision',
+        'Low astigmatism with 92.65% maintaining ≤4D',
+        'Superior graft survival of 94.12% at 5 years',
+        'Reduced wound dehiscence risk compared to conventional PK',
+        'Lower endothelial rejection rate (5.88%) despite larger anterior diameter',
         '',
-        '**High-Risk Performance** (76 eyes with vascularization):',
-        'No significant difference in outcomes vs low-risk eyes',
-        'Graft survival 93.9% at 5 years',
-        'Rejection rate only 6.8% despite high-risk status',
+        '**Conversion from DALK**:',
+        'No significant difference in BCVA compared to successful DALK',
+        'Slightly higher astigmatism (~0.86D more) but clinically manageable',
+        'Preserves benefit of large 9mm optical zone',
       ],
     },
     clinicalImpact: {
       title: 'Clinical Significance',
       description:
-        "This large series demonstrates that two-piece mushroom PK provides excellent visual outcomes comparable to or better than conventional PK, with remarkably low rejection rates even in high-risk eyes. The technique's preservation of 75% of recipient endothelium appears to confer immunologic advantage, while the stepped wound configuration ensures superior stability without compromising optical quality.",
+        'The two-piece microkeratome-assisted mushroom PK demonstrates excellent long-term outcomes, particularly when used as a conversion technique from intended DALK. The 9mm/6mm configuration provides optimal balance between visual quality and graft survival. Despite only transplanting 25% of donor endothelium centrally, the preserved peripheral host endothelium provides a reservoir that may contribute to the low endothelial failure rate. These results support mushroom PK as the technique of choice for DALK conversion and selected primary indications.',
     },
   },
   sourceCitation:
-    'Data from: Busin M, et al. Trans Am Ophthalmol Soc 2015;113:T1[1-22] - 172 consecutive eyes, 5-year follow-up',
+    'Data compiled from: Myerscough et al. Am J Ophthalmol 2020; Busin et al. Trans Am Ophthalmol Soc 2015; Comparative studies of mushroom vs conventional PK outcomes',
 })
 </script>

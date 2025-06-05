@@ -18,7 +18,9 @@
 <script setup>
 import { ref } from 'vue'
 import CollapsibleSection from '@/components/CollapsibleSection.vue'
-import ComplicationsSection, { complicationsMetadata } from '@/components/surgery/ComplicationsComponent.vue'
+import ComplicationsSection, {
+  complicationsMetadata,
+} from '@/components/surgery/ComplicationsComponent.vue'
 
 defineProps({
   isExpanded: {
@@ -38,24 +40,24 @@ const complicationsData = ref({
       {
         name: 'Descemet perforation',
         details: [
-          { label: 'Conventional', value: '5-32%' },
-          { label: 'Busin Modified', value: '3.7%', highlight: true },
+          { label: 'Conventional Diameter', value: '5-32%' },
+          { label: 'Large Diameter', value: '3.7%', highlight: true },
           { label: 'Management', value: 'Air tamponade, conversion to PK if large' },
         ],
       },
       {
         name: 'Failed big bubble',
         details: [
-          { label: 'Conventional', value: '10-43%' },
-          { label: 'Busin Modified', value: '16.3%', highlight: true },
+          { label: 'Conventional Diameter', value: '10-43%' },
+          { label: 'Large Diameter', value: '16.3%', highlight: true },
           { label: 'Management', value: 'Manual dissection (limited to 6mm in modified)' },
         ],
       },
       {
         name: 'Conversion to PK',
         details: [
-          { label: 'Conventional', value: '1.2-27%' },
-          { label: 'Busin Modified', value: '0%', highlight: true },
+          { label: 'Conventional Diameter', value: '1.2-27%' },
+          { label: 'Large Diameter', value: '0%', highlight: true },
           { label: 'Management', value: '9mm PK or mushroom keratoplasty' },
         ],
       },

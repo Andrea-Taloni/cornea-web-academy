@@ -38,19 +38,27 @@ const complicationsData = ref({
     colorTheme: 'orange',
     complications: [
       {
-        name: 'Posterior lamella detachment',
+        name: 'Conversion from DALK',
         details: [
-          { label: 'Incidence', value: '1.2% (2/172 eyes)', highlight: true },
-          { label: 'Timing', value: 'Within 24 hours postop' },
-          { label: 'Management', value: 'Air injection, 100% success rate' },
+          { label: 'Incidence', value: '16.4% of intended DALK', highlight: true },
+          { label: 'Main causes', value: 'DM macroperforation, full-thickness opacity' },
+          { label: 'Management', value: 'Two-piece mushroom PK maintains 9mm benefits' },
         ],
       },
       {
-        name: 'Technical challenges',
+        name: 'Iris prolapse',
         details: [
-          { label: 'Vascularized corneas', value: '44.2% of cases' },
-          { label: 'Scarred tissue dissection', value: 'Manageable with careful technique' },
-          { label: 'Combined procedures', value: '12.8% required additional surgery' },
+          { label: 'Incidence', value: '5-10%' },
+          { label: 'Risk factors', value: 'Shallow AC, positive vitreous pressure' },
+          { label: 'Management', value: 'Gentle reposition, peripheral iridectomy if needed' },
+        ],
+      },
+      {
+        name: 'Donor tissue damage',
+        details: [
+          { label: 'Incidence', value: '1-3%' },
+          { label: 'Causes', value: 'Microkeratome issues, handling errors' },
+          { label: 'Management', value: 'New donor tissue required' },
         ],
       },
     ],
@@ -60,30 +68,25 @@ const complicationsData = ref({
     colorTheme: 'red',
     sections: [
       {
-        title: 'Most Common',
+        title: 'Early (&lt;1 month)',
         items: [
-          'High astigmatism (>4.5D): 27% - managed with wound revision (22 eyes), toric IOL (4), or RGP (9)',
-          'Cataract formation: 11.9% of phakic eyes - routine phaco successful',
-          'Immunologic rejection: 3.6% overall (6/172) - mostly reversible with steroids',
-          'Endothelial cell loss: 47.8% at 5 years but stable after 2 years',
+          'Posterior lamella detachment: 1.47% (rebubble with air)',
+          'Wound leak: 2-5% (less common than conventional PK)',
+          'Pupillary block: 3-5% (manage with PI or mydriatics)',
+          'Primary graft failure: <1% with good donor selection',
+          'Interface infection: 1.47%',
+          'Persistent epithelial defects: Rare with mushroom design',
         ],
       },
       {
-        title: 'Serious Complications',
+        title: 'Late (&gt;1 month)',
         items: [
-          'Graft failure: 3.5% (6/172 eyes) over 5 years',
-          'Herpetic recurrence: 7.3% of herpetic cases (3/43)',
-          'Persistent epithelial defect: 1.7% (3 eyes) - led to early failure',
-          'No wound dehiscence after suture removal (0% vs 2.8-5.5% in conventional PK)',
-        ],
-      },
-      {
-        title: 'Management Outcomes',
-        items: [
-          'Failed grafts successfully regrafted: 4/6 cases',
-          'Wound revision for astigmatism: Mean reduction 4.52D',
-          'All rejection episodes except one reversed with treatment',
-          'Secondary procedures well-tolerated through mushroom wound',
+          'Endothelial rejection: 5.88% (lower than expected for 9mm anterior diameter)',
+          'Stromal rejection: 2.94% (manageable medically)',
+          'High astigmatism (>4.5D): 7.35% (vs 10% in conventional DALK)',
+          'Secondary cataract: 7.35% (higher than DALK)',
+          'Wound dehiscence: 2.94% (significantly reduced risk)',
+          'Graft failure (all causes): 5.88% at 5 years',
         ],
       },
     ],

@@ -33,56 +33,56 @@ const mushroomPKTechnique = {
   title: 'Two-Piece Microkeratome-Assisted Mushroom PK Technique',
   steps: [
     {
-      title: 'Recipient Bed Preparation - Anterior Dissection',
+      title: 'Recipient Bed Preparation',
       description:
-        'Under peribulbar anesthesia, create circular incision 9.0mm diameter, ~250μm depth using vacuum trephine centered on corneoscleral limbus. Perform manual lamellar dissection circumferentially 3mm toward center from incision base. Cauterize limbal vessels only if bleeding persists. Remove dissected tissue leaving central 3mm island of full-thickness cornea.',
+        'For conversion from DALK: Having already performed 9mm anterior keratectomy, excise central 6mm optical zone full-thickness, leaving 1.5mm posterior stromal crown (~100-150μm thick). For primary mushroom PK: Mark visual axis and desired diameters. Use femtosecond laser or manual double-blade trephine to create stepped configuration.',
     },
     {
-      title: 'Central Full-Thickness Excision',
+      title: 'Donor Tissue Preparation',
       description:
-        'Using 6.0mm trephine, create full-thickness circular incision in residual central island, carefully centered on pupil (not limbus). Excise central button with corneal scissors. This creates stepped recipient bed: 9mm anterior diameter, 6mm posterior opening.',
+        'Mount donor on artificial chamber (ALTK system). Split cornea using 350μm microkeratome head to create anterior and posterior lamellae. Punch anterior lamella to 9mm and posterior lamella to 6mm diameter. Maintain proper orientation throughout preparation.',
     },
     {
-      title: 'Donor Tissue Preparation - Microkeratome Dissection',
+      title: 'Posterior Lamella Placement',
       description:
-        'Mount donor cornea on ALTK artificial anterior chamber. Use 200μm microkeratome head to split donor into anterior and posterior lamellae (actual depth ~240μm due to 20% deeper cut). This thickness optimally matches removed recipient tissue.',
+        'Place 6mm posterior lamella (endothelium and deep stroma) into central recipient opening without sutures. This mushroom "stem" contains only 25% of total corneal endothelium, preserving peripheral host endothelium.',
     },
     {
-      title: 'Donor Punching',
+      title: 'Anterior Lamella Positioning',
       description:
-        'Punch both lamellae to match recipient bed dimensions: anterior lamella to 9.0mm, posterior lamella to 6.0mm. Same size punches used as recipient bed to ensure proper fit. Mark orientation if needed.',
+        'Place 9mm anterior lamella on top, ensuring proper orientation (mark with gentian violet if needed). The larger anterior "cap" provides wide optical zone while the overlap creates enhanced wound stability.',
     },
     {
-      title: 'Graft Placement & Initial Fixation',
+      title: 'Suturing Technique',
       description:
-        "Place posterior lamella (endothelium + deep stroma) into central 6mm opening without sutures - self-retaining fit. Position anterior lamella on top, secure with 4 cardinal 10-0 nylon sutures at 12, 3, 6, 9 o'clock. Ensure proper alignment.",
+        'Secure with double running 10-0 nylon sutures or combined technique (8 interrupted + continuous). Fewer sutures needed than conventional PK due to inherent mushroom stability. Adjust tension with keratoscope to minimize astigmatism.',
     },
     {
-      title: 'Final Suturing & Closure',
+      title: 'Chamber Formation & Closure',
       description:
-        'Complete with double running 10-0 nylon suture or 16 interrupted sutures. Suture bites pass only through anterior lamella, leaving posterior button free to adapt. Fill AC with BSS via limbal paracentesis. Subconjunctival: gentamicin 40mg + methylprednisolone 40mg. Apply tobramycin-dexamethasone ointment.',
+        'Reform anterior chamber with BSS. Test wound integrity with fluorescein - mushroom configuration typically self-sealing. Subconjunctival injection: triamcinolone + antibiotic. Apply bandage contact lens if needed.',
     },
   ],
 }
 
 // Alternative approaches data
 const alternativeApproaches = {
-  title: 'Technical Considerations',
+  title: 'Technical Variations',
   techniques: [
     {
-      title: 'Combined Procedures',
+      title: 'Femtosecond Laser-Assisted',
       description:
-        'Open-sky approach through 6mm opening allows ECCE + IOL (performed in 7.6% of cases), pupilloplasty, synechiolysis, or anterior vitrectomy. Smaller opening than conventional PK provides better anterior chamber control.',
+        'Precise, programmable cuts with customizable diameters and angles. Enables perfect donor-recipient matching. Smooth interfaces promote better healing. OCT-guided for optimal depth. Reduced open-sky time but higher cost.',
     },
     {
-      title: 'High-Risk Modifications',
+      title: 'Manual Double-Blade',
       description:
-        'For vascularized corneas (44.2% in series): careful limbal cautery, meticulous dissection through scarred tissue. Systemic steroids (prednisone 1.5mg/kg) started 3 days preop for high-risk cases.',
+        'Specialized trephines create both cuts simultaneously. Good centration but requires specific instrumentation. Less precise depth control than laser. Cost-effective option for experienced surgeons.',
     },
     {
-      title: 'Pediatric Adaptations',
+      title: 'Hybrid Technique',
       description:
-        'Successfully performed in patients ≥2 years old. Lateral tarsorrhaphy considered for lagophthalmos. General anesthesia required for uncooperative patients. Enhanced wound stability crucial for active children.',
+        'Femtosecond for recipient, manual for donor preparation. Balances precision with cost considerations. Useful when laser time is limited. Maintains advantages of precise recipient bed.',
     },
   ],
 }
