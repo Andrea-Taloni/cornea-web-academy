@@ -40,7 +40,7 @@
                   class="px-6 py-3 font-bold text-base"
                   :class="getSectionTextClass(section.colorTheme)"
                 >
-                  <span v-html="section.title"></span>
+                  <span v-html="processBoldText(section.title)"></span>
                 </td>
               </tr>
               <!-- Data Rows -->
@@ -52,7 +52,7 @@
                   'bg-gray-50': rowIndex % 2 === 1 && mainTable.alternateRowColors,
                 }"
               >
-                <td class="px-6 py-3 text-base" v-html="row.parameter"></td>
+                <td class="px-6 py-3 text-base" v-html="processBoldText(row.parameter)"></td>
                 <td
                   v-for="(value, valueIndex) in row.values"
                   :key="valueIndex"
@@ -62,14 +62,14 @@
                     'text-gray-500': value.isPlaceholder,
                   }"
                 >
-                  <span v-html="value.text || value"></span>
+                  <span v-html="processBoldText(value.text || value)"></span>
                 </td>
                 <td
                   v-if="mainTable.showPValue"
                   class="px-6 py-3 text-center"
                   :class="{ 'font-medium': row.pValue && row.pValue !== '-' }"
                 >
-                  <span v-html="row.pValue || '-'"></span>
+                  <span v-html="processBoldText(row.pValue || '-')"></span>
                 </td>
               </tr>
             </template>
@@ -123,7 +123,7 @@
                   class="px-6 py-3 font-bold text-base"
                   :class="getSectionTextClass(section.colorTheme)"
                 >
-                  <span v-html="section.title"></span>
+                  <span v-html="processBoldText(section.title)"></span>
                 </td>
               </tr>
               <!-- Data Rows -->
@@ -135,7 +135,7 @@
                   'bg-gray-50': rowIndex % 2 === 1 && secondaryTable.alternateRowColors,
                 }"
               >
-                <td class="px-6 py-3 text-base" v-html="row.parameter"></td>
+                <td class="px-6 py-3 text-base" v-html="processBoldText(row.parameter)"></td>
                 <td
                   v-for="(value, valueIndex) in row.values"
                   :key="valueIndex"
@@ -145,14 +145,14 @@
                     'text-gray-500': value.isPlaceholder,
                   }"
                 >
-                  <span v-html="value.text || value"></span>
+                  <span v-html="processBoldText(value.text || value)"></span>
                 </td>
                 <td
                   v-if="secondaryTable.showPValue"
                   class="px-6 py-3 text-center"
                   :class="{ 'font-medium': row.pValue && row.pValue !== '-' }"
                 >
-                  <span v-html="row.pValue || '-'"></span>
+                  <span v-html="processBoldText(row.pValue || '-')"></span>
                 </td>
               </tr>
             </template>
@@ -173,18 +173,10 @@
           <li
             v-for="(finding, index) in keySummary.keyFindings.items"
             :key="index"
-            :class="{ 'flex items-start': finding && !finding.startsWith('**') }"
+            class="flex items-start"
           >
-            <span v-if="finding && !finding.startsWith('**')" class="text-blue-600 mr-2">•</span>
-            <span
-              v-if="finding && finding.startsWith('**') && finding.endsWith('**')"
-              class="font-bold"
-            >
-              {{ finding.slice(2, -2) }}
-            </span>
-            <span v-else-if="finding">{{ finding }}</span>
-            <div v-else class="h-2"></div>
-            <!-- Empty line spacer -->
+            <span class="text-blue-600 mr-2">•</span>
+            <span v-html="processBoldText(finding)"></span>
           </li>
         </ul>
       </div>
@@ -197,8 +189,7 @@
         <h4 class="font-bold text-lg text-green-900 mb-3">
           {{ keySummary.clinicalImpact.title }}
         </h4>
-        <p class="text-gray-700 text-sm leading-relaxed">
-          {{ keySummary.clinicalImpact.description }}
+        <p class="text-gray-700 text-sm leading-relaxed" v-html="processBoldText(keySummary.clinicalImpact.description)">
         </p>
       </div>
     </div>
@@ -216,27 +207,20 @@
         <h4 class="font-bold text-lg mb-3" :class="getAdditionalBoxTitleClass(box.colorTheme)">
           {{ box.title }}
         </h4>
-        <p v-if="box.description" class="text-gray-700 text-sm leading-relaxed">
-          {{ box.description }}
+        <p v-if="box.description" class="text-gray-700 text-sm leading-relaxed" v-html="processBoldText(box.description)">
         </p>
         <ul v-if="box.items" class="space-y-2 text-gray-700 text-sm">
           <li
             v-for="(item, itemIndex) in box.items"
             :key="itemIndex"
-            :class="{ 'flex items-start': item && !item.startsWith('**') }"
+            class="flex items-start"
           >
             <span
-              v-if="item && !item.startsWith('**')"
               class="mr-2"
               :class="getAdditionalBoxBulletClass(box.colorTheme)"
               >•</span
             >
-            <span v-if="item && item.startsWith('**') && item.endsWith('**')" class="font-bold">
-              {{ item.slice(2, -2) }}
-            </span>
-            <span v-else-if="item">{{ item }}</span>
-            <div v-else class="h-2"></div>
-            <!-- Empty line spacer -->
+            <span v-html="processBoldText(item)"></span>
           </li>
         </ul>
       </div>
@@ -261,6 +245,8 @@ export const outcomesMetadata = {
 </script>
 
 <script setup>
+import { processBoldText } from '@/utils/textFormatting'
+
 defineProps({
   // Main title at the top
   mainTitle: {
@@ -272,28 +258,6 @@ defineProps({
   mainTable: {
     type: Object,
     default: null,
-    /* Expected structure:
-    {
-      parameterColumnTitle: 'Parameter',
-      comparisonColumns: ['Column 1', 'Column 2'],
-      showPValue: true,
-      headerColorTheme: 'purple',
-      alternateRowColors: false,
-      dataSections: [
-        {
-          title: 'Section Title',
-          colorTheme: 'blue',
-          rows: [
-            {
-              parameter: 'Row Name',
-              values: ['Value 1', { text: 'Value 2', highlight: true }],
-              pValue: '0.01'
-            }
-          ]
-        }
-      ]
-    }
-    */
   },
 
   // Secondary title (optional)
@@ -306,33 +270,12 @@ defineProps({
   secondaryTable: {
     type: Object,
     default: null,
-    // Same structure as mainTable
   },
 
   // Key summary boxes
   keySummary: {
     type: Object,
     default: null,
-    /* Expected structure:
-    {
-      keyFindings: {
-        title: 'Key Findings',
-        items: ['Finding 1', 'Finding 2']
-      },
-      clinicalImpact: {
-        title: 'Clinical Impact',
-        description: 'Description text...'
-      },
-      additionalBoxes: [
-        {
-          title: 'Additional Info',
-          colorTheme: 'orange',
-          description: 'Text...',
-          items: ['Item 1', 'Item 2'] // optional, can have description OR items
-        }
-      ]
-    }
-    */
   },
 
   // Source citation at the bottom

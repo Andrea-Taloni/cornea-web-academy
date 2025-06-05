@@ -3,7 +3,7 @@
   <div class="w-full space-y-8">
     <!-- Main Surgical Steps Section -->
     <div v-if="mainSteps" class="mb-8">
-      <h3 class="text-xl font-bold mb-4 text-gray-800">{{ mainSteps.title }}</h3>
+      <h3 class="text-xl font-bold mb-4 text-gray-800" v-html="processBoldText(mainSteps.title)"></h3>
 
       <div class="grid lg:grid-cols-2 xl:grid-cols-3 gap-3">
         <div
@@ -18,8 +18,8 @@
               <span class="text-green-600 font-bold text-sm">{{ index + 1 }}</span>
             </div>
             <div class="flex-1">
-              <h4 class="font-semibold text-base mb-1 text-gray-800">{{ step.title }}</h4>
-              <p class="text-gray-600 text-sm">{{ step.description }}</p>
+              <h4 class="font-semibold text-base mb-1 text-gray-800" v-html="processBoldText(step.title)"></h4>
+              <p class="text-gray-600 text-sm" v-html="processBoldText(step.description)"></p>
             </div>
           </div>
         </div>
@@ -28,22 +28,22 @@
 
     <!-- Alternative Techniques Section -->
     <div v-if="alternativeTechniques">
-      <h3 class="text-xl font-bold mb-4 text-gray-800">{{ alternativeTechniques.title || 'Alternative Dissection Strategies' }}</h3>
+      <h3 class="text-xl font-bold mb-4 text-gray-800" v-html="processBoldText(alternativeTechniques.title || 'Alternative Dissection Strategies')"></h3>
       <div class="grid md:grid-cols-3 gap-3">
         <div
           v-for="(technique, index) in alternativeTechniques.techniques"
           :key="index"
           class="bg-gray-100 p-3 rounded-lg"
         >
-          <h4 class="font-semibold text-sm mb-1 text-gray-800">{{ technique.title }}</h4>
-          <p class="text-gray-600 text-xs">{{ technique.description }}</p>
+          <h4 class="font-semibold text-sm mb-1 text-gray-800" v-html="processBoldText(technique.title)"></h4>
+          <p class="text-gray-600 text-xs" v-html="processBoldText(technique.description)"></p>
         </div>
       </div>
     </div>
 
     <!-- Additional Techniques Sections (if needed) -->
     <div v-for="(section, sectionIndex) in additionalSections" :key="`section-${sectionIndex}`" class="mb-8">
-      <h3 class="text-xl font-bold mb-4 text-gray-800">{{ section.title }}</h3>
+      <h3 class="text-xl font-bold mb-4 text-gray-800" v-html="processBoldText(section.title)"></h3>
 
       <!-- If section has numbered steps -->
       <div v-if="section.numbered" class="grid lg:grid-cols-2 xl:grid-cols-3 gap-3">
@@ -65,8 +65,8 @@
               </span>
             </div>
             <div class="flex-1">
-              <h4 class="font-semibold text-base mb-1 text-gray-800">{{ item.title }}</h4>
-              <p class="text-gray-600 text-sm">{{ item.description }}</p>
+              <h4 class="font-semibold text-base mb-1 text-gray-800" v-html="processBoldText(item.title)"></h4>
+              <p class="text-gray-600 text-sm" v-html="processBoldText(item.description)"></p>
             </div>
           </div>
         </div>
@@ -80,8 +80,8 @@
           :class="getItemBgClass(section.bgColor)"
           class="p-3 rounded-lg"
         >
-          <h4 class="font-semibold text-sm mb-1 text-gray-800">{{ item.title }}</h4>
-          <p class="text-gray-600 text-xs">{{ item.description }}</p>
+          <h4 class="font-semibold text-sm mb-1 text-gray-800" v-html="processBoldText(item.title)"></h4>
+          <p class="text-gray-600 text-xs" v-html="processBoldText(item.description)"></p>
         </div>
       </div>
     </div>
@@ -100,61 +100,25 @@ export const techniquesMetadata = {
 </script>
 
 <script setup>
+import { processBoldText } from '@/utils/textFormatting'
+
 defineProps({
   // Main surgical steps (numbered)
   mainSteps: {
     type: Object,
     default: null,
-    /* Expected structure:
-    {
-      title: 'Large Diameter Big-Bubble Technique',
-      steps: [
-        {
-          title: 'Step Title',
-          description: 'Step description...'
-        }
-      ]
-    }
-    */
   },
 
   // Alternative techniques (unnumbered grid)
   alternativeTechniques: {
     type: Object,
     default: null,
-    /* Expected structure:
-    {
-      title: 'Alternative Dissection Strategies', // optional, has default
-      techniques: [
-        {
-          title: 'Technique Name',
-          description: 'Technique description...'
-        }
-      ]
-    }
-    */
   },
 
   // Additional sections for flexibility
   additionalSections: {
     type: Array,
     default: () => [],
-    /* Expected structure:
-    [
-      {
-        title: 'Section Title',
-        numbered: true, // whether to show numbers
-        numberColor: 'blue', // optional, defaults to blue
-        bgColor: 'gray', // optional, for unnumbered items
-        items: [
-          {
-            title: 'Item Title',
-            description: 'Item description...'
-          }
-        ]
-      }
-    ]
-    */
   }
 })
 

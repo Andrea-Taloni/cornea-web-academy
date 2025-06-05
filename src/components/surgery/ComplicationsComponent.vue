@@ -20,14 +20,14 @@
         </h4>
         <div class="text-gray-700 space-y-3">
           <div v-for="(complication, index) in intraoperativeBox.complications" :key="index">
-            <p class="font-bold text-base">{{ complication.name }}</p>
+            <p class="font-bold text-base" v-html="processBoldText(complication.name)"></p>
             <ul class="text-base pl-4 mt-1">
               <li v-for="(detail, detailIndex) in complication.details" :key="detailIndex">
-                • {{ detail.label }}:
+                • <span v-html="processBoldText(detail.label)"></span>:
                 <span v-if="detail.highlight" class="font-bold text-green-600">{{
                   detail.value
                 }}</span>
-                <span v-else>{{ detail.value }}</span>
+                <span v-else v-html="processBoldText(detail.value)"></span>
               </li>
             </ul>
           </div>
@@ -52,9 +52,11 @@
         </h4>
         <div class="text-gray-700 space-y-4">
           <div v-for="(section, index) in postoperativeBox.sections" :key="index">
-            <p class="font-bold text-base" v-html="section.title"></p>
+            <p class="font-bold text-base" v-html="processBoldText(section.title)"></p>
             <ul class="text-base pl-4 mt-1 space-y-1">
-              <li v-for="(item, itemIndex) in section.items" :key="itemIndex">• {{ item }}</li>
+              <li v-for="(item, itemIndex) in section.items" :key="itemIndex">
+                • <span v-html="processBoldText(item)"></span>
+              </li>
             </ul>
           </div>
         </div>
@@ -75,45 +77,16 @@ export const complicationsMetadata = {
 </script>
 
 <script setup>
+import { processBoldText } from '@/utils/textFormatting'
+
 defineProps({
   intraoperativeBox: {
     type: Object,
     required: true,
-    /* Expected structure:
-    {
-      title: 'Intraoperative Complications',
-      colorTheme: 'orange', // 'orange', 'red', 'yellow', 'green', 'blue', 'purple'
-      complications: [
-        {
-          name: 'Descemet perforation',
-          details: [
-            { label: 'Conventional', value: '5-32%' },
-            { label: 'Busin Modified', value: '3.7%', highlight: true },
-            { label: 'Management', value: 'Air tamponade, conversion to PK if large' }
-          ]
-        }
-      ]
-    }
-    */
   },
   postoperativeBox: {
     type: Object,
     required: true,
-    /* Expected structure:
-    {
-      title: 'Postoperative Complications',
-      colorTheme: 'red',
-      sections: [
-        {
-          title: 'Early (<1 month)', // can include HTML like &lt;
-          items: [
-            'Double anterior chamber: 2.5% (Busin) vs 8-15% (conventional)',
-            'Interface haze: 10-20%'
-          ]
-        }
-      ]
-    }
-    */
   },
 })
 

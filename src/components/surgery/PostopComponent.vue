@@ -16,7 +16,7 @@
           {{ corticosteroids.title }}
         </h4>
         <div class="text-gray-700 space-y-2">
-          <p class="font-bold text-sm">{{ corticosteroids.medication }}</p>
+          <p class="font-bold text-sm" v-html="processBoldText(corticosteroids.medication)"></p>
           <ul class="text-sm space-y-1">
             <li
               v-for="(dose, index) in corticosteroids.dosing"
@@ -24,7 +24,7 @@
               class="flex items-start"
             >
               <span class="text-teal-600 mr-2">•</span>
-              <span>{{ dose }}</span>
+              <span v-html="processBoldText(dose)"></span>
             </li>
           </ul>
         </div>
@@ -52,12 +52,12 @@
               class="flex items-start"
             >
               <span class="text-green-600 mr-2">•</span>
-              <span>{{ option }}</span>
+              <span v-html="processBoldText(option)"></span>
             </li>
           </ul>
           <p class="text-sm mt-2">
             <span class="font-bold">{{ antimicrobial.dosingLabel }}:</span>
-            {{ antimicrobial.dosing }}
+            <span v-html="processBoldText(antimicrobial.dosing)"></span>
           </p>
         </div>
       </div>
@@ -83,7 +83,7 @@
               class="flex items-start"
             >
               <span class="text-blue-600 mr-2">•</span>
-              <span>{{ schedule }}</span>
+              <span v-html="processBoldText(schedule)"></span>
             </li>
           </ul>
         </div>
@@ -111,7 +111,7 @@
               :class="{ 'ml-4': timing.isSubItem }"
             >
               <span class="text-purple-600 mr-2">{{ timing.isSubItem ? '◦' : '•' }}</span>
-              <span>{{ timing.text }}</span>
+              <span v-html="processBoldText(timing.text)"></span>
             </li>
           </ul>
         </div>
@@ -132,6 +132,8 @@ export const postopMetadata = {
 </script>
 
 <script setup>
+import { processBoldText } from '@/utils/textFormatting'
+
 defineProps({
   corticosteroids: {
     type: Object,

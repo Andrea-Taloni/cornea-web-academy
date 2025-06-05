@@ -7,9 +7,9 @@
         :key="index"
         class="px-6 py-3 text-sm text-gray-700 hover:bg-gray-50 transition-colors"
       >
-        {{ reference.authors }}
-        {{ reference.title }}
-        <em class="text-gray-600">{{ reference.journal }}</em>
+        <span v-html="processBoldText(reference.authors)"></span>
+        <span v-html="processBoldText(reference.title)"></span>
+        <em class="text-gray-600" v-html="processBoldText(reference.journal)"></em>
         {{ reference.year }};{{ reference.volume }}:{{ reference.pages }}.
       </li>
     </ol>
@@ -29,6 +29,8 @@ export const referencesMetadata = {
 </script>
 
 <script setup>
+import { processBoldText } from '@/utils/textFormatting'
+
 defineProps({
   references: {
     type: Array,

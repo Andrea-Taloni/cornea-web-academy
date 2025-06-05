@@ -5,7 +5,7 @@
     <div class="flex items-center space-x-6 text-sm">
       <span class="font-semibold text-green-900">Key Requirements:</span>
       <span v-for="(req, index) in keyRequirements" :key="index" class="text-green-800">
-        • {{ req }}
+        • <span v-html="processBoldText(req)"></span>
       </span>
     </div>
   </div>
@@ -21,12 +21,12 @@
       <div class="p-5 space-y-4">
         <div v-for="(indication, index) in indications" :key="index" class="pl-4 py-2">
           <h4 class="font-bold text-base text-gray-800">
-            {{ indication.title }}
+            <span v-html="processBoldText(indication.title)"></span>
             <span v-if="indication.subtitle" class="text-sm font-normal text-gray-600">
               {{ indication.subtitle }}
             </span>
           </h4>
-          <p class="text-sm text-gray-600 mt-1">{{ indication.description }}</p>
+          <p class="text-sm text-gray-600 mt-1" v-html="processBoldText(indication.description)"></p>
         </div>
       </div>
     </div>
@@ -105,6 +105,8 @@ export const indicationsMetadata = {
 </script>
 
 <script setup>
+import { processBoldText } from '@/utils/textFormatting'
+
 defineProps({
   keyRequirements: {
     type: Array,
@@ -126,11 +128,11 @@ defineProps({
 // Helper function to format contraindications with possible subtitles
 const formatContraindication = (item) => {
   if (typeof item === 'string') {
-    return item
+    return processBoldText(item)
   }
   if (item.text && item.subtitle) {
-    return `${item.text}<br /><span class="text-xs text-gray-500">${item.subtitle}</span>`
+    return `${processBoldText(item.text)}<br /><span class="text-xs text-gray-500">${processBoldText(item.subtitle)}</span>`
   }
-  return item.text || item
+  return processBoldText(item.text || item)
 }
 </script>

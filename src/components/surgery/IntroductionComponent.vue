@@ -13,8 +13,8 @@
       v-for="(paragraph, index) in paragraphs"
       :key="index"
       class="text-gray-600 leading-relaxed mb-4 text-base text-justify"
+      v-html="processBoldText(paragraph)"
     >
-      {{ paragraph }}
     </p>
 
     <!-- Clear float after text content -->
@@ -34,16 +34,16 @@ export const overviewMetadata = {
 </script>
 
 <script setup>
+import { processBoldText } from '@/utils/textFormatting'
+
 defineProps({
   image: {
     type: Object,
     default: null,
-    // Expected format: { src: 'path/to/image', alt: 'Alt text' }
   },
   paragraphs: {
     type: Array,
     required: true,
-    // Array of paragraph strings
   },
 })
 </script>
