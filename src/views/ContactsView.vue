@@ -4,7 +4,7 @@
 
     <!-- Hero Section usando il componente riutilizzabile -->
     <PageHero
-      title="Contact Us"
+      title="Contacts"
       subtitle="Get in touch with the CWA team for inquiries, support, or collaboration"
     />
 
