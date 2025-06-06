@@ -121,63 +121,7 @@
               </div>
             </div>
 
-            <div
-              class="bg-white rounded-lg p-6 border-2 border-blue-500 shadow-lg hover:shadow-xl transition-shadow"
-            >
-              <h3 class="font-semibold mb-3 flex items-center text-blue-900">
-                <svg
-                  class="w-5 h-5 mr-2 text-blue-600"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"
-                  ></path>
-                </svg>
-                Customize Your Live Surgery Session
-              </h3>
-              <p class="text-sm text-gray-700 mb-4">
-                Book and customize surgeries according to your needs. Choose from available dates,
-                times, and procedure types.
-              </p>
 
-              <div class="bg-blue-50 rounded-lg p-4 border border-blue-200">
-                <h4 class="font-medium mb-2 flex items-center text-blue-900">
-                  Request a Custom Session
-                </h4>
-                <p class="text-sm text-gray-700 mb-3">
-                  Choose a technique you would like to see in a surgery session and propose a date.
-                  For each request, a fee of
-                  <span class="font-bold text-blue-900">€ 200,00</span> applies. This includes the
-                  fee due in order to attend the session (in interactive mode).
-                </p>
-                <p class="text-sm text-gray-700">
-                  To submit your request, go to the
-                  <router-link
-                    to="/contacts"
-                    class="text-blue-600 font-semibold underline hover:text-blue-800"
-                  >
-                    CONTACTS
-                  </router-link>
-                  page and send a message.
-                </p>
-              </div>
-            </div>
-
-            <div class="text-center pt-4">
-              <p class="text-lg font-semibold text-gray-800 mb-4">
-                Join us for this exciting educational experience!
-              </p>
-              <button
-                class="bg-gradient-to-r from-blue-500 to-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:from-blue-600 hover:to-blue-700 transition-all duration-200 transform hover:scale-105 shadow-md"
-              >
-                Register
-              </button>
-            </div>
           </div>
         </div>
       </div>
