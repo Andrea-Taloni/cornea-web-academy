@@ -57,10 +57,9 @@
             v-model="sortBy"
             class="px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 w-full md:w-auto"
           >
-            <option value="newest">Newest First</option>
-            <option value="oldest">Oldest First</option>
-            <option value="views">Most Viewed</option>
             <option value="title">Title (A-Z)</option>
+            <option value="surgeon">Surgeon</option>
+            <option value="category">Category</option>
           </select>
         </div>
       </div>
@@ -92,6 +91,7 @@
 
             <!-- Video Information -->
             <div v-if="currentVideo" class="p-6">
+              <!-- Title and description should be fetched from YouTube Data API -->
               <h2 class="text-2xl font-bold text-gray-800 mb-2">{{ currentVideo.title }}</h2>
               <p class="text-gray-600 mb-4">{{ currentVideo.description }}</p>
               <div class="flex flex-wrap items-center gap-4 text-sm text-gray-500">
@@ -110,38 +110,6 @@
                     />
                   </svg>
                   {{ currentVideo.surgeon }}
-                </span>
-                <span class="flex items-center">
-                  <svg
-                    class="w-4 h-4 mr-1"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-                    />
-                  </svg>
-                  {{ currentVideo.date }}
-                </span>
-                <span class="flex items-center">
-                  <svg
-                    class="w-4 h-4 mr-1"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-                    />
-                  </svg>
-                  {{ currentVideo.duration }}
                 </span>
               </div>
             </div>
@@ -172,12 +140,6 @@
                     class="w-full h-auto"
                     @error="handleImageError($event, video.youtubeId)"
                   />
-                  <!-- Duration Badge -->
-                  <div
-                    class="absolute bottom-1 right-1 bg-black bg-opacity-80 text-white text-xs px-1.5 py-0.5 rounded"
-                  >
-                    {{ video.duration }}
-                  </div>
                 </div>
 
                 <!-- Video Info -->
@@ -185,16 +147,13 @@
                   <h4 class="font-semibold text-sm text-gray-800 mb-1 line-clamp-2">
                     {{ video.title }}
                   </h4>
-                  <p class="text-xs text-gray-600">{{ video.surgeon }}</p>
-                  <div class="flex items-center justify-between mt-2">
-                    <span class="text-xs text-gray-500">{{ video.date }}</span>
-                    <span
-                      class="inline-block px-2 py-0.5 text-xs font-medium rounded-full"
-                      :class="getCategoryClass(video.category)"
-                    >
-                      {{ getCategoryLabel(video.category) }}
-                    </span>
-                  </div>
+                  <p class="text-xs text-gray-600 mb-2">{{ video.surgeon }}</p>
+                  <span
+                    class="inline-block px-2 py-0.5 text-xs font-medium rounded-full"
+                    :class="getCategoryClass(video.category)"
+                  >
+                    {{ getCategoryLabel(video.category) }}
+                  </span>
                 </div>
               </div>
 
@@ -237,82 +196,66 @@ import PageHero from '@/components/HeroComponent.vue'
 // State
 const searchQuery = ref('')
 const selectedCategory = ref('')
-const sortBy = ref('newest')
+const sortBy = ref('title')
 const currentVideo = ref(null)
 
-// Sample video data - Replace with actual data from your backend
+// Sample video data
+// In production, title and description should be fetched from YouTube Data API v3
+// using the video ID to get the actual video metadata
 const videos = ref([
   {
     id: 1,
     youtubeId: 'dQw4w9WgXcQ', // Replace with actual YouTube video IDs
-    title: 'DMEK Surgery - Complex Case Management',
+    title: 'DMEK Surgery - Complex Case Management', // Should be fetched from YouTube
     description:
-      'Detailed demonstration of DMEK surgery on a patient with Fuchs endothelial dystrophy, showcasing advanced techniques for graft preparation and insertion.',
+      'Detailed demonstration of DMEK surgery on a patient with Fuchs endothelial dystrophy, showcasing advanced techniques for graft preparation and insertion.', // Should be fetched from YouTube
     surgeon: 'Prof. Massimo Busin',
-    date: 'Dec 15, 2024',
-    duration: '45:32',
     category: 'dmek',
-    views: 1250,
   },
   {
     id: 2,
     youtubeId: 'dQw4w9WgXcQ', // Replace with actual YouTube video IDs
-    title: 'Large Diameter DALK with Big Bubble Technique',
+    title: 'Large Diameter DALK with Big Bubble Technique', // Should be fetched from YouTube
     description:
-      'Step-by-step demonstration of the modified big bubble technique for deep anterior lamellar keratoplasty in advanced keratoconus.',
+      'Step-by-step demonstration of the modified big bubble technique for deep anterior lamellar keratoplasty in advanced keratoconus.', // Should be fetched from YouTube
     surgeon: 'Prof. Massimo Busin',
-    date: 'Dec 10, 2024',
-    duration: '38:45',
     category: 'dalk',
-    views: 980,
   },
   {
     id: 3,
     youtubeId: 'dQw4w9WgXcQ', // Replace with actual YouTube video IDs
-    title: 'UT-DSAEK: Microkeratome Preparation Technique',
+    title: 'UT-DSAEK: Microkeratome Preparation Technique', // Should be fetched from YouTube
     description:
-      'Comprehensive guide to preparing ultra-thin grafts for DSAEK using the microkeratome technique, with tips for optimal thickness achievement.',
+      'Comprehensive guide to preparing ultra-thin grafts for DSAEK using the microkeratome technique, with tips for optimal thickness achievement.', // Should be fetched from YouTube
     surgeon: 'Dr. Angeli Christy Yu',
-    date: 'Dec 5, 2024',
-    duration: '42:18',
     category: 'ut-dsaek',
-    views: 756,
   },
   {
     id: 4,
     youtubeId: 'dQw4w9WgXcQ', // Replace with actual YouTube video IDs
-    title: 'Mushroom PK: Two-Piece Technique',
+    title: 'Mushroom PK: Two-Piece Technique', // Should be fetched from YouTube
     description:
-      'Innovative two-piece mushroom keratoplasty technique for full-thickness corneal replacement with enhanced wound stability.',
+      'Innovative two-piece mushroom keratoplasty technique for full-thickness corneal replacement with enhanced wound stability.', // Should be fetched from YouTube
     surgeon: 'Prof. Massimo Busin',
-    date: 'Nov 28, 2024',
-    duration: '51:20',
     category: 'mushroom-pk',
-    views: 620,
   },
   {
     id: 5,
     youtubeId: 'dQw4w9WgXcQ', // Replace with actual YouTube video IDs
-    title: 'Managing Complications in Corneal Surgery',
+    title: 'Managing Complications in Corneal Surgery', // Should be fetched from YouTube
     description:
-      'Educational session covering common complications in various corneal transplant procedures and their management strategies.',
+      'Educational session covering common complications in various corneal transplant procedures and their management strategies.', // Should be fetched from YouTube
     surgeon: 'Dr. Vincenzo Scorcia',
-    date: 'Nov 20, 2024',
-    duration: '35:45',
     category: 'educational',
-    views: 1450,
   },
   {
     id: 6,
     youtubeId: 'dQw4w9WgXcQ', // Replace with actual YouTube video IDs
-    title: 'DSAEK in Complex Eyes',
+    title: 'DSAEK in Complex Eyes', // Should be fetched from YouTube
     description:
-      'Challenging DSAEK surgery in eyes with previous vitrectomy and anterior chamber IOL, demonstrating modified surgical approaches.',
+      'Challenging DSAEK surgery in eyes with previous vitrectomy and anterior chamber IOL, demonstrating modified surgical approaches.', // Should be fetched from YouTube
     surgeon: 'Dr. Cristina Bovone',
-    date: 'Nov 15, 2024',
-    duration: '48:30',
     category: 'dsaek',
-    views: 890,
   },
 ])
 
@@ -338,17 +281,14 @@ const filteredVideos = computed(() => {
 
   // Sort videos
   switch (sortBy.value) {
-    case 'newest':
-      filtered.sort((a, b) => new Date(b.date) - new Date(a.date))
-      break
-    case 'oldest':
-      filtered.sort((a, b) => new Date(a.date) - new Date(b.date))
-      break
-    case 'views':
-      filtered.sort((a, b) => b.views - a.views)
-      break
     case 'title':
       filtered.sort((a, b) => a.title.localeCompare(b.title))
+      break
+    case 'surgeon':
+      filtered.sort((a, b) => a.surgeon.localeCompare(b.surgeon))
+      break
+    case 'category':
+      filtered.sort((a, b) => a.category.localeCompare(b.category))
       break
   }
 
