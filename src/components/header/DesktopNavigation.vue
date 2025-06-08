@@ -8,6 +8,7 @@
 
     <router-link to="/publications" class="nav-link">Publications</router-link>
     <router-link to="/live-surgery" class="nav-link">Live Surgery</router-link>
+    <router-link to="/recordings" class="nav-link">Recordings</router-link>
     <router-link to="/about" class="nav-link">About Us</router-link>
     <router-link to="/contacts" class="nav-link">Contacts</router-link>
   </nav>
