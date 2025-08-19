@@ -1,6 +1,7 @@
 {
   "nav": {
     "home": "Startseite",
+    "surgery": "Chirurgie",
     "liveSurgery": "Live-Chirurgie",
     "recordings": "Aufzeichnungen",
     "publications": "Publikationen",
@@ -11,10 +12,44 @@
     "logout": "Abmelden",
     "profile": "Profil"
   },
+  "surgery": {
+    "types": {
+      "dalk": "DALK",
+      "mushroomPk": "Mushroom PK",
+      "dmek": "DMEK",
+      "dsaek": "DSAEK",
+      "utDsaek": "UT-DSAEK",
+      "salk": "SALK"
+    },
+    "sections": {
+      "introduction": "Einführung",
+      "indications": "Indikationen",
+      "surgery": "Chirurgie",
+      "results": "Ergebnisse",
+      "complications": "Komplikationen",
+      "postop": "Postoperativ",
+      "references": "Referenzen"
+    }
+  },
   "home": {
     "title": "Willkommen bei der Cornea Web Academy",
     "subtitle": "Exzellenz in der Hornhautchirurgie-Ausbildung",
-    "description": "Begleiten Sie uns bei der Weiterentwicklung der Hornhautchirurgie durch innovative Ausbildung und Live-Operationsdemonstrationen"
+    "description": "Begleiten Sie uns bei der Weiterentwicklung der Hornhautchirurgie durch innovative Ausbildung und Live-Operationsdemonstrationen",
+    "welcome": {
+      "title": "Willkommen bei der Cornea Web Academy",
+      "description": "Bildungsplattform für Hornhautchirurgie, gegründet 2018 von Prof. Massimo Busin, ansässig an der Abteilung für Augenheilkunde, Ospedali Privati Forlì, Villa Igea, in Forlì, Italien.",
+      "exploreLiveSurgery": "Live-Chirurgie Erkunden",
+      "learnMore": "Mehr Erfahren"
+    },
+    "about": {
+      "intro": "Die Cornea Web Academy (CWA) ist eine Bildungsplattform für Hornhautchirurgie mit Sitz an der",
+      "department": "Abteilung für Augenheilkunde, Ospedali Privati Forlì, Villa Igea",
+      "location": "in Forlì, Italien.",
+      "founder": "Prof. Massimo Busin",
+      "procedures": "Unsere Abteilung führt jährlich etwa",
+      "proceduresCount": "300 Keratoplastik-Verfahren durch",
+      "surgeryTypes": "einschließlich DALK, DMEK, DSAEK, UT-DSAEK, SALK und Mushroom-Keratoplastik. Diese Operationen werden live über unsere Streaming-Plattform übertragen."
+    }
   },
   "auth": {
     "welcomeBack": "Willkommen zurück",
@@ -39,7 +74,23 @@
     "confirmNewPassword": "Neues Passwort bestätigen",
     "deleteAccount": "Konto löschen",
     "profileUpdated": "Profil erfolgreich aktualisiert",
-    "passwordChanged": "Passwort erfolgreich geändert"
+    "passwordChanged": "Passwort erfolgreich geändert",
+    "username": "Benutzername",
+    "email": "E-Mail",
+    "updating": "Aktualisierung...",
+    "changingPassword": "Änderung...",
+    "memberSince": "Mitglied seit",
+    "deleteAccountWarning": "Sind Sie sicher, dass Sie Ihr Konto löschen möchten? Diese Aktion kann nicht rückgängig gemacht werden.",
+    "confirmDelete": "Ja, mein Konto löschen",
+    "cancel": "Abbrechen",
+    "profileImageUpdated": "Profilbild erfolgreich aktualisiert",
+    "failedToUpdateImage": "Fehler beim Aktualisieren des Profilbildes",
+    "failedToUpdateProfile": "Fehler beim Aktualisieren des Profils",
+    "failedToChangePassword": "Fehler beim Ändern des Passworts",
+    "failedToDeleteAccount": "Fehler beim Löschen des Kontos",
+    "imageSizeError": "Die Bildgröße muss weniger als 5 MB betragen",
+    "passwordsDoNotMatch": "Die neuen Passwörter stimmen nicht überein",
+    "enterPassword": "Bitte geben Sie Ihr Passwort ein"
   },
   "recordings": {
     "title": "Videobibliothek",
@@ -81,6 +132,7 @@
     "filter": "Filtern",
     "refresh": "Aktualisieren",
     "yes": "Ja",
-    "no": "Nein"
+    "no": "Nein",
+    "by": "von"
   }
 }

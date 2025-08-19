@@ -1,6 +1,7 @@
 {
   "nav": {
     "home": "Inicio",
+    "surgery": "Cirugía",
     "liveSurgery": "Cirugía en Vivo",
     "recordings": "Grabaciones",
     "publications": "Publicaciones",
@@ -11,10 +12,44 @@
     "logout": "Cerrar sesión",
     "profile": "Perfil"
   },
+  "surgery": {
+    "types": {
+      "dalk": "DALK",
+      "mushroomPk": "Mushroom PK",
+      "dmek": "DMEK",
+      "dsaek": "DSAEK",
+      "utDsaek": "UT-DSAEK",
+      "salk": "SALK"
+    },
+    "sections": {
+      "introduction": "Introducción",
+      "indications": "Indicaciones",
+      "surgery": "Cirugía",
+      "results": "Resultados",
+      "complications": "Complicaciones",
+      "postop": "Postoperatorio",
+      "references": "Referencias"
+    }
+  },
   "home": {
     "title": "Bienvenidos a Cornea Web Academy",
     "subtitle": "Excelencia en Educación de Cirugía Corneal",
-    "description": "Únete a nosotros para avanzar en la cirugía corneal a través de educación innovadora y demostraciones quirúrgicas en vivo"
+    "description": "Únete a nosotros para avanzar en la cirugía corneal a través de educación innovadora y demostraciones quirúrgicas en vivo",
+    "welcome": {
+      "title": "Bienvenidos a Cornea Web Academy",
+      "description": "Plataforma educativa para cirugía corneal fundada en 2018 por el Prof. Massimo Busin, ubicada en el Departamento de Oftalmología, Ospedali Privati Forlì, Villa Igea, en Forlì, Italia.",
+      "exploreLiveSurgery": "Explorar Cirugía en Vivo",
+      "learnMore": "Saber Más"
+    },
+    "about": {
+      "intro": "La Cornea Web Academy (CWA) es una plataforma educativa para cirugía corneal ubicada en el",
+      "department": "Departamento de Oftalmología, Ospedali Privati Forlì, Villa Igea",
+      "location": "en Forlì, Italia.",
+      "founder": "Prof. Massimo Busin",
+      "procedures": "Nuestro departamento realiza aproximadamente",
+      "proceduresCount": "300 procedimientos de queratoplastia anualmente",
+      "surgeryTypes": "incluyendo DALK, DMEK, DSAEK, UT-DSAEK, SALK y queratoplastia mushroom. Estas cirugías se transmiten en vivo a través de nuestra plataforma de streaming."
+    }
   },
   "auth": {
     "welcomeBack": "Bienvenido de nuevo",
@@ -39,7 +74,23 @@
     "confirmNewPassword": "Confirmar Nueva Contraseña",
     "deleteAccount": "Eliminar Cuenta",
     "profileUpdated": "Perfil actualizado con éxito",
-    "passwordChanged": "Contraseña cambiada con éxito"
+    "passwordChanged": "Contraseña cambiada con éxito",
+    "username": "Nombre de usuario",
+    "email": "Correo electrónico",
+    "updating": "Actualizando...",
+    "changingPassword": "Cambiando...",
+    "memberSince": "Miembro desde",
+    "deleteAccountWarning": "¿Está seguro de que desea eliminar su cuenta? Esta acción no se puede deshacer.",
+    "confirmDelete": "Sí, eliminar mi cuenta",
+    "cancel": "Cancelar",
+    "profileImageUpdated": "Imagen de perfil actualizada con éxito",
+    "failedToUpdateImage": "Error al actualizar la imagen de perfil",
+    "failedToUpdateProfile": "Error al actualizar el perfil",
+    "failedToChangePassword": "Error al cambiar la contraseña",
+    "failedToDeleteAccount": "Error al eliminar la cuenta",
+    "imageSizeError": "El tamaño de la imagen debe ser menor a 5MB",
+    "passwordsDoNotMatch": "Las nuevas contraseñas no coinciden",
+    "enterPassword": "Por favor ingrese su contraseña"
   },
   "recordings": {
     "title": "Biblioteca de Videos",
@@ -81,6 +132,7 @@
     "filter": "Filtrar",
     "refresh": "Actualizar",
     "yes": "Sí",
-    "no": "No"
+    "no": "No",
+    "by": "por"
   }
 }

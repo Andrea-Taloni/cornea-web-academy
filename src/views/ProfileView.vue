@@ -4,7 +4,7 @@
     
     <div class="flex-1 container mx-auto px-4 py-8">
       <div class="max-w-4xl mx-auto">
-        <h1 class="text-3xl font-bold text-gray-900 mb-8">My Profile</h1>
+        <h1 class="text-3xl font-bold text-gray-900 mb-8">{{ $t('profile.myProfile') }}</h1>
         
         <div class="bg-white shadow-lg rounded-lg overflow-hidden">
           <!-- Profile Header -->
@@ -63,11 +63,11 @@
             
             <!-- Update Profile Form -->
             <div class="mb-8">
-              <h3 class="text-lg font-semibold text-gray-900 mb-4">Update Profile</h3>
+              <h3 class="text-lg font-semibold text-gray-900 mb-4">{{ $t('profile.updateProfile') }}</h3>
               <form @submit.prevent="updateProfile" class="space-y-4">
                 <div>
                   <label for="username" class="block text-sm font-medium text-gray-700 mb-1">
-                    Username
+                    {{ $t('profile.username') }}
                   </label>
                   <input
                     id="username"
@@ -78,7 +78,7 @@
                 </div>
                 <div>
                   <label for="email" class="block text-sm font-medium text-gray-700 mb-1">
-                    Email
+                    {{ $t('profile.email') }}
                   </label>
                   <input
                     id="email"
@@ -92,18 +92,18 @@
                   :disabled="isUpdating"
                   class="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
                 >
-                  {{ isUpdating ? 'Updating...' : 'Update Profile' }}
+                  {{ isUpdating ? $t('profile.updating') : $t('profile.updateProfile') }}
                 </button>
               </form>
             </div>
             
             <!-- Change Password -->
             <div class="mb-8 pb-8 border-b border-gray-200">
-              <h3 class="text-lg font-semibold text-gray-900 mb-4">Change Password</h3>
+              <h3 class="text-lg font-semibold text-gray-900 mb-4">{{ $t('profile.changePassword') }}</h3>
               <form @submit.prevent="changePassword" class="space-y-4">
                 <div>
                   <label for="currentPassword" class="block text-sm font-medium text-gray-700 mb-1">
-                    Current Password
+                    {{ $t('profile.currentPassword') }}
                   </label>
                   <input
                     id="currentPassword"
@@ -115,7 +115,7 @@
                 </div>
                 <div>
                   <label for="newPassword" class="block text-sm font-medium text-gray-700 mb-1">
-                    New Password
+                    {{ $t('profile.newPassword') }}
                   </label>
                   <input
                     id="newPassword"
@@ -128,7 +128,7 @@
                 </div>
                 <div>
                   <label for="confirmPassword" class="block text-sm font-medium text-gray-700 mb-1">
-                    Confirm New Password
+                    {{ $t('profile.confirmNewPassword') }}
                   </label>
                   <input
                     id="confirmPassword"
@@ -144,7 +144,7 @@
                   :disabled="isChangingPassword"
                   class="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
                 >
-                  {{ isChangingPassword ? 'Changing...' : 'Change Password' }}
+                  {{ isChangingPassword ? $t('profile.changingPassword') : $t('profile.changePassword') }}
                 </button>
               </form>
             </div>
@@ -204,6 +204,7 @@
 <script setup>
 import { ref, computed, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
+import { useI18n } from 'vue-i18n'
 import { useAuthStore } from '@/stores/auth'
 import apiService from '@/services/api'
 import HeaderComponent from '@/components/HeaderComponent.vue'
@@ -211,6 +212,7 @@ import FooterComponent from '@/components/FooterComponent.vue'
 
 const router = useRouter()
 const authStore = useAuthStore()
+const { t, locale } = useI18n()
 
 // State
 const profileImage = ref('')
@@ -237,7 +239,7 @@ const passwordForm = ref({
 // Computed
 const memberSince = computed(() => {
   if (authStore.user?.createdAt) {
-    return new Date(authStore.user.createdAt).toLocaleDateString('en-US', {
+    return new Date(authStore.user.createdAt).toLocaleDateString(locale.value, {
       month: 'long',
       year: 'numeric'
     })
@@ -257,7 +259,7 @@ const handleImageUpload = async (event) => {
   
   // Check file size (max 5MB)
   if (file.size > 5 * 1024 * 1024) {
-    errorMessage.value = 'Image size must be less than 5MB'
+    errorMessage.value = t('profile.imageSizeError')
     return
   }
   
@@ -281,7 +283,7 @@ const handleImageUpload = async (event) => {
         })
         
         if (response.ok) {
-          successMessage.value = 'Profile image updated successfully'
+          successMessage.value = t('profile.profileImageUpdated')
           // Update local user data
           const data = await response.json()
           authStore.user.profileImage = data.profileImage
@@ -289,13 +291,13 @@ const handleImageUpload = async (event) => {
           throw new Error('Failed to upload image')
         }
       } catch (error) {
-        errorMessage.value = 'Failed to upload image. Please try again.'
+        errorMessage.value = t('profile.failedToUpdateImage')
         console.error('Upload error:', error)
       }
     }
     reader.readAsDataURL(file)
   } catch (error) {
-    errorMessage.value = 'Failed to process image'
+    errorMessage.value = t('profile.failedToUpdateImage')
     console.error('Image processing error:', error)
   }
 }
@@ -315,9 +317,9 @@ const updateProfile = async () => {
     authStore.user.email = profileForm.value.email
     localStorage.setItem('user', JSON.stringify(authStore.user))
     
-    successMessage.value = 'Profile updated successfully'
+    successMessage.value = t('profile.profileUpdated')
   } catch (error) {
-    errorMessage.value = error.message || 'Failed to update profile'
+    errorMessage.value = error.message || t('profile.failedToUpdateProfile')
   } finally {
     isUpdating.value = false
   }
@@ -328,7 +330,7 @@ const changePassword = async () => {
   
   // Validate passwords match
   if (passwordForm.value.newPassword !== passwordForm.value.confirmPassword) {
-    errorMessage.value = 'New passwords do not match'
+    errorMessage.value = t('profile.passwordsDoNotMatch')
     return
   }
   
@@ -353,7 +355,7 @@ const changePassword = async () => {
       throw new Error(data.message || 'Failed to change password')
     }
     
-    successMessage.value = 'Password changed successfully'
+    successMessage.value = t('profile.passwordChanged')
     
     // Clear form
     passwordForm.value = {
@@ -362,7 +364,7 @@ const changePassword = async () => {
       confirmPassword: ''
     }
   } catch (error) {
-    errorMessage.value = error.message || 'Failed to change password'
+    errorMessage.value = error.message || t('profile.failedToChangePassword')
   } finally {
     isChangingPassword.value = false
   }
@@ -370,7 +372,7 @@ const changePassword = async () => {
 
 const deleteAccount = async () => {
   if (!deletePassword.value) {
-    errorMessage.value = 'Please enter your password'
+    errorMessage.value = t('profile.enterPassword')
     return
   }
   
@@ -398,7 +400,7 @@ const deleteAccount = async () => {
     await authStore.logout()
     router.push('/')
   } catch (error) {
-    errorMessage.value = error.message || 'Failed to delete account'
+    errorMessage.value = error.message || t('profile.failedToDeleteAccount')
   } finally {
     isDeletingAccount.value = false
     showDeleteModal.value = false

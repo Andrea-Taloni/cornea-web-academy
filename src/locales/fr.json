@@ -1,6 +1,7 @@
 {
   "nav": {
     "home": "Accueil",
+    "surgery": "Chirurgie",
     "liveSurgery": "Chirurgie en Direct",
     "recordings": "Enregistrements",
     "publications": "Publications",
@@ -11,10 +12,44 @@
     "logout": "Déconnexion",
     "profile": "Profil"
   },
+  "surgery": {
+    "types": {
+      "dalk": "DALK",
+      "mushroomPk": "Mushroom PK",
+      "dmek": "DMEK",
+      "dsaek": "DSAEK",
+      "utDsaek": "UT-DSAEK",
+      "salk": "SALK"
+    },
+    "sections": {
+      "introduction": "Introduction",
+      "indications": "Indications",
+      "surgery": "Chirurgie",
+      "results": "Résultats",
+      "complications": "Complications",
+      "postop": "Post-opératoire",
+      "references": "Références"
+    }
+  },
   "home": {
     "title": "Bienvenue à Cornea Web Academy",
     "subtitle": "Excellence en Éducation de Chirurgie Cornéenne",
-    "description": "Rejoignez-nous pour faire progresser la chirurgie cornéenne grâce à une formation innovante et des démonstrations chirurgicales en direct"
+    "description": "Rejoignez-nous pour faire progresser la chirurgie cornéenne grâce à une formation innovante et des démonstrations chirurgicales en direct",
+    "welcome": {
+      "title": "Bienvenue à Cornea Web Academy",
+      "description": "Plateforme éducative pour la chirurgie cornéenne fondée en 2018 par le Prof. Massimo Busin, basée au Département d'Ophtalmologie, Ospedali Privati Forlì, Villa Igea, à Forlì, Italie.",
+      "exploreLiveSurgery": "Explorer la Chirurgie en Direct",
+      "learnMore": "En Savoir Plus"
+    },
+    "about": {
+      "intro": "La Cornea Web Academy (CWA) est une plateforme éducative pour la chirurgie cornéenne basée au",
+      "department": "Département d'Ophtalmologie, Ospedali Privati Forlì, Villa Igea",
+      "location": "à Forlì, Italie.",
+      "founder": "Prof. Massimo Busin",
+      "procedures": "Notre département effectue environ",
+      "proceduresCount": "300 procédures de kératoplastie par an",
+      "surgeryTypes": "y compris DALK, DMEK, DSAEK, UT-DSAEK, SALK et kératoplastie mushroom. Ces chirurgies sont diffusées en direct via notre plateforme de streaming."
+    }
   },
   "auth": {
     "welcomeBack": "Bon retour",
@@ -39,7 +74,23 @@
     "confirmNewPassword": "Confirmer le Nouveau Mot de Passe",
     "deleteAccount": "Supprimer le Compte",
     "profileUpdated": "Profil mis à jour avec succès",
-    "passwordChanged": "Mot de passe changé avec succès"
+    "passwordChanged": "Mot de passe changé avec succès",
+    "username": "Nom d'utilisateur",
+    "email": "Email",
+    "updating": "Mise à jour...",
+    "changingPassword": "Changement...",
+    "memberSince": "Membre depuis",
+    "deleteAccountWarning": "Êtes-vous sûr de vouloir supprimer votre compte ? Cette action ne peut pas être annulée.",
+    "confirmDelete": "Oui, supprimer mon compte",
+    "cancel": "Annuler",
+    "profileImageUpdated": "Image de profil mise à jour avec succès",
+    "failedToUpdateImage": "Échec de la mise à jour de l'image de profil",
+    "failedToUpdateProfile": "Échec de la mise à jour du profil",
+    "failedToChangePassword": "Échec du changement de mot de passe",
+    "failedToDeleteAccount": "Échec de la suppression du compte",
+    "imageSizeError": "La taille de l'image doit être inférieure à 5 Mo",
+    "passwordsDoNotMatch": "Les nouveaux mots de passe ne correspondent pas",
+    "enterPassword": "Veuillez entrer votre mot de passe"
   },
   "recordings": {
     "title": "Bibliothèque Vidéo",
@@ -81,6 +132,7 @@
     "filter": "Filtrer",
     "refresh": "Actualiser",
     "yes": "Oui",
-    "no": "Non"
+    "no": "Non",
+    "by": "par"
   }
 }

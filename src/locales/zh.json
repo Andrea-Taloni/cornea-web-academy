@@ -1,6 +1,7 @@
 {
   "nav": {
     "home": "首页",
+    "surgery": "手术",
     "liveSurgery": "实时手术",
     "recordings": "录像",
     "publications": "出版物",
@@ -11,10 +12,44 @@
     "logout": "退出",
     "profile": "个人资料"
   },
+  "surgery": {
+    "types": {
+      "dalk": "DALK",
+      "mushroomPk": "Mushroom PK",
+      "dmek": "DMEK",
+      "dsaek": "DSAEK",
+      "utDsaek": "UT-DSAEK",
+      "salk": "SALK"
+    },
+    "sections": {
+      "introduction": "介绍",
+      "indications": "适应症",
+      "surgery": "手术",
+      "results": "结果",
+      "complications": "并发症",
+      "postop": "术后",
+      "references": "参考文献"
+    }
+  },
   "home": {
     "title": "欢迎来到角膜网络学院",
     "subtitle": "角膜手术教育的卓越",
-    "description": "加入我们，通过创新教育和现场手术演示推进角膜手术"
+    "description": "加入我们，通过创新教育和现场手术演示推进角膜手术",
+    "welcome": {
+      "title": "欢迎来到角膜网络学院",
+      "description": "角膜手术教育平台，由 Massimo Busin 教授于2018年创立，位于意大利弗利的眼科系，Ospedali Privati Forlì, Villa Igea。",
+      "exploreLiveSurgery": "探索实时手术",
+      "learnMore": "了解更多"
+    },
+    "about": {
+      "intro": "角膜网络学院（CWA）是一个角膜手术教育平台，位于",
+      "department": "眼科系，Ospedali Privati Forlì, Villa Igea",
+      "location": "意大利弗利。",
+      "founder": "Massimo Busin 教授",
+      "procedures": "我们的科室每年进行约",
+      "proceduresCount": "300例角膜移植手术",
+      "surgeryTypes": "包括DALK、DMEK、DSAEK、UT-DSAEK、SALK和蘑菇型角膜移植术。这些手术通过我们的流媒体平台进行现场直播。"
+    }
   },
   "auth": {
     "welcomeBack": "欢迎回来",
@@ -39,7 +74,23 @@
     "confirmNewPassword": "确认新密码",
     "deleteAccount": "删除账户",
     "profileUpdated": "资料更新成功",
-    "passwordChanged": "密码更改成功"
+    "passwordChanged": "密码更改成功",
+    "username": "用户名",
+    "email": "电子邮件",
+    "updating": "更新中...",
+    "changingPassword": "更改中...",
+    "memberSince": "注册时间",
+    "deleteAccountWarning": "您确定要删除您的账户吗？此操作无法撤销。",
+    "confirmDelete": "是的，删除我的账户",
+    "cancel": "取消",
+    "profileImageUpdated": "头像更新成功",
+    "failedToUpdateImage": "头像更新失败",
+    "failedToUpdateProfile": "资料更新失败",
+    "failedToChangePassword": "密码更改失败",
+    "failedToDeleteAccount": "账户删除失败",
+    "imageSizeError": "图像大小必须小于5MB",
+    "passwordsDoNotMatch": "新密码不匹配",
+    "enterPassword": "请输入您的密码"
   },
   "recordings": {
     "title": "视频库",
@@ -81,6 +132,7 @@
     "filter": "筛选",
     "refresh": "刷新",
     "yes": "是",
-    "no": "否"
+    "no": "否",
+    "by": "由"
   }
 }

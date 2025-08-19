@@ -1,6 +1,7 @@
 {
   "nav": {
     "home": "Home",
+    "surgery": "Chirurgia",
     "liveSurgery": "Chirurgia Live",
     "recordings": "Registrazioni",
     "publications": "Pubblicazioni",
@@ -11,10 +12,46 @@
     "logout": "Esci",
     "profile": "Profilo"
   },
+  "surgery": {
+    "types": {
+      "dalk": "DALK",
+      "mushroomPk": "Mushroom PK",
+      "dmek": "DMEK",
+      "dsaek": "DSAEK",
+      "utDsaek": "UT-DSAEK",
+      "salk": "SALK"
+    },
+    "sections": {
+      "introduction": "Introduzione",
+      "indications": "Indicazioni",
+      "surgery": "Chirurgia",
+      "results": "Risultati",
+      "complications": "Complicazioni",
+      "postop": "Post-operatorio",
+      "references": "Riferimenti"
+    }
+  },
   "home": {
     "title": "Benvenuti alla Cornea Web Academy",
     "subtitle": "Eccellenza nell'Educazione Chirurgica Corneale",
-    "description": "Unisciti a noi per far progredire la chirurgia corneale attraverso formazione innovativa e dimostrazioni chirurgiche dal vivo"
+    "description": "Unisciti a noi per far progredire la chirurgia corneale attraverso formazione innovativa e dimostrazioni chirurgiche dal vivo",
+    "welcome": {
+      "title": "Benvenuti alla Cornea Web Academy",
+      "description": "Piattaforma educativa per la chirurgia corneale fondata nel 2018 dal Prof. Massimo Busin, con sede presso il Dipartimento di Oftalmologia, Ospedali Privati Forlì, Villa Igea, a Forlì, Italia.",
+      "exploreLiveSurgery": "Esplora Chirurgia Live",
+      "learnMore": "Scopri di più"
+    },
+    "about": {
+      "intro": "La Cornea Web Academy (CWA) è una piattaforma educativa per la chirurgia corneale con sede presso il",
+      "department": "Dipartimento di Oftalmologia, Ospedali Privati Forlì, Villa Igea",
+      "location": "a Forlì, Italia.",
+      "founded": "Fondata nel",
+      "year": "2018",
+      "founder": "Prof. Massimo Busin",
+      "procedures": "Il nostro dipartimento esegue circa",
+      "proceduresCount": "300 procedure di cheratoplastica all'anno",
+      "surgeryTypes": "tra cui DALK, DMEK, DSAEK, UT-DSAEK, SALK e cheratoplastica a fungo. Questi interventi sono trasmessi in diretta attraverso la nostra piattaforma di streaming."
+    }
   },
   "auth": {
     "welcomeBack": "Bentornato",
@@ -39,7 +76,23 @@
     "confirmNewPassword": "Conferma Nuova Password",
     "deleteAccount": "Elimina Account",
     "profileUpdated": "Profilo aggiornato con successo",
-    "passwordChanged": "Password cambiata con successo"
+    "passwordChanged": "Password cambiata con successo",
+    "username": "Nome utente",
+    "email": "Email",
+    "updating": "Aggiornamento...",
+    "changingPassword": "Modifica...",
+    "memberSince": "Membro dal",
+    "deleteAccountWarning": "Sei sicuro di voler eliminare il tuo account? Questa azione non può essere annullata.",
+    "confirmDelete": "Sì, elimina il mio account",
+    "cancel": "Annulla",
+    "profileImageUpdated": "Immagine profilo aggiornata con successo",
+    "failedToUpdateImage": "Impossibile aggiornare l'immagine del profilo",
+    "failedToUpdateProfile": "Impossibile aggiornare il profilo",
+    "failedToChangePassword": "Impossibile cambiare la password",
+    "failedToDeleteAccount": "Impossibile eliminare l'account",
+    "imageSizeError": "L'immagine deve essere inferiore a 5MB",
+    "passwordsDoNotMatch": "Le nuove password non corrispondono",
+    "enterPassword": "Inserisci la tua password"
   },
   "recordings": {
     "title": "Libreria Video",
@@ -81,6 +134,7 @@
     "filter": "Filtra",
     "refresh": "Aggiorna",
     "yes": "Sì",
-    "no": "No"
+    "no": "No",
+    "by": "dal"
   }
 }

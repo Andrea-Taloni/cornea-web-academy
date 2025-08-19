@@ -1,6 +1,7 @@
 {
   "nav": {
     "home": "Acasă",
+    "surgery": "Chirurgie",
     "liveSurgery": "Chirurgie Live",
     "recordings": "Înregistrări",
     "publications": "Publicații",
@@ -11,10 +12,44 @@
     "logout": "Deconectare",
     "profile": "Profil"
   },
+  "surgery": {
+    "types": {
+      "dalk": "DALK",
+      "mushroomPk": "Mushroom PK",
+      "dmek": "DMEK",
+      "dsaek": "DSAEK",
+      "utDsaek": "UT-DSAEK",
+      "salk": "SALK"
+    },
+    "sections": {
+      "introduction": "Introducere",
+      "indications": "Indicații",
+      "surgery": "Chirurgie",
+      "results": "Rezultate",
+      "complications": "Complicații",
+      "postop": "Postoperator",
+      "references": "Referințe"
+    }
+  },
   "home": {
     "title": "Bine ați venit la Cornea Web Academy",
     "subtitle": "Excelență în Educația Chirurgiei Corneene",
-    "description": "Alăturați-vă nouă pentru a avansa chirurgia corneeană prin educație inovatoare și demonstrații chirurgicale live"
+    "description": "Alăturați-vă nouă pentru a avansa chirurgia corneeană prin educație inovatoare și demonstrații chirurgicale live",
+    "welcome": {
+      "title": "Bine ați venit la Cornea Web Academy",
+      "description": "Platformă educațională pentru chirurgia corneeană înființată în 2018 de Prof. Massimo Busin, cu sediul la Departamentul de Oftalmologie, Ospedali Privati Forlì, Villa Igea, în Forlì, Italia.",
+      "exploreLiveSurgery": "Explorați Chirurgia Live",
+      "learnMore": "Aflați Mai Multe"
+    },
+    "about": {
+      "intro": "Cornea Web Academy (CWA) este o platformă educațională pentru chirurgia corneeană cu sediul la",
+      "department": "Departamentul de Oftalmologie, Ospedali Privati Forlì, Villa Igea",
+      "location": "în Forlì, Italia.",
+      "founder": "Prof. Massimo Busin",
+      "procedures": "Departamentul nostru efectuează aproximativ",
+      "proceduresCount": "300 de proceduri de keratoplastie anual",
+      "surgeryTypes": "incluzând DALK, DMEK, DSAEK, UT-DSAEK, SALK și keratoplastia mushroom. Aceste operații sunt transmise live prin platforma noastră de streaming."
+    }
   },
   "auth": {
     "welcomeBack": "Bine ai revenit",
@@ -39,7 +74,23 @@
     "confirmNewPassword": "Confirmă Parola Nouă",
     "deleteAccount": "Șterge Contul",
     "profileUpdated": "Profil actualizat cu succes",
-    "passwordChanged": "Parolă schimbată cu succes"
+    "passwordChanged": "Parolă schimbată cu succes",
+    "username": "Nume utilizator",
+    "email": "Email",
+    "updating": "Actualizez...",
+    "changingPassword": "Schimb...",
+    "memberSince": "Membru din",
+    "deleteAccountWarning": "Ești sigur că vrei să îți ștergi contul? Această acțiune nu poate fi anulată.",
+    "confirmDelete": "Da, șterge contul meu",
+    "cancel": "Anulează",
+    "profileImageUpdated": "Imaginea de profil actualizată cu succes",
+    "failedToUpdateImage": "Eroare la actualizarea imaginii de profil",
+    "failedToUpdateProfile": "Eroare la actualizarea profilului",
+    "failedToChangePassword": "Eroare la schimbarea parolei",
+    "failedToDeleteAccount": "Eroare la ștergerea contului",
+    "imageSizeError": "Dimensiunea imaginii trebuie să fie mai mică de 5MB",
+    "passwordsDoNotMatch": "Parolele noi nu se potrivesc",
+    "enterPassword": "Vă rugăm să introduceți parola"
   },
   "recordings": {
     "title": "Bibliotecă Video",
@@ -81,6 +132,7 @@
     "filter": "Filtrează",
     "refresh": "Actualizează",
     "yes": "Da",
-    "no": "Nu"
+    "no": "Nu",
+    "by": "de"
   }
 }

@@ -1,6 +1,7 @@
 {
   "nav": {
     "home": "Home",
+    "surgery": "Surgery",
     "liveSurgery": "Live Surgery",
     "recordings": "Recordings",
     "publications": "Publications",
@@ -11,10 +12,46 @@
     "logout": "Logout",
     "profile": "Profile"
   },
+  "surgery": {
+    "types": {
+      "dalk": "DALK",
+      "mushroomPk": "Mushroom PK",
+      "dmek": "DMEK",
+      "dsaek": "DSAEK",
+      "utDsaek": "UT-DSAEK",
+      "salk": "SALK"
+    },
+    "sections": {
+      "introduction": "Introduction",
+      "indications": "Indications",
+      "surgery": "Surgery",
+      "results": "Results",
+      "complications": "Complications",
+      "postop": "Post-operative",
+      "references": "References"
+    }
+  },
   "home": {
     "title": "Welcome to Cornea Web Academy",
     "subtitle": "Excellence in Corneal Surgery Education",
-    "description": "Join us in advancing corneal surgery through innovative education and live surgical demonstrations"
+    "description": "Join us in advancing corneal surgery through innovative education and live surgical demonstrations",
+    "welcome": {
+      "title": "Welcome to Cornea Web Academy",
+      "description": "Educational platform for corneal surgery founded in 2018 by Prof. Massimo Busin, based at the Department of Ophthalmology, Ospedali Privati Forlì, Villa Igea, in Forlì, Italy.",
+      "exploreLiveSurgery": "Explore Live Surgery",
+      "learnMore": "Learn More"
+    },
+    "about": {
+      "intro": "The Cornea Web Academy (CWA) is an educational platform for corneal surgery based at the",
+      "department": "Department of Ophthalmology, Ospedali Privati Forlì, Villa Igea",
+      "location": "in Forlì, Italy.",
+      "founded": "Founded in",
+      "year": "2018",
+      "founder": "Prof. Massimo Busin",
+      "procedures": "Our department performs approximately",
+      "proceduresCount": "300 keratoplasty procedures annually",
+      "surgeryTypes": "including DALK, DMEK, DSAEK, UT-DSAEK, SALK, and mushroom keratoplasty. These surgeries are broadcast live through our streaming platform."
+    }
   },
   "auth": {
     "welcomeBack": "Welcome Back",
@@ -39,7 +76,23 @@
     "confirmNewPassword": "Confirm New Password",
     "deleteAccount": "Delete Account",
     "profileUpdated": "Profile updated successfully",
-    "passwordChanged": "Password changed successfully"
+    "passwordChanged": "Password changed successfully",
+    "username": "Username",
+    "email": "Email",
+    "updating": "Updating...",
+    "changingPassword": "Changing...",
+    "memberSince": "Member Since",
+    "deleteAccountWarning": "Are you sure you want to delete your account? This action cannot be undone.",
+    "confirmDelete": "Yes, delete my account",
+    "cancel": "Cancel",
+    "profileImageUpdated": "Profile image updated successfully",
+    "failedToUpdateImage": "Failed to update profile image",
+    "failedToUpdateProfile": "Failed to update profile",
+    "failedToChangePassword": "Failed to change password",
+    "failedToDeleteAccount": "Failed to delete account",
+    "imageSizeError": "Image size must be less than 5MB",
+    "passwordsDoNotMatch": "New passwords do not match",
+    "enterPassword": "Please enter your password"
   },
   "recordings": {
     "title": "Video Library",
@@ -81,6 +134,7 @@
     "filter": "Filter",
     "refresh": "Refresh",
     "yes": "Yes",
-    "no": "No"
+    "no": "No",
+    "by": "by"
   }
 }

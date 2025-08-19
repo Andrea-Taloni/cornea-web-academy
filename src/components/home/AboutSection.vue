@@ -4,16 +4,16 @@
       <div class="max-w-4xl mx-auto text-center">
         <div class="space-y-4 text-gray-600">
           <p class="text-lg leading-relaxed">
-            The Cornea Web Academy (CWA) is an educational platform for corneal surgery based at the 
-            <strong class="text-gray-900">Department of Ophthalmology, Ospedali Privati Forlì, Villa Igea</strong>, 
-            in Forlì, Italy.
+            {{ $t('home.about.intro') }} 
+            <strong class="text-gray-900">{{ $t('home.about.department') }}</strong> 
+            {{ $t('home.about.location') }}
           </p>
           <p class="text-lg leading-relaxed">
-            Founded in <strong class="text-gray-900">2018</strong> by <strong class="text-gray-900">Prof. Massimo Busin</strong>.
+            {{ $t('home.about.founded') }} <strong class="text-gray-900">{{ $t('home.about.year') }}</strong> {{ $t('common.by') || 'by' }} <strong class="text-gray-900">{{ $t('home.about.founder') }}</strong>.
           </p>
           <p class="text-lg leading-relaxed">
-            Our department performs approximately <strong class="text-gray-900">300 keratoplasty procedures annually</strong>, including 
-            DALK, DMEK, DSAEK, UT-DSAEK, SALK, and mushroom keratoplasty. These surgeries are broadcast live through our streaming platform.
+            {{ $t('home.about.procedures') }} <strong class="text-gray-900">{{ $t('home.about.proceduresCount') }}</strong>, 
+            {{ $t('home.about.surgeryTypes') }}
           </p>
         </div>
       </div>
@@ -22,4 +22,6 @@
 </template>
 
 <script setup>
+import { useI18n } from 'vue-i18n'
+const { t } = useI18n()
 </script>

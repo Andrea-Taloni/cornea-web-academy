@@ -3,21 +3,18 @@
     <div class="absolute inset-0 bg-black opacity-50"></div>
     <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 md:py-8">
       <div class="text-center">
-        <h2 class="text-4xl md:text-5xl font-bold mb-4">Welcome to Cornea Web Academy</h2>
-        <p class="text-xl md:text-2xl mb-6 max-w-3xl mx-auto">
-          The Cornea Web Academy (CWA) is an educational platform for corneal surgery based at the Department of Ophthalmology, Ospedali Privati Forlì, Villa Igea, in Forlì, Italy.
-        </p>
-        <p class="text-lg md:text-xl mb-6 max-w-3xl mx-auto">
-          Founded in 2018 by Prof. Massimo Busin.
+        <h2 class="text-4xl md:text-5xl font-bold mb-4">{{ $t('home.welcome.title') }}</h2>
+        <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
+          {{ $t('home.welcome.description') }}
         </p>
         <div class="space-x-4">
           <router-link
             to="/live-surgery"
             class="inline-flex items-center gap-4 bg-white/10 backdrop-blur-sm border-2 border-white/30 text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-blue-900 transition-all duration-300 transform hover:scale-105 group"
           >
-            <span class="text-lg">Explore Live Surgery</span>
+            <span class="text-lg">{{ $t('home.welcome.exploreLiveSurgery') }}</span>
             <div class="flex items-center gap-2">
-              <span class="text-sm opacity-80 group-hover:opacity-100">Learn More</span>
+              <span class="text-sm opacity-80 group-hover:opacity-100">{{ $t('home.welcome.learnMore') }}</span>
               <svg
                 class="w-5 h-5 transform transition-transform group-hover:translate-x-1"
                 fill="none"
@@ -40,5 +37,6 @@
 </template>
 
 <script setup>
-// No props or additional logic needed for this component
+import { useI18n } from 'vue-i18n'
+const { t } = useI18n()
 </script>

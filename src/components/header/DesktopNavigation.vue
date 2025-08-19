@@ -1,29 +1,32 @@
 // src/components/header/DesktopNavigation.vue
 <template>
   <nav class="hidden md:flex items-center space-x-8">
-    <router-link to="/" class="nav-link">Home</router-link>
+    <router-link to="/" class="nav-link">{{ $t('nav.home') }}</router-link>
 
     <!-- Surgery Dropdown -->
-    <NavDropdown title="Surgery" :items="surgeryTypes" baseUrl="/surgery/" />
+    <NavDropdown :title="$t('nav.surgery')" :items="surgeryTypes" baseUrl="/surgery/" />
 
-    <router-link to="/publications" class="nav-link">Publications</router-link>
-    <router-link to="/live-surgery" class="nav-link">Live Surgery</router-link>
-    <router-link to="/recordings" class="nav-link">Recordings</router-link>
-    <router-link to="/contacts" class="nav-link">Contacts</router-link>
+    <router-link to="/publications" class="nav-link">{{ $t('nav.publications') }}</router-link>
+    <router-link to="/live-surgery" class="nav-link">{{ $t('nav.liveSurgery') }}</router-link>
+    <router-link to="/recordings" class="nav-link">{{ $t('nav.recordings') }}</router-link>
+    <router-link to="/contacts" class="nav-link">{{ $t('nav.contacts') }}</router-link>
   </nav>
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
+import { useI18n } from 'vue-i18n'
 import NavDropdown from './SurgeryDropdown.vue'
 
-const surgeryTypes = ref([
-  { name: 'DALK', slug: 'dalk' },
-  { name: 'Mushroom PK', slug: 'mushroom-pk' },
-  { name: 'DMEK', slug: 'dmek' },
-  { name: 'DSAEK', slug: 'dsaek' },
-  { name: 'UT-DSAEK', slug: 'ut-dsaek' },
-  { name: 'SALK', slug: 'salk' },
+const { t } = useI18n()
+
+const surgeryTypes = computed(() => [
+  { name: t('surgery.types.dalk'), slug: 'dalk' },
+  { name: t('surgery.types.mushroomPk'), slug: 'mushroom-pk' },
+  { name: t('surgery.types.dmek'), slug: 'dmek' },
+  { name: t('surgery.types.dsaek'), slug: 'dsaek' },
+  { name: t('surgery.types.utDsaek'), slug: 'ut-dsaek' },
+  { name: t('surgery.types.salk'), slug: 'salk' },
 ])
 </script>
 

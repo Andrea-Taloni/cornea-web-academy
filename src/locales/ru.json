@@ -1,6 +1,7 @@
 {
   "nav": {
     "home": "Главная",
+    "surgery": "Хирургия",
     "liveSurgery": "Живая хирургия",
     "recordings": "Записи",
     "publications": "Публикации",
@@ -11,10 +12,44 @@
     "logout": "Выйти",
     "profile": "Профиль"
   },
+  "surgery": {
+    "types": {
+      "dalk": "DALK",
+      "mushroomPk": "Mushroom PK",
+      "dmek": "DMEK",
+      "dsaek": "DSAEK",
+      "utDsaek": "UT-DSAEK",
+      "salk": "SALK"
+    },
+    "sections": {
+      "introduction": "Введение",
+      "indications": "Показания",
+      "surgery": "Хирургия",
+      "results": "Результаты",
+      "complications": "Осложнения",
+      "postop": "Послеоперационное",
+      "references": "Ссылки"
+    }
+  },
   "home": {
     "title": "Добро пожаловать в Cornea Web Academy",
     "subtitle": "Превосходство в образовании роговичной хирургии",
-    "description": "Присоединяйтесь к нам для продвижения роговичной хирургии через инновационное образование и живые хирургические демонстрации"
+    "description": "Присоединяйтесь к нам для продвижения роговичной хирургии через инновационное образование и живые хирургические демонстрации",
+    "welcome": {
+      "title": "Добро пожаловать в Cornea Web Academy",
+      "description": "Образовательная платформа для роговичной хирургии, основанная в 2018 году проф. Массимо Бузиным, расположенная в отделении офтальмологии, Ospedali Privati Forlì, Villa Igea, в Форли, Италия.",
+      "exploreLiveSurgery": "Изучить Живую Хирургию",
+      "learnMore": "Узнать Больше"
+    },
+    "about": {
+      "intro": "Cornea Web Academy (CWA) - это образовательная платформа для роговичной хирургии, расположенная в",
+      "department": "отделении офтальмологии, Ospedali Privati Forlì, Villa Igea",
+      "location": "в Форли, Италия.",
+      "founder": "проф. Массимо Бузин",
+      "procedures": "Наше отделение выполняет примерно",
+      "proceduresCount": "300 процедур кератопластики в год",
+      "surgeryTypes": "включая DALK, DMEK, DSAEK, UT-DSAEK, SALK и грибовидную кератопластику. Эти операции транслируются в прямом эфире через нашу стриминговую платформу."
+    }
   },
   "auth": {
     "welcomeBack": "С возвращением",
@@ -39,7 +74,23 @@
     "confirmNewPassword": "Подтвердите новый пароль",
     "deleteAccount": "Удалить аккаунт",
     "profileUpdated": "Профиль успешно обновлен",
-    "passwordChanged": "Пароль успешно изменен"
+    "passwordChanged": "Пароль успешно изменен",
+    "username": "Имя пользователя",
+    "email": "Электронная почта",
+    "updating": "Обновление...",
+    "changingPassword": "Изменение...",
+    "memberSince": "Участник с",
+    "deleteAccountWarning": "Вы уверены, что хотите удалить свой аккаунт? Это действие нельзя отменить.",
+    "confirmDelete": "Да, удалить мой аккаунт",
+    "cancel": "Отмена",
+    "profileImageUpdated": "Изображение профиля успешно обновлено",
+    "failedToUpdateImage": "Не удалось обновить изображение профиля",
+    "failedToUpdateProfile": "Не удалось обновить профиль",
+    "failedToChangePassword": "Не удалось изменить пароль",
+    "failedToDeleteAccount": "Не удалось удалить аккаунт",
+    "imageSizeError": "Размер изображения должен быть менее 5 МБ",
+    "passwordsDoNotMatch": "Новые пароли не совпадают",
+    "enterPassword": "Пожалуйста, введите ваш пароль"
   },
   "recordings": {
     "title": "Видеотека",
@@ -81,6 +132,7 @@
     "filter": "Фильтр",
     "refresh": "Обновить",
     "yes": "Да",
-    "no": "Нет"
+    "no": "Нет",
+    "by": "от"
   }
 }
