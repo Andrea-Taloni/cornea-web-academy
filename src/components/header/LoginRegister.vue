@@ -1,22 +1,82 @@
 // src/components/header/AuthButtons.vue
 <template>
-  <div :class="[mobile ? 'space-y-2' : 'items-center space-x-4']">
-    <button :class="mobile ? 'mobile-login-button' : 'login-button'">
-      <span class="button-text">Login</span>
-    </button>
-    <button :class="mobile ? 'mobile-register-button' : 'register-button'">
-      <span class="button-text">Register</span>
-    </button>
+  <div :class="[mobile ? 'space-y-2' : 'flex items-center space-x-4']">
+    <!-- If user is authenticated -->
+    <template v-if="authStore.isAuthenticated">
+      <div v-if="!mobile" class="flex items-center space-x-4">
+        <router-link 
+          to="/profile"
+          class="flex items-center space-x-2 text-sm text-gray-600 hover:text-blue-600 transition-colors"
+        >
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+          </svg>
+          <span>{{ authStore.username }}</span>
+        </router-link>
+        <button 
+          @click="handleLogout"
+          class="px-4 py-2 text-sm font-medium text-gray-700 hover:text-red-600 transition-colors"
+        >
+          Logout
+        </button>
+      </div>
+      <div v-else class="space-y-2">
+        <router-link 
+          to="/profile"
+          class="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 rounded-lg transition-colors"
+        >
+          <div class="flex items-center space-x-2">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+            </svg>
+            <span>{{ authStore.username }}</span>
+          </div>
+        </router-link>
+        <button 
+          @click="handleLogout"
+          class="w-full px-4 py-2 text-sm font-medium text-white bg-red-600 hover:bg-red-700 rounded-lg transition-colors"
+        >
+          Logout
+        </button>
+      </div>
+    </template>
+    
+    <!-- If user is not authenticated -->
+    <template v-else>
+      <router-link
+        to="/login"
+        :class="mobile ? 'mobile-login-button' : 'login-button'"
+      >
+        <span class="button-text">Login</span>
+      </router-link>
+      <router-link
+        to="/register"
+        :class="mobile ? 'mobile-register-button' : 'register-button'"
+      >
+        <span class="button-text">Register</span>
+      </router-link>
+    </template>
   </div>
 </template>
 
 <script setup>
+import { useAuthStore } from '@/stores/auth'
+import { useRouter } from 'vue-router'
+
+const authStore = useAuthStore()
+const router = useRouter()
+
 defineProps({
   mobile: {
     type: Boolean,
     default: false,
   },
 })
+
+const handleLogout = () => {
+  authStore.logout()
+  router.push('/')
+}
 </script>
 
 <style scoped>

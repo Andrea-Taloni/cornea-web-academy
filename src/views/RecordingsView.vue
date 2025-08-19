@@ -10,65 +10,22 @@
 
     <!-- Main Content Container -->
     <div class="container mx-auto px-4 py-8 max-w-7xl">
-      <!-- Search and Filter Bar -->
-      <div class="bg-white rounded-lg shadow-sm p-4 mb-8">
-        <div class="flex flex-col md:flex-row gap-4">
-          <!-- Search Bar -->
-          <div class="flex-1">
-            <div class="relative">
-              <svg
-                class="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                />
-              </svg>
-              <input
-                v-model="searchQuery"
-                type="text"
-                placeholder="Search videos by title, surgeon, or procedure..."
-                class="w-full pl-10 pr-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-              />
-            </div>
-          </div>
-
-          <!-- Category Filter -->
-          <select
-            v-model="selectedCategory"
-            class="px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 w-full md:w-auto"
-          >
-            <option value="">All Categories</option>
-            <option value="dalk">DALK</option>
-            <option value="dmek">DMEK</option>
-            <option value="dsaek">DSAEK</option>
-            <option value="ut-dsaek">UT-DSAEK</option>
-            <option value="mushroom-pk">Mushroom PK</option>
-            <option value="educational">Educational</option>
-          </select>
-
-          <!-- Sort Options -->
-          <select
-            v-model="sortBy"
-            class="px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 w-full md:w-auto"
-          >
-            <option value="title">Title (A-Z)</option>
-            <option value="surgeon">Surgeon</option>
-            <option value="category">Category</option>
-          </select>
+      <!-- Error Alert -->
+      <div v-if="error && !isLoading" class="bg-yellow-50 border border-yellow-200 text-yellow-800 px-4 py-3 rounded-lg mb-6">
+        <div class="flex items-center">
+          <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/>
+          </svg>
+          <span>{{ error }}</span>
+          <button @click="refreshVideos" class="ml-auto text-yellow-600 hover:text-yellow-800 font-semibold">
+            Retry
+          </button>
         </div>
       </div>
 
-      <!-- Video Player and List Grid -->
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-        <!-- Video Player Section (Left - Takes 2 columns on large screens) -->
-        <div class="lg:col-span-2">
-          <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+      <!-- Video Player Section -->
+      <div class="mb-8">
+        <div class="bg-white rounded-lg shadow-lg overflow-hidden max-w-6xl mx-auto">
             <!-- Video Player Container with Fixed Aspect Ratio -->
             <div class="video-player-wrapper bg-black">
               <div class="video-player-container">
@@ -114,71 +71,154 @@
               </div>
             </div>
           </div>
-        </div>
+      </div>
 
-        <!-- Video List Section (Right - Takes 1 column on large screens) -->
-        <div class="lg:col-span-1">
-          <div class="bg-white rounded-lg shadow-lg p-4">
-            <h3 class="text-lg font-bold text-gray-800 mb-4">Video Library</h3>
-
-            <!-- Scrollable Video List -->
-            <div class="video-list-container">
-              <div
-                v-for="video in filteredVideos"
-                :key="video.id"
-                @click="selectVideo(video)"
-                class="video-list-item cursor-pointer rounded-lg overflow-hidden hover:shadow-md transition-all duration-200 bg-gray-50 mb-3"
-                :class="{
-                  'ring-2 ring-blue-500 bg-blue-50': currentVideo && currentVideo.id === video.id,
-                }"
+      <!-- Search and Filter Bar -->
+      <div class="bg-white rounded-lg shadow-sm p-4 mb-6">
+        <div class="flex flex-col md:flex-row gap-4">
+          <!-- Search Bar -->
+          <div class="flex-1">
+            <div class="relative">
+              <svg
+                class="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
               >
-                <!-- Video Thumbnail -->
-                <div class="relative">
-                  <img
-                    :src="`https://img.youtube.com/vi/${video.youtubeId}/mqdefault.jpg`"
-                    :alt="video.title"
-                    class="w-full h-auto"
-                    @error="handleImageError($event, video.youtubeId)"
-                  />
-                </div>
-
-                <!-- Video Info -->
-                <div class="p-3">
-                  <h4 class="font-semibold text-sm text-gray-800 mb-1 line-clamp-2">
-                    {{ video.title }}
-                  </h4>
-                  <p class="text-xs text-gray-600 mb-2">{{ video.surgeon }}</p>
-                  <span
-                    class="inline-block px-2 py-0.5 text-xs font-medium rounded-full"
-                    :class="getCategoryClass(video.category)"
-                  >
-                    {{ getCategoryLabel(video.category) }}
-                  </span>
-                </div>
-              </div>
-
-              <!-- No Results Message -->
-              <div
-                v-if="filteredVideos.length === 0"
-                class="text-center py-8 text-gray-500"
-              >
-                <svg
-                  class="mx-auto h-12 w-12 text-gray-400 mb-3"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"
-                  />
-                </svg>
-                <p class="text-sm">No videos found</p>
-              </div>
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                />
+              </svg>
+              <input
+                v-model="searchQuery"
+                type="text"
+                placeholder="Search videos by title or procedure..."
+                class="w-full pl-10 pr-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
             </div>
           </div>
+
+          <!-- Category Filter -->
+          <select
+            v-model="selectedCategory"
+            class="px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 w-full md:w-auto"
+          >
+            <option value="">All Categories</option>
+            <option value="dalk">DALK</option>
+            <option value="dmek">DMEK</option>
+            <option value="dsaek">DSAEK</option>
+            <option value="ut-dsaek">UT-DSAEK</option>
+            <option value="mushroom-pk">Mushroom PK</option>
+            <option value="educational">Educational</option>
+          </select>
+
+          <!-- Sort Options -->
+          <select
+            v-model="sortBy"
+            class="px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 w-full md:w-auto"
+          >
+            <option value="title">Title (A-Z)</option>
+            <option value="category">Category</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Video Library Section (Full Width Below Player) -->
+      <div class="bg-white rounded-lg shadow-lg p-6">
+        <div class="flex justify-between items-center mb-6">
+          <h3 class="text-xl font-bold text-gray-800">Video Library</h3>
+          <button
+            @click="refreshVideos"
+            :disabled="isLoading"
+            class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors flex items-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+          >
+            <svg 
+              class="w-4 h-4"
+              :class="{ 'animate-spin': isLoading }"
+              fill="none" 
+              stroke="currentColor" 
+              viewBox="0 0 24 24"
+            >
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
+            </svg>
+            {{ isLoading ? 'Refreshing...' : 'Refresh Videos' }}
+          </button>
+        </div>
+
+        <!-- Loading State -->
+        <div v-if="isLoading" class="flex justify-center py-8">
+          <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"></div>
+        </div>
+
+        <!-- Video Grid -->
+        <div v-else class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
+              <div
+            v-for="video in filteredVideos"
+            :key="video.id"
+            @click="selectVideo(video)"
+            class="cursor-pointer rounded-lg overflow-hidden hover:shadow-lg transition-all duration-200 bg-gray-50 group"
+            :class="{
+              'ring-2 ring-blue-500 bg-blue-50': currentVideo && currentVideo.id === video.id,
+            }"
+          >
+            <!-- Video Thumbnail -->
+            <div class="relative aspect-video">
+              <img
+                :src="`https://img.youtube.com/vi/${video.youtubeId}/mqdefault.jpg`"
+                :alt="video.title"
+                class="w-full h-full object-cover"
+                @error="handleImageError($event, video.youtubeId)"
+              />
+              <!-- Play button overlay -->
+              <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                <div class="bg-black bg-opacity-50 rounded-full p-3">
+                  <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M6.3 2.841A1.5 1.5 0 004 4.11V15.89a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z"/>
+                  </svg>
+                </div>
+              </div>
+            </div>
+
+            <!-- Video Info -->
+            <div class="p-3">
+              <h4 class="font-semibold text-sm text-gray-800 mb-1 line-clamp-2">
+                {{ video.title }}
+              </h4>
+              <p class="text-xs text-gray-600 mb-2">{{ video.surgeon }}</p>
+              <span
+                class="inline-block px-2 py-0.5 text-xs font-medium rounded-full"
+                :class="getCategoryClass(video.category)"
+              >
+                {{ getCategoryLabel(video.category) }}
+              </span>
+            </div>
+          </div>
+
+        </div>
+        
+        <!-- No Results Message -->
+        <div
+          v-if="!isLoading && filteredVideos.length === 0"
+          class="text-center py-12 text-gray-500"
+        >
+          <svg
+            class="mx-auto h-16 w-16 text-gray-400 mb-4"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"
+            />
+          </svg>
+          <p class="text-lg font-medium">No videos found</p>
+          <p class="text-sm text-gray-400 mt-1">Try adjusting your search or filters</p>
         </div>
       </div>
     </div>
@@ -192,72 +232,16 @@ import { ref, computed, onMounted } from 'vue'
 import HeaderComponent from '@/components/HeaderComponent.vue'
 import FooterComponent from '@/components/FooterComponent.vue'
 import PageHero from '@/components/HeroComponent.vue'
+import youtubeService from '@/services/youtube.js'
 
 // State
 const searchQuery = ref('')
 const selectedCategory = ref('')
 const sortBy = ref('title')
 const currentVideo = ref(null)
-
-// Sample video data
-// In production, title and description should be fetched from YouTube Data API v3
-// using the video ID to get the actual video metadata
-const videos = ref([
-  {
-    id: 1,
-    youtubeId: 'dQw4w9WgXcQ', // Replace with actual YouTube video IDs
-    title: 'DMEK Surgery - Complex Case Management', // Should be fetched from YouTube
-    description:
-      'Detailed demonstration of DMEK surgery on a patient with Fuchs endothelial dystrophy, showcasing advanced techniques for graft preparation and insertion.', // Should be fetched from YouTube
-    surgeon: 'Prof. Massimo Busin',
-    category: 'dmek',
-  },
-  {
-    id: 2,
-    youtubeId: 'dQw4w9WgXcQ', // Replace with actual YouTube video IDs
-    title: 'Large Diameter DALK with Big Bubble Technique', // Should be fetched from YouTube
-    description:
-      'Step-by-step demonstration of the modified big bubble technique for deep anterior lamellar keratoplasty in advanced keratoconus.', // Should be fetched from YouTube
-    surgeon: 'Prof. Massimo Busin',
-    category: 'dalk',
-  },
-  {
-    id: 3,
-    youtubeId: 'dQw4w9WgXcQ', // Replace with actual YouTube video IDs
-    title: 'UT-DSAEK: Microkeratome Preparation Technique', // Should be fetched from YouTube
-    description:
-      'Comprehensive guide to preparing ultra-thin grafts for DSAEK using the microkeratome technique, with tips for optimal thickness achievement.', // Should be fetched from YouTube
-    surgeon: 'Dr. Angeli Christy Yu',
-    category: 'ut-dsaek',
-  },
-  {
-    id: 4,
-    youtubeId: 'dQw4w9WgXcQ', // Replace with actual YouTube video IDs
-    title: 'Mushroom PK: Two-Piece Technique', // Should be fetched from YouTube
-    description:
-      'Innovative two-piece mushroom keratoplasty technique for full-thickness corneal replacement with enhanced wound stability.', // Should be fetched from YouTube
-    surgeon: 'Prof. Massimo Busin',
-    category: 'mushroom-pk',
-  },
-  {
-    id: 5,
-    youtubeId: 'dQw4w9WgXcQ', // Replace with actual YouTube video IDs
-    title: 'Managing Complications in Corneal Surgery', // Should be fetched from YouTube
-    description:
-      'Educational session covering common complications in various corneal transplant procedures and their management strategies.', // Should be fetched from YouTube
-    surgeon: 'Dr. Vincenzo Scorcia',
-    category: 'educational',
-  },
-  {
-    id: 6,
-    youtubeId: 'dQw4w9WgXcQ', // Replace with actual YouTube video IDs
-    title: 'DSAEK in Complex Eyes', // Should be fetched from YouTube
-    description:
-      'Challenging DSAEK surgery in eyes with previous vitrectomy and anterior chamber IOL, demonstrating modified surgical approaches.', // Should be fetched from YouTube
-    surgeon: 'Dr. Cristina Bovone',
-    category: 'dsaek',
-  },
-])
+const videos = ref([])
+const isLoading = ref(true)
+const error = ref(null)
 
 // Filtered and sorted videos
 const filteredVideos = computed(() => {
@@ -283,9 +267,6 @@ const filteredVideos = computed(() => {
   switch (sortBy.value) {
     case 'title':
       filtered.sort((a, b) => a.title.localeCompare(b.title))
-      break
-    case 'surgeon':
-      filtered.sort((a, b) => a.surgeon.localeCompare(b.surgeon))
       break
     case 'category':
       filtered.sort((a, b) => a.category.localeCompare(b.category))
@@ -333,11 +314,67 @@ const getCategoryLabel = (category) => {
   return labels[category] || category
 }
 
+// Load videos from YouTube API
+const loadVideos = async () => {
+  try {
+    isLoading.value = true
+    error.value = null
+    
+    const result = await youtubeService.getChannelVideos()
+    
+    if (result.error) {
+      error.value = result.error
+      // Use fallback sample data if API fails
+      videos.value = getFallbackVideos()
+    } else if (result.videos && result.videos.length > 0) {
+      videos.value = result.videos
+    } else {
+      videos.value = result
+    }
+    
+    // Set initial video
+    if (filteredVideos.value.length > 0) {
+      currentVideo.value = filteredVideos.value[0]
+    }
+  } catch (err) {
+    console.error('Error loading videos:', err)
+    error.value = 'Failed to load videos. Please try again later.'
+    // Use fallback data
+    videos.value = getFallbackVideos()
+  } finally {
+    isLoading.value = false
+  }
+}
+
+// Fallback video data when API is not available
+const getFallbackVideos = () => [
+  {
+    id: 1,
+    youtubeId: 'dQw4w9WgXcQ',
+    title: 'DMEK Surgery - Complex Case Management',
+    description: 'Detailed demonstration of DMEK surgery on a patient with Fuchs endothelial dystrophy.',
+    surgeon: 'Prof. Massimo Busin',
+    category: 'dmek',
+  },
+  {
+    id: 2,
+    youtubeId: 'dQw4w9WgXcQ',
+    title: 'Large Diameter DALK with Big Bubble Technique',
+    description: 'Step-by-step demonstration of the modified big bubble technique for DALK.',
+    surgeon: 'Prof. Massimo Busin',
+    category: 'dalk',
+  },
+]
+
+// Refresh videos (bypasses cache)
+const refreshVideos = () => {
+  youtubeService.clearCache()
+  loadVideos()
+}
+
 // Set initial video on mount
 onMounted(() => {
-  if (filteredVideos.value.length > 0) {
-    currentVideo.value = filteredVideos.value[0]
-  }
+  loadVideos()
 })
 </script>
 
@@ -387,34 +424,8 @@ onMounted(() => {
   font-size: 1.125rem;
 }
 
-/* Video List Container */
-.video-list-container {
-  max-height: 600px;
-  overflow-y: auto;
-  padding-right: 0.5rem;
-}
-
-/* Custom scrollbar for video list */
-.video-list-container::-webkit-scrollbar {
-  width: 6px;
-}
-
-.video-list-container::-webkit-scrollbar-track {
-  background: #f1f1f1;
-  border-radius: 3px;
-}
-
-.video-list-container::-webkit-scrollbar-thumb {
-  background: #888;
-  border-radius: 3px;
-}
-
-.video-list-container::-webkit-scrollbar-thumb:hover {
-  background: #555;
-}
-
-/* Video list item hover effect */
-.video-list-item:hover {
-  transform: translateY(-2px);
+/* Aspect ratio utility for video thumbnails */
+.aspect-video {
+  aspect-ratio: 16 / 9;
 }
 </style>

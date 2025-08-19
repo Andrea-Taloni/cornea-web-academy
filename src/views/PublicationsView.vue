@@ -173,7 +173,7 @@ const loadPublications = async () => {
         OpenAccess: pub['Open Access'] || '',
       }))
 
-    console.log('Loaded', publications.value.length, 'publications from Scopus')
+    console.log('Loaded', publications.value.length, 'publications from CSV')
 
     // Apply initial sorting
     filteredPublications.value = sortPublications([...publications.value])

@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install)",
+      "Bash(npm run dev:*)",
+      "WebFetch(domain:www.youtube.com)",
+      "Bash(start http://localhost:5174/findChannelId.html)",
+      "Bash(del findChannelId.html)",
+      "Bash(rm:*)",
+      "Bash(start http://localhost:5176/testScopus.html)",
+      "Bash(true)",
+      "Bash(taskkill:*)",
+      "Bash(start http://localhost:5178/clearCache.html)",
+      "Bash(timeout 5 npm run dev)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
