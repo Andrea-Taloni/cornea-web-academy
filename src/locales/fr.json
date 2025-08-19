@@ -1,0 +1,86 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "liveSurgery": "Chirurgie en Direct",
+    "recordings": "Enregistrements",
+    "publications": "Publications",
+    "aboutUs": "À Propos",
+    "contacts": "Contacts",
+    "login": "Connexion",
+    "register": "S'inscrire",
+    "logout": "Déconnexion",
+    "profile": "Profil"
+  },
+  "home": {
+    "title": "Bienvenue à Cornea Web Academy",
+    "subtitle": "Excellence en Éducation de Chirurgie Cornéenne",
+    "description": "Rejoignez-nous pour faire progresser la chirurgie cornéenne grâce à une formation innovante et des démonstrations chirurgicales en direct"
+  },
+  "auth": {
+    "welcomeBack": "Bon retour",
+    "email": "Email",
+    "password": "Mot de passe",
+    "username": "Nom d'utilisateur",
+    "confirmPassword": "Confirmer le mot de passe",
+    "rememberMe": "Se souvenir de moi",
+    "forgotPassword": "Mot de passe oublié?",
+    "signIn": "Se connecter",
+    "signUp": "S'inscrire",
+    "createAccount": "Créer un compte",
+    "alreadyHaveAccount": "Vous avez déjà un compte?",
+    "newToCWA": "Nouveau sur CWA?"
+  },
+  "profile": {
+    "myProfile": "Mon Profil",
+    "updateProfile": "Mettre à jour le Profil",
+    "changePassword": "Changer le Mot de Passe",
+    "currentPassword": "Mot de Passe Actuel",
+    "newPassword": "Nouveau Mot de Passe",
+    "confirmNewPassword": "Confirmer le Nouveau Mot de Passe",
+    "deleteAccount": "Supprimer le Compte",
+    "profileUpdated": "Profil mis à jour avec succès",
+    "passwordChanged": "Mot de passe changé avec succès"
+  },
+  "recordings": {
+    "title": "Bibliothèque Vidéo",
+    "searchPlaceholder": "Rechercher des vidéos...",
+    "filterByCategory": "Filtrer par catégorie",
+    "allCategories": "Toutes les Catégories",
+    "sortBy": "Trier par",
+    "newest": "Plus récents",
+    "oldest": "Plus anciens",
+    "mostViewed": "Plus vus",
+    "refreshVideos": "Actualiser les Vidéos"
+  },
+  "publications": {
+    "title": "Publications",
+    "searchPlaceholder": "Rechercher des publications...",
+    "year": "Année",
+    "journal": "Revue",
+    "authors": "Auteurs",
+    "abstract": "Résumé",
+    "viewPDF": "Voir PDF",
+    "viewOnPubMed": "Voir sur PubMed"
+  },
+  "footer": {
+    "quickLinks": "Liens Rapides",
+    "connectWithUs": "Connectez-vous avec nous",
+    "followUs": "Suivez-nous sur les réseaux sociaux",
+    "allRightsReserved": "Tous droits réservés"
+  },
+  "common": {
+    "loading": "Chargement...",
+    "error": "Erreur",
+    "success": "Succès",
+    "cancel": "Annuler",
+    "save": "Enregistrer",
+    "delete": "Supprimer",
+    "edit": "Modifier",
+    "close": "Fermer",
+    "search": "Rechercher",
+    "filter": "Filtrer",
+    "refresh": "Actualiser",
+    "yes": "Oui",
+    "no": "Non"
+  }
+}

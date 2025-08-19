@@ -1,0 +1,86 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "liveSurgery": "Cirugía en Vivo",
+    "recordings": "Grabaciones",
+    "publications": "Publicaciones",
+    "aboutUs": "Sobre Nosotros",
+    "contacts": "Contactos",
+    "login": "Iniciar sesión",
+    "register": "Registrarse",
+    "logout": "Cerrar sesión",
+    "profile": "Perfil"
+  },
+  "home": {
+    "title": "Bienvenidos a Cornea Web Academy",
+    "subtitle": "Excelencia en Educación de Cirugía Corneal",
+    "description": "Únete a nosotros para avanzar en la cirugía corneal a través de educación innovadora y demostraciones quirúrgicas en vivo"
+  },
+  "auth": {
+    "welcomeBack": "Bienvenido de nuevo",
+    "email": "Correo electrónico",
+    "password": "Contraseña",
+    "username": "Nombre de usuario",
+    "confirmPassword": "Confirmar contraseña",
+    "rememberMe": "Recuérdame",
+    "forgotPassword": "¿Olvidaste tu contraseña?",
+    "signIn": "Iniciar sesión",
+    "signUp": "Registrarse",
+    "createAccount": "Crear una cuenta",
+    "alreadyHaveAccount": "¿Ya tienes una cuenta?",
+    "newToCWA": "¿Nuevo en CWA?"
+  },
+  "profile": {
+    "myProfile": "Mi Perfil",
+    "updateProfile": "Actualizar Perfil",
+    "changePassword": "Cambiar Contraseña",
+    "currentPassword": "Contraseña Actual",
+    "newPassword": "Nueva Contraseña",
+    "confirmNewPassword": "Confirmar Nueva Contraseña",
+    "deleteAccount": "Eliminar Cuenta",
+    "profileUpdated": "Perfil actualizado con éxito",
+    "passwordChanged": "Contraseña cambiada con éxito"
+  },
+  "recordings": {
+    "title": "Biblioteca de Videos",
+    "searchPlaceholder": "Buscar videos...",
+    "filterByCategory": "Filtrar por categoría",
+    "allCategories": "Todas las Categorías",
+    "sortBy": "Ordenar por",
+    "newest": "Más recientes",
+    "oldest": "Más antiguos",
+    "mostViewed": "Más vistos",
+    "refreshVideos": "Actualizar Videos"
+  },
+  "publications": {
+    "title": "Publicaciones",
+    "searchPlaceholder": "Buscar publicaciones...",
+    "year": "Año",
+    "journal": "Revista",
+    "authors": "Autores",
+    "abstract": "Resumen",
+    "viewPDF": "Ver PDF",
+    "viewOnPubMed": "Ver en PubMed"
+  },
+  "footer": {
+    "quickLinks": "Enlaces Rápidos",
+    "connectWithUs": "Conéctate con nosotros",
+    "followUs": "Síguenos en redes sociales",
+    "allRightsReserved": "Todos los derechos reservados"
+  },
+  "common": {
+    "loading": "Cargando...",
+    "error": "Error",
+    "success": "Éxito",
+    "cancel": "Cancelar",
+    "save": "Guardar",
+    "delete": "Eliminar",
+    "edit": "Editar",
+    "close": "Cerrar",
+    "search": "Buscar",
+    "filter": "Filtrar",
+    "refresh": "Actualizar",
+    "yes": "Sí",
+    "no": "No"
+  }
+}

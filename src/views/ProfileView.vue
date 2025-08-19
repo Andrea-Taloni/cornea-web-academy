@@ -408,8 +408,20 @@ const deleteAccount = async () => {
 
 // Load profile image on mount
 onMounted(async () => {
-  if (authStore.user?.profileImage) {
-    profileImage.value = authStore.user.profileImage
+  // Fetch fresh user data to get profileImage
+  try {
+    const userData = await apiService.getCurrentUser()
+    if (userData.user.profileImage) {
+      profileImage.value = userData.user.profileImage
+      // Update local store
+      authStore.user = { ...authStore.user, ...userData.user }
+    }
+  } catch (error) {
+    console.log('Could not fetch user profile:', error)
+    // Fallback to stored value
+    if (authStore.user?.profileImage) {
+      profileImage.value = authStore.user.profileImage
+    }
   }
 })
 </script>

@@ -1,0 +1,86 @@
+{
+  "nav": {
+    "home": "Startseite",
+    "liveSurgery": "Live-Chirurgie",
+    "recordings": "Aufzeichnungen",
+    "publications": "Publikationen",
+    "aboutUs": "Über uns",
+    "contacts": "Kontakte",
+    "login": "Anmelden",
+    "register": "Registrieren",
+    "logout": "Abmelden",
+    "profile": "Profil"
+  },
+  "home": {
+    "title": "Willkommen bei der Cornea Web Academy",
+    "subtitle": "Exzellenz in der Hornhautchirurgie-Ausbildung",
+    "description": "Begleiten Sie uns bei der Weiterentwicklung der Hornhautchirurgie durch innovative Ausbildung und Live-Operationsdemonstrationen"
+  },
+  "auth": {
+    "welcomeBack": "Willkommen zurück",
+    "email": "E-Mail",
+    "password": "Passwort",
+    "username": "Benutzername",
+    "confirmPassword": "Passwort bestätigen",
+    "rememberMe": "Angemeldet bleiben",
+    "forgotPassword": "Passwort vergessen?",
+    "signIn": "Anmelden",
+    "signUp": "Registrieren",
+    "createAccount": "Konto erstellen",
+    "alreadyHaveAccount": "Haben Sie bereits ein Konto?",
+    "newToCWA": "Neu bei CWA?"
+  },
+  "profile": {
+    "myProfile": "Mein Profil",
+    "updateProfile": "Profil aktualisieren",
+    "changePassword": "Passwort ändern",
+    "currentPassword": "Aktuelles Passwort",
+    "newPassword": "Neues Passwort",
+    "confirmNewPassword": "Neues Passwort bestätigen",
+    "deleteAccount": "Konto löschen",
+    "profileUpdated": "Profil erfolgreich aktualisiert",
+    "passwordChanged": "Passwort erfolgreich geändert"
+  },
+  "recordings": {
+    "title": "Videobibliothek",
+    "searchPlaceholder": "Videos suchen...",
+    "filterByCategory": "Nach Kategorie filtern",
+    "allCategories": "Alle Kategorien",
+    "sortBy": "Sortieren nach",
+    "newest": "Neueste",
+    "oldest": "Älteste",
+    "mostViewed": "Meistgesehen",
+    "refreshVideos": "Videos aktualisieren"
+  },
+  "publications": {
+    "title": "Publikationen",
+    "searchPlaceholder": "Publikationen suchen...",
+    "year": "Jahr",
+    "journal": "Zeitschrift",
+    "authors": "Autoren",
+    "abstract": "Zusammenfassung",
+    "viewPDF": "PDF anzeigen",
+    "viewOnPubMed": "Auf PubMed anzeigen"
+  },
+  "footer": {
+    "quickLinks": "Schnelllinks",
+    "connectWithUs": "Verbinden Sie sich mit uns",
+    "followUs": "Folgen Sie uns in den sozialen Medien",
+    "allRightsReserved": "Alle Rechte vorbehalten"
+  },
+  "common": {
+    "loading": "Laden...",
+    "error": "Fehler",
+    "success": "Erfolg",
+    "cancel": "Abbrechen",
+    "save": "Speichern",
+    "delete": "Löschen",
+    "edit": "Bearbeiten",
+    "close": "Schließen",
+    "search": "Suchen",
+    "filter": "Filtern",
+    "refresh": "Aktualisieren",
+    "yes": "Ja",
+    "no": "Nein"
+  }
+}

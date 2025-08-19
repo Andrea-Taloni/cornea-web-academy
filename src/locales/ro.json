@@ -1,0 +1,86 @@
+{
+  "nav": {
+    "home": "Acasă",
+    "liveSurgery": "Chirurgie Live",
+    "recordings": "Înregistrări",
+    "publications": "Publicații",
+    "aboutUs": "Despre Noi",
+    "contacts": "Contacte",
+    "login": "Autentificare",
+    "register": "Înregistrare",
+    "logout": "Deconectare",
+    "profile": "Profil"
+  },
+  "home": {
+    "title": "Bine ați venit la Cornea Web Academy",
+    "subtitle": "Excelență în Educația Chirurgiei Corneene",
+    "description": "Alăturați-vă nouă pentru a avansa chirurgia corneeană prin educație inovatoare și demonstrații chirurgicale live"
+  },
+  "auth": {
+    "welcomeBack": "Bine ai revenit",
+    "email": "Email",
+    "password": "Parolă",
+    "username": "Nume utilizator",
+    "confirmPassword": "Confirmă parola",
+    "rememberMe": "Ține-mă minte",
+    "forgotPassword": "Ai uitat parola?",
+    "signIn": "Autentificare",
+    "signUp": "Înregistrare",
+    "createAccount": "Creează un cont",
+    "alreadyHaveAccount": "Ai deja un cont?",
+    "newToCWA": "Nou la CWA?"
+  },
+  "profile": {
+    "myProfile": "Profilul Meu",
+    "updateProfile": "Actualizează Profilul",
+    "changePassword": "Schimbă Parola",
+    "currentPassword": "Parola Curentă",
+    "newPassword": "Parolă Nouă",
+    "confirmNewPassword": "Confirmă Parola Nouă",
+    "deleteAccount": "Șterge Contul",
+    "profileUpdated": "Profil actualizat cu succes",
+    "passwordChanged": "Parolă schimbată cu succes"
+  },
+  "recordings": {
+    "title": "Bibliotecă Video",
+    "searchPlaceholder": "Caută videoclipuri...",
+    "filterByCategory": "Filtrează după categorie",
+    "allCategories": "Toate Categoriile",
+    "sortBy": "Sortează după",
+    "newest": "Cele mai noi",
+    "oldest": "Cele mai vechi",
+    "mostViewed": "Cele mai vizionate",
+    "refreshVideos": "Actualizează Videoclipuri"
+  },
+  "publications": {
+    "title": "Publicații",
+    "searchPlaceholder": "Caută publicații...",
+    "year": "An",
+    "journal": "Revistă",
+    "authors": "Autori",
+    "abstract": "Rezumat",
+    "viewPDF": "Vezi PDF",
+    "viewOnPubMed": "Vezi pe PubMed"
+  },
+  "footer": {
+    "quickLinks": "Linkuri Rapide",
+    "connectWithUs": "Conectează-te cu noi",
+    "followUs": "Urmărește-ne pe rețelele sociale",
+    "allRightsReserved": "Toate drepturile rezervate"
+  },
+  "common": {
+    "loading": "Se încarcă...",
+    "error": "Eroare",
+    "success": "Succes",
+    "cancel": "Anulează",
+    "save": "Salvează",
+    "delete": "Șterge",
+    "edit": "Editează",
+    "close": "Închide",
+    "search": "Caută",
+    "filter": "Filtrează",
+    "refresh": "Actualizează",
+    "yes": "Da",
+    "no": "Nu"
+  }
+}

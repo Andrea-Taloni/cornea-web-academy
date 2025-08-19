@@ -11,7 +11,10 @@
       "Bash(true)",
       "Bash(taskkill:*)",
       "Bash(start http://localhost:5178/clearCache.html)",
-      "Bash(timeout 5 npm run dev)"
+      "Bash(timeout 5 npm run dev)",
+      "Bash(node:*)",
+      "Bash(npm install:*)",
+      "Bash(mkdir:*)"
     ],
     "deny": [],
     "ask": []

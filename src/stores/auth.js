@@ -8,12 +8,22 @@ export const useAuthStore = defineStore('auth', () => {
   const isLoading = ref(false)
   const error = ref(null)
 
-  // Load user from localStorage on init
-  const loadUser = () => {
+  // Load user from localStorage on init and fetch fresh data
+  const loadUser = async () => {
     const savedUser = localStorage.getItem('user')
     if (savedUser) {
       try {
         user.value = JSON.parse(savedUser)
+        // Fetch fresh user data from backend
+        if (apiService.getToken()) {
+          try {
+            const freshUser = await apiService.getCurrentUser()
+            user.value = { ...user.value, ...freshUser.user }
+            localStorage.setItem('user', JSON.stringify(user.value))
+          } catch (error) {
+            console.log('Could not fetch fresh user data:', error)
+          }
+        }
       } catch (e) {
         console.error('Error loading user:', e)
         localStorage.removeItem('user')

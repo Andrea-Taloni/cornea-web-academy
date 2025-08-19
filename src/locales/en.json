@@ -1,0 +1,86 @@
+{
+  "nav": {
+    "home": "Home",
+    "liveSurgery": "Live Surgery",
+    "recordings": "Recordings",
+    "publications": "Publications",
+    "aboutUs": "About Us",
+    "contacts": "Contacts",
+    "login": "Login",
+    "register": "Register",
+    "logout": "Logout",
+    "profile": "Profile"
+  },
+  "home": {
+    "title": "Welcome to Cornea Web Academy",
+    "subtitle": "Excellence in Corneal Surgery Education",
+    "description": "Join us in advancing corneal surgery through innovative education and live surgical demonstrations"
+  },
+  "auth": {
+    "welcomeBack": "Welcome Back",
+    "email": "Email",
+    "password": "Password",
+    "username": "Username",
+    "confirmPassword": "Confirm Password",
+    "rememberMe": "Remember me",
+    "forgotPassword": "Forgot password?",
+    "signIn": "Sign In",
+    "signUp": "Sign Up",
+    "createAccount": "Create an account",
+    "alreadyHaveAccount": "Already have an account?",
+    "newToCWA": "New to CWA?"
+  },
+  "profile": {
+    "myProfile": "My Profile",
+    "updateProfile": "Update Profile",
+    "changePassword": "Change Password",
+    "currentPassword": "Current Password",
+    "newPassword": "New Password",
+    "confirmNewPassword": "Confirm New Password",
+    "deleteAccount": "Delete Account",
+    "profileUpdated": "Profile updated successfully",
+    "passwordChanged": "Password changed successfully"
+  },
+  "recordings": {
+    "title": "Video Library",
+    "searchPlaceholder": "Search videos...",
+    "filterByCategory": "Filter by category",
+    "allCategories": "All Categories",
+    "sortBy": "Sort by",
+    "newest": "Newest",
+    "oldest": "Oldest",
+    "mostViewed": "Most Viewed",
+    "refreshVideos": "Refresh Videos"
+  },
+  "publications": {
+    "title": "Publications",
+    "searchPlaceholder": "Search publications...",
+    "year": "Year",
+    "journal": "Journal",
+    "authors": "Authors",
+    "abstract": "Abstract",
+    "viewPDF": "View PDF",
+    "viewOnPubMed": "View on PubMed"
+  },
+  "footer": {
+    "quickLinks": "Quick Links",
+    "connectWithUs": "Connect with us",
+    "followUs": "Follow us on social media",
+    "allRightsReserved": "All rights reserved"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "cancel": "Cancel",
+    "save": "Save",
+    "delete": "Delete",
+    "edit": "Edit",
+    "close": "Close",
+    "search": "Search",
+    "filter": "Filter",
+    "refresh": "Refresh",
+    "yes": "Yes",
+    "no": "No"
+  }
+}

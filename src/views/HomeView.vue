@@ -3,6 +3,7 @@
     <HeaderComponent />
     <SlideshowComponent />
     <HeroSection />
+    <AboutSection />
     <FeaturesSection />
     <NewsSection />
     <FooterComponent />
@@ -13,6 +14,7 @@
 import HeaderComponent from '@/components/HeaderComponent.vue'
 import SlideshowComponent from '@/components/home/SlideshowGallery.vue'
 import HeroSection from '@/components/home/WelcomeBanner.vue'
+import AboutSection from '@/components/home/AboutSection.vue'
 import FeaturesSection from '@/components/home/FeaturesSection.vue'
 import NewsSection from '@/components/home/NewsSection.vue'
 import FooterComponent from '@/components/FooterComponent.vue'

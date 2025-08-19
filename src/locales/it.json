@@ -1,0 +1,86 @@
+{
+  "nav": {
+    "home": "Home",
+    "liveSurgery": "Chirurgia Live",
+    "recordings": "Registrazioni",
+    "publications": "Pubblicazioni",
+    "aboutUs": "Chi Siamo",
+    "contacts": "Contatti",
+    "login": "Accedi",
+    "register": "Registrati",
+    "logout": "Esci",
+    "profile": "Profilo"
+  },
+  "home": {
+    "title": "Benvenuti alla Cornea Web Academy",
+    "subtitle": "Eccellenza nell'Educazione Chirurgica Corneale",
+    "description": "Unisciti a noi per far progredire la chirurgia corneale attraverso formazione innovativa e dimostrazioni chirurgiche dal vivo"
+  },
+  "auth": {
+    "welcomeBack": "Bentornato",
+    "email": "Email",
+    "password": "Password",
+    "username": "Nome utente",
+    "confirmPassword": "Conferma Password",
+    "rememberMe": "Ricordami",
+    "forgotPassword": "Password dimenticata?",
+    "signIn": "Accedi",
+    "signUp": "Registrati",
+    "createAccount": "Crea un account",
+    "alreadyHaveAccount": "Hai già un account?",
+    "newToCWA": "Nuovo su CWA?"
+  },
+  "profile": {
+    "myProfile": "Il Mio Profilo",
+    "updateProfile": "Aggiorna Profilo",
+    "changePassword": "Cambia Password",
+    "currentPassword": "Password Attuale",
+    "newPassword": "Nuova Password",
+    "confirmNewPassword": "Conferma Nuova Password",
+    "deleteAccount": "Elimina Account",
+    "profileUpdated": "Profilo aggiornato con successo",
+    "passwordChanged": "Password cambiata con successo"
+  },
+  "recordings": {
+    "title": "Libreria Video",
+    "searchPlaceholder": "Cerca video...",
+    "filterByCategory": "Filtra per categoria",
+    "allCategories": "Tutte le Categorie",
+    "sortBy": "Ordina per",
+    "newest": "Più recenti",
+    "oldest": "Più vecchi",
+    "mostViewed": "Più visti",
+    "refreshVideos": "Aggiorna Video"
+  },
+  "publications": {
+    "title": "Pubblicazioni",
+    "searchPlaceholder": "Cerca pubblicazioni...",
+    "year": "Anno",
+    "journal": "Rivista",
+    "authors": "Autori",
+    "abstract": "Abstract",
+    "viewPDF": "Visualizza PDF",
+    "viewOnPubMed": "Visualizza su PubMed"
+  },
+  "footer": {
+    "quickLinks": "Link Rapidi",
+    "connectWithUs": "Connettiti con noi",
+    "followUs": "Seguici sui social media",
+    "allRightsReserved": "Tutti i diritti riservati"
+  },
+  "common": {
+    "loading": "Caricamento...",
+    "error": "Errore",
+    "success": "Successo",
+    "cancel": "Annulla",
+    "save": "Salva",
+    "delete": "Elimina",
+    "edit": "Modifica",
+    "close": "Chiudi",
+    "search": "Cerca",
+    "filter": "Filtra",
+    "refresh": "Aggiorna",
+    "yes": "Sì",
+    "no": "No"
+  }
+}

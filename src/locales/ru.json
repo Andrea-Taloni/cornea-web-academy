@@ -1,0 +1,86 @@
+{
+  "nav": {
+    "home": "Главная",
+    "liveSurgery": "Живая хирургия",
+    "recordings": "Записи",
+    "publications": "Публикации",
+    "aboutUs": "О нас",
+    "contacts": "Контакты",
+    "login": "Войти",
+    "register": "Регистрация",
+    "logout": "Выйти",
+    "profile": "Профиль"
+  },
+  "home": {
+    "title": "Добро пожаловать в Cornea Web Academy",
+    "subtitle": "Превосходство в образовании роговичной хирургии",
+    "description": "Присоединяйтесь к нам для продвижения роговичной хирургии через инновационное образование и живые хирургические демонстрации"
+  },
+  "auth": {
+    "welcomeBack": "С возвращением",
+    "email": "Электронная почта",
+    "password": "Пароль",
+    "username": "Имя пользователя",
+    "confirmPassword": "Подтвердите пароль",
+    "rememberMe": "Запомнить меня",
+    "forgotPassword": "Забыли пароль?",
+    "signIn": "Войти",
+    "signUp": "Зарегистрироваться",
+    "createAccount": "Создать аккаунт",
+    "alreadyHaveAccount": "Уже есть аккаунт?",
+    "newToCWA": "Новичок в CWA?"
+  },
+  "profile": {
+    "myProfile": "Мой профиль",
+    "updateProfile": "Обновить профиль",
+    "changePassword": "Изменить пароль",
+    "currentPassword": "Текущий пароль",
+    "newPassword": "Новый пароль",
+    "confirmNewPassword": "Подтвердите новый пароль",
+    "deleteAccount": "Удалить аккаунт",
+    "profileUpdated": "Профиль успешно обновлен",
+    "passwordChanged": "Пароль успешно изменен"
+  },
+  "recordings": {
+    "title": "Видеотека",
+    "searchPlaceholder": "Поиск видео...",
+    "filterByCategory": "Фильтр по категории",
+    "allCategories": "Все категории",
+    "sortBy": "Сортировать по",
+    "newest": "Новейшие",
+    "oldest": "Старейшие",
+    "mostViewed": "Самые просматриваемые",
+    "refreshVideos": "Обновить видео"
+  },
+  "publications": {
+    "title": "Публикации",
+    "searchPlaceholder": "Поиск публикаций...",
+    "year": "Год",
+    "journal": "Журнал",
+    "authors": "Авторы",
+    "abstract": "Аннотация",
+    "viewPDF": "Просмотр PDF",
+    "viewOnPubMed": "Просмотр на PubMed"
+  },
+  "footer": {
+    "quickLinks": "Быстрые ссылки",
+    "connectWithUs": "Свяжитесь с нами",
+    "followUs": "Следите за нами в социальных сетях",
+    "allRightsReserved": "Все права защищены"
+  },
+  "common": {
+    "loading": "Загрузка...",
+    "error": "Ошибка",
+    "success": "Успех",
+    "cancel": "Отмена",
+    "save": "Сохранить",
+    "delete": "Удалить",
+    "edit": "Редактировать",
+    "close": "Закрыть",
+    "search": "Поиск",
+    "filter": "Фильтр",
+    "refresh": "Обновить",
+    "yes": "Да",
+    "no": "Нет"
+  }
+}

@@ -65,9 +65,6 @@
         <router-link to="/recordings" class="mobile-nav-link" @click="handleLinkClick">
           Recordings
         </router-link>
-        <router-link to="/about" class="mobile-nav-link" @click="handleLinkClick">
-          About Us
-        </router-link>
         <router-link to="/contacts" class="mobile-nav-link" @click="handleLinkClick">
           Contacts
         </router-link>

@@ -5,8 +5,10 @@
       <div class="text-center">
         <h2 class="text-4xl md:text-5xl font-bold mb-4">Welcome to Cornea Web Academy</h2>
         <p class="text-xl md:text-2xl mb-6 max-w-3xl mx-auto">
-          Enter the surgical theatre of Prof. Massimo Busin through interactive high-definition
-          video streaming
+          The Cornea Web Academy (CWA) is an educational platform for corneal surgery based at the Department of Ophthalmology, Ospedali Privati Forlì, Villa Igea, in Forlì, Italy.
+        </p>
+        <p class="text-lg md:text-xl mb-6 max-w-3xl mx-auto">
+          Founded in 2018 by Prof. Massimo Busin.
         </p>
         <div class="space-x-4">
           <router-link

@@ -17,8 +17,11 @@
         <!-- Desktop Navigation -->
         <DesktopNavigation />
 
-        <!-- Auth Buttons -->
-        <AuthButtons class="hidden md:flex" />
+        <!-- Language Switcher and Auth Buttons -->
+        <div class="hidden md:flex items-center space-x-4">
+          <LanguageSwitcher />
+          <AuthButtons />
+        </div>
 
         <!-- Mobile Menu Button -->
         <button
@@ -54,6 +57,7 @@ import logoImage from '@/assets/images/cwa-logo.png'
 import DesktopNavigation from './header/DesktopNavigation.vue'
 import MobileNavigation from './header/MobileNavigation.vue'
 import AuthButtons from './header/LoginRegister.vue'
+import LanguageSwitcher from './LanguageSwitcher.vue'
 
 const mobileMenuOpen = ref(false)
 

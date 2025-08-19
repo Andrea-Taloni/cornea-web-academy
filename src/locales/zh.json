@@ -1,0 +1,86 @@
+{
+  "nav": {
+    "home": "首页",
+    "liveSurgery": "实时手术",
+    "recordings": "录像",
+    "publications": "出版物",
+    "aboutUs": "关于我们",
+    "contacts": "联系方式",
+    "login": "登录",
+    "register": "注册",
+    "logout": "退出",
+    "profile": "个人资料"
+  },
+  "home": {
+    "title": "欢迎来到角膜网络学院",
+    "subtitle": "角膜手术教育的卓越",
+    "description": "加入我们，通过创新教育和现场手术演示推进角膜手术"
+  },
+  "auth": {
+    "welcomeBack": "欢迎回来",
+    "email": "电子邮件",
+    "password": "密码",
+    "username": "用户名",
+    "confirmPassword": "确认密码",
+    "rememberMe": "记住我",
+    "forgotPassword": "忘记密码？",
+    "signIn": "登录",
+    "signUp": "注册",
+    "createAccount": "创建账户",
+    "alreadyHaveAccount": "已有账户？",
+    "newToCWA": "CWA新用户？"
+  },
+  "profile": {
+    "myProfile": "我的资料",
+    "updateProfile": "更新资料",
+    "changePassword": "更改密码",
+    "currentPassword": "当前密码",
+    "newPassword": "新密码",
+    "confirmNewPassword": "确认新密码",
+    "deleteAccount": "删除账户",
+    "profileUpdated": "资料更新成功",
+    "passwordChanged": "密码更改成功"
+  },
+  "recordings": {
+    "title": "视频库",
+    "searchPlaceholder": "搜索视频...",
+    "filterByCategory": "按类别筛选",
+    "allCategories": "所有类别",
+    "sortBy": "排序方式",
+    "newest": "最新",
+    "oldest": "最旧",
+    "mostViewed": "观看最多",
+    "refreshVideos": "刷新视频"
+  },
+  "publications": {
+    "title": "出版物",
+    "searchPlaceholder": "搜索出版物...",
+    "year": "年份",
+    "journal": "期刊",
+    "authors": "作者",
+    "abstract": "摘要",
+    "viewPDF": "查看PDF",
+    "viewOnPubMed": "在PubMed查看"
+  },
+  "footer": {
+    "quickLinks": "快速链接",
+    "connectWithUs": "与我们联系",
+    "followUs": "在社交媒体上关注我们",
+    "allRightsReserved": "版权所有"
+  },
+  "common": {
+    "loading": "加载中...",
+    "error": "错误",
+    "success": "成功",
+    "cancel": "取消",
+    "save": "保存",
+    "delete": "删除",
+    "edit": "编辑",
+    "close": "关闭",
+    "search": "搜索",
+    "filter": "筛选",
+    "refresh": "刷新",
+    "yes": "是",
+    "no": "否"
+  }
+}
