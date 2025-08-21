@@ -26,9 +26,9 @@
       "indications": "Indicazioni",
       "surgery": "Chirurgia",
       "results": "Risultati",
-      "complications": "Complicazioni",
+      "complications": "Complicanze",
       "postop": "Post-operatorio",
-      "references": "Riferimenti"
+      "references": "Bibliografia"
     }
   },
   "home": {
@@ -178,7 +178,7 @@
     "allRightsReserved": "Tutti i diritti riservati"
   },
   "liveSurgery": {
-    "title": "Chirurgia dal Vivo",
+    "title": "Chirurgia in Diretta",
     "subtitle": "Partecipa alle nostre trasmissioni chirurgiche interattive dal vivo e impara dalle procedure in tempo reale",
     "cwaTitle": "La Cornea Web Academy (CWA)",
     "introText": "ti offre l'opportunità di entrare nella sala operatoria del Prof. Massimo Busin e connetterti direttamente con il suo microscopio attraverso lo streaming video HD ad alta velocità (disponibile in inglese e italiano)",

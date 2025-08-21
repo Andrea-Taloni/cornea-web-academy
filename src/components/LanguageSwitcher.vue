@@ -1,5 +1,5 @@
 <template>
-  <div class="relative">
+  <div class="relative" ref="dropdownRef">
     <button
       @click="isOpen = !isOpen"
       class="flex items-center space-x-1 px-2 py-2 text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors"
@@ -24,7 +24,6 @@
     <!-- Dropdown -->
     <div
       v-if="isOpen"
-      @click.away="isOpen = false"
       class="absolute right-0 mt-2 w-52 bg-white rounded-lg shadow-xl border border-gray-200 z-50 overflow-hidden"
     >
       <div class="py-1">
@@ -54,11 +53,26 @@
 </template>
 
 <script setup>
-import { ref, computed } from 'vue'
+import { ref, computed, onMounted, onUnmounted } from 'vue'
 import { useI18n } from 'vue-i18n'
 
 const { locale } = useI18n()
 const isOpen = ref(false)
+const dropdownRef = ref(null)
+
+const handleClickOutside = (event) => {
+  if (dropdownRef.value && !dropdownRef.value.contains(event.target)) {
+    isOpen.value = false
+  }
+}
+
+onMounted(() => {
+  document.addEventListener('click', handleClickOutside)
+})
+
+onUnmounted(() => {
+  document.removeEventListener('click', handleClickOutside)
+})
 
 const languages = [
   { code: 'en', name: 'English', flag: 'GB', emoji: '🇬🇧' },
