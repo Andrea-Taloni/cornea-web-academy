@@ -33,22 +33,25 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { computed } from 'vue'
+import { useI18n } from 'vue-i18n'
 
-const features = ref([
+const { t } = useI18n()
+
+const features = computed(() => [
   {
-    title: 'HD Video Streaming',
-    description: 'Watch surgeries in high-definition video quality',
+    title: t('home.features.hdStreaming.title'),
+    description: t('home.features.hdStreaming.description'),
     icon: 'M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z',
   },
   {
-    title: 'Live Interaction',
-    description: 'Get answers directly from the surgeon',
+    title: t('home.features.liveInteraction.title'),
+    description: t('home.features.liveInteraction.description'),
     icon: 'M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z',
   },
   {
-    title: 'Educational Resources',
-    description: 'Access comprehensive learning materials',
+    title: t('home.features.educationalResources.title'),
+    description: t('home.features.educationalResources.description'),
     icon: 'M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253',
   },
 ])

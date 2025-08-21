@@ -4,8 +4,8 @@
 
     <!-- Hero Section usando il componente riutilizzabile -->
     <PageHero
-      title="Publications"
-      subtitle="Explore the extensive research contributions from Prof. Massimo Busin and colleagues"
+      :title="$t('publications.title')"
+      :subtitle="$t('publications.subtitle')"
     />
 
     <!-- Statistics Overview -->
@@ -32,7 +32,7 @@
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex flex-col items-center justify-center">
           <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"></div>
-          <p class="mt-4 text-gray-600">Loading publications...</p>
+          <p class="mt-4 text-gray-600">{{ $t('publications.loadingText') }}</p>
         </div>
       </div>
     </section>
@@ -54,13 +54,13 @@
               d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
             ></path>
           </svg>
-          <h3 class="mt-2 text-lg font-medium text-red-800">Error Loading Publications</h3>
+          <h3 class="mt-2 text-lg font-medium text-red-800">{{ $t('publications.errorTitle') }}</h3>
           <p class="mt-1 text-sm text-red-600">{{ error }}</p>
           <button
             @click="loadPublications"
             class="mt-4 px-4 py-2 bg-red-600 text-white rounded hover:bg-red-700"
           >
-            Try Again
+            {{ $t('publications.tryAgain') }}
           </button>
         </div>
       </div>

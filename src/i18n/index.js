@@ -7,6 +7,8 @@ import de from '../locales/de.json'
 import ro from '../locales/ro.json'
 import ru from '../locales/ru.json'
 import zh from '../locales/zh.json'
+import pl from '../locales/pl.json'
+import cs from '../locales/cs.json'
 
 const messages = {
   en,
@@ -16,7 +18,9 @@ const messages = {
   de,
   ro,
   ru,
-  zh
+  zh,
+  pl,
+  cs
 }
 
 // Get saved language or detect browser language

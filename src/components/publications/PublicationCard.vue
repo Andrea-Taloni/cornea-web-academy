@@ -17,7 +17,7 @@
           </svg>
           {{ publication.CitedBy }}
         </span>
-        <span class="citation-tooltip">Citations</span>
+        <span class="citation-tooltip">{{ $t('publications.citations') }}</span>
       </div>
     </div>
 
@@ -79,7 +79,7 @@
               clip-rule="evenodd"
             />
           </svg>
-          Open Access
+          {{ $t('publications.openAccess') }}
         </span>
       </div>
 
@@ -127,7 +127,7 @@
         <button
           @click="copyCitation"
           class="inline-flex items-center text-gray-600 hover:text-gray-800 transition-colors"
-          :title="copied ? 'Copied!' : 'Copy citation'"
+          :title="copied ? $t('publications.copied') : $t('publications.copyCitation')"
         >
           <svg
             v-if="!copied"
@@ -157,7 +157,7 @@
               d="M5 13l4 4L19 7"
             />
           </svg>
-          {{ copied ? 'Copied!' : 'Copy citation' }}
+          {{ copied ? $t('publications.copied') : $t('publications.copyCitation') }}
         </button>
       </div>
     </div>

@@ -4,7 +4,7 @@
     <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 md:py-8">
       <div class="text-center">
         <h2 class="text-4xl md:text-5xl font-bold mb-4">{{ $t('home.welcome.title') }}</h2>
-        <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
+        <p class="text-xl md:text-2xl mb-8 max-w-5xl mx-auto">
           {{ $t('home.welcome.description') }}
         </p>
         <div class="space-x-4">

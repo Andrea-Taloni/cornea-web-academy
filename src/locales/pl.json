@@ -1,0 +1,238 @@
+{
+  "nav": {
+    "home": "Strona główna",
+    "surgery": "Chirurgia",
+    "liveSurgery": "Chirurgia na żywo",
+    "recordings": "Nagrania",
+    "publications": "Publikacje",
+    "aboutUs": "O nas",
+    "contacts": "Kontakt",
+    "login": "Zaloguj",
+    "register": "Zarejestruj",
+    "logout": "Wyloguj",
+    "profile": "Profil"
+  },
+  "surgery": {
+    "types": {
+      "dalk": "DALK",
+      "mushroomPk": "Mushroom PK",
+      "dmek": "DMEK",
+      "dsaek": "DSAEK",
+      "utDsaek": "UT-DSAEK",
+      "salk": "SALK"
+    },
+    "sections": {
+      "introduction": "Wprowadzenie",
+      "indications": "Wskazania",
+      "surgery": "Chirurgia",
+      "results": "Wyniki",
+      "complications": "Powikłania",
+      "postop": "Okres pooperacyjny",
+      "references": "Bibliografia"
+    }
+  },
+  "home": {
+    "title": "Witamy w Cornea Web Academy",
+    "subtitle": "Doskonałość w edukacji chirurgii rogówki",
+    "description": "Dołącz do nas, aby rozwijać chirurgię rogówki poprzez innowacyjną edukację i demonstracje chirurgiczne na żywo",
+    "welcome": {
+      "title": "Witamy w Cornea Web Academy",
+      "description": "Platforma edukacyjna dla chirurgii rogówki założona w 2018 roku przez prof. Massimo Busina, z siedzibą w Departamencie Okulistyki, Ospedali Privati Forlì, Villa Igea, w Forlì, Włochy.",
+      "exploreLiveSurgery": "Odkryj chirurgię na żywo",
+      "learnMore": "Dowiedz się więcej"
+    },
+    "about": {
+      "intro": "Cornea Web Academy (CWA) to platforma edukacyjna dla chirurgii rogówki z siedzibą w",
+      "department": "Departamencie Okulistyki, Ospedali Privati Forlì, Villa Igea",
+      "location": "w Forlì, Włochy.",
+      "founded": "Założona w",
+      "year": "2018",
+      "founder": "prof. Massimo Busin",
+      "procedures": "Nasz departament wykonuje rocznie około",
+      "proceduresCount": "300 zabiegów keratoplastyki,",
+      "surgeryTypes": "w tym DALK, Keratoplastykę Grzybkową, DSAEK, UT-DSAEK, DMEK i SALK."
+    },
+    "features": {
+      "hdStreaming": {
+        "title": "Transmisja Wideo HD",
+        "description": "Oglądaj operacje w jakości wideo wysokiej rozdzielczości"
+      },
+      "liveInteraction": {
+        "title": "Interakcja na Żywo",
+        "description": "Uzyskaj odpowiedzi bezpośrednio od chirurga"
+      },
+      "educationalResources": {
+        "title": "Zasoby Edukacyjne",
+        "description": "Dostęp do kompleksowych materiałów edukacyjnych"
+      }
+    }
+  },
+  "auth": {
+    "welcomeBack": "Witaj ponownie",
+    "email": "Email",
+    "password": "Hasło",
+    "username": "Nazwa użytkownika",
+    "confirmPassword": "Potwierdź hasło",
+    "rememberMe": "Zapamiętaj mnie",
+    "forgotPassword": "Zapomniałeś hasła?",
+    "signIn": "Zaloguj się",
+    "signUp": "Zarejestruj się",
+    "createAccount": "Utwórz konto",
+    "alreadyHaveAccount": "Masz już konto?",
+    "newToCWA": "Nowy w CWA?"
+  },
+  "profile": {
+    "myProfile": "Mój profil",
+    "updateProfile": "Zaktualizuj profil",
+    "changePassword": "Zmień hasło",
+    "currentPassword": "Obecne hasło",
+    "newPassword": "Nowe hasło",
+    "confirmNewPassword": "Potwierdź nowe hasło",
+    "deleteAccount": "Usuń konto",
+    "profileUpdated": "Profil zaktualizowany pomyślnie",
+    "passwordChanged": "Hasło zmienione pomyślnie",
+    "username": "Nazwa użytkownika",
+    "email": "Email",
+    "updating": "Aktualizowanie...",
+    "changingPassword": "Zmiana...",
+    "memberSince": "Członek od",
+    "deleteAccountWarning": "Czy na pewno chcesz usunąć swoje konto? Ta akcja nie może być cofnięta.",
+    "confirmDelete": "Tak, usuń moje konto",
+    "cancel": "Anuluj",
+    "profileImageUpdated": "Zdjęcie profilowe zaktualizowane pomyślnie",
+    "failedToUpdateImage": "Nie udało się zaktualizować zdjęcia profilowego",
+    "failedToUpdateProfile": "Nie udało się zaktualizować profilu",
+    "failedToChangePassword": "Nie udało się zmienić hasła",
+    "failedToDeleteAccount": "Nie udało się usunąć konta",
+    "imageSizeError": "Rozmiar obrazu musi być mniejszy niż 5MB",
+    "passwordsDoNotMatch": "Nowe hasła nie pasują do siebie",
+    "enterPassword": "Proszę wprowadzić hasło"
+  },
+  "recordings": {
+    "title": "Nagrania Chirurgiczne",
+    "subtitle": "Oglądaj nagrane procedury chirurgiczne naszych ekspertów",
+    "retry": "Ponów",
+    "selectVideo": "Wybierz wideo do odtworzenia",
+    "searchPlaceholder": "Szukaj filmów według tytułu lub procedury...",
+    "allCategories": "Wszystkie kategorie",
+    "sortTitleAZ": "Tytuł (A-Z)",
+    "sortCategory": "Kategoria",
+    "videoLibrary": "Biblioteka wideo",
+    "refreshing": "Odświeżanie...",
+    "refreshVideos": "Odśwież filmy",
+    "noVideosFound": "Nie znaleziono filmów",
+    "tryAdjusting": "Spróbuj dostosować wyszukiwanie lub filtry",
+    "categories": {
+      "dalk": "DALK",
+      "dmek": "DMEK",
+      "dsaek": "DSAEK",
+      "utDsaek": "UT-DSAEK",
+      "mushroomPk": "Keratoplastyka Grzybkowa",
+      "educational": "Edukacyjne"
+    }
+  },
+  "publications": {
+    "title": "Publikacje",
+    "subtitle": "Poznaj rozległe badania prof. Massimo Busina i współpracowników",
+    "loadingText": "Ładowanie publikacji...",
+    "errorTitle": "Błąd wczytywania publikacji",
+    "tryAgain": "Spróbuj ponownie",
+    "searchPlaceholder": "Szukaj publikacji według tytułu, autorów lub czasopisma...",
+    "allYears": "Wszystkie lata",
+    "allJournals": "Wszystkie czasopisma",
+    "clear": "Wyczyść",
+    "dateNewest": "Data (najnowsze pierwsze)",
+    "dateOldest": "Data (najstarsze pierwsze)",
+    "citationsMost": "Cytowania (najczęściej cytowane pierwsze)",
+    "citationsLeast": "Cytowania (najrzadziej cytowane pierwsze)",
+    "titleAZ": "Tytuł (A-Z)",
+    "titleZA": "Tytuł (Z-A)",
+    "journalAZ": "Czasopismo (A-Z)",
+    "journalZA": "Czasopismo (Z-A)",
+    "scopusMetrics": "Metryki Scopus",
+    "totalPublications": "Wszystkie publikacje",
+    "yearsActive": "Lata aktywności",
+    "hIndex": "Indeks h",
+    "totalCitations": "Wszystkie cytowania",
+    "avgCitationsPerPaper": "Śred. cytowań/artykuł",
+    "coAuthors": "Współautorzy",
+    "noPublicationsFound": "Nie znaleziono publikacji",
+    "tryAdjustingSearch": "Spróbuj dostosować kryteria wyszukiwania lub filtrowania.",
+    "citations": "Cytowania",
+    "openAccess": "Otwarty dostęp",
+    "previous": "Poprzednia",
+    "next": "Następna",
+    "year": "Rok",
+    "journal": "Czasopismo",
+    "authors": "Autorzy",
+    "abstract": "Abstrakt",
+    "viewPDF": "Zobacz PDF",
+    "viewOnPubMed": "Zobacz na PubMed",
+    "copyCitation": "Kopiuj cytat",
+    "copied": "Skopiowano!"
+  },
+  "footer": {
+    "quickLinks": "Szybkie linki",
+    "connectWithUs": "Połącz się z nami",
+    "followUs": "Śledź nas w mediach społecznościowych",
+    "allRightsReserved": "Wszelkie prawa zastrzeżone"
+  },
+  "liveSurgery": {
+    "title": "Chirurgia na Żywo",
+    "subtitle": "Dołącz do naszych interaktywnych transmisji chirurgicznych na żywo i ucz się z zabiegów w czasie rzeczywistym",
+    "cwaTitle": "Cornea Web Academy (CWA)",
+    "introText": "oferuje możliwość wejścia na salę operacyjną prof. Massimo Busina i bezpośredniego połączenia z jego mikroskopem poprzez szybki streaming wideo HD (dostępne w języku angielskim i włoskim)",
+    "broadcasting": {
+      "title": "Transmisja Chirurgiczna na Żywo",
+      "description": "W każdej sesji wszystkie interwencje chirurgiczne są wykonywane i omawiane na żywo. Transmisja skierowana jest zarówno do młodszych chirurgów, jak i bardziej doświadczonych kolegów."
+    },
+    "interactive": {
+      "title": "Interaktywny Udział",
+      "description": "Zadawaj pytania i otrzymuj wyjaśnienia w czasie rzeczywistym bezpośrednio od chirurga lub po prostu obserwuj i słuchaj dyskusji w trybie tylko do podglądu."
+    },
+    "specialized": {
+      "title": "Specjalistyczne Tematy Chirurgiczne",
+      "description": "Każda operacja koncentruje się na konkretnych tematach, w tym DALK, DMEK, UT-DSAEK, DSAEK w PK i DALK w PK, z co najmniej 2 procedurami wykonywanymi i omawianymi podczas operacji."
+    }
+  },
+  "contacts": {
+    "title": "Kontakty",
+    "subtitle": "Skontaktuj się z zespołem CWA w sprawie zapytań, wsparcia lub współpracy",
+    "sendMessage": "Wyślij nam wiadomość",
+    "firstName": "Imię",
+    "lastName": "Nazwisko",
+    "email": "Email",
+    "subject": "Temat",
+    "selectSubject": "Wybierz temat",
+    "generalInquiry": "Zapytanie ogólne",
+    "technicalSupport": "Wsparcie techniczne",
+    "membership": "Członkostwo",
+    "collaboration": "Współpraca",
+    "mediaInquiry": "Zapytanie medialne",
+    "message": "Wiadomość",
+    "notRobot": "Nie jestem robotem",
+    "sendButton": "Wyślij wiadomość",
+    "captchaError": "Proszę zweryfikować, że nie jesteś robotem",
+    "successMessage": "Wiadomość wysłana pomyślnie!",
+    "getInTouch": "Skontaktuj się",
+    "address": "Adres",
+    "phone": "Telefon",
+    "location": "Lokalizacja"
+  },
+  "common": {
+    "loading": "Ładowanie...",
+    "error": "Błąd",
+    "success": "Sukces",
+    "cancel": "Anuluj",
+    "save": "Zapisz",
+    "delete": "Usuń",
+    "edit": "Edytuj",
+    "close": "Zamknij",
+    "search": "Szukaj",
+    "filter": "Filtruj",
+    "refresh": "Odśwież",
+    "yes": "Tak",
+    "no": "Nie",
+    "by": "przez"
+  }
+}

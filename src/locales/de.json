@@ -47,8 +47,22 @@
       "location": "in Forlì, Italien.",
       "founder": "Prof. Massimo Busin",
       "procedures": "Unsere Abteilung führt jährlich etwa",
-      "proceduresCount": "300 Keratoplastik-Verfahren durch",
-      "surgeryTypes": "einschließlich DALK, DMEK, DSAEK, UT-DSAEK, SALK und Mushroom-Keratoplastik. Diese Operationen werden live über unsere Streaming-Plattform übertragen."
+      "proceduresCount": "300 Keratoplastik-Verfahren durch,",
+      "surgeryTypes": "einschließlich DALK, Mushroom-Keratoplastik, DSAEK, UT-DSAEK, DMEK und SALK."
+    },
+    "features": {
+      "hdStreaming": {
+        "title": "HD-Video-Streaming",
+        "description": "Sehen Sie Operationen in hochauflösender Videoqualität"
+      },
+      "liveInteraction": {
+        "title": "Live-Interaktion",
+        "description": "Erhalten Sie Antworten direkt vom Chirurgen"
+      },
+      "educationalResources": {
+        "title": "Bildungsressourcen",
+        "description": "Zugriff auf umfassende Lernmaterialien"
+      }
     }
   },
   "auth": {
@@ -93,31 +107,115 @@
     "enterPassword": "Bitte geben Sie Ihr Passwort ein"
   },
   "recordings": {
-    "title": "Videobibliothek",
-    "searchPlaceholder": "Videos suchen...",
-    "filterByCategory": "Nach Kategorie filtern",
+    "title": "Chirurgie-Aufzeichnungen",
+    "subtitle": "Sehen Sie aufgezeichnete chirurgische Eingriffe unserer erfahrenen Chirurgen",
+    "retry": "Wiederholen",
+    "selectVideo": "Wählen Sie ein Video zum Abspielen",
+    "searchPlaceholder": "Videos nach Titel oder Verfahren suchen...",
     "allCategories": "Alle Kategorien",
-    "sortBy": "Sortieren nach",
-    "newest": "Neueste",
-    "oldest": "Älteste",
-    "mostViewed": "Meistgesehen",
-    "refreshVideos": "Videos aktualisieren"
+    "sortTitleAZ": "Titel (A-Z)",
+    "sortCategory": "Kategorie",
+    "videoLibrary": "Videobibliothek",
+    "refreshing": "Aktualisierung...",
+    "refreshVideos": "Videos aktualisieren",
+    "noVideosFound": "Keine Videos gefunden",
+    "tryAdjusting": "Versuchen Sie, Ihre Suche oder Filter anzupassen",
+    "categories": {
+      "dalk": "DALK",
+      "dmek": "DMEK",
+      "dsaek": "DSAEK",
+      "utDsaek": "UT-DSAEK",
+      "mushroomPk": "Mushroom-Keratoplastik",
+      "educational": "Bildung"
+    }
   },
   "publications": {
     "title": "Publikationen",
-    "searchPlaceholder": "Publikationen suchen...",
+    "subtitle": "Entdecken Sie die umfangreichen Forschungsbeiträge von Prof. Massimo Busin und Kollegen",
+    "loadingText": "Publikationen werden geladen...",
+    "errorTitle": "Fehler beim Laden der Publikationen",
+    "tryAgain": "Erneut versuchen",
+    "searchPlaceholder": "Publikationen nach Titel, Autoren oder Zeitschrift suchen...",
+    "allYears": "Alle Jahre",
+    "allJournals": "Alle Zeitschriften",
+    "clear": "Löschen",
+    "dateNewest": "Datum (Neueste zuerst)",
+    "dateOldest": "Datum (Älteste zuerst)",
+    "citationsMost": "Zitationen (Meist zitiert zuerst)",
+    "citationsLeast": "Zitationen (Wenig zitiert zuerst)",
+    "titleAZ": "Titel (A-Z)",
+    "titleZA": "Titel (Z-A)",
+    "journalAZ": "Zeitschrift (A-Z)",
+    "journalZA": "Zeitschrift (Z-A)",
+    "scopusMetrics": "Scopus-Metriken",
+    "totalPublications": "Gesamte Publikationen",
+    "yearsActive": "Aktive Jahre",
+    "hIndex": "h-Index",
+    "totalCitations": "Gesamte Zitationen",
+    "avgCitationsPerPaper": "Durchschn. Zitationen/Artikel",
+    "coAuthors": "Mitautoren",
+    "noPublicationsFound": "Keine Publikationen gefunden",
+    "tryAdjustingSearch": "Versuchen Sie, Ihre Such- oder Filterkriterien anzupassen.",
+    "citations": "Zitationen",
+    "openAccess": "Offener Zugang",
+    "previous": "Vorherige",
+    "next": "Nächste",
     "year": "Jahr",
     "journal": "Zeitschrift",
     "authors": "Autoren",
     "abstract": "Zusammenfassung",
     "viewPDF": "PDF anzeigen",
-    "viewOnPubMed": "Auf PubMed anzeigen"
+    "viewOnPubMed": "Auf PubMed anzeigen",
+    "copyCitation": "Zitat kopieren",
+    "copied": "Kopiert!"
   },
   "footer": {
     "quickLinks": "Schnelllinks",
     "connectWithUs": "Verbinden Sie sich mit uns",
     "followUs": "Folgen Sie uns in den sozialen Medien",
     "allRightsReserved": "Alle Rechte vorbehalten"
+  },
+  "liveSurgery": {
+    "title": "Live-Chirurgie",
+    "subtitle": "Nehmen Sie an unseren interaktiven Live-Chirurgie-Übertragungen teil und lernen Sie aus Echtzeit-Verfahren",
+    "cwaTitle": "Die Cornea Web Academy (CWA)",
+    "introText": "bietet Ihnen die Möglichkeit, den Operationssaal von Prof. Massimo Busin zu betreten und sich direkt mit seinem Mikroskop über Hochgeschwindigkeits-HD-Videostreaming zu verbinden (verfügbar auf Englisch und Italienisch)",
+    "broadcasting": {
+      "title": "Live-Chirurgie-Übertragung",
+      "description": "In jeder Sitzung werden alle chirurgischen Eingriffe live durchgeführt und diskutiert. Die Übertragung richtet sich sowohl an junge Chirurgen als auch an erfahrenere Kollegen."
+    },
+    "interactive": {
+      "title": "Interaktive Teilnahme",
+      "description": "Stellen Sie Fragen und erhalten Sie Erklärungen in Echtzeit direkt vom Chirurgen, oder beobachten und hören Sie einfach der Diskussion im Nur-Ansicht-Modus zu."
+    },
+    "specialized": {
+      "title": "Spezialisierte Chirurgie-Themen",
+      "description": "Jede Operation konzentriert sich auf spezifische Themen wie DALK, DMEK, UT-DSAEK, DSAEK in PK und DALK in PK, mit mindestens 2 durchgeführten und besprochenen Verfahren pro Operation."
+    }
+  },
+  "contacts": {
+    "title": "Kontakte",
+    "subtitle": "Kontaktieren Sie das CWA-Team für Anfragen, Support oder Zusammenarbeit",
+    "sendMessage": "Senden Sie uns eine Nachricht",
+    "firstName": "Vorname",
+    "lastName": "Nachname",
+    "email": "E-Mail",
+    "subject": "Betreff",
+    "selectSubject": "Betreff auswählen",
+    "generalInquiry": "Allgemeine Anfrage",
+    "technicalSupport": "Technischer Support",
+    "membership": "Mitgliedschaft",
+    "collaboration": "Zusammenarbeit",
+    "mediaInquiry": "Medienanfrage",
+    "message": "Nachricht",
+    "notRobot": "Ich bin kein Roboter",
+    "sendButton": "Nachricht senden",
+    "captchaError": "Bitte bestätigen Sie, dass Sie kein Roboter sind",
+    "successMessage": "Nachricht erfolgreich gesendet!",
+    "getInTouch": "Kontakt aufnehmen",
+    "address": "Adresse",
+    "phone": "Telefon",
+    "location": "Standort"
   },
   "common": {
     "loading": "Laden...",

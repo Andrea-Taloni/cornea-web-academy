@@ -24,7 +24,7 @@
               :value="searchQuery"
               @input="updateSearchQuery"
               type="text"
-              placeholder="Search publications by title, authors, or journal..."
+              :placeholder="$t('publications.searchPlaceholder')"
               class="w-full pl-10 pr-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
           </div>
@@ -129,7 +129,7 @@
                   d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
                 ></path>
               </svg>
-              <span class="truncate">{{ selectedYear || 'All Years' }}</span>
+              <span class="truncate">{{ selectedYear || $t('publications.allYears') }}</span>
               <svg
                 class="w-4 h-4 flex-shrink-0 transition-transform duration-200"
                 :class="{ 'rotate-180': showYearFilter }"
@@ -163,7 +163,7 @@
                   class="w-full text-left px-4 py-3 hover:bg-gray-100 transition-colors duration-150"
                   :class="{ 'bg-blue-50 text-blue-600': !selectedYear }"
                 >
-                  All Years
+                  {{ $t('publications.allYears') }}
                 </button>
                 <button
                   v-for="year in availableYears"
@@ -198,7 +198,7 @@
                 ></path>
               </svg>
               <span class="truncate">{{
-                selectedJournal ? truncateText(selectedJournal, 20) : 'All Journals'
+                selectedJournal ? truncateText(selectedJournal, 20) : $t('publications.allJournals')
               }}</span>
               <svg
                 class="w-4 h-4 flex-shrink-0 transition-transform duration-200"
@@ -233,7 +233,7 @@
                   class="w-full text-left px-4 py-3 hover:bg-gray-100 transition-colors duration-150"
                   :class="{ 'bg-blue-50 text-blue-600': !selectedJournal }"
                 >
-                  All Journals
+                  {{ $t('publications.allJournals') }}
                 </button>
                 <button
                   v-for="journal in availableJournals"
@@ -262,7 +262,7 @@
                 d="M6 18L18 6M6 6l12 12"
               ></path>
             </svg>
-            Clear
+            {{ $t('publications.clear') }}
           </button>
         </div>
       </div>
@@ -271,7 +271,8 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue'
+import { ref, onMounted, onUnmounted, computed } from 'vue'
+import { useI18n } from 'vue-i18n'
 
 defineProps({
   searchQuery: {
@@ -320,6 +321,8 @@ const emit = defineEmits([
   'clear-filters',
 ])
 
+const { t } = useI18n()
+
 const showYearFilter = ref(false)
 const showJournalFilter = ref(false)
 const showSortFilter = ref(false)
@@ -329,16 +332,16 @@ const sortDropdownRef = ref(null)
 const yearDropdownRef = ref(null)
 const journalDropdownRef = ref(null)
 
-const sortOptions = [
-  { label: 'Date (Newest First)', field: 'year', order: 'desc', value: 'year-desc' },
-  { label: 'Date (Oldest First)', field: 'year', order: 'asc', value: 'year-asc' },
-  { label: 'Citations (Most First)', field: 'citations', order: 'desc', value: 'citations-desc' },
-  { label: 'Citations (Least First)', field: 'citations', order: 'asc', value: 'citations-asc' },
-  { label: 'Title (A-Z)', field: 'title', order: 'asc', value: 'title-asc' },
-  { label: 'Title (Z-A)', field: 'title', order: 'desc', value: 'title-desc' },
-  { label: 'Journal (A-Z)', field: 'journal', order: 'asc', value: 'journal-asc' },
-  { label: 'Journal (Z-A)', field: 'journal', order: 'desc', value: 'journal-desc' },
-]
+const sortOptions = computed(() => [
+  { label: t('publications.dateNewest'), field: 'year', order: 'desc', value: 'year-desc' },
+  { label: t('publications.dateOldest'), field: 'year', order: 'asc', value: 'year-asc' },
+  { label: t('publications.citationsMost'), field: 'citations', order: 'desc', value: 'citations-desc' },
+  { label: t('publications.citationsLeast'), field: 'citations', order: 'asc', value: 'citations-asc' },
+  { label: t('publications.titleAZ'), field: 'title', order: 'asc', value: 'title-asc' },
+  { label: t('publications.titleZA'), field: 'title', order: 'desc', value: 'title-desc' },
+  { label: t('publications.journalAZ'), field: 'journal', order: 'asc', value: 'journal-asc' },
+  { label: t('publications.journalZA'), field: 'journal', order: 'desc', value: 'journal-desc' },
+])
 
 const updateSearchQuery = (event) => {
   emit('update:searchQuery', event.target.value)
@@ -389,8 +392,8 @@ const clearAllFilters = () => {
 }
 
 const getSortLabel = (sortBy, sortOrder) => {
-  const option = sortOptions.find((opt) => opt.field === sortBy && opt.order === sortOrder)
-  return option ? option.label : 'Date (Newest First)'
+  const option = sortOptions.value.find((opt) => opt.field === sortBy && opt.order === sortOrder)
+  return option ? option.label : t('publications.dateNewest')
 }
 
 const truncateText = (text, maxLength) => {

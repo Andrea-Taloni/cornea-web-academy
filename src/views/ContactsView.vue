@@ -4,8 +4,8 @@
 
     <!-- Hero Section usando il componente riutilizzabile -->
     <PageHero
-      title="Contacts"
-      subtitle="Get in touch with the CWA team for inquiries, support, or collaboration"
+      :title="t('contacts.title')"
+      :subtitle="t('contacts.subtitle')"
     />
 
     <!-- Contact Content -->
@@ -14,11 +14,11 @@
         <div class="grid lg:grid-cols-2 gap-12">
           <!-- Contact Form -->
           <div class="bg-white rounded-lg shadow-lg p-8">
-            <h2 class="text-2xl font-bold mb-6">Send us a Message</h2>
+            <h2 class="text-2xl font-bold mb-6">{{ t('contacts.sendMessage') }}</h2>
             <form @submit.prevent="handleSubmit" class="space-y-6">
               <div class="grid md:grid-cols-2 gap-4">
                 <div>
-                  <label class="block text-sm font-medium text-gray-700 mb-2">First Name</label>
+                  <label class="block text-sm font-medium text-gray-700 mb-2">{{ t('contacts.firstName') }}</label>
                   <input
                     type="text"
                     v-model="form.firstName"
@@ -27,7 +27,7 @@
                   />
                 </div>
                 <div>
-                  <label class="block text-sm font-medium text-gray-700 mb-2">Last Name</label>
+                  <label class="block text-sm font-medium text-gray-700 mb-2">{{ t('contacts.lastName') }}</label>
                   <input
                     type="text"
                     v-model="form.lastName"
@@ -38,7 +38,7 @@
               </div>
 
               <div>
-                <label class="block text-sm font-medium text-gray-700 mb-2">Email</label>
+                <label class="block text-sm font-medium text-gray-700 mb-2">{{ t('contacts.email') }}</label>
                 <input
                   type="email"
                   v-model="form.email"
@@ -48,23 +48,23 @@
               </div>
 
               <div>
-                <label class="block text-sm font-medium text-gray-700 mb-2">Subject</label>
+                <label class="block text-sm font-medium text-gray-700 mb-2">{{ t('contacts.subject') }}</label>
                 <select
                   v-model="form.subject"
                   class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                   required
                 >
-                  <option value="">Select a subject</option>
-                  <option value="general">General Inquiry</option>
-                  <option value="technical">Technical Support</option>
-                  <option value="membership">Membership</option>
-                  <option value="collaboration">Collaboration</option>
-                  <option value="media">Media Inquiry</option>
+                  <option value="">{{ t('contacts.selectSubject') }}</option>
+                  <option value="general">{{ t('contacts.generalInquiry') }}</option>
+                  <option value="technical">{{ t('contacts.technicalSupport') }}</option>
+                  <option value="membership">{{ t('contacts.membership') }}</option>
+                  <option value="collaboration">{{ t('contacts.collaboration') }}</option>
+                  <option value="media">{{ t('contacts.mediaInquiry') }}</option>
                 </select>
               </div>
 
               <div>
-                <label class="block text-sm font-medium text-gray-700 mb-2">Message</label>
+                <label class="block text-sm font-medium text-gray-700 mb-2">{{ t('contacts.message') }}</label>
                 <textarea
                   v-model="form.message"
                   rows="5"
@@ -129,7 +129,7 @@
                         </svg>
                       </div>
                     </div>
-                    <span class="ml-3 text-sm font-medium text-gray-700">I'm not a robot</span>
+                    <span class="ml-3 text-sm font-medium text-gray-700">{{ t('contacts.notRobot') }}</span>
                   </label>
                   <div class="flex items-center">
                     <svg class="w-10 h-10 text-gray-400" viewBox="0 0 48 48" fill="currentColor">
@@ -172,7 +172,7 @@
                 class="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition disabled:bg-gray-400 disabled:cursor-not-allowed"
                 :disabled="!captcha.verified || captcha.loading"
               >
-                Send Message
+                {{ t('contacts.sendButton') }}
               </button>
             </form>
           </div>
@@ -180,7 +180,7 @@
           <!-- Contact Information -->
           <div>
             <div class="bg-white rounded-lg shadow-lg p-8 mb-6">
-              <h3 class="text-2xl font-bold mb-6">Get in Touch</h3>
+              <h3 class="text-2xl font-bold mb-6">{{ t('contacts.getInTouch') }}</h3>
 
               <div class="space-y-4">
                 <div class="flex items-start">
@@ -204,7 +204,7 @@
                     ></path>
                   </svg>
                   <div>
-                    <h4 class="font-semibold mb-1">Address</h4>
+                    <h4 class="font-semibold mb-1">{{ t('contacts.address') }}</h4>
                     <p class="text-gray-600">
                       Villa Igea Hospital<br />
                       Viale Antonio Gramsci, 42<br />
@@ -228,7 +228,7 @@
                     ></path>
                   </svg>
                   <div>
-                    <h4 class="font-semibold mb-1">Phone</h4>
+                    <h4 class="font-semibold mb-1">{{ t('contacts.phone') }}</h4>
                     <p class="text-gray-600">+39 0543 454111</p>
                   </div>
                 </div>
@@ -237,7 +237,7 @@
 
             <!-- Map -->
             <div class="bg-white rounded-lg shadow-lg p-8">
-              <h3 class="text-xl font-bold mb-4">Location</h3>
+              <h3 class="text-xl font-bold mb-4">{{ t('contacts.location') }}</h3>
               <div class="h-96 rounded-lg overflow-hidden">
                 <iframe
                   width="100%"
@@ -265,6 +265,9 @@ import HeaderComponent from '@/components/HeaderComponent.vue'
 import FooterComponent from '@/components/FooterComponent.vue'
 import PageHero from '@/components/HeroComponent.vue'
 import { ref } from 'vue'
+import { useI18n } from 'vue-i18n'
+
+const { t } = useI18n()
 
 const form = ref({
   firstName: '',
@@ -306,7 +309,7 @@ const toggleCaptcha = () => {
 const handleSubmit = () => {
   // Validate captcha
   if (!captcha.value.verified) {
-    captcha.value.error = 'Please verify that you are not a robot'
+    captcha.value.error = t('contacts.captchaError')
     return
   }
 
@@ -314,7 +317,7 @@ const handleSubmit = () => {
   console.log('Form submitted:', form.value)
 
   // Show success message
-  alert('Message sent successfully!')
+  alert(t('contacts.successMessage'))
 
   // Reset form
   form.value = {

@@ -49,8 +49,22 @@
       "year": "2018",
       "founder": "Prof. Massimo Busin",
       "procedures": "Il nostro dipartimento esegue circa",
-      "proceduresCount": "300 procedure di cheratoplastica all'anno",
-      "surgeryTypes": "tra cui DALK, DMEK, DSAEK, UT-DSAEK, SALK e cheratoplastica a fungo. Questi interventi sono trasmessi in diretta attraverso la nostra piattaforma di streaming."
+      "proceduresCount": "300 procedure di cheratoplastica all'anno,",
+      "surgeryTypes": "tra cui DALK, Cheratoplastica a Fungo, DSAEK, UT-DSAEK, DMEK e SALK."
+    },
+    "features": {
+      "hdStreaming": {
+        "title": "Streaming Video HD",
+        "description": "Guarda gli interventi chirurgici in qualità video ad alta definizione"
+      },
+      "liveInteraction": {
+        "title": "Interazione dal Vivo",
+        "description": "Ottieni risposte direttamente dal chirurgo"
+      },
+      "educationalResources": {
+        "title": "Risorse Educative",
+        "description": "Accedi a materiali didattici completi"
+      }
     }
   },
   "auth": {
@@ -95,31 +109,115 @@
     "enterPassword": "Inserisci la tua password"
   },
   "recordings": {
-    "title": "Libreria Video",
-    "searchPlaceholder": "Cerca video...",
-    "filterByCategory": "Filtra per categoria",
-    "allCategories": "Tutte le Categorie",
-    "sortBy": "Ordina per",
-    "newest": "Più recenti",
-    "oldest": "Più vecchi",
-    "mostViewed": "Più visti",
-    "refreshVideos": "Aggiorna Video"
+    "title": "Registrazioni Chirurgiche",
+    "subtitle": "Guarda le procedure chirurgiche registrate dai nostri chirurghi esperti",
+    "retry": "Riprova",
+    "selectVideo": "Seleziona un video da riprodurre",
+    "searchPlaceholder": "Cerca video per titolo o procedura...",
+    "allCategories": "Tutte le categorie",
+    "sortTitleAZ": "Titolo (A-Z)",
+    "sortCategory": "Categoria",
+    "videoLibrary": "Videoteca",
+    "refreshing": "Aggiornamento...",
+    "refreshVideos": "Aggiorna video",
+    "noVideosFound": "Nessun video trovato",
+    "tryAdjusting": "Prova a modificare la ricerca o i filtri",
+    "categories": {
+      "dalk": "DALK",
+      "dmek": "DMEK",
+      "dsaek": "DSAEK",
+      "utDsaek": "UT-DSAEK",
+      "mushroomPk": "Cheratoplastica a Fungo",
+      "educational": "Educativo"
+    }
   },
   "publications": {
     "title": "Pubblicazioni",
-    "searchPlaceholder": "Cerca pubblicazioni...",
+    "subtitle": "Esplora gli ampi contributi di ricerca del Prof. Massimo Busin e colleghi",
+    "loadingText": "Caricamento pubblicazioni...",
+    "errorTitle": "Errore nel Caricamento delle Pubblicazioni",
+    "tryAgain": "Riprova",
+    "searchPlaceholder": "Cerca pubblicazioni per titolo, autori o rivista...",
+    "allYears": "Tutti gli Anni",
+    "allJournals": "Tutte le Riviste",
+    "clear": "Cancella",
+    "dateNewest": "Data (Prima i Più Recenti)",
+    "dateOldest": "Data (Prima i Meno Recenti)",
+    "citationsMost": "Citazioni (Prima i Più Citati)",
+    "citationsLeast": "Citazioni (Prima i Meno Citati)",
+    "titleAZ": "Titolo (A-Z)",
+    "titleZA": "Titolo (Z-A)",
+    "journalAZ": "Rivista (A-Z)",
+    "journalZA": "Rivista (Z-A)",
+    "scopusMetrics": "Metriche Scopus",
+    "totalPublications": "Pubblicazioni Totali",
+    "yearsActive": "Anni di Attività",
+    "hIndex": "Indice h",
+    "totalCitations": "Citazioni Totali",
+    "avgCitationsPerPaper": "Media Citazioni/Articolo",
+    "coAuthors": "Co-autori",
+    "noPublicationsFound": "Nessuna pubblicazione trovata",
+    "tryAdjustingSearch": "Prova ad aggiustare i criteri di ricerca o filtro.",
+    "citations": "Citazioni",
+    "openAccess": "Accesso Aperto",
+    "previous": "Precedente",
+    "next": "Successivo",
     "year": "Anno",
     "journal": "Rivista",
     "authors": "Autori",
     "abstract": "Abstract",
     "viewPDF": "Visualizza PDF",
-    "viewOnPubMed": "Visualizza su PubMed"
+    "viewOnPubMed": "Visualizza su PubMed",
+    "copyCitation": "Copia citazione",
+    "copied": "Copiato!"
   },
   "footer": {
     "quickLinks": "Link Rapidi",
     "connectWithUs": "Connettiti con noi",
     "followUs": "Seguici sui social media",
     "allRightsReserved": "Tutti i diritti riservati"
+  },
+  "liveSurgery": {
+    "title": "Chirurgia dal Vivo",
+    "subtitle": "Partecipa alle nostre trasmissioni chirurgiche interattive dal vivo e impara dalle procedure in tempo reale",
+    "cwaTitle": "La Cornea Web Academy (CWA)",
+    "introText": "ti offre l'opportunità di entrare nella sala operatoria del Prof. Massimo Busin e connetterti direttamente con il suo microscopio attraverso lo streaming video HD ad alta velocità (disponibile in inglese e italiano)",
+    "broadcasting": {
+      "title": "Trasmissione Chirurgica dal Vivo",
+      "description": "In ogni sessione tutti gli interventi chirurgici vengono eseguiti e discussi dal vivo. La trasmissione è rivolta sia ai chirurghi junior che ai colleghi più esperti."
+    },
+    "interactive": {
+      "title": "Partecipazione Interattiva",
+      "description": "Fai domande e ricevi spiegazioni in tempo reale direttamente dal chirurgo, o semplicemente osserva e ascolta la discussione in modalità solo visualizzazione."
+    },
+    "specialized": {
+      "title": "Argomenti Chirurgici Specializzati",
+      "description": "Ogni intervento si concentra su temi specifici tra cui DALK, DMEK, UT-DSAEK, DSAEK in PK e DALK in PK, con almeno 2 procedure eseguite e discusse per intervento."
+    }
+  },
+  "contacts": {
+    "title": "Contatti",
+    "subtitle": "Mettiti in contatto con il team CWA per richieste, supporto o collaborazioni",
+    "sendMessage": "Inviaci un messaggio",
+    "firstName": "Nome",
+    "lastName": "Cognome",
+    "email": "Email",
+    "subject": "Oggetto",
+    "selectSubject": "Seleziona un oggetto",
+    "generalInquiry": "Richiesta generale",
+    "technicalSupport": "Supporto tecnico",
+    "membership": "Iscrizione",
+    "collaboration": "Collaborazione",
+    "mediaInquiry": "Richiesta media",
+    "message": "Messaggio",
+    "notRobot": "Non sono un robot",
+    "sendButton": "Invia messaggio",
+    "captchaError": "Per favore verifica di non essere un robot",
+    "successMessage": "Messaggio inviato con successo!",
+    "getInTouch": "Mettiti in contatto",
+    "address": "Indirizzo",
+    "phone": "Telefono",
+    "location": "Posizione"
   },
   "common": {
     "loading": "Caricamento...",

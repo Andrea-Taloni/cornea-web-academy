@@ -47,8 +47,22 @@
       "location": "în Forlì, Italia.",
       "founder": "Prof. Massimo Busin",
       "procedures": "Departamentul nostru efectuează aproximativ",
-      "proceduresCount": "300 de proceduri de keratoplastie anual",
-      "surgeryTypes": "incluzând DALK, DMEK, DSAEK, UT-DSAEK, SALK și keratoplastia mushroom. Aceste operații sunt transmise live prin platforma noastră de streaming."
+      "proceduresCount": "300 de proceduri de keratoplastie anual,",
+      "surgeryTypes": "incluzând DALK, Keratoplastia Mushroom, DSAEK, UT-DSAEK, DMEK și SALK."
+    },
+    "features": {
+      "hdStreaming": {
+        "title": "Transmisie Video HD",
+        "description": "Urmăriți intervențiile chirurgicale în calitate video de înaltă definiție"
+      },
+      "liveInteraction": {
+        "title": "Interacțiune Live",
+        "description": "Obțineți răspunsuri direct de la chirurg"
+      },
+      "educationalResources": {
+        "title": "Resurse Educaționale",
+        "description": "Accesați materiale de învățare cuprinzătoare"
+      }
     }
   },
   "auth": {
@@ -93,31 +107,115 @@
     "enterPassword": "Vă rugăm să introduceți parola"
   },
   "recordings": {
-    "title": "Bibliotecă Video",
-    "searchPlaceholder": "Caută videoclipuri...",
-    "filterByCategory": "Filtrează după categorie",
-    "allCategories": "Toate Categoriile",
-    "sortBy": "Sortează după",
-    "newest": "Cele mai noi",
-    "oldest": "Cele mai vechi",
-    "mostViewed": "Cele mai vizionate",
-    "refreshVideos": "Actualizează Videoclipuri"
+    "title": "Înregistrări Chirurgicale",
+    "subtitle": "Urmăriți proceduri chirurgicale înregistrate de la chirurgii noștri experți",
+    "retry": "Reîncercare",
+    "selectVideo": "Selectați un videoclip pentru redare",
+    "searchPlaceholder": "Căutați videoclipuri după titlu sau procedură...",
+    "allCategories": "Toate categoriile",
+    "sortTitleAZ": "Titlu (A-Z)",
+    "sortCategory": "Categorie",
+    "videoLibrary": "Bibliotecă video",
+    "refreshing": "Se actualizează...",
+    "refreshVideos": "Actualizați videoclipurile",
+    "noVideosFound": "Nu s-au găsit videoclipuri",
+    "tryAdjusting": "Încercați să ajustați căutarea sau filtrele",
+    "categories": {
+      "dalk": "DALK",
+      "dmek": "DMEK",
+      "dsaek": "DSAEK",
+      "utDsaek": "UT-DSAEK",
+      "mushroomPk": "Keratoplastia Mushroom",
+      "educational": "Educațional"
+    }
   },
   "publications": {
     "title": "Publicații",
-    "searchPlaceholder": "Caută publicații...",
+    "subtitle": "Explorați vastele contribuții de cercetare ale Prof. Massimo Busin și colegii",
+    "loadingText": "Se încarcă publicațiile...",
+    "errorTitle": "Eroare la Încărcarea Publicațiilor",
+    "tryAgain": "Încearcă Din Nou",
+    "searchPlaceholder": "Caută publicații după titlu, autori sau revistă...",
+    "allYears": "Toți Anii",
+    "allJournals": "Toate Revistele",
+    "clear": "Șterge",
+    "dateNewest": "Data (Cele Mai Noi Primul)",
+    "dateOldest": "Data (Cele Mai Vechi Primul)",
+    "citationsMost": "Citări (Cele Mai Citate Primul)",
+    "citationsLeast": "Citări (Cele Mai Puțin Citate Primul)",
+    "titleAZ": "Titlu (A-Z)",
+    "titleZA": "Titlu (Z-A)",
+    "journalAZ": "Revistă (A-Z)",
+    "journalZA": "Revistă (Z-A)",
+    "scopusMetrics": "Metrici Scopus",
+    "totalPublications": "Total Publicații",
+    "yearsActive": "Ani Activi",
+    "hIndex": "Indicele h",
+    "totalCitations": "Total Citări",
+    "avgCitationsPerPaper": "Med. Citări/Articol",
+    "coAuthors": "Co-autori",
+    "noPublicationsFound": "Nu s-au găsit publicații",
+    "tryAdjustingSearch": "Încercați să ajustați criteriile de căutare sau filtrare.",
+    "citations": "Citări",
+    "openAccess": "Acces Deschis",
+    "previous": "Anterior",
+    "next": "Următor",
     "year": "An",
     "journal": "Revistă",
     "authors": "Autori",
     "abstract": "Rezumat",
     "viewPDF": "Vezi PDF",
-    "viewOnPubMed": "Vezi pe PubMed"
+    "viewOnPubMed": "Vezi pe PubMed",
+    "copyCitation": "Copiază citația",
+    "copied": "Copiat!"
   },
   "footer": {
     "quickLinks": "Linkuri Rapide",
     "connectWithUs": "Conectează-te cu noi",
     "followUs": "Urmărește-ne pe rețelele sociale",
     "allRightsReserved": "Toate drepturile rezervate"
+  },
+  "liveSurgery": {
+    "title": "Chirurgie Live",
+    "subtitle": "Alăturați-vă transmisiunilor noastre chirurgicale interactive live și învățați din proceduri în timp real",
+    "cwaTitle": "Cornea Web Academy (CWA)",
+    "introText": "vă oferă oportunitatea de a intra în sala de operație a Prof. Massimo Busin și de a vă conecta direct cu microscopul său prin streaming video HD de mare viteză (disponibil în engleză și italiană)",
+    "broadcasting": {
+      "title": "Transmisie Chirurgicală Live",
+      "description": "În fiecare sesiune, toate intervențiile chirurgicale sunt efectuate și discutate live. Transmisia se adresează atât chirurgilor juniori, cât și colegilor mai experimentați."
+    },
+    "interactive": {
+      "title": "Participare Interactivă",
+      "description": "Puneți întrebări și primiți explicații în timp real direct de la chirurg sau pur și simplu observați și ascultați discuria în modul doar vizualizare."
+    },
+    "specialized": {
+      "title": "Subiecte Chirurgicale Specializate",
+      "description": "Fiecare operație se concentrează pe teme specifice, inclusiv DALK, DMEK, UT-DSAEK, DSAEK în PK și DALK în PK, cu cel puțin 2 proceduri efectuate și discutate per operație."
+    }
+  },
+  "contacts": {
+    "title": "Contacte",
+    "subtitle": "Contactați echipa CWA pentru întrebări, asistență sau colaborare",
+    "sendMessage": "Trimiteți-ne un mesaj",
+    "firstName": "Prenume",
+    "lastName": "Nume",
+    "email": "Email",
+    "subject": "Subiect",
+    "selectSubject": "Selectați un subiect",
+    "generalInquiry": "Întrebare generală",
+    "technicalSupport": "Suport tehnic",
+    "membership": "Membru",
+    "collaboration": "Colaborare",
+    "mediaInquiry": "Solicitare media",
+    "message": "Mesaj",
+    "notRobot": "Nu sunt un robot",
+    "sendButton": "Trimite mesaj",
+    "captchaError": "Vă rugăm să verificați că nu sunteți un robot",
+    "successMessage": "Mesaj trimis cu succes!",
+    "getInTouch": "Contactați-ne",
+    "address": "Adresă",
+    "phone": "Telefon",
+    "location": "Locație"
   },
   "common": {
     "loading": "Se încarcă...",

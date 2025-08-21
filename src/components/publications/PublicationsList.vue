@@ -23,8 +23,8 @@
             d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
           ></path>
         </svg>
-        <h3 class="mt-2 text-lg font-medium text-gray-900">No publications found</h3>
-        <p class="mt-1 text-sm text-gray-500">Try adjusting your search or filter criteria.</p>
+        <h3 class="mt-2 text-lg font-medium text-gray-900">{{ $t('publications.noPublicationsFound') }}</h3>
+        <p class="mt-1 text-sm text-gray-500">{{ $t('publications.tryAdjustingSearch') }}</p>
       </div>
 
       <!-- Pagination -->

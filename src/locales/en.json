@@ -32,11 +32,11 @@
     }
   },
   "home": {
-    "title": "Welcome to Cornea Web Academy",
+    "title": "Welcome to the Cornea Web Academy",
     "subtitle": "Excellence in Corneal Surgery Education",
     "description": "Join us in advancing corneal surgery through innovative education and live surgical demonstrations",
     "welcome": {
-      "title": "Welcome to Cornea Web Academy",
+      "title": "Welcome to the Cornea Web Academy",
       "description": "Educational platform for corneal surgery founded in 2018 by Prof. Massimo Busin, based at the Department of Ophthalmology, Ospedali Privati Forlì, Villa Igea, in Forlì, Italy.",
       "exploreLiveSurgery": "Explore Live Surgery",
       "learnMore": "Learn More"
@@ -49,8 +49,22 @@
       "year": "2018",
       "founder": "Prof. Massimo Busin",
       "procedures": "Our department performs approximately",
-      "proceduresCount": "300 keratoplasty procedures annually",
-      "surgeryTypes": "including DALK, DMEK, DSAEK, UT-DSAEK, SALK, and mushroom keratoplasty. These surgeries are broadcast live through our streaming platform."
+      "proceduresCount": "300 keratoplasty procedures annually,",
+      "surgeryTypes": "including DALK, Mushroom Keratoplasty, DSAEK, UT-DSAEK, DMEK, and SALK."
+    },
+    "features": {
+      "hdStreaming": {
+        "title": "HD Video Streaming",
+        "description": "Watch surgeries in high-definition video quality"
+      },
+      "liveInteraction": {
+        "title": "Live Interaction",
+        "description": "Get answers directly from the surgeon"
+      },
+      "educationalResources": {
+        "title": "Educational Resources",
+        "description": "Access comprehensive learning materials"
+      }
     }
   },
   "auth": {
@@ -95,31 +109,115 @@
     "enterPassword": "Please enter your password"
   },
   "recordings": {
-    "title": "Video Library",
-    "searchPlaceholder": "Search videos...",
-    "filterByCategory": "Filter by category",
+    "title": "Surgery Recordings",
+    "subtitle": "Watch recorded surgical procedures from our expert surgeons",
+    "retry": "Retry",
+    "selectVideo": "Select a video to play",
+    "searchPlaceholder": "Search videos by title or procedure...",
     "allCategories": "All Categories",
-    "sortBy": "Sort by",
-    "newest": "Newest",
-    "oldest": "Oldest",
-    "mostViewed": "Most Viewed",
-    "refreshVideos": "Refresh Videos"
+    "sortTitleAZ": "Title (A-Z)",
+    "sortCategory": "Category",
+    "videoLibrary": "Video Library",
+    "refreshing": "Refreshing...",
+    "refreshVideos": "Refresh Videos",
+    "noVideosFound": "No videos found",
+    "tryAdjusting": "Try adjusting your search or filters",
+    "categories": {
+      "dalk": "DALK",
+      "dmek": "DMEK",
+      "dsaek": "DSAEK",
+      "utDsaek": "UT-DSAEK",
+      "mushroomPk": "Mushroom PK",
+      "educational": "Educational"
+    }
   },
   "publications": {
     "title": "Publications",
-    "searchPlaceholder": "Search publications...",
+    "subtitle": "Explore the extensive research contributions from Prof. Massimo Busin and colleagues",
+    "loadingText": "Loading publications...",
+    "errorTitle": "Error Loading Publications",
+    "tryAgain": "Try Again",
+    "searchPlaceholder": "Search publications by title, authors, or journal...",
+    "allYears": "All Years",
+    "allJournals": "All Journals",
+    "clear": "Clear",
+    "dateNewest": "Date (Newest First)",
+    "dateOldest": "Date (Oldest First)",
+    "citationsMost": "Citations (Most First)",
+    "citationsLeast": "Citations (Least First)",
+    "titleAZ": "Title (A-Z)",
+    "titleZA": "Title (Z-A)",
+    "journalAZ": "Journal (A-Z)",
+    "journalZA": "Journal (Z-A)",
+    "scopusMetrics": "Scopus Metrics",
+    "totalPublications": "Total Publications",
+    "yearsActive": "Years Active",
+    "hIndex": "h-index",
+    "totalCitations": "Total Citations",
+    "avgCitationsPerPaper": "Avg. Citations/Paper",
+    "coAuthors": "Co-authors",
+    "noPublicationsFound": "No publications found",
+    "tryAdjustingSearch": "Try adjusting your search or filter criteria.",
+    "citations": "Citations",
+    "openAccess": "Open Access",
+    "previous": "Previous",
+    "next": "Next",
     "year": "Year",
     "journal": "Journal",
     "authors": "Authors",
     "abstract": "Abstract",
     "viewPDF": "View PDF",
-    "viewOnPubMed": "View on PubMed"
+    "viewOnPubMed": "View on PubMed",
+    "copyCitation": "Copy citation",
+    "copied": "Copied!"
   },
   "footer": {
     "quickLinks": "Quick Links",
     "connectWithUs": "Connect with us",
     "followUs": "Follow us on social media",
     "allRightsReserved": "All rights reserved"
+  },
+  "liveSurgery": {
+    "title": "Live Surgery",
+    "subtitle": "Join our interactive live surgical broadcasts and learn from real-time procedures",
+    "cwaTitle": "The Cornea Web Academy (CWA)",
+    "introText": "offers you the opportunity to enter the surgical theatre of Prof. Massimo Busin and connect directly with his microscope through high-speed HD video streaming (available in English and Italian)",
+    "broadcasting": {
+      "title": "Live Surgical Broadcasting",
+      "description": "In every session all surgical interventions are performed and discussed live. The broadcasting is addressed both to junior surgeons and to more experienced colleagues."
+    },
+    "interactive": {
+      "title": "Interactive Participation",
+      "description": "Ask questions and receive explanations in real-time directly from the surgeon, or simply observe and listen to the discussion in view-only mode."
+    },
+    "specialized": {
+      "title": "Specialized Surgery Topics",
+      "description": "Each surgery focuses on specific themes including DALK, DMEK, UT-DSAEK, DSAEK in PK, and DALK in PK, with at least 2 procedures performed and discussed per surgery."
+    }
+  },
+  "contacts": {
+    "title": "Contacts",
+    "subtitle": "Get in touch with the CWA team for inquiries, support, or collaboration",
+    "sendMessage": "Send us a Message",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "email": "Email",
+    "subject": "Subject",
+    "selectSubject": "Select a subject",
+    "generalInquiry": "General Inquiry",
+    "technicalSupport": "Technical Support",
+    "membership": "Membership",
+    "collaboration": "Collaboration",
+    "mediaInquiry": "Media Inquiry",
+    "message": "Message",
+    "notRobot": "I'm not a robot",
+    "sendButton": "Send Message",
+    "captchaError": "Please verify that you are not a robot",
+    "successMessage": "Message sent successfully!",
+    "getInTouch": "Get in Touch",
+    "address": "Address",
+    "phone": "Phone",
+    "location": "Location"
   },
   "common": {
     "loading": "Loading...",

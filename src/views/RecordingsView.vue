@@ -4,8 +4,8 @@
 
     <!-- Hero Section -->
     <PageHero
-      title="Surgery Recordings"
-      subtitle="Watch recorded surgical procedures from our expert surgeons"
+      :title="t('recordings.title')"
+      :subtitle="t('recordings.subtitle')"
     />
 
     <!-- Main Content Container -->
@@ -18,7 +18,7 @@
           </svg>
           <span>{{ error }}</span>
           <button @click="refreshVideos" class="ml-auto text-yellow-600 hover:text-yellow-800 font-semibold">
-            Retry
+            {{ t('recordings.retry') }}
           </button>
         </div>
       </div>
@@ -41,7 +41,7 @@
                   v-else
                   class="video-placeholder"
                 >
-                  Select a video to play
+                  {{ t('recordings.selectVideo') }}
                 </div>
               </div>
             </div>
@@ -95,7 +95,7 @@
               <input
                 v-model="searchQuery"
                 type="text"
-                placeholder="Search videos by title or procedure..."
+                :placeholder="t('recordings.searchPlaceholder')"
                 class="w-full pl-10 pr-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
             </div>
@@ -106,13 +106,13 @@
             v-model="selectedCategory"
             class="px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 w-full md:w-auto"
           >
-            <option value="">All Categories</option>
-            <option value="dalk">DALK</option>
-            <option value="dmek">DMEK</option>
-            <option value="dsaek">DSAEK</option>
-            <option value="ut-dsaek">UT-DSAEK</option>
-            <option value="mushroom-pk">Mushroom PK</option>
-            <option value="educational">Educational</option>
+            <option value="">{{ t('recordings.allCategories') }}</option>
+            <option value="dalk">{{ t('recordings.categories.dalk') }}</option>
+            <option value="dmek">{{ t('recordings.categories.dmek') }}</option>
+            <option value="dsaek">{{ t('recordings.categories.dsaek') }}</option>
+            <option value="ut-dsaek">{{ t('recordings.categories.utDsaek') }}</option>
+            <option value="mushroom-pk">{{ t('recordings.categories.mushroomPk') }}</option>
+            <option value="educational">{{ t('recordings.categories.educational') }}</option>
           </select>
 
           <!-- Sort Options -->
@@ -120,8 +120,8 @@
             v-model="sortBy"
             class="px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 w-full md:w-auto"
           >
-            <option value="title">Title (A-Z)</option>
-            <option value="category">Category</option>
+            <option value="title">{{ t('recordings.sortTitleAZ') }}</option>
+            <option value="category">{{ t('recordings.sortCategory') }}</option>
           </select>
         </div>
       </div>
@@ -129,7 +129,7 @@
       <!-- Video Library Section (Full Width Below Player) -->
       <div class="bg-white rounded-lg shadow-lg p-6">
         <div class="flex justify-between items-center mb-6">
-          <h3 class="text-xl font-bold text-gray-800">Video Library</h3>
+          <h3 class="text-xl font-bold text-gray-800">{{ t('recordings.videoLibrary') }}</h3>
           <button
             @click="refreshVideos"
             :disabled="isLoading"
@@ -144,7 +144,7 @@
             >
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
             </svg>
-            {{ isLoading ? 'Refreshing...' : 'Refresh Videos' }}
+            {{ isLoading ? t('recordings.refreshing') : t('recordings.refreshVideos') }}
           </button>
         </div>
 
@@ -217,8 +217,8 @@
               d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"
             />
           </svg>
-          <p class="text-lg font-medium">No videos found</p>
-          <p class="text-sm text-gray-400 mt-1">Try adjusting your search or filters</p>
+          <p class="text-lg font-medium">{{ t('recordings.noVideosFound') }}</p>
+          <p class="text-sm text-gray-400 mt-1">{{ t('recordings.tryAdjusting') }}</p>
         </div>
       </div>
     </div>
@@ -229,10 +229,14 @@
 
 <script setup>
 import { ref, computed, onMounted } from 'vue'
+import { useI18n } from 'vue-i18n'
 import HeaderComponent from '@/components/HeaderComponent.vue'
 import FooterComponent from '@/components/FooterComponent.vue'
 import PageHero from '@/components/HeroComponent.vue'
 import youtubeService from '@/services/youtube.js'
+
+// i18n
+const { t } = useI18n()
 
 // State
 const searchQuery = ref('')
@@ -304,12 +308,12 @@ const getCategoryClass = (category) => {
 
 const getCategoryLabel = (category) => {
   const labels = {
-    dalk: 'DALK',
-    dmek: 'DMEK',
-    dsaek: 'DSAEK',
-    'ut-dsaek': 'UT-DSAEK',
-    'mushroom-pk': 'Mushroom PK',
-    educational: 'Educational',
+    dalk: t('recordings.categories.dalk'),
+    dmek: t('recordings.categories.dmek'),
+    dsaek: t('recordings.categories.dsaek'),
+    'ut-dsaek': t('recordings.categories.utDsaek'),
+    'mushroom-pk': t('recordings.categories.mushroomPk'),
+    educational: t('recordings.categories.educational'),
   }
   return labels[category] || category
 }

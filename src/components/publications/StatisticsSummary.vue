@@ -2,33 +2,33 @@
 <template>
   <section class="bg-white border-b">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      <h2 class="text-2xl font-bold text-gray-800 text-center mb-8">Scopus Metrics</h2>
+      <h2 class="text-2xl font-bold text-gray-800 text-center mb-8">{{ $t('publications.scopusMetrics') }}</h2>
       <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
         <div class="text-center p-4 bg-blue-50 rounded-lg">
           <div class="text-3xl font-bold text-blue-600">{{ publications.length }}</div>
-          <div class="text-sm text-gray-600 mt-1">Total Publications</div>
+          <div class="text-sm text-gray-600 mt-1">{{ $t('publications.totalPublications') }}</div>
         </div>
         <div class="text-center p-4 bg-purple-50 rounded-lg">
           <div class="text-3xl font-bold text-purple-600">{{ yearRange }}</div>
-          <div class="text-sm text-gray-600 mt-1">Years Active</div>
+          <div class="text-sm text-gray-600 mt-1">{{ $t('publications.yearsActive') }}</div>
         </div>
         <div class="text-center p-4 bg-green-50 rounded-lg">
           <div class="text-3xl font-bold text-green-600">{{ hIndex }}</div>
-          <div class="text-sm text-gray-600 mt-1">h-index</div>
+          <div class="text-sm text-gray-600 mt-1">{{ $t('publications.hIndex') }}</div>
         </div>
         <div class="text-center p-4 bg-orange-50 rounded-lg">
           <div class="text-3xl font-bold text-orange-600">
             {{ totalCitations.toLocaleString() }}
           </div>
-          <div class="text-sm text-gray-600 mt-1">Total Citations</div>
+          <div class="text-sm text-gray-600 mt-1">{{ $t('publications.totalCitations') }}</div>
         </div>
         <div class="text-center p-4 bg-red-50 rounded-lg">
           <div class="text-3xl font-bold text-red-600">{{ avgCitationsPerPub }}</div>
-          <div class="text-sm text-gray-600 mt-1">Avg. Citations/Paper</div>
+          <div class="text-sm text-gray-600 mt-1">{{ $t('publications.avgCitationsPerPaper') }}</div>
         </div>
         <div class="text-center p-4 bg-teal-50 rounded-lg">
           <div class="text-3xl font-bold text-teal-600">{{ uniqueCoAuthors }}</div>
-          <div class="text-sm text-gray-600 mt-1">Co-authors</div>
+          <div class="text-sm text-gray-600 mt-1">{{ $t('publications.coAuthors') }}</div>
         </div>
       </div>
     </div>

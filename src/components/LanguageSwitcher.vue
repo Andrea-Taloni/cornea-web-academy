@@ -66,6 +66,8 @@ const languages = [
   { code: 'es', name: 'Español', flag: 'ES', emoji: '🇪🇸' },
   { code: 'fr', name: 'Français', flag: 'FR', emoji: '🇫🇷' },
   { code: 'de', name: 'Deutsch', flag: 'DE', emoji: '🇩🇪' },
+  { code: 'pl', name: 'Polski', flag: 'PL', emoji: '🇵🇱' },
+  { code: 'cs', name: 'Čeština', flag: 'CZ', emoji: '🇨🇿' },
   { code: 'ro', name: 'Română', flag: 'RO', emoji: '🇷🇴' },
   { code: 'ru', name: 'Русский', flag: 'RU', emoji: '🇷🇺' },
   { code: 'zh', name: '中文', flag: 'CN', emoji: '🇨🇳' }

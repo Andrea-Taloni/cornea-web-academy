@@ -1,0 +1,238 @@
+{
+  "nav": {
+    "home": "Domů",
+    "surgery": "Chirurgie",
+    "liveSurgery": "Živá chirurgie",
+    "recordings": "Nahrávky",
+    "publications": "Publikace",
+    "aboutUs": "O nás",
+    "contacts": "Kontakty",
+    "login": "Přihlásit",
+    "register": "Registrovat",
+    "logout": "Odhlásit",
+    "profile": "Profil"
+  },
+  "surgery": {
+    "types": {
+      "dalk": "DALK",
+      "mushroomPk": "Mushroom PK",
+      "dmek": "DMEK",
+      "dsaek": "DSAEK",
+      "utDsaek": "UT-DSAEK",
+      "salk": "SALK"
+    },
+    "sections": {
+      "introduction": "Úvod",
+      "indications": "Indikace",
+      "surgery": "Chirurgie",
+      "results": "Výsledky",
+      "complications": "Komplikace",
+      "postop": "Pooperační péče",
+      "references": "Reference"
+    }
+  },
+  "home": {
+    "title": "Vítejte v Cornea Web Academy",
+    "subtitle": "Excelence ve vzdělávání rohovkové chirurgie",
+    "description": "Připojte se k nám pro pokrok v rohovkové chirurgii prostřednictvím inovativního vzdělávání a živých chirurgických demonstrací",
+    "welcome": {
+      "title": "Vítejte v Cornea Web Academy",
+      "description": "Vzdělávací platforma pro rohovkovou chirurgii založená v roce 2018 prof. Massimem Businem, sídlící na Oddělení oftalmologie, Ospedali Privati Forlì, Villa Igea, ve Forlì, Itálie.",
+      "exploreLiveSurgery": "Prozkoumat živou chirurgii",
+      "learnMore": "Zjistit více"
+    },
+    "about": {
+      "intro": "Cornea Web Academy (CWA) je vzdělávací platforma pro rohovkovou chirurgii se sídlem na",
+      "department": "Oddělení oftalmologie, Ospedali Privati Forlì, Villa Igea",
+      "location": "ve Forlì, Itálie.",
+      "founded": "Založena v roce",
+      "year": "2018",
+      "founder": "prof. Massimo Busin",
+      "procedures": "Naše oddělení provádí ročně přibližně",
+      "proceduresCount": "300 keratoplastických zákroků,",
+      "surgeryTypes": "včetně DALK, Houbové keratoplastiky, DSAEK, UT-DSAEK, DMEK a SALK."
+    },
+    "features": {
+      "hdStreaming": {
+        "title": "HD Video Streaming",
+        "description": "Sledujte operace ve vysoké kvalitě videa"
+      },
+      "liveInteraction": {
+        "title": "Živá Interakce",
+        "description": "Získejte odpovědi přímo od chirurga"
+      },
+      "educationalResources": {
+        "title": "Vzdělávací Zdroje",
+        "description": "Přístup ke komplexním výukovým materiálům"
+      }
+    }
+  },
+  "auth": {
+    "welcomeBack": "Vítejte zpět",
+    "email": "Email",
+    "password": "Heslo",
+    "username": "Uživatelské jméno",
+    "confirmPassword": "Potvrdit heslo",
+    "rememberMe": "Zapamatovat si mě",
+    "forgotPassword": "Zapomněli jste heslo?",
+    "signIn": "Přihlásit se",
+    "signUp": "Registrovat se",
+    "createAccount": "Vytvořit účet",
+    "alreadyHaveAccount": "Už máte účet?",
+    "newToCWA": "Jste nový v CWA?"
+  },
+  "profile": {
+    "myProfile": "Můj profil",
+    "updateProfile": "Aktualizovat profil",
+    "changePassword": "Změnit heslo",
+    "currentPassword": "Současné heslo",
+    "newPassword": "Nové heslo",
+    "confirmNewPassword": "Potvrdit nové heslo",
+    "deleteAccount": "Smazat účet",
+    "profileUpdated": "Profil úspěšně aktualizován",
+    "passwordChanged": "Heslo úspěšně změněno",
+    "username": "Uživatelské jméno",
+    "email": "Email",
+    "updating": "Aktualizace...",
+    "changingPassword": "Změna...",
+    "memberSince": "Člen od",
+    "deleteAccountWarning": "Opravdu chcete smazat svůj účet? Tuto akci nelze vrátit zpět.",
+    "confirmDelete": "Ano, smazat můj účet",
+    "cancel": "Zrušit",
+    "profileImageUpdated": "Profilový obrázek úspěšně aktualizován",
+    "failedToUpdateImage": "Nepodařilo se aktualizovat profilový obrázek",
+    "failedToUpdateProfile": "Nepodařilo se aktualizovat profil",
+    "failedToChangePassword": "Nepodařilo se změnit heslo",
+    "failedToDeleteAccount": "Nepodařilo se smazat účet",
+    "imageSizeError": "Velikost obrázku musí být menší než 5MB",
+    "passwordsDoNotMatch": "Nová hesla se neshodují",
+    "enterPassword": "Prosím zadejte heslo"
+  },
+  "recordings": {
+    "title": "Chirurgické záznamy",
+    "subtitle": "Sledujte zaznamenané chirurgické postupy od našich expertních chirurgů",
+    "retry": "Opakovat",
+    "selectVideo": "Vyberte video k přehrání",
+    "searchPlaceholder": "Hledat videa podle názvu nebo postupu...",
+    "allCategories": "Všechny kategorie",
+    "sortTitleAZ": "Název (A-Z)",
+    "sortCategory": "Kategorie",
+    "videoLibrary": "Video knihovna",
+    "refreshing": "Obnovování...",
+    "refreshVideos": "Obnovit videa",
+    "noVideosFound": "Nenalezena žádná videa",
+    "tryAdjusting": "Zkuste upravit vyhledávání nebo filtry",
+    "categories": {
+      "dalk": "DALK",
+      "dmek": "DMEK",
+      "dsaek": "DSAEK",
+      "utDsaek": "UT-DSAEK",
+      "mushroomPk": "Houbová keratoplastika",
+      "educational": "Vzdělávací"
+    }
+  },
+  "publications": {
+    "title": "Publikace",
+    "subtitle": "Prozkoumejte rozsáhlé výzkumné příspěvky prof. Massima Busina a kolegů",
+    "loadingText": "Načítání publikací...",
+    "errorTitle": "Chyba při načítání publikací",
+    "tryAgain": "Zkusit znovu",
+    "searchPlaceholder": "Hledat publikace podle názvu, autorů nebo časopisu...",
+    "allYears": "Všechny roky",
+    "allJournals": "Všechny časopisy",
+    "clear": "Vymazat",
+    "dateNewest": "Datum (nejnovější první)",
+    "dateOldest": "Datum (nejstarší první)",
+    "citationsMost": "Citace (nejvíce citované první)",
+    "citationsLeast": "Citace (nejméně citované první)",
+    "titleAZ": "Název (A-Z)",
+    "titleZA": "Název (Z-A)",
+    "journalAZ": "Časopis (A-Z)",
+    "journalZA": "Časopis (Z-A)",
+    "scopusMetrics": "Metriky Scopus",
+    "totalPublications": "Celkem publikací",
+    "yearsActive": "Aktivní roky",
+    "hIndex": "h-index",
+    "totalCitations": "Celkem citací",
+    "avgCitationsPerPaper": "Průměr citací/článek",
+    "coAuthors": "Spoluautoři",
+    "noPublicationsFound": "Nenalezeny žádné publikace",
+    "tryAdjustingSearch": "Zkuste upravit svá vyhledávací nebo filtrovací kritéria.",
+    "citations": "Citace",
+    "openAccess": "Otevřený přístup",
+    "previous": "Předchozí",
+    "next": "Další",
+    "year": "Rok",
+    "journal": "Časopis",
+    "authors": "Autoři",
+    "abstract": "Abstrakt",
+    "viewPDF": "Zobrazit PDF",
+    "viewOnPubMed": "Zobrazit na PubMed",
+    "copyCitation": "Kopírovat citaci",
+    "copied": "Zkopírováno!"
+  },
+  "footer": {
+    "quickLinks": "Rychlé odkazy",
+    "connectWithUs": "Spojte se s námi",
+    "followUs": "Sledujte nás na sociálních sítích",
+    "allRightsReserved": "Všechna práva vyhrazena"
+  },
+  "liveSurgery": {
+    "title": "Živá Chirurgie",
+    "subtitle": "Připojte se k našim interaktivním živým chirurgickým přenosům a učte se z procedur v reálném čase",
+    "cwaTitle": "Cornea Web Academy (CWA)",
+    "introText": "vám nabízí příležitost vstoupit do operačního sálu prof. Massima Busina a připojit se přímo k jeho mikroskopu prostřednictvím vysokorychlostního HD video streamingu (k dispozici v angličtině a italštině)",
+    "broadcasting": {
+      "title": "Živé Chirurgické Vysílání",
+      "description": "V každé relaci jsou všechny chirurgické zákroky prováděny a diskutovány živě. Vysílání je určeno jak mladším chirurgům, tak zkušenějším kolegům."
+    },
+    "interactive": {
+      "title": "Interaktivní Účast",
+      "description": "Ptejte se a získávejte vysvětlení v reálném čase přímo od chirurga, nebo jednodueše pozorujte a poslouchejte diskusi v režimu pouze pro zobrazení."
+    },
+    "specialized": {
+      "title": "Specializovaná Chirurgická Témata",
+      "description": "Každá operace se zaměřuje na konkrétní témata včetně DALK, DMEK, UT-DSAEK, DSAEK v PK a DALK v PK, s nejméně 2 procedurami prováděnými a diskutovanými na operaci."
+    }
+  },
+  "contacts": {
+    "title": "Kontakty",
+    "subtitle": "Kontaktujte tým CWA pro dotazy, podporu nebo spolupráci",
+    "sendMessage": "Pošlete nám zprávu",
+    "firstName": "Jméno",
+    "lastName": "Příjmení",
+    "email": "Email",
+    "subject": "Předmět",
+    "selectSubject": "Vyberte předmět",
+    "generalInquiry": "Obecný dotaz",
+    "technicalSupport": "Technická podpora",
+    "membership": "Členství",
+    "collaboration": "Spolupráce",
+    "mediaInquiry": "Mediální dotaz",
+    "message": "Zpráva",
+    "notRobot": "Nejsem robot",
+    "sendButton": "Odeslat zprávu",
+    "captchaError": "Prosím ověřte, že nejste robot",
+    "successMessage": "Zpráva byla úspěšně odeslána!",
+    "getInTouch": "Kontaktujte nás",
+    "address": "Adresa",
+    "phone": "Telefon",
+    "location": "Umístění"
+  },
+  "common": {
+    "loading": "Načítání...",
+    "error": "Chyba",
+    "success": "Úspěch",
+    "cancel": "Zrušit",
+    "save": "Uložit",
+    "delete": "Smazat",
+    "edit": "Upravit",
+    "close": "Zavřít",
+    "search": "Hledat",
+    "filter": "Filtrovat",
+    "refresh": "Obnovit",
+    "yes": "Ano",
+    "no": "Ne",
+    "by": "od"
+  }
+}

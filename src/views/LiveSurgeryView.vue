@@ -4,8 +4,8 @@
 
     <!-- Hero Section usando il componente riutilizzabile -->
     <PageHero
-      title="Live Surgery"
-      subtitle="Join our interactive live surgical broadcasts and learn from real-time procedures"
+      :title="t('liveSurgery.title')"
+      :subtitle="t('liveSurgery.subtitle')"
     />
 
     <!-- Live Now Section - Posizionata come primo elemento -->
@@ -19,9 +19,7 @@
         >
           <div class="space-y-6 text-gray-800 leading-relaxed">
             <p class="text-lg">
-              <span class="font-semibold text-blue-900">The Cornea Web Academy (CWA)</span> offers
-              you the opportunity to enter the surgical theatre of Prof. Massimo Busin and connect
-              directly with his microscope through high-speed HD video streaming.
+              <span class="font-semibold text-blue-900">{{ t('liveSurgery.cwaTitle') }}</span> {{ t('liveSurgery.introText') }}
             </p>
 
             <!-- Grid Layout with Image on Right -->
@@ -45,12 +43,10 @@
                         d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"
                       ></path>
                     </svg>
-                    Live Surgical Broadcasting
+                    {{ t('liveSurgery.broadcasting.title') }}
                   </h3>
                   <p class="text-sm text-gray-600 leading-relaxed">
-                    In every session all surgical interventions are performed and discussed live.
-                    The broadcasting is addressed both to junior surgeons and to more experienced
-                    colleagues.
+                    {{ t('liveSurgery.broadcasting.description') }}
                   </p>
                 </div>
 
@@ -71,11 +67,10 @@
                         d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
                       ></path>
                     </svg>
-                    Interactive Participation
+                    {{ t('liveSurgery.interactive.title') }}
                   </h3>
                   <p class="text-sm text-gray-600 leading-relaxed">
-                    Ask questions and receive explanations in real-time directly from the surgeon,
-                    or simply observe and listen to the discussion in view-only mode.
+                    {{ t('liveSurgery.interactive.description') }}
                   </p>
                 </div>
 
@@ -96,12 +91,10 @@
                         d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"
                       ></path>
                     </svg>
-                    Specialized Surgery Topics
+                    {{ t('liveSurgery.specialized.title') }}
                   </h3>
                   <p class="text-sm text-gray-600 leading-relaxed">
-                    Each surgery focuses on specific themes including DALK, DMEK, UT-DSAEK, DSAEK in
-                    PK, and DALK in PK, with at least 2 procedures performed and discussed per
-                    surgery.
+                    {{ t('liveSurgery.specialized.description') }}
                   </p>
                 </div>
               </div>
@@ -141,6 +134,9 @@ import PageHero from '@/components/HeroComponent.vue'
 import NewsSection from '@/components/home/NewsSection.vue'
 // #### import LiveNowSection from '@/components/live/LiveNowSection.vue' ####
 import eyeStreamImage from '@/assets/images/eyestream.jpg'
+import { useI18n } from 'vue-i18n'
+
+const { t } = useI18n()
 
 // #### const liveNow = ref({
 //   title: 'DMEK Surgery - Complex Case',

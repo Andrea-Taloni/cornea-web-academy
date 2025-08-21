@@ -35,19 +35,6 @@
                   experienced surgeons.
                 </p>
                 <p class="text-lg">No registration fee required.</p>
-                <div class="flex flex-wrap items-center gap-4 mt-6">
-                  <a
-                    href="https://bit.ly/3ZuXNkA"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="inline-block bg-white text-blue-700 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition"
-                  >
-                    Register here or use the QR-code
-                  </a>
-                  <div class="bg-white p-2 rounded-lg">
-                    <img :src="qrCode" alt="Registration QR Code" class="w-24 h-24" />
-                  </div>
-                </div>
               </div>
               <div>
                 <p class="text-sm opacity-90 mb-4">In collaboration with:</p>

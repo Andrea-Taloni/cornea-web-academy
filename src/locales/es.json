@@ -32,11 +32,11 @@
     }
   },
   "home": {
-    "title": "Bienvenidos a Cornea Web Academy",
+    "title": "Bienvenidos a la Cornea Web Academy",
     "subtitle": "Excelencia en Educación de Cirugía Corneal",
     "description": "Únete a nosotros para avanzar en la cirugía corneal a través de educación innovadora y demostraciones quirúrgicas en vivo",
     "welcome": {
-      "title": "Bienvenidos a Cornea Web Academy",
+      "title": "Bienvenidos a la Cornea Web Academy",
       "description": "Plataforma educativa para cirugía corneal fundada en 2018 por el Prof. Massimo Busin, ubicada en el Departamento de Oftalmología, Ospedali Privati Forlì, Villa Igea, en Forlì, Italia.",
       "exploreLiveSurgery": "Explorar Cirugía en Vivo",
       "learnMore": "Saber Más"
@@ -47,8 +47,22 @@
       "location": "en Forlì, Italia.",
       "founder": "Prof. Massimo Busin",
       "procedures": "Nuestro departamento realiza aproximadamente",
-      "proceduresCount": "300 procedimientos de queratoplastia anualmente",
-      "surgeryTypes": "incluyendo DALK, DMEK, DSAEK, UT-DSAEK, SALK y queratoplastia mushroom. Estas cirugías se transmiten en vivo a través de nuestra plataforma de streaming."
+      "proceduresCount": "300 procedimientos de queratoplastia anualmente,",
+      "surgeryTypes": "incluyendo DALK, Queratoplastia Mushroom, DSAEK, UT-DSAEK, DMEK y SALK."
+    },
+    "features": {
+      "hdStreaming": {
+        "title": "Transmisión de Video HD",
+        "description": "Mira cirugías en calidad de video de alta definición"
+      },
+      "liveInteraction": {
+        "title": "Interacción en Vivo",
+        "description": "Obtén respuestas directamente del cirujano"
+      },
+      "educationalResources": {
+        "title": "Recursos Educativos",
+        "description": "Accede a materiales de aprendizaje completos"
+      }
     }
   },
   "auth": {
@@ -93,31 +107,115 @@
     "enterPassword": "Por favor ingrese su contraseña"
   },
   "recordings": {
-    "title": "Biblioteca de Videos",
-    "searchPlaceholder": "Buscar videos...",
-    "filterByCategory": "Filtrar por categoría",
-    "allCategories": "Todas las Categorías",
-    "sortBy": "Ordenar por",
-    "newest": "Más recientes",
-    "oldest": "Más antiguos",
-    "mostViewed": "Más vistos",
-    "refreshVideos": "Actualizar Videos"
+    "title": "Grabaciones de Cirugías",
+    "subtitle": "Mira procedimientos quirúrgicos grabados de nuestros cirujanos expertos",
+    "retry": "Reintentar",
+    "selectVideo": "Selecciona un video para reproducir",
+    "searchPlaceholder": "Buscar videos por título o procedimiento...",
+    "allCategories": "Todas las categorías",
+    "sortTitleAZ": "Título (A-Z)",
+    "sortCategory": "Categoría",
+    "videoLibrary": "Biblioteca de videos",
+    "refreshing": "Actualizando...",
+    "refreshVideos": "Actualizar videos",
+    "noVideosFound": "No se encontraron videos",
+    "tryAdjusting": "Intenta ajustar tu búsqueda o filtros",
+    "categories": {
+      "dalk": "DALK",
+      "dmek": "DMEK",
+      "dsaek": "DSAEK",
+      "utDsaek": "UT-DSAEK",
+      "mushroomPk": "Queratoplastia Mushroom",
+      "educational": "Educativo"
+    }
   },
   "publications": {
     "title": "Publicaciones",
-    "searchPlaceholder": "Buscar publicaciones...",
+    "subtitle": "Explora las extensas contribuciones de investigación del Prof. Massimo Busin y colegas",
+    "loadingText": "Cargando publicaciones...",
+    "errorTitle": "Error al Cargar Publicaciones",
+    "tryAgain": "Intentar de Nuevo",
+    "searchPlaceholder": "Buscar publicaciones por título, autores o revista...",
+    "allYears": "Todos los Años",
+    "allJournals": "Todas las Revistas",
+    "clear": "Limpiar",
+    "dateNewest": "Fecha (Más Recientes Primero)",
+    "dateOldest": "Fecha (Más Antiguos Primero)",
+    "citationsMost": "Citas (Más Citados Primero)",
+    "citationsLeast": "Citas (Menos Citados Primero)",
+    "titleAZ": "Título (A-Z)",
+    "titleZA": "Título (Z-A)",
+    "journalAZ": "Revista (A-Z)",
+    "journalZA": "Revista (Z-A)",
+    "scopusMetrics": "Métricas Scopus",
+    "totalPublications": "Publicaciones Totales",
+    "yearsActive": "Años Activos",
+    "hIndex": "Índice h",
+    "totalCitations": "Citas Totales",
+    "avgCitationsPerPaper": "Prom. Citas/Artículo",
+    "coAuthors": "Co-autores",
+    "noPublicationsFound": "No se encontraron publicaciones",
+    "tryAdjustingSearch": "Intenta ajustar tus criterios de búsqueda o filtro.",
+    "citations": "Citas",
+    "openAccess": "Acceso Abierto",
+    "previous": "Anterior",
+    "next": "Siguiente",
     "year": "Año",
     "journal": "Revista",
     "authors": "Autores",
     "abstract": "Resumen",
     "viewPDF": "Ver PDF",
-    "viewOnPubMed": "Ver en PubMed"
+    "viewOnPubMed": "Ver en PubMed",
+    "copyCitation": "Copiar cita",
+    "copied": "¡Copiado!"
   },
   "footer": {
     "quickLinks": "Enlaces Rápidos",
     "connectWithUs": "Conéctate con nosotros",
     "followUs": "Síguenos en redes sociales",
     "allRightsReserved": "Todos los derechos reservados"
+  },
+  "liveSurgery": {
+    "title": "Cirugía en Vivo",
+    "subtitle": "Únete a nuestras transmisiones quirúrgicas interactivas en vivo y aprende de procedimientos en tiempo real",
+    "cwaTitle": "La Cornea Web Academy (CWA)",
+    "introText": "te ofrece la oportunidad de entrar en el quirófano del Prof. Massimo Busin y conectarte directamente con su microscopio a través de transmisión de video HD de alta velocidad (disponible en inglés e italiano)",
+    "broadcasting": {
+      "title": "Transmisión Quirúrgica en Vivo",
+      "description": "En cada sesión se realizan y discuten en vivo todas las intervenciones quirúrgicas. La transmisión está dirigida tanto a cirujanos junior como a colegas más experimentados."
+    },
+    "interactive": {
+      "title": "Participación Interactiva",
+      "description": "Haz preguntas y recibe explicaciones en tiempo real directamente del cirujano, o simplemente observa y escucha la discusión en modo de solo visualización."
+    },
+    "specialized": {
+      "title": "Temas Quirúrgicos Especializados",
+      "description": "Cada cirugía se centra en temas específicos que incluyen DALK, DMEK, UT-DSAEK, DSAEK en PK y DALK en PK, con al menos 2 procedimientos realizados y discutidos por cirugía."
+    }
+  },
+  "contacts": {
+    "title": "Contactos",
+    "subtitle": "Ponte en contacto con el equipo de CWA para consultas, soporte o colaboración",
+    "sendMessage": "Envíanos un mensaje",
+    "firstName": "Nombre",
+    "lastName": "Apellido",
+    "email": "Correo electrónico",
+    "subject": "Asunto",
+    "selectSubject": "Selecciona un asunto",
+    "generalInquiry": "Consulta general",
+    "technicalSupport": "Soporte técnico",
+    "membership": "Membresía",
+    "collaboration": "Colaboración",
+    "mediaInquiry": "Consulta de medios",
+    "message": "Mensaje",
+    "notRobot": "No soy un robot",
+    "sendButton": "Enviar mensaje",
+    "captchaError": "Por favor verifica que no eres un robot",
+    "successMessage": "¡Mensaje enviado con éxito!",
+    "getInTouch": "Ponte en contacto",
+    "address": "Dirección",
+    "phone": "Teléfono",
+    "location": "Ubicación"
   },
   "common": {
     "loading": "Cargando...",

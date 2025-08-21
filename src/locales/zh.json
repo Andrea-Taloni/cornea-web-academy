@@ -47,8 +47,22 @@
       "location": "意大利弗利。",
       "founder": "Massimo Busin 教授",
       "procedures": "我们的科室每年进行约",
-      "proceduresCount": "300例角膜移植手术",
-      "surgeryTypes": "包括DALK、DMEK、DSAEK、UT-DSAEK、SALK和蘑菇型角膜移植术。这些手术通过我们的流媒体平台进行现场直播。"
+      "proceduresCount": "300例角膜移植手术，",
+      "surgeryTypes": "包括DALK、蘑菇型角膜移植术、DSAEK、UT-DSAEK、DMEK和SALK。"
+    },
+    "features": {
+      "hdStreaming": {
+        "title": "高清视频直播",
+        "description": "观看高清视频质量的手术"
+      },
+      "liveInteraction": {
+        "title": "实时互动",
+        "description": "直接从外科医生那里获得答案"
+      },
+      "educationalResources": {
+        "title": "教育资源",
+        "description": "访问全面的学习材料"
+      }
     }
   },
   "auth": {
@@ -93,31 +107,115 @@
     "enterPassword": "请输入您的密码"
   },
   "recordings": {
-    "title": "视频库",
-    "searchPlaceholder": "搜索视频...",
-    "filterByCategory": "按类别筛选",
+    "title": "手术录像",
+    "subtitle": "观看我们专家外科医生录制的手术程序",
+    "retry": "重试",
+    "selectVideo": "选择要播放的视频",
+    "searchPlaceholder": "按标题或程序搜索视频...",
     "allCategories": "所有类别",
-    "sortBy": "排序方式",
-    "newest": "最新",
-    "oldest": "最旧",
-    "mostViewed": "观看最多",
-    "refreshVideos": "刷新视频"
+    "sortTitleAZ": "标题 (A-Z)",
+    "sortCategory": "类别",
+    "videoLibrary": "视频库",
+    "refreshing": "刷新中...",
+    "refreshVideos": "刷新视频",
+    "noVideosFound": "未找到视频",
+    "tryAdjusting": "尝试调整您的搜索或过滤器",
+    "categories": {
+      "dalk": "DALK",
+      "dmek": "DMEK",
+      "dsaek": "DSAEK",
+      "utDsaek": "UT-DSAEK",
+      "mushroomPk": "蘑菇型角膜移植",
+      "educational": "教育"
+    }
   },
   "publications": {
     "title": "出版物",
-    "searchPlaceholder": "搜索出版物...",
+    "subtitle": "探索 Massimo Busin 教授及同事的广泛研究贡献",
+    "loadingText": "正在加载出版物...",
+    "errorTitle": "加载出版物时出错",
+    "tryAgain": "重试",
+    "searchPlaceholder": "按标题、作者或期刊搜索出版物...",
+    "allYears": "所有年份",
+    "allJournals": "所有期刊",
+    "clear": "清除",
+    "dateNewest": "日期（最新优先）",
+    "dateOldest": "日期（最旧优先）",
+    "citationsMost": "引用（最多优先）",
+    "citationsLeast": "引用（最少优先）",
+    "titleAZ": "标题（A-Z）",
+    "titleZA": "标题（Z-A）",
+    "journalAZ": "期刊（A-Z）",
+    "journalZA": "期刊（Z-A）",
+    "scopusMetrics": "Scopus 指标",
+    "totalPublications": "总出版物",
+    "yearsActive": "活跃年份",
+    "hIndex": "h指数",
+    "totalCitations": "总引用数",
+    "avgCitationsPerPaper": "平均引用/文章",
+    "coAuthors": "合作者",
+    "noPublicationsFound": "未找到出版物",
+    "tryAdjustingSearch": "请尝试调整您的搜索或筛选条件。",
+    "citations": "引用",
+    "openAccess": "开放获取",
+    "previous": "上一页",
+    "next": "下一页",
     "year": "年份",
     "journal": "期刊",
     "authors": "作者",
     "abstract": "摘要",
     "viewPDF": "查看PDF",
-    "viewOnPubMed": "在PubMed查看"
+    "viewOnPubMed": "在PubMed查看",
+    "copyCitation": "复制引用",
+    "copied": "已复制！"
   },
   "footer": {
     "quickLinks": "快速链接",
     "connectWithUs": "与我们联系",
     "followUs": "在社交媒体上关注我们",
     "allRightsReserved": "版权所有"
+  },
+  "liveSurgery": {
+    "title": "实时手术",
+    "subtitle": "加入我们的互动实时手术直播，从实时程序中学习",
+    "cwaTitle": "角膜网络学院（CWA）",
+    "introText": "为您提供进入Massimo Busin教授手术室的机会，通过高速高清视频流直接连接到他的显微镜 (提供英语和意大利语版本)",
+    "broadcasting": {
+      "title": "实时手术直播",
+      "description": "在每个会话中，所有外科手术都是现场进行和讨论的。广播既面向初级外科医生，也面向更有经验的同事。"
+    },
+    "interactive": {
+      "title": "互动参与",
+      "description": "直接向外科医生提问并实时获得解释，或者只是在仅查看模式下观察和倾听讨论。"
+    },
+    "specialized": {
+      "title": "专业手术主题",
+      "description": "每次手术都专注于特定主题，包括DALK、DMEK、UT-DSAEK、PK中的DSAEK和PK中的DALK，每次手术至少执行和讨论2个程序。"
+    }
+  },
+  "contacts": {
+    "title": "联系方式",
+    "subtitle": "联系CWA团队进行咨询、支持或合作",
+    "sendMessage": "给我们发送消息",
+    "firstName": "名",
+    "lastName": "姓",
+    "email": "电子邮件",
+    "subject": "主题",
+    "selectSubject": "选择主题",
+    "generalInquiry": "一般咨询",
+    "technicalSupport": "技术支持",
+    "membership": "会员资格",
+    "collaboration": "合作",
+    "mediaInquiry": "媒体咨询",
+    "message": "消息",
+    "notRobot": "我不是机器人",
+    "sendButton": "发送消息",
+    "captchaError": "请验证您不是机器人",
+    "successMessage": "消息发送成功！",
+    "getInTouch": "联系我们",
+    "address": "地址",
+    "phone": "电话",
+    "location": "位置"
   },
   "common": {
     "loading": "加载中...",
