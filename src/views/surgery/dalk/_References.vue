@@ -28,6 +28,14 @@ defineEmits(['toggle'])
 // References data
 const references = [
   {
+    authors: 'Reinhart WJ, Musch DC, Jacobs DS, Lee WB, Kaufman SC, Shtein RM.',
+    title: 'Deep anterior lamellar keratoplasty as an alternative to penetrating keratoplasty a report by the american academy of ophthalmology.',
+    journal: 'Ophthalmology.',
+    year: '2011',
+    volume: '118',
+    pages: '209-18',
+  },
+  {
     authors: 'Yu AC, Sollazzo A, Bovone C, Busin M.',
     title: 'Large-diameter deep anterior lamellar keratoplasty: A narrative review.',
     journal: 'Taiwan J Ophthalmol.',
@@ -69,15 +77,6 @@ const references = [
     year: '2002',
     volume: '28(3)',
     pages: '398-403',
-  },
-  {
-    authors: 'Reinhart WJ, et al.',
-    title:
-      'Deep anterior lamellar keratoplasty as an alternative to penetrating keratoplasty: a report by the American Academy of Ophthalmology.',
-    journal: 'Ophthalmology.',
-    year: '2011',
-    volume: '118(1)',
-    pages: '209-218',
   },
   {
     authors: 'Borderie VM, et al.',
