@@ -4,18 +4,64 @@
     @mouseenter="stopSlideshow"
     @mouseleave="startSlideshow"
   >
-    <!-- Container con larghezza massima -->
-    <div class="max-w-[1920px] mx-auto relative h-[350px] md:h-[450px] lg:h-[550px]">
-      <!-- Slides -->
+    <!-- Mobile version - aspect ratio based -->
+    <div class="sm:hidden relative w-full" style="aspect-ratio: 21/9;">
+      <!-- Slides for mobile -->
       <div
         v-for="(image, index) in images"
-        :key="index"
+        :key="`mobile-${index}`"
         :class="[
           'absolute inset-0 transition-opacity duration-1000 ease-in-out',
           currentSlide === index ? 'opacity-100' : 'opacity-0',
         ]"
       >
-        <img :src="image.src" :alt="image.alt" class="w-full h-full object-cover object-center" />
+        <img 
+          :src="image.src" 
+          :alt="image.alt" 
+          class="w-full h-full object-cover object-center" 
+        />
+        
+        <!-- Bottom overlay for text visibility -->
+        <div class="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-black/70 to-transparent"></div>
+        
+        <!-- Mobile caption -->
+        <div v-if="image.caption" class="absolute bottom-8 left-0 right-0 text-center px-4">
+          <p class="text-white text-xs font-semibold drop-shadow-lg">
+            {{ image.caption }}
+          </p>
+        </div>
+      </div>
+      
+      <!-- Mobile navigation dots -->
+      <div class="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex space-x-2">
+        <button
+          v-for="(_, index) in images"
+          :key="`mobile-dot-${index}`"
+          @click="goToSlide(index)"
+          :class="[
+            'w-2 h-2 rounded-full transition-all duration-300',
+            currentSlide === index ? 'bg-white w-6' : 'bg-white/50',
+          ]"
+        ></button>
+      </div>
+    </div>
+
+    <!-- Desktop version - fixed height -->
+    <div class="hidden sm:block max-w-[1920px] mx-auto relative h-[350px] md:h-[450px] lg:h-[550px]">
+      <!-- Slides for desktop -->
+      <div
+        v-for="(image, index) in images"
+        :key="`desktop-${index}`"
+        :class="[
+          'absolute inset-0 transition-opacity duration-1000 ease-in-out',
+          currentSlide === index ? 'opacity-100' : 'opacity-0',
+        ]"
+      >
+        <img 
+          :src="image.src" 
+          :alt="image.alt" 
+          class="w-full h-full object-cover object-center" 
+        />
 
         <!-- Bottom overlay for text visibility -->
         <div
@@ -23,15 +69,15 @@
         ></div>
 
         <!-- Image caption -->
-        <div v-if="image.caption" class="absolute bottom-16 left-0 right-0 text-center px-4">
-          <p class="text-white text-lg md:text-xl font-semibold drop-shadow-lg max-w-4xl mx-auto">
+        <div v-if="image.caption" class="absolute bottom-12 sm:bottom-16 left-0 right-0 text-center px-4">
+          <p class="text-white text-sm sm:text-base md:text-lg lg:text-xl font-semibold drop-shadow-lg max-w-4xl mx-auto">
             {{ image.caption }}
           </p>
         </div>
       </div>
 
       <!-- Navigation dots -->
-      <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+      <div class="absolute bottom-2 sm:bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
         <button
           v-for="(_, index) in images"
           :key="index"
@@ -43,7 +89,7 @@
         ></button>
       </div>
 
-      <!-- Previous/Next buttons -->
+      <!-- Desktop Previous/Next buttons -->
       <button
         @click="goToPreviousSlide"
         class="absolute left-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/30 text-white p-2 rounded-full transition-all duration-300"
@@ -62,6 +108,36 @@
         class="absolute right-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/30 text-white p-2 rounded-full transition-all duration-300"
       >
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M9 5l7 7-7 7"
+          ></path>
+        </svg>
+      </button>
+    </div>
+    
+    <!-- Mobile swipe indicators - optional -->
+    <div class="sm:hidden absolute left-2 right-2 top-1/2 -translate-y-1/2 flex justify-between pointer-events-none">
+      <button
+        @click="goToPreviousSlide"
+        class="bg-white/10 hover:bg-white/20 text-white p-1 rounded-full transition-all duration-300 pointer-events-auto"
+      >
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M15 19l-7-7 7-7"
+          ></path>
+        </svg>
+      </button>
+      <button
+        @click="goToNextSlide"
+        class="bg-white/10 hover:bg-white/20 text-white p-1 rounded-full transition-all duration-300 pointer-events-auto"
+      >
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path
             stroke-linecap="round"
             stroke-linejoin="round"

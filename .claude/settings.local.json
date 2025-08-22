@@ -16,7 +16,9 @@
       "mcp__ide__getDiagnostics",
       "Bash(npm run server:*)",
       "Bash(npm start)",
-      "WebFetch(domain:pubmed.ncbi.nlm.nih.gov)"
+      "WebFetch(domain:pubmed.ncbi.nlm.nih.gov)",
+      "Bash(curl:*)",
+      "Bash(rg:*)"
     ],
     "deny": [],
     "ask": [],

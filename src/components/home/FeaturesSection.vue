@@ -1,17 +1,17 @@
 <template>
   <section class="py-8 md:py-12">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid md:grid-cols-3 gap-8">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
         <div
           v-for="feature in features"
           :key="feature.title"
-          class="text-center p-6 bg-white rounded-lg shadow-lg hover:shadow-xl transition"
+          class="text-center p-4 sm:p-6 bg-white rounded-lg shadow-lg hover:shadow-xl transition"
         >
           <div
-            class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4"
+            class="w-14 h-14 sm:w-16 sm:h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4"
           >
             <svg
-              class="w-8 h-8 text-blue-600"
+              class="w-7 h-7 sm:w-8 sm:h-8 text-blue-600"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -24,8 +24,8 @@
               ></path>
             </svg>
           </div>
-          <h4 class="text-xl font-semibold mb-2">{{ feature.title }}</h4>
-          <p class="text-gray-600">{{ feature.description }}</p>
+          <h4 class="text-lg sm:text-xl font-semibold mb-2">{{ feature.title }}</h4>
+          <p class="text-sm sm:text-base text-gray-600">{{ feature.description }}</p>
         </div>
       </div>
     </div>

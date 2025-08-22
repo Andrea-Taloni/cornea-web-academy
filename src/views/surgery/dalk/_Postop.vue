@@ -35,36 +35,48 @@ defineProps({
 defineEmits(['toggle'])
 
 // Post-operative management data - From Busin et al. 2017
-const postopData = computed(() => ({
-  corticosteroids: {
-    title: t('surgery.dalk.postoperative.corticosteroids.title'),
-    medication: t('surgery.dalk.postoperative.corticosteroids.medication'),
-    dosing: [
-      t('surgery.dalk.postoperative.corticosteroids.dosing.0'),
-      t('surgery.dalk.postoperative.corticosteroids.dosing.1'),
-      t('surgery.dalk.postoperative.corticosteroids.dosing.2'),
-    ],
-  },
-  antimicrobial: {
-    title: t('surgery.dalk.postoperative.antimicrobial.title'),
-    optionsLabel: t('surgery.dalk.postoperative.antimicrobial.initial'),
-    options: [t('surgery.dalk.postoperative.antimicrobial.medication')],
-    dosingLabel: t('surgery.dalk.labels.dosing'),
-    dosing: t('surgery.dalk.postoperative.antimicrobial.dosing'),
-  },
-  followUp: {
-    title: t('surgery.dalk.postoperative.followUp.title'),
-    schedule: t('surgery.dalk.postoperative.followUp.schedule'),
-  },
-  sutureManagement: {
-    title: t('surgery.dalk.postoperative.sutureManagement.title'),
-    timings: [
-      { text: t('surgery.dalk.postoperative.sutureManagement.firstRemoval'), isSubItem: false },
-      { text: t('surgery.dalk.postoperative.sutureManagement.secondRemoval'), isSubItem: false },
-      { text: t('surgery.dalk.postoperative.sutureManagement.underThirty'), isSubItem: true },
-      { text: t('surgery.dalk.postoperative.sutureManagement.overThirty'), isSubItem: true },
-      { text: t('surgery.dalk.postoperative.sutureManagement.monitoring'), isSubItem: false },
-    ],
-  },
-}))
+const postopData = computed(() => {
+  // Get the raw translation data
+  const followUpSchedule = t('surgery.dalk.postoperative.followUp.schedule')
+  
+  // Ensure schedule is an array
+  const scheduleArray = Array.isArray(followUpSchedule) 
+    ? followUpSchedule 
+    : typeof followUpSchedule === 'string' 
+      ? [followUpSchedule] 
+      : ['Regular monitoring as per standard protocol']
+  
+  return {
+    corticosteroids: {
+      title: t('surgery.dalk.postoperative.corticosteroids.title'),
+      medication: t('surgery.dalk.postoperative.corticosteroids.medication'),
+      dosing: [
+        t('surgery.dalk.postoperative.corticosteroids.dosing.0'),
+        t('surgery.dalk.postoperative.corticosteroids.dosing.1'),
+        t('surgery.dalk.postoperative.corticosteroids.dosing.2'),
+      ],
+    },
+    antimicrobial: {
+      title: t('surgery.dalk.postoperative.antimicrobial.title'),
+      optionsLabel: t('surgery.dalk.postoperative.antimicrobial.initial'),
+      options: [t('surgery.dalk.postoperative.antimicrobial.medication')],
+      dosingLabel: t('surgery.dalk.labels.dosing'),
+      dosing: t('surgery.dalk.postoperative.antimicrobial.dosing'),
+    },
+    followUp: {
+      title: t('surgery.dalk.postoperative.followUp.title'),
+      schedule: scheduleArray,
+    },
+    sutureManagement: {
+      title: t('surgery.dalk.postoperative.sutureManagement.title'),
+      timings: [
+        { text: t('surgery.dalk.postoperative.sutureManagement.firstRemoval'), isSubItem: false },
+        { text: t('surgery.dalk.postoperative.sutureManagement.secondRemoval'), isSubItem: false },
+        { text: t('surgery.dalk.postoperative.sutureManagement.underThirty'), isSubItem: true },
+        { text: t('surgery.dalk.postoperative.sutureManagement.overThirty'), isSubItem: true },
+        { text: t('surgery.dalk.postoperative.sutureManagement.monitoring'), isSubItem: false },
+      ],
+    },
+  }
+})
 </script>

@@ -7,7 +7,10 @@
     <NavDropdown :title="$t('nav.surgery')" :items="surgeryTypes" baseUrl="/surgery/" />
 
     <router-link to="/publications" class="nav-link">{{ $t('nav.publications') }}</router-link>
-    <router-link to="/live-surgery" class="nav-link">{{ $t('nav.liveSurgery') }}</router-link>
+    <router-link to="/live-surgery" class="nav-link">
+      <span class="hidden lg:inline">{{ $t('nav.liveSurgery') }}</span>
+      <span class="inline lg:hidden">{{ $t('nav.live') || 'Live' }}</span>
+    </router-link>
     <router-link to="/recordings" class="nav-link">{{ $t('nav.recordings') }}</router-link>
     <router-link to="/contacts" class="nav-link">{{ $t('nav.contacts') }}</router-link>
   </nav>

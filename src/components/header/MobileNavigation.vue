@@ -10,17 +10,17 @@
   >
     <div v-show="open" class="md:hidden border-t border-gray-200 bg-white shadow-lg">
       <div class="px-2 pt-2 pb-3 space-y-1">
-        <router-link to="/" class="mobile-nav-link" @click="handleLinkClick"> Home </router-link>
+        <router-link to="/" class="mobile-nav-link text-center" @click="handleLinkClick"> Home </router-link>
 
         <!-- Mobile Surgery Accordion -->
         <div>
           <button
             @click="mobileSurgeryOpen = !mobileSurgeryOpen"
-            class="mobile-nav-link w-full flex justify-between items-center"
+            class="mobile-nav-link w-full flex justify-center items-center relative"
           >
-            Surgery
+            <span>Surgery</span>
             <svg
-              class="w-4 h-4 transition-transform duration-300"
+              class="w-4 h-4 transition-transform duration-300 absolute right-4 top-1/2 -translate-y-1/2"
               :class="{ 'rotate-180': mobileSurgeryOpen }"
               fill="none"
               stroke="currentColor"
@@ -42,12 +42,12 @@
             leave-from-class="opacity-100 translate-y-0"
             leave-to-class="opacity-0 -translate-y-1"
           >
-            <div v-show="mobileSurgeryOpen" class="pl-6 space-y-1 mt-1">
+            <div v-show="mobileSurgeryOpen" class="space-y-1 mt-1 px-6">
               <router-link
                 v-for="surgery in surgeryTypes"
                 :key="surgery.name"
                 :to="`/surgery/${surgery.slug}`"
-                class="mobile-dropdown-item"
+                class="mobile-dropdown-item text-center"
                 @click="handleLinkClick"
               >
                 {{ surgery.name }}
@@ -56,16 +56,16 @@
           </transition>
         </div>
 
-        <router-link to="/publications" class="mobile-nav-link" @click="handleLinkClick">
+        <router-link to="/publications" class="mobile-nav-link text-center" @click="handleLinkClick">
           Publications
         </router-link>
-        <router-link to="/live-surgery" class="mobile-nav-link" @click="handleLinkClick">
+        <router-link to="/live-surgery" class="mobile-nav-link text-center" @click="handleLinkClick">
           Live Surgery
         </router-link>
-        <router-link to="/recordings" class="mobile-nav-link" @click="handleLinkClick">
+        <router-link to="/recordings" class="mobile-nav-link text-center" @click="handleLinkClick">
           Recordings
         </router-link>
-        <router-link to="/contacts" class="mobile-nav-link" @click="handleLinkClick">
+        <router-link to="/contacts" class="mobile-nav-link text-center" @click="handleLinkClick">
           Contacts
         </router-link>
 
@@ -121,7 +121,7 @@ const surgeryTypes = ref([
 }
 
 .mobile-nav-link:hover {
-  @apply text-blue-600 bg-blue-50 pl-5;
+  @apply text-blue-600 bg-blue-50;
 }
 
 .mobile-nav-link:hover::before {
@@ -129,12 +129,12 @@ const surgeryTypes = ref([
 }
 
 .mobile-dropdown-item {
-  @apply block py-2 text-sm text-gray-600 rounded-md pl-4 relative;
+  @apply block py-2 text-sm text-gray-600 rounded-md relative;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .mobile-dropdown-item:hover {
-  @apply text-blue-600 bg-blue-50 pl-6;
+  @apply text-blue-600 bg-blue-50;
 }
 
 /* Router Link Active State for mobile */

@@ -5,7 +5,7 @@
       <div class="flex justify-between items-center h-20">
         <!-- Logo -->
         <div class="flex items-center">
-          <router-link to="/" class="block">
+          <router-link to="/" class="hidden xl:block">
             <img
               :src="logoImage"
               alt="CWA Logo"

@@ -3,6 +3,7 @@
     "home": "Home",
     "surgery": "Surgery",
     "liveSurgery": "Live Surgery",
+    "live": "Live",
     "recordings": "Recordings",
     "publications": "Publications",
     "aboutUs": "About Us",
@@ -281,7 +282,7 @@
         "postoperative": {
           "title": "Postoperative Complications",
           "early": {
-            "title": "Early Complications (< 1 month)",
+            "title": "Early Complications (less than 1 month)",
             "items": [
               "Double anterior chamber",
               "Interface haze",
@@ -293,7 +294,7 @@
             ]
           },
           "late": {
-            "title": "Late Complications (> 1 month)",
+            "title": "Late Complications (more than 1 month)",
             "items": [
               "Stromal rejection",
               "Interface opacification",
@@ -568,7 +569,7 @@
         "postoperative": {
           "title": "Postoperative Complications",
           "early": {
-            "title": "Early Complications (< 1 month)",
+            "title": "Early Complications (less than 1 month)",
             "items": [
               "Posterior lamella detachment",
               "Interface fluid",
@@ -580,7 +581,7 @@
             ]
           },
           "late": {
-            "title": "Late Complications (> 1 month)",
+            "title": "Late Complications (more than 1 month)",
             "items": [
               "Endothelial rejection",
               "Stromal rejection",

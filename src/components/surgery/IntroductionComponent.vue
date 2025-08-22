@@ -1,8 +1,8 @@
 <!-- src/components/surgery/OverviewSection.vue -->
 <template>
   <div class="prose max-w-none">
-    <!-- Image float right if provided -->
-    <div v-if="image" class="float-right ml-8 mb-6 w-full md:w-96 lg:w-[450px]">
+    <!-- Image - full width on mobile, float right on desktop -->
+    <div v-if="image" class="mb-6 md:float-right md:ml-8 md:mb-6 w-full md:w-96 lg:w-[450px]">
       <div class="rounded-lg overflow-hidden shadow-lg bg-white">
         <img :src="image.src" :alt="image.alt" class="w-full h-auto object-contain" />
       </div>
@@ -12,7 +12,7 @@
     <p
       v-for="(paragraph, index) in paragraphs"
       :key="index"
-      class="text-gray-600 leading-relaxed mb-4 text-base text-justify"
+      class="text-gray-600 leading-relaxed mb-4 text-sm sm:text-base text-justify"
       v-html="processBoldText(paragraph)"
     >
     </p>

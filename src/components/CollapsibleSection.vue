@@ -4,25 +4,25 @@
   >
     <button
       @click="toggleSection"
-      class="w-full px-8 py-6 flex items-center justify-between transition-all duration-300 group"
+      class="w-full px-4 sm:px-6 lg:px-8 py-4 sm:py-5 lg:py-6 flex items-center justify-between transition-all duration-300 group"
       :class="buttonClasses"
     >
-      <div class="flex items-center space-x-4">
+      <div class="flex items-center space-x-3 sm:space-x-4">
         <div
-          class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300"
+          class="w-8 h-8 sm:w-10 sm:h-10 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300"
           :class="iconBgClasses"
         >
-          <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg class="w-5 h-5 sm:w-6 sm:h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" :d="iconPath" />
           </svg>
         </div>
-        <h2 class="text-2xl font-bold text-gray-800 transition-colors" :class="titleHoverClass">
+        <h2 class="text-lg sm:text-xl lg:text-2xl font-bold text-gray-800 transition-colors text-left" :class="titleHoverClass">
           {{ title }}
         </h2>
       </div>
       <div class="flex items-center space-x-2">
         <span
-          class="text-sm text-gray-500 transition-colors"
+          class="hidden sm:block text-sm text-gray-500 transition-colors"
           :class="helperTextClass"
           v-if="!isExpanded"
         >
@@ -49,7 +49,7 @@
       class="overflow-hidden transition-[height] duration-500 ease-in-out"
       :style="{ height: contentHeight }"
     >
-      <div ref="contentInner" class="px-8 py-8 bg-gradient-to-b from-gray-50 to-white">
+      <div ref="contentInner" class="px-4 sm:px-6 lg:px-8 py-4 sm:py-6 lg:py-8 bg-gradient-to-b from-gray-50 to-white">
         <slot></slot>
       </div>
     </div>
