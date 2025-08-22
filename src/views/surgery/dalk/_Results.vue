@@ -1,7 +1,7 @@
 <!-- src/views/surgery/dalk/_Outcomes.vue -->
 <template>
   <CollapsibleSection
-    :title="outcomesMetadata.title"
+    :title="'Results - 9-mm DALK with 6-mm Optical Zone Clearance'"
     :iconPath="outcomesMetadata.iconPath"
     :colorTheme="outcomesMetadata.colorTheme"
     :isExpanded="isExpanded"
@@ -14,7 +14,6 @@
       :secondaryTitle="sectionData.secondaryTitle"
       :secondaryTable="sectionData.secondaryTable"
       :keySummary="sectionData.keySummary"
-      :sourceCitation="sectionData.sourceCitation"
     />
   </CollapsibleSection>
 </template>
@@ -33,103 +32,154 @@ defineProps({
 
 defineEmits(['toggle'])
 
-// All section data
+// All section data - From Busin et al. Ophthalmology 2017
 const sectionData = ref({
-  mainTitle: 'Conventional vs Large-Diameter DALK Outcomes',
+  mainTitle: '<div style="font-size: 0.9rem; line-height: 1.4;"><div>Busin M, Leon P, Nahum Y, Scorcia V.</div><div style="margin-top: 4px;">Large (9 mm) Deep Anterior Lamellar Keratoplasty with Clearance of a 6-mm Optical Zone Optimizes Outcomes of Keratoconus Surgery.</div><div style="margin-top: 4px;">Ophthalmology. 2017;124(7):1072-1080.</div></div>',
   mainTable: {
-    parameterColumnTitle: 'Outcome Parameter',
+    parameterColumnTitle: 'Parameter',
     comparisonColumns: [
-      'Conventional DALK<br/>(8.0-8.5 mm)',
-      'Large-Diameter DALK<br/>(9 mm/6 mm OZ)',
+      'Preoperative',
+      'Postoperative',
     ],
     showPValue: true,
-    headerColorTheme: 'purple',
+    headerColorTheme: 'blue',
     alternateRowColors: false,
     dataSections: [
       {
-        title: 'Surgical Outcomes',
-        colorTheme: 'purple',
+        title: 'Surgical Technique Outcomes',
+        colorTheme: 'orange',
         rows: [
           {
-            parameter: 'Bubble Success Rate',
-            values: ['57-81%', { text: 'Up to 85%', highlight: true }],
+            parameter: 'Big Bubble Success Rate',
+            values: ['-', '67/80 (83.7%)'],
             pValue: '-',
           },
           {
-            parameter: 'Conversion to PK',
-            values: ['1.2-27%', { text: '0%', highlight: true }],
+            parameter: 'Type 1 Bubble',
+            values: ['-', '66/67 (98.5%)'],
+            pValue: '-',
+          },
+          {
+            parameter: 'Average Bubble Diameter',
+            values: ['-', '7.7 ± 0.8 mm'],
             pValue: '-',
           },
         ],
       },
       {
-        title: 'Visual Acuity Outcomes',
+        title: 'Visual Acuity Analysis (After Complete Suture Removal)',
         colorTheme: 'blue',
         rows: [
           {
-            parameter: 'BSCVA ≥20/20',
-            values: ['26%', { text: '44%', highlight: true }],
-            pValue: '0.01',
+            parameter: 'Mean BSCVA (logMAR)',
+            values: ['0.54 ± 0.85', '0.09 ± 0.72'],
+            pValue: 'P = 0.001',
           },
           {
-            parameter: 'BSCVA ≥20/25',
-            values: ['59%', { text: '74%', highlight: true }],
-            pValue: '0.03',
+            parameter: 'BSCVA 20/20 or better',
+            values: ['-', '28 eyes (35%)'],
+            pValue: '-',
           },
           {
-            parameter: 'BSCVA ≥20/40',
-            values: ['80-95%', { text: '94%', highlight: true }],
+            parameter: 'BSCVA 20/25 or better',
+            values: ['-', '54 eyes (67.5%)'],
+            pValue: '-',
+          },
+          {
+            parameter: 'BSCVA 20/40 or better',
+            values: ['-', '76 eyes (95%)'],
             pValue: '-',
           },
         ],
       },
       {
-        title: 'Refractive Outcomes',
+        title: 'Refractive Outcomes (After Complete Suture Removal)',
         colorTheme: 'green',
         rows: [
           {
-            parameter: 'Mean Postoperative Astigmatism',
-            values: ['Higher baseline', { text: '1.0 D lower', highlight: true }],
+            parameter: 'Mean Refractive Astigmatism',
+            values: ['7.2 ± 2.5 D', '3.10 ± 1.30 D'],
+            pValue: '0.002',
+          },
+          {
+            parameter: 'Astigmatism ≤4.5 D',
+            values: ['-', '73 eyes (91%)'],
             pValue: '-',
           },
           {
-            parameter: 'Astigmatism &lt;4.5 D',
-            values: ['Not reported', { text: '89%', highlight: true }],
+            parameter: 'Astigmatism >6 D',
+            values: ['-', '0 eyes (0%)'],
             pValue: '-',
           },
           {
-            parameter: 'High Astigmatism (&gt;4.5 D)',
-            values: ['~16%', { text: '7%', highlight: true }],
+            parameter: 'Spherical Equivalent',
+            values: ['-', '-1.55 ± 3.3 D'],
+            pValue: '-',
+          },
+        ],
+      },
+      {
+        title: 'Anatomical Outcomes (After Complete Suture Removal)',
+        colorTheme: 'purple',
+        rows: [
+          {
+            parameter: 'Central Corneal Thickness',
+            values: ['-', '492 ± 62.10 μm'],
+            pValue: '-',
+          },
+        ],
+      },
+      {
+        title: 'Endothelial Cell Analysis (12 Months Postoperative)',
+        colorTheme: 'teal',
+        rows: [
+          {
+            parameter: 'Endothelial Cell Density',
+            values: ['-', '2026 ± 397 cells/mm²'],
+            pValue: '-',
+          },
+          {
+            parameter: 'Mean Cell Loss from Baseline',
+            values: ['-', '11.2%'],
             pValue: '-',
           },
         ],
       },
     ],
   },
-  secondaryTitle: 'Long-term Graft Survival: DALK vs Penetrating Keratoplasty',
+  secondaryTitle: 'Intraoperative and Postoperative Complications',
   secondaryTable: {
-    parameterColumnTitle: 'Time Point',
-    comparisonColumns: ['PK (Historical Control)', 'DALK'],
-    showPValue: true,
-    headerColorTheme: 'orange',
+    parameterColumnTitle: 'Complication',
+    comparisonColumns: ['Incidence', 'Management/Outcome'],
+    showPValue: false,
+    headerColorTheme: 'red',
     alternateRowColors: true,
     dataSections: [
       {
         rows: [
           {
-            parameter: '1 Year Survival',
-            values: ['95.1%', { text: '98.2%', highlight: true }],
-            pValue: '0.042',
+            parameter: 'Intraoperative Perforation',
+            values: ['4 eyes (5%)', 'Completed with manual dissection, no PK conversion'],
           },
           {
-            parameter: '5 Year Survival',
-            values: ['89.2%', { text: '95.3%', highlight: true }],
-            pValue: '0.018',
+            parameter: 'Loss of Suction',
+            values: ['1 eye (1.25%)', 'Procedure completed successfully'],
           },
           {
-            parameter: '10 Year Survival',
-            values: ['73.5%', { text: '90.7%', highlight: true }],
-            pValue: '&lt;0.001',
+            parameter: 'Conversion to PK',
+            values: ['0 eyes (0%)', 'No conversions required'],
+          },
+          {
+            parameter: 'Double Anterior Chamber',
+            values: ['2 eyes (2.5%)', 'Successfully managed with air injection'],
+          },
+          {
+            parameter: 'Stromal Rejection',
+            values: ['6 eyes (7.5%)', 'All reversed with topical steroids'],
+          },
+          {
+            parameter: 'Inadvertent Suture Removal',
+            values: ['1 eye', 'Both sutures removed at 3 months, no dehiscence'],
           },
         ],
       },
@@ -137,21 +187,21 @@ const sectionData = ref({
   },
   keySummary: {
     keyFindings: {
-      title: 'Key Findings',
+      title: 'Statistical Analysis Summary',
       items: [
-        'Superior visual outcomes with 44% achieving 20/20 vision',
-        '89% of patients maintain astigmatism below 4.5 D',
-        'Zero conversion to PK in large-diameter technique',
-        'Significantly better long-term graft survival than PK',
+        'Visual acuity improved: 0.54±0.85 to 0.09±0.72 logMAR (P = 0.001)',
+        'Refractive astigmatism reduced from 7.2±2.5 D to 3.10±1.30 D',
+        '35% achieved 20/20, 67.5% achieved 20/25, 95% achieved 20/40',
+        'No significant difference in BSCVA between pneumatic and manual dissection (P = 0.12)',
+        'Endothelial cell loss 11.2% at 12 months',
+        'Zero conversion to PK (0/80 cases)',
       ],
     },
     clinicalImpact: {
-      title: 'Clinical Impact',
+      title: 'Statistical and Clinical Significance',
       description:
-        'Large-diameter DALK with limited central stromal clearance demonstrates statistically significant improvements across all major outcome measures. The technique offers superior visual acuity, lower astigmatism, and excellent long-term survival rates, providing compelling evidence for its adoption as the standard of care for anterior corneal pathology with healthy endothelium.',
+        'This prospective study demonstrates statistically significant improvements in all primary outcome measures (P=0.001 for visual acuity, P=0.002 for astigmatism). The 9-mm/6-mm technique shows superior outcomes compared to historical controls while maintaining excellent safety profile. The absence of PK conversion despite intraoperative complications validates the technique\'s reproducibility.',
     },
   },
-  sourceCitation:
-    'Data compiled from: Yu et al. Taiwan J Ophthalmol 2024; Busin et al. Ophthalmology 2017; Lucisano et al. Cornea 2023; comparative studies and long-term follow-up data',
 })
 </script>

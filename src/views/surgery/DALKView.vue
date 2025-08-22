@@ -29,6 +29,16 @@
         @toggle="toggleSection('outcomes')"
       />
 
+      <OutcomesSection3
+        :isExpanded="expandedSections.outcomes3"
+        @toggle="toggleSection('outcomes3')"
+      />
+
+      <OutcomesSection4
+        :isExpanded="expandedSections.outcomes4"
+        @toggle="toggleSection('outcomes4')"
+      />
+
       <ComplicationsSection
         :isExpanded="expandedSections.complications"
         @toggle="toggleSection('complications')"
@@ -57,6 +67,8 @@ import OverviewSection from './dalk/_Introduction.vue'
 import IndicationsSection from './dalk/_Indications.vue'
 import TechniquesSection from './dalk/_Surgery.vue'
 import OutcomesSection from './dalk/_Results.vue'
+import OutcomesSection3 from './dalk/_Results3.vue'
+import OutcomesSection4 from './dalk/_Results4.vue'
 import ComplicationsSection from './dalk/_Complications.vue'
 import PostopSection from './dalk/_Postop.vue'
 import ReferencesSection from './dalk/_References.vue'
@@ -67,6 +79,8 @@ const expandedSections = ref({
   indications: false,
   techniques: false,
   outcomes: false,
+  outcomes3: false,
+  outcomes4: false,
   complications: false,
   postop: false,
   references: false,

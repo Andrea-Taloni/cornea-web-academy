@@ -31,36 +31,38 @@ defineProps({
 
 defineEmits(['toggle'])
 
-// Post-operative management data
+// Post-operative management data - From Busin et al. 2017
 const postopData = ref({
   corticosteroids: {
     title: 'Topical Corticosteroids',
-    medication: 'Prednisolone 1% / Dexamethasone 0.1%',
-    dosing: ['QID × 1 month', 'TID × 1 month', 'BID × 2 months → taper'],
+    medication: 'Dexamethasone phosphate 0.1%',
+    dosing: [
+      'Every 2 hours initially',
+      'Tapered to single daily dose by 1 month after partial suture removal',
+      'Discontinued at month 8',
+    ],
   },
   antimicrobial: {
     title: 'Antimicrobial Prophylaxis',
-    optionsLabel: 'Options:',
-    options: ['Moxifloxacin 0.5%', 'Tobramycin 0.3%'],
+    optionsLabel: 'Initial:',
+    options: ['Tobramycin sulfate 0.3%'],
     dosingLabel: 'Dosing',
-    dosing: 'QID × 2 weeks',
+    dosing: 'Every 2 hours initially (with corticosteroid)',
   },
   followUp: {
     title: 'Follow-up Schedule',
     schedule: [
-      'Day 1, Week 1, 2, 4',
-      'Monthly × 6 months',
-      'Every 3 months year 1',
-      'Biannually thereafter',
+      'Regular monitoring as per standard protocol',
     ],
   },
   sutureManagement: {
-    title: 'Suture Management',
+    title: 'Suture Management Protocol',
     timings: [
-      { text: 'First running suture: 2-3 months', isSubItem: false },
-      { text: 'Second suture:', isSubItem: false },
-      { text: '10 months (age <30 years)', isSubItem: true },
-      { text: '12 months (age >30 years)', isSubItem: true },
+      { text: 'First running suture removal: 2-3 months postoperatively', isSubItem: false },
+      { text: 'Second suture removal (age-dependent):', isSubItem: false },
+      { text: 'Within 10 months from surgery (patients <30 years)', isSubItem: true },
+      { text: 'Within 12 months from surgery (patients ≥30 years)', isSubItem: true },
+      { text: 'Monitor for astigmatism changes between removals', isSubItem: false },
     ],
   },
 })

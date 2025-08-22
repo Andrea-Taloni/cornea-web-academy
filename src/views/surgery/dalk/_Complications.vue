@@ -31,34 +31,31 @@ defineProps({
 
 defineEmits(['toggle'])
 
-// Complications data
+// General DALK Complications
 const complicationsData = ref({
   intraoperative: {
     title: 'Intraoperative Complications',
     colorTheme: 'orange',
     complications: [
       {
-        name: 'Descemet perforation',
+        name: 'Descemet Membrane Perforation',
         details: [
-          { label: 'Conventional Diameter', value: '5-32%' },
-          { label: 'Large Diameter', value: '3.7%', highlight: true },
+          { label: 'Incidence', value: '5-20% depending on technique' },
           { label: 'Management', value: 'Air tamponade, conversion to PK if large' },
         ],
       },
       {
-        name: 'Failed big bubble',
+        name: 'Failed Big Bubble',
         details: [
-          { label: 'Conventional Diameter', value: '10-43%' },
-          { label: 'Large Diameter', value: '16.3%', highlight: true },
-          { label: 'Management', value: 'Manual dissection (limited to 6mm in modified)' },
+          { label: 'Incidence', value: '15-30% of cases' },
+          { label: 'Management', value: 'Manual dissection' },
         ],
       },
       {
         name: 'Conversion to PK',
         details: [
-          { label: 'Conventional Diameter', value: '1.2-27%' },
-          { label: 'Large Diameter', value: '0%', highlight: true },
-          { label: 'Management', value: '9mm PK or mushroom keratoplasty' },
+          { label: 'Incidence', value: '0-15% depending on experience' },
+          { label: 'Management', value: 'Complete penetrating keratoplasty' },
         ],
       },
     ],
@@ -68,23 +65,27 @@ const complicationsData = ref({
     colorTheme: 'red',
     sections: [
       {
-        title: 'Early (&lt;1 month)',
+        title: 'Early Complications (< 1 month)',
         items: [
-          'Double anterior chamber: 2.5% (Busin) vs 8-15% (conventional)',
-          'Interface haze: 10-20%',
-          'Epithelial defects: 5-10%',
-          'Pupillary block: 2-5%',
-          'Descemet membrane detachment: 2.5% (manageable with air)',
+          'Double anterior chamber',
+          'Interface haze',
+          'Epithelial defects',
+          'Pupillary block',
+          'Descemet membrane detachment',
+          'Wound leak',
+          'Elevated intraocular pressure',
         ],
       },
       {
-        title: 'Late (&gt;1 month)',
+        title: 'Late Complications (> 1 month)',
         items: [
-          'Stromal rejection: 7.5% (Busin) vs 1-10% (conventional)',
-          'Interface opacification: 5-10%',
-          'Secondary glaucoma: 5-15%',
-          'Late endothelial failure: 2-5%',
-          'No wound dehiscence reported with Busin technique',
+          'Stromal rejection',
+          'Interface opacification',
+          'Secondary glaucoma',
+          'Late endothelial failure',
+          'Wound dehiscence',
+          'Recurrence of primary disease',
+          'Irregular astigmatism',
         ],
       },
     ],

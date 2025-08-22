@@ -44,25 +44,20 @@
         </svg>
       </div>
     </button>
-    <transition
-      enter-active-class="transition-all duration-500 ease-out"
-      leave-active-class="transition-all duration-300 ease-in"
-      enter-from-class="max-h-0 opacity-0"
-      :enter-to-class="`max-h-[${maxHeight}] opacity-100`"
-      :leave-from-class="`max-h-[${maxHeight}] opacity-100`"
-      leave-to-class="max-h-0 opacity-0"
+    <div 
+      ref="contentWrapper"
+      class="overflow-hidden transition-[height] duration-500 ease-in-out"
+      :style="{ height: contentHeight }"
     >
-      <div v-show="isExpanded" class="overflow-hidden">
-        <div class="px-8 py-8 bg-gradient-to-b from-gray-50 to-white">
-          <slot></slot>
-        </div>
+      <div ref="contentInner" class="px-8 py-8 bg-gradient-to-b from-gray-50 to-white">
+        <slot></slot>
       </div>
-    </transition>
+    </div>
   </div>
 </template>
 
 <script setup>
-import { computed } from 'vue'
+import { computed, ref, watch, nextTick, onMounted } from 'vue'
 
 const props = defineProps({
   title: {
@@ -90,10 +85,35 @@ const props = defineProps({
 })
 
 const emit = defineEmits(['toggle'])
+const contentWrapper = ref(null)
+const contentInner = ref(null)
+const contentHeight = ref('0px')
 
 const toggleSection = () => {
   emit('toggle')
 }
+
+// Function to calculate and set height
+const updateHeight = async () => {
+  if (props.isExpanded) {
+    await nextTick()
+    if (contentInner.value) {
+      const height = contentInner.value.scrollHeight
+      contentHeight.value = `${height}px`
+    }
+  } else {
+    contentHeight.value = '0px'
+  }
+}
+
+// Watch for expansion changes and update height immediately
+watch(() => props.isExpanded, updateHeight, { immediate: true })
+
+// Also recalculate on mount to ensure initial expanded state shows correctly
+onMounted(() => {
+  // Small delay to ensure content is fully rendered
+  setTimeout(updateHeight, 100)
+})
 
 // Computed classes based on color theme
 const buttonClasses = computed(() => {
@@ -167,11 +187,3 @@ const arrowHoverClass = computed(() => {
 })
 </script>
 
-<style scoped>
-/* Custom transition styles for smooth accordion effect */
-.max-h-0 {
-  max-height: 0;
-}
-
-/* Dynamic max-height classes will be handled inline */
-</style>

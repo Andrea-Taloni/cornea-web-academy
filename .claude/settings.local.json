@@ -15,7 +15,8 @@
       "Bash(start http://localhost:5173/)",
       "mcp__ide__getDiagnostics",
       "Bash(npm run server:*)",
-      "Bash(npm start)"
+      "Bash(npm start)",
+      "WebFetch(domain:pubmed.ncbi.nlm.nih.gov)"
     ],
     "deny": [],
     "ask": [],

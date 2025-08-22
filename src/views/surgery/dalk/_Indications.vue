@@ -9,7 +9,6 @@
     @toggle="$emit('toggle')"
   >
     <IndicationsSection
-      :keyRequirements="keyRequirements"
       :indications="indications"
       :contraindications="contraindications"
     />
@@ -29,21 +28,17 @@ defineProps({
 
 defineEmits(['toggle'])
 
-// Key requirements data
-const keyRequirements = ['Healthy endothelium', 'No DM involvement', 'Anterior pathology only']
-
 // Indications data
 const indications = [
   {
     title: 'Keratoconus',
-    subtitle: '(70-80% of cases)',
     description:
-      'Progressive/advanced disease, contact lens intolerance, central scarring, thickness <400μm. Large diameter technique ideal for broad-base cases.',
+      'Progressive/advanced disease, contact lens intolerance, central scarring.',
   },
   {
     title: 'Corneal Stromal Dystrophies',
     description:
-      'Granular, lattice, macular, Avellino dystrophies. Preserved endothelial function required (ECD >2000/mm²).',
+      'Granular, lattice, macular, Avellino dystrophies.',
   },
   {
     title: 'Post-Infectious Scarring',
@@ -51,9 +46,9 @@ const indications = [
       'Bacterial, viral (HSV/VZV), fungal, Acanthamoeba sequelae. Deep scars contraindicate modified technique.',
   },
   {
-    title: 'Other Anterior Pathology',
+    title: 'Non-perforating Trauma',
     description:
-      'Trauma (non-perforating), chemical burns (superficial), degenerations, anterior dystrophies.',
+      'Corneal lacerations or injuries that do not penetrate through Descemet membrane, allowing preservation of the endothelium during surgical repair.',
   },
 ]
 
@@ -61,21 +56,17 @@ const indications = [
 const contraindications = {
   absolute: [
     {
-      text: 'Endothelial dysfunction',
-      subtitle: '(ECD <1000 cells/mm²)',
+      title: 'Endothelial Dysfunction',
+      description: 'Endothelial cell density less than 1000 cells/mm². Inadequate endothelial function would compromise graft survival and visual outcomes.',
     },
     {
-      text: 'Descemet rupture',
-      subtitle: '(acute hydrops)',
+      title: 'Acute Hydrops',
+      description: 'Rupture of Descemet membrane with stromal edema. Requires resolution and stabilization before considering surgical intervention.',
     },
-    'Deep stromal scars to DM',
-    'Active infection',
-  ],
-  relative: [
-    'Previous IOL surgery',
-    'Peripheral thinning',
-    'Significant neovascularization',
-    'Severe dry eye',
+    {
+      title: 'Deep Stromal Scarring',
+      description: 'Scars extending to Descemet membrane that prevent safe dissection and bubble formation during pneumatic dissection.',
+    },
   ],
 }
 </script>
