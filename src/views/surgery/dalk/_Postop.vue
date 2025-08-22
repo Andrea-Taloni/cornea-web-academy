@@ -18,9 +18,12 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
+import { useI18n } from 'vue-i18n'
 import CollapsibleSection from '@/components/CollapsibleSection.vue'
 import PostopSection, { postopMetadata } from '@/components/surgery/PostopComponent.vue'
+
+const { t } = useI18n()
 
 defineProps({
   isExpanded: {
@@ -32,38 +35,36 @@ defineProps({
 defineEmits(['toggle'])
 
 // Post-operative management data - From Busin et al. 2017
-const postopData = ref({
+const postopData = computed(() => ({
   corticosteroids: {
-    title: 'Topical Corticosteroids',
-    medication: 'Dexamethasone phosphate 0.1%',
+    title: t('surgery.dalk.postoperative.corticosteroids.title'),
+    medication: t('surgery.dalk.postoperative.corticosteroids.medication'),
     dosing: [
-      'Every 2 hours initially',
-      'Tapered to single daily dose by 1 month after partial suture removal',
-      'Discontinued at month 8',
+      t('surgery.dalk.postoperative.corticosteroids.dosing.0'),
+      t('surgery.dalk.postoperative.corticosteroids.dosing.1'),
+      t('surgery.dalk.postoperative.corticosteroids.dosing.2'),
     ],
   },
   antimicrobial: {
-    title: 'Antimicrobial Prophylaxis',
-    optionsLabel: 'Initial:',
-    options: ['Tobramycin sulfate 0.3%'],
-    dosingLabel: 'Dosing',
-    dosing: 'Every 2 hours initially (with corticosteroid)',
+    title: t('surgery.dalk.postoperative.antimicrobial.title'),
+    optionsLabel: t('surgery.dalk.postoperative.antimicrobial.initial'),
+    options: [t('surgery.dalk.postoperative.antimicrobial.medication')],
+    dosingLabel: t('surgery.dalk.labels.dosing'),
+    dosing: t('surgery.dalk.postoperative.antimicrobial.dosing'),
   },
   followUp: {
-    title: 'Follow-up Schedule',
-    schedule: [
-      'Regular monitoring as per standard protocol',
-    ],
+    title: t('surgery.dalk.postoperative.followUp.title'),
+    schedule: t('surgery.dalk.postoperative.followUp.schedule'),
   },
   sutureManagement: {
-    title: 'Suture Management Protocol',
+    title: t('surgery.dalk.postoperative.sutureManagement.title'),
     timings: [
-      { text: 'First running suture removal: 2-3 months postoperatively', isSubItem: false },
-      { text: 'Second suture removal (age-dependent):', isSubItem: false },
-      { text: 'Within 10 months from surgery (patients <30 years)', isSubItem: true },
-      { text: 'Within 12 months from surgery (patients ≥30 years)', isSubItem: true },
-      { text: 'Monitor for astigmatism changes between removals', isSubItem: false },
+      { text: t('surgery.dalk.postoperative.sutureManagement.firstRemoval'), isSubItem: false },
+      { text: t('surgery.dalk.postoperative.sutureManagement.secondRemoval'), isSubItem: false },
+      { text: t('surgery.dalk.postoperative.sutureManagement.underThirty'), isSubItem: true },
+      { text: t('surgery.dalk.postoperative.sutureManagement.overThirty'), isSubItem: true },
+      { text: t('surgery.dalk.postoperative.sutureManagement.monitoring'), isSubItem: false },
     ],
   },
-})
+}))
 </script>

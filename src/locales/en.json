@@ -29,6 +29,607 @@
       "complications": "Complications",
       "postop": "Post-operative",
       "references": "References"
+    },
+    "dalk": {
+      "title": "DALK",
+      "subtitle": "Deep Anterior Lamellar Keratoplasty",
+      "introduction": {
+        "title": "Introduction",
+        "paragraph1": "Deep Anterior Lamellar Keratoplasty (DALK) is a surgical procedure that involves selective transplantation of the corneal stroma while preserving the recipient's Descemet membrane and endothelium.",
+        "paragraph2": "For decades, penetrating keratoplasty (PK) has been considered the mainstay surgical treatment for eyes affected by corneal stromal diseases. More recently, deep anterior lamellar keratoplasty (DALK) has become an alternative to PK, with the advantages of eliminating the risk of endothelial rejection (which occurs in approximately 20-30% of penetrating keratoplasty cases over 10 years) and avoiding the complications associated with open-sky surgery [1].",
+        "paragraph3": "Despite these undisputed advantages, the uptake of DALK among corneal surgeons has been relatively slow [2]. Longer surgical time, steep learning curve, and low patient volume have been reported as the most important barriers to adoption of DALK [3].",
+        "paragraph4": "Different techniques to perform DALK have been proposed, including layer-by-layer manual dissection, pneumatic dissection, and viscoelastic-assisted dissection. The method of pneumatic dissection through injection of a \"big bubble\" described by Anwar represents the most popular surgical method [4].",
+        "paragraph5": "In 2017, Busin et al. have introduced a modified technique using larger 9-mm grafts with clearance limited to a central 6-mm optical zone, demonstrating superior visual and refractive outcomes while minimizing complications [5]."
+      },
+      "indications": {
+        "title": "Indications and Contraindications",
+        "keratoconus": {
+          "title": "Keratoconus",
+          "description": "Progressive/advanced disease, contact lens intolerance, central scarring."
+        },
+        "dystrophies": {
+          "title": "Corneal Stromal Dystrophies",
+          "description": "Granular, lattice, macular, Avellino dystrophies."
+        },
+        "postInfectious": {
+          "title": "Post-Infectious Scarring",
+          "description": "Bacterial, viral (HSV/VZV), fungal, Acanthamoeba sequelae. Deep scars contraindicate modified technique."
+        },
+        "trauma": {
+          "title": "Non-perforating Trauma",
+          "description": "Corneal lacerations or injuries that do not penetrate through Descemet membrane, allowing preservation of the endothelium during surgical repair."
+        },
+        "contraindications": {
+          "endothelial": {
+            "title": "Endothelial Dysfunction",
+            "description": "Endothelial cell density less than 1000 cells/mm². Inadequate endothelial function would compromise graft survival and visual outcomes."
+          },
+          "hydrops": {
+            "title": "Acute Hydrops",
+            "description": "Rupture of Descemet membrane with stromal edema. Requires resolution and stabilization before considering surgical intervention."
+          },
+          "deepScarring": {
+            "title": "Deep Stromal Scarring",
+            "description": "Scars extending to Descemet membrane that prevent safe dissection and bubble formation during pneumatic dissection."
+          }
+        }
+      },
+      "surgery": {
+        "title": "Surgical Technique",
+        "largeDiameterTechnique": {
+          "title": "Large Diameter Big-Bubble Technique (9-mm DALK with 6-mm Optical Zone) [5]",
+          "steps": [
+            {
+              "title": "Deep Trephination",
+              "description": "Peribulbar anesthesia: 10ml of 0.75% ropivacaine solution. Create side entry for anterior chamber maintenance. 9mm diameter vacuum trephination to 450-550μm depth. Blade setting precisely calibrated: within 100μm of thinnest AS-OCT measurement at trephination site (9mm diameter). Measurable blade advancement regulated in 50μm steps for optimal depth control to minimize perforation risk."
+            },
+            {
+              "title": "Modified Pneumatic Dissection",
+              "description": "Advance dedicated probe then cannula up to 2mm centripetally from bottom of deep trephination. Controlled air injection creates big bubble separation. Type 1 bubble (pre-Descemetic) obtained in 83.7% of cases. Average bubble size: 7.7±0.8mm (range 6-9mm). Success independent of bubble extension to trephination edge."
+            },
+            {
+              "title": "Standardized Anterior Debulking",
+              "description": "Perform anterior keratectomy removing ~80% of anterior stroma uniformly across 9mm zone. Execute regardless of pneumatic dissection success/failure. Use combination of sharp dissection with crescent blade and blunt separation. Creates consistent stromal bed thickness for subsequent deep dissection phase."
+            },
+            {
+              "title": "Selective 6-mm Deep Dissection",
+              "description": "Mark central 6mm optical zone with disposable handheld trephine. Apply adhesive viscoelastic (IAL-F) centrally onto bubble roof for tissue protection. Enter bubble with 15° blade. Insert inferior branch of blunt Vannas scissors into pre-Descemetic space, enlarge slit. Complete excision of central deep stroma following 6mm mark using corneal scissors. Preserve peripheral ~1.5mm width stromal crown for lap-joint configuration."
+            },
+            {
+              "title": "Microkeratome-Assisted Graft Preparation",
+              "description": "Mount donor cornea on automated lamellar therapeutic keratoplasty (ALTK) system artificial chamber. Dissect with 400μm microkeratome head creating anterior lamella. Punch lamella to 9mm diameter. Transplant into recipient bed. Secure with double running 10-0 nylon suture technique. Final architecture: 6mm central optical zone with direct donor-to-Descemet contact, peripheral 1.5mm crown overlap creating lap-joint wound configuration."
+            },
+            {
+              "title": "Chamber Formation & Closure",
+              "description": "Fill anterior chamber with balanced salt solution through side entry created before pneumatic dissection. Verify wound integrity. Subconjunctival injection: triamcinolone acetonide and gentamicin sulfate 0.3%. Eye patching. Postoperative regimen: dexamethasone phosphate 0.1% and tobramycin sulfate 0.3% q2h, tapered to single daily steroid by 1 month post partial suture removal, discontinued at month 8."
+            }
+          ],
+          "postoperative": {
+            "title": "Suture Management Protocol",
+            "description": "First running suture removal: 2-3 months postoperatively. Second suture removal timing age-dependent: Patients <30 years: within 10 months from surgery. Patients ≥30 years: within 12 months from surgery. Monitor for astigmatism changes between removals. Complete suture removal allows final visual rehabilitation."
+          }
+        },
+        "alternativeTechniques": {
+          "title": "Alternative Dissection Strategies",
+          "techniques": [
+            {
+              "title": "Manual Layer-by-Layer",
+              "description": "Sequential lamellar dissection when pneumatic separation fails. Begin with superficial plane using crescent blade, progress deeper with specialized spatulas. Identify tissue planes by color/texture changes. Continue until reaching characteristic pre-Descemetic plane appearance. Requires experience to avoid perforation."
+            },
+            {
+              "title": "Femtosecond Laser-Assisted",
+              "description": "Computer-controlled lamellar cuts at predetermined depth/diameter. Spiral or raster patterns create smooth interface. Requires docking with patient interface. Limited by corneal opacity preventing laser transmission. Post-laser manual dissection often needed to complete separation."
+            },
+            {
+              "title": "Viscoelastic-Assisted Dissection",
+              "description": "Alternative when air injection unsuccessful. Inject high molecular weight OVD through small stromal pocket. Multiple injection sites may be required for complete separation. Creates hydrodissection plane. Requires thorough irrigation to remove all viscoelastic material."
+            }
+          ]
+        }
+      },
+      "results": {
+        "study1": {
+          "title": "Results - 9-mm DALK with 6-mm Optical Zone Clearance",
+          "citation": "Busin M, Leon P, Nahum Y, Scorcia V. Large (9 mm) Deep Anterior Lamellar Keratoplasty with Clearance of a 6-mm Optical Zone Optimizes Outcomes of Keratoconus Surgery. Ophthalmology. 2017;124(7):1072-1080.",
+          "tableHeaders": {
+            "parameter": "Parameter",
+            "preoperative": "Preoperative",
+            "postoperative": "Postoperative"
+          },
+          "sections": {
+            "surgicalOutcomes": {
+              "title": "Surgical Technique Outcomes",
+              "bigBubbleSuccess": "Big Bubble Success Rate",
+              "type1Bubble": "Type 1 Bubble",
+              "averageBubbleDiameter": "Average Bubble Diameter"
+            },
+            "visualAcuity": {
+              "title": "Visual Acuity Analysis (After Complete Suture Removal)",
+              "meanBSCVA": "Mean BSCVA (logMAR)",
+              "bscva2020": "BSCVA 20/20 or better",
+              "bscva2025": "BSCVA 20/25 or better",
+              "bscva2040": "BSCVA 20/40 or better"
+            },
+            "refractiveOutcomes": {
+              "title": "Refractive Outcomes (After Complete Suture Removal)",
+              "meanAstigmatism": "Mean Refractive Astigmatism",
+              "astigmatism45": "Astigmatism ≤4.5 D",
+              "astigmatism6": "Astigmatism >6 D",
+              "sphericalEquivalent": "Spherical Equivalent"
+            },
+            "anatomicalOutcomes": {
+              "title": "Anatomical Outcomes (After Complete Suture Removal)",
+              "centralCornealThickness": "Central Corneal Thickness"
+            },
+            "endothelialAnalysis": {
+              "title": "Endothelial Cell Analysis (12 Months Postoperative)",
+              "endothelialCellDensity": "Endothelial Cell Density",
+              "meanCellLoss": "Mean Cell Loss from Baseline"
+            }
+          },
+          "complications": {
+            "title": "Intraoperative and Postoperative Complications",
+            "tableHeaders": {
+              "complication": "Complication",
+              "incidence": "Incidence",
+              "management": "Management/Outcome"
+            },
+            "items": {
+              "intraoperativePerforation": "Intraoperative Perforation",
+              "lossOfSuction": "Loss of Suction",
+              "conversionToPK": "Conversion to PK",
+              "doubleAnteriorChamber": "Double Anterior Chamber",
+              "stromalRejection": "Stromal Rejection",
+              "inadvertentSutureRemoval": "Inadvertent Suture Removal"
+            }
+          },
+          "keySummary": {
+            "statisticalAnalysis": "Statistical Analysis Summary",
+            "clinicalSignificance": "Statistical and Clinical Significance",
+            "keyFindings": [
+              "Visual acuity improved: 0.54±0.85 to 0.09±0.72 logMAR (P = 0.001)",
+              "Refractive astigmatism reduced from 7.2±2.5 D to 3.10±1.30 D",
+              "35% achieved 20/20, 67.5% achieved 20/25, 95% achieved 20/40",
+              "No significant difference in BSCVA between pneumatic and manual dissection (P = 0.12)",
+              "Endothelial cell loss 11.2% at 12 months",
+              "Zero conversion to PK (0/80 cases)"
+            ],
+            "clinicalImpact": "This prospective study demonstrates statistically significant improvements in all primary outcome measures (P=0.001 for visual acuity, P=0.002 for astigmatism). The 9-mm/6-mm technique shows superior outcomes compared to historical controls while maintaining excellent safety profile. The absence of PK conversion despite intraoperative complications validates the technique's reproducibility."
+          }
+        },
+        "study2": {
+          "title": "Results - DALK vs PK Long-term Comparison",
+          "citation": "Borderie VM, Sandali O, Bullet J, Gaujoux T, Touzeau O, Laroche L. Long-term Results of Deep Anterior Lamellar versus Penetrating Keratoplasty. Ophthalmology. 2012;119(2):249-255.",
+          "tableHeaders": {
+            "parameter": "Parameter",
+            "dalk": "DALK (n=142)",
+            "pk": "PK (n=142)"
+          },
+          "sections": {
+            "demographics": {
+              "title": "Patient Demographics",
+              "meanAge": "Mean Recipient Age",
+              "keratoconus": "Keratoconus",
+              "meanFollowup": "Mean Follow-up"
+            },
+            "endothelialAnalysis": {
+              "title": "Endothelial Cell Density Analysis",
+              "fiveYearCellLoss": "5-year Endothelial Cell Loss",
+              "earlyPhaseAnnualLoss": "Early Phase Annual Cell Loss",
+              "latePhaseAnnualLoss": "Late Phase Annual Cell Loss"
+            },
+            "graftSurvival": {
+              "title": "Graft Survival Analysis",
+              "medianSurvival": "Median Predicted Graft Survival",
+              "graftFailures": "Graft Failures (3 years)"
+            },
+            "visualAcuityComparison": {
+              "title": "Visual Acuity Outcomes (Big-Bubble vs Manual vs PK)",
+              "bscva2025at12": "BSCVA ≤0.10 (≥20/25) at 12 months",
+              "bscva2040at12": "BSCVA ≤0.30 (≥20/40) at 12 months",
+              "bscva2040at36": "BSCVA ≤0.30 (≥20/40) at 36 months"
+            },
+            "cornealThickness": {
+              "title": "Corneal Thickness at 12 Months",
+              "centralThickness": "Central Corneal Thickness",
+              "residualStroma": "Residual Recipient Stroma (Manual)"
+            },
+            "complications": {
+              "title": "Postoperative Complications",
+              "anyComplication": "Any Complication",
+              "rejectionEpisodes": "Rejection Episodes",
+              "ocularHypertension": "Ocular Hypertension",
+              "doubleAnteriorChamber": "Double Anterior Chamber"
+            }
+          },
+          "keySummary": {
+            "keyFindings": [
+              "Median predicted graft survival: 49 years (DALK) vs 17.3 years (PK)",
+              "Endothelial cell loss at 5 years: 22.3% (DALK) vs 50.1% (PK)",
+              "Big-bubble technique superior to manual dissection for visual outcomes",
+              "Manual dissection visual acuity 1.0-1.8 lines worse than PK",
+              "Big-bubble visual acuity 2.2-2.5 lines better than manual dissection",
+              "Complication rate: 19% (DALK) vs 59% (PK)",
+              "Conversion to PK rate: 9.6% during DALK procedures"
+            ],
+            "clinicalSignificance": "This long-term comparative study demonstrates that DALK provides superior endothelial preservation and graft survival compared to PK. The big-bubble technique achieves visual outcomes comparable to PK while maintaining the advantages of DALK. Manual dissection, while providing lower visual acuity, still offers dramatically better long-term graft survival than PK."
+          }
+        }
+      },
+      "complications": {
+        "title": "Complications",
+        "intraoperative": {
+          "title": "Intraoperative Complications",
+          "items": [
+            {
+              "name": "Descemet Membrane Perforation",
+              "incidence": "5-20% depending on technique",
+              "management": "Air tamponade, conversion to PK if large"
+            },
+            {
+              "name": "Failed Big Bubble",
+              "incidence": "15-30% of cases",
+              "management": "Manual dissection"
+            },
+            {
+              "name": "Conversion to PK",
+              "incidence": "0-15% depending on experience",
+              "management": "Complete penetrating keratoplasty"
+            }
+          ]
+        },
+        "postoperative": {
+          "title": "Postoperative Complications",
+          "early": {
+            "title": "Early Complications (< 1 month)",
+            "items": [
+              "Double anterior chamber",
+              "Interface haze",
+              "Epithelial defects",
+              "Pupillary block",
+              "Descemet membrane detachment",
+              "Wound leak",
+              "Elevated intraocular pressure"
+            ]
+          },
+          "late": {
+            "title": "Late Complications (> 1 month)",
+            "items": [
+              "Stromal rejection",
+              "Interface opacification",
+              "Secondary glaucoma",
+              "Late endothelial failure",
+              "Wound dehiscence",
+              "Recurrence of primary disease",
+              "Irregular astigmatism"
+            ]
+          }
+        }
+      },
+      "postoperative": {
+        "title": "Post-operative Management",
+        "corticosteroids": {
+          "title": "Topical Corticosteroids",
+          "medication": "Dexamethasone phosphate 0.1%",
+          "dosing": [
+            "Every 2 hours initially",
+            "Tapered to single daily dose by 1 month after partial suture removal",
+            "Discontinued at month 8"
+          ]
+        },
+        "antimicrobial": {
+          "title": "Antimicrobial Prophylaxis",
+          "initial": "Initial:",
+          "medication": "Tobramycin sulfate 0.3%",
+          "dosing": "Every 2 hours initially (with corticosteroid)"
+        },
+        "followUp": {
+          "title": "Follow-up Schedule",
+          "schedule": [
+            "Regular monitoring as per standard protocol"
+          ]
+        },
+        "sutureManagement": {
+          "title": "Suture Management Protocol",
+          "firstRemoval": "First running suture removal: 2-3 months postoperatively",
+          "secondRemoval": "Second suture removal (age-dependent):",
+          "underThirty": "Within 10 months from surgery (patients <30 years)",
+          "overThirty": "Within 12 months from surgery (patients ≥30 years)",
+          "monitoring": "Monitor for astigmatism changes between removals"
+        }
+      },
+      "labels": {
+        "bigBubble": "Big Bubble",
+        "manualDissection": "Manual Dissection",
+        "pneumaticDissection": "Pneumatic Dissection",
+        "graftDiameter": "Graft Diameter",
+        "opticalZone": "Optical Zone",
+        "visualAcuity": "Visual Acuity",
+        "endothelialCells": "Endothelial Cells",
+        "cornealThickness": "Corneal Thickness",
+        "astigmatism": "Astigmatism",
+        "graftSurvival": "Graft Survival",
+        "complications": "Complications",
+        "technique": "Technique",
+        "incidence": "Incidence",
+        "management": "Management",
+        "preoperative": "Preoperative",
+        "postoperative": "Postoperative",
+        "intraoperative": "Intraoperative",
+        "followUp": "Follow-up",
+        "sutureRemoval": "Suture Removal",
+        "medication": "Medication",
+        "dosing": "Dosing",
+        "cellDensity": "Cell Density",
+        "cellLoss": "Cell Loss",
+        "rejection": "Rejection",
+        "perforation": "Perforation",
+        "conversion": "Conversion",
+        "bubbleSuccess": "Bubble Success",
+        "years": "years",
+        "months": "months",
+        "weeks": "weeks",
+        "days": "days",
+        "cells": "cells",
+        "diameter": "diameter",
+        "thickness": "thickness",
+        "better": "or better",
+        "range": "range"
+      }
+    },
+    "mushroomPk": {
+      "title": "Mushroom PK",
+      "subtitle": "Two-Piece Microkeratome-Assisted Mushroom Penetrating Keratoplasty",
+      "introduction": {
+        "title": "Introduction",
+        "paragraphs": [
+          "Two-piece microkeratome-assisted Mushroom Penetrating Keratoplasty (PK) is a corneal transplantation technique that employs a mushroom-shaped graft with a larger 9.0mm anterior lamella and smaller 6.0mm posterior lamella. This technique is indicated for eyes with full-thickness central corneal opacities but otherwise healthy peripheral endothelium.",
+          "The technique represents a paradigm shift in corneal transplantation by addressing the critical limitation of conventional PK: the inverse relationship between graft size and immunologic rejection risk. By transplanting only the central 6mm of endothelium while maintaining a 9mm optical zone, mushroom PK preserves approximately 75% of the recipient endothelium. This minimal endothelial replacement strategy dramatically reduces the antigenic load and provides a biological reservoir for endothelial cell migration, explaining the exceptionally low rejection rates (<5% at 5 years) observed even in vascularized corneas [1].",
+          "The microkeratome-assisted approach involves splitting the donor cornea into anterior and posterior lamellae using a 200μm head on an automated lamellar therapeutic keratoplasty (ALTK) system. This method overcomes the limitations of femtosecond laser-assisted techniques, allowing successful dissection through densely scarred and vascularized tissue. The recipient bed is prepared with a 9mm peripheral lamellar dissection at 250μm depth, followed by central 6mm full-thickness trephination, creating the characteristic stepped wound configuration [1]."
+        ]
+      },
+      "indications": {
+        "title": "Indications and Contraindications",
+        "indications": {
+          "title": "Indications",
+          "items": [
+            {
+              "title": "Conversion from DALK",
+              "description": "When DALK cannot be completed due to DM macroperforation."
+            },
+            {
+              "title": "Advanced Keratoconus",
+              "description": "Severe keratoconus with central full-thickness scarring not amenable to DALK."
+            },
+            {
+              "title": "Full-Thickness Corneal Scars",
+              "description": "Deep corneal scarring involving all layers including endothelium."
+            },
+            {
+              "title": "Corneal Perforations",
+              "description": "Active or impending perforations requiring urgent intervention."
+            }
+          ]
+        },
+        "contraindications": {
+          "title": "Contraindications",
+          "absolute": {
+            "title": "Absolute Contraindications",
+            "items": [
+              {
+                "title": "Endothelial cell density <1000 cells/mm² in recipient periphery",
+                "description": "Healthy peripheral endothelium provides a reservoir for cell migration."
+              },
+              {
+                "title": "Endothelial diseases",
+                "description": "These conditions require endothelial keratoplasty (DMEK/DSAEK)"
+              }
+            ]
+          }
+        }
+      },
+      "surgery": {
+        "title": "Surgical Technique",
+        "mainTechnique": {
+          "title": "Two-Piece Microkeratome-Assisted Mushroom PK Technique",
+          "steps": [
+            {
+              "title": "Initial Trephination",
+              "description": "Create a 9.0mm circular incision approximately 250μm deep using a Barron suction trephine, centered on the recipient cornea. This partial-thickness cut establishes the outer diameter of the mushroom configuration."
+            },
+            {
+              "title": "Lamellar Dissection",
+              "description": "Perform manual lamellar dissection circumferentially from the base of the incision, extending approximately 3mm toward the center. Cauterization at the limbus is performed only when bleeding from corneal neovessels does not subside spontaneously."
+            },
+            {
+              "title": "Central Excision",
+              "description": "Remove the dissected tissue, leaving a central island of full-thickness corneal tissue approximately 3mm in diameter. Use a 6.0mm trephine to make a full-thickness circular incision centered on the pupil. Excise the central button with corneal scissors."
+            },
+            {
+              "title": "Donor Preparation",
+              "description": "Mount donor cornea on the artificial anterior chamber of the ALTK system (Moria SA). Use a 200μm head to split the donor into anterior and posterior lamellae (cuts ~20% deeper, yielding ~240μm). Punch both lamellae to proper size: 9.0mm for anterior and 6.0mm for posterior."
+            },
+            {
+              "title": "Graft Assembly",
+              "description": "Fit the donor stem (posterior lamella with endothelium) into the central hole without sutures. Place the anterior lamella on top and secure with 4 cardinal 10-0 nylon stitches. Suture bites pass only through the anterior lamella, leaving the posterior one free to adapt."
+            },
+            {
+              "title": "Final Suturing",
+              "description": "Complete with either double running 10-0 nylon suture or 16 interrupted sutures. Fill anterior chamber with BSS through a limbal puncture. Apply subconjunctival gentamicin (40mg) and methylprednisolone (40mg), plus topical tobramycin/dexamethasone ointment."
+            }
+          ]
+        },
+        "alternativeTechniques": {
+          "title": "Additional Procedures & Modifications",
+          "techniques": [
+            {
+              "title": "Combined Procedures",
+              "description": "When necessary before reassembling the mushroom graft, additional intraocular procedures can be performed with open-sky technique: extracapsular cataract extraction, IOL implantation or exchange, pupilloplasty, or anterior vitrectomy."
+            },
+            {
+              "title": "Management of Posterior Lamella Detachment",
+              "description": "If detachment occurs (1.2% of cases), manage on first postoperative day by repositioning the detached button and injecting air into the anterior chamber through temporal paracentesis. Remove air 2 hours after surgery."
+            },
+            {
+              "title": "Wound Revision for High Astigmatism",
+              "description": "For astigmatism >4.5D after suture removal, open wound at steeper meridian using blunt forceps tips for ~1 clock hour. Insert cyclodialysis spatula between lamellae to opposite hemi-meridian. Mean reduction of 4.52D achieved without sutures."
+            }
+          ]
+        }
+      },
+      "results": {
+        "title": "Results - DALK to Mushroom PK Conversion Outcomes",
+        "citation": "Myerscough J, Bovone C, Scorcia V, Ricci-Filipovic B, Moramarco A, Fontana L, Busin M. The role of microkeratome-assisted anterior lamellar keratoplasty in the management of keratoconus: a multicenter study. Am J Ophthalmol. 2020;220:82-90.",
+        "studyPopulation": {
+          "title": "Study Population",
+          "totalProcedures": "Total procedures attempted",
+          "eyesIncluded": "Eyes included in analysis",
+          "meanFollowUp": "Mean follow-up (months)"
+        },
+        "visualOutcomes": {
+          "title": "Visual Outcomes",
+          "meanBCVA1Year": "Mean BCVA at 1 year (logMAR)",
+          "meanBCVA2Years": "Mean BCVA at 2 years (logMAR)",
+          "meanBCVA5Years": "Mean BCVA at 5 years (logMAR)",
+          "eyes2040": "Eyes with ≥20/40 at last visit"
+        },
+        "refractiveOutcomes": {
+          "title": "Refractive Outcomes",
+          "astigmatism1Year": "Refractive astigmatism at 1 year",
+          "astigmatism2Years": "Refractive astigmatism at 2 years",
+          "astigmatism5Years": "Refractive astigmatism at 5 years",
+          "eyes4D": "Eyes with ≤4D astigmatism"
+        },
+        "endothelialAnalysis": {
+          "title": "Endothelial Cell Density",
+          "preoperativeECD": "Preoperative ECD (cells/mm²)",
+          "ecd1Year": "ECD at 1 year (cells/mm²)",
+          "ecd2Years": "ECD at 2 years (cells/mm²)",
+          "ecd5Years": "ECD at 5 years (cells/mm²)",
+          "cellLoss5Years": "Endothelial cell loss at 5 years"
+        },
+        "graftSurvival": {
+          "title": "Graft Survival",
+          "survival1Year": "1-year survival",
+          "survival2Years": "2-year survival",
+          "survival5Years": "5-year survival",
+          "graftFailures": "Graft failures",
+          "rejectionEpisodes": "Endothelial rejection episodes"
+        },
+        "complications": {
+          "title": "Complications Analysis",
+          "tableHeaders": {
+            "complication": "Complication",
+            "dalkGroup": "DALK Group",
+            "mushroomGroup": "Mushroom PK Group"
+          },
+          "intraoperativePerforation": "Intraoperative DM macroperforation",
+          "postoperativeRejection": "Postoperative endothelial rejection",
+          "graftFailureAll": "Graft failure (all causes)",
+          "failureDueRejection": "Failure due to rejection",
+          "meanTimeFailure": "Mean time to failure"
+        },
+        "keySummary": {
+          "title": "Key Findings from Multicenter Study",
+          "findings": [
+            "416 intended DALK procedures with 16.4% conversion rate to Mushroom PK",
+            "No significant difference in final BCVA between DALK and Mushroom PK groups (both 0.09 logMAR at 5 years)",
+            "Higher refractive astigmatism in Mushroom PK group (3.02D vs 2.16D at 5 years, p=0.042)",
+            "Greater endothelial cell loss in Mushroom PK (56.61% vs 40.97% at 5 years)",
+            "5-year graft survival: DALK 99.42% (2/348 failed) vs Mushroom PK 94.12% (4/68 failed)",
+            "All 4 graft failures in Mushroom PK group were due to endothelial rejection",
+            "No endothelial rejection episodes observed in DALK group"
+          ],
+          "clinicalSignificance": "This multicenter study demonstrates that conversion from intended DALK to Mushroom PK achieves comparable visual outcomes to successful DALK, with mean BCVA of 0.09 logMAR in both groups at 5 years. While Mushroom PK shows slightly higher astigmatism (approximately 0.86D more) and increased endothelial cell loss, the technique maintains excellent graft survival (94.12% at 5 years) and provides a safe bailout option when DALK cannot be completed due to Descemet membrane macroperforation."
+        }
+      },
+      "complications": {
+        "title": "Complications",
+        "intraoperative": {
+          "title": "Intraoperative Complications",
+          "items": [
+            {
+              "name": "Conversion from intended DALK",
+              "incidence": "10-20% of DALK attempts",
+              "management": "Two-piece mushroom PK technique"
+            },
+            {
+              "name": "Microkeratome-related issues",
+              "incidence": "Rare with proper technique",
+              "management": "Manual dissection or new donor tissue"
+            },
+            {
+              "name": "Posterior lamella malpositioning",
+              "incidence": "1-2%",
+              "management": "Careful repositioning during surgery"
+            }
+          ]
+        },
+        "postoperative": {
+          "title": "Postoperative Complications",
+          "early": {
+            "title": "Early Complications (< 1 month)",
+            "items": [
+              "Posterior lamella detachment",
+              "Interface fluid",
+              "Wound leak",
+              "Pupillary block",
+              "Elevated intraocular pressure",
+              "Epithelial defects",
+              "Primary graft failure"
+            ]
+          },
+          "late": {
+            "title": "Late Complications (> 1 month)",
+            "items": [
+              "Endothelial rejection",
+              "Stromal rejection",
+              "High astigmatism",
+              "Interface opacification",
+              "Secondary glaucoma",
+              "Wound dehiscence",
+              "Progressive endothelial cell loss",
+              "Late graft failure"
+            ]
+          }
+        }
+      },
+      "postoperative": {
+        "title": "Post-operative Management",
+        "corticosteroids": {
+          "title": "Topical Corticosteroids",
+          "medication": "Tobramycin 0.3% + Dexamethasone 0.1% combination",
+          "dosing": [
+            "Every 2 hours × 2 weeks",
+            "Every 3 hours × 2 weeks",
+            "QID × 1 month",
+            "TID × 1 month",
+            "BID × 1 month",
+            "QD indefinitely (except phakic or steroid responders)"
+          ]
+        },
+        "antimicrobial": {
+          "title": "Antimicrobial Prophylaxis",
+          "initial": "Initial therapy:",
+          "medication": "Tobramycin/Dexamethasone combination as above",
+          "additional": "For herpetic keratitis systemic acyclovir 400mg BID starting 3 months pre-op, continued ≥1 year"
+        },
+        "followUp": {
+          "title": "Follow-up Schedule",
+          "schedule": [
+            "Regular monitoring as per institutional protocol",
+            "Endothelial cell counts at 6 months, then yearly",
+            "Topography at each visit after 6 months"
+          ]
+        },
+        "sutureManagement": {
+          "title": "Suture Management",
+          "allSuturesRemoved": "All sutures removed within 12 months",
+          "earlierRemoval": "Earlier removal possible due to enhanced wound stability",
+          "selectiveRemoval": "Selective removal based on topographic astigmatism",
+          "noSutureBeyond": "No suture left beyond 12 months"
+        }
+      }
     }
   },
   "home": {

@@ -29,6 +29,223 @@
       "complications": "并发症",
       "postop": "术后",
       "references": "参考文献"
+    },
+    "mushroomPk": {
+      "title": "Mushroom PK",
+      "subtitle": "双片微角膜刀辅助蘑菇形穿透性角膜移植术",
+      "introduction": {
+        "title": "介绍",
+        "paragraphs": [
+          "双片微角膜刀辅助蘑菇形穿透性角膜移植术（PK）是一种角膜移植技术，采用蘑菇形移植片，包含较大的9.0mm前板层和较小的6.0mm后板层。该技术适用于中央全层角膜混浊但周边内皮健康的眼球。",
+          "该技术代表了角膜移植的范式转变，解决了传统PK的关键限制：移植片大小与免疫排斥风险之间的反比关系。通过仅移植6mm中央内皮同时保持9mm光学区，蘑菇形PK保留约75%的受体内皮。",
+          "微角膜刀辅助方法涉及使用自动板层治疗性角膜移植术（ALTK）系统上的200μm刀头将供体角膜分离成前后板层。"
+        ]
+      },
+      "indications": {
+        "title": "适应症和禁忌症",
+        "indications": {
+          "title": "适应症",
+          "items": [
+            {
+              "title": "DALK转换",
+              "description": "当DALK因DM大穿孔无法完成时。"
+            },
+            {
+              "title": "晚期圆锥角膜",
+              "description": "严重的圆锥角膜伴中央全层瘢痕，不适合DALK。"
+            },
+            {
+              "title": "全层角膜瘢痕",
+              "description": "涉及包括内皮在内的所有层的深度角膜瘢痕。"
+            },
+            {
+              "title": "角膜穿孔",
+              "description": "需要紧急干预的活动性或即将发生的穿孔。"
+            }
+          ]
+        },
+        "contraindications": {
+          "title": "禁忌症",
+          "absolute": {
+            "title": "绝对禁忌症",
+            "items": [
+              {
+                "title": "受体周边内皮细胞密度<1000细胞/mm²",
+                "description": "健康的周边内皮为细胞迁移提供储备。"
+              },
+              {
+                "title": "内皮疾病",
+                "description": "这些情况需要内皮角膜移植术（DMEK/DSAEK）"
+              }
+            ]
+          }
+        }
+      },
+      "surgery": {
+        "title": "手术技术",
+        "mainTechnique": {
+          "title": "双片微角膜刀辅助蘑菇形PK技术",
+          "steps": [
+            {
+              "title": "初始环钻",
+              "description": "使用Barron吸引环钻在受体角膜中央创建9.0mm环形切口，深度约250μm。"
+            },
+            {
+              "title": "板层分离",
+              "description": "从切口底部周向进行手动板层分离，向中心延伸约3mm。"
+            },
+            {
+              "title": "中央切除",
+              "description": "切除分离的组织，留下直径约3mm的中央全层角膜组织岛。"
+            },
+            {
+              "title": "供体准备",
+              "description": "将供体角膜安装在ALTK系统（Moria SA）的人工前房上。使用200μm刀头将供体分离成前后板层。"
+            },
+            {
+              "title": "移植片组装",
+              "description": "将供体茎（带内皮的后板层）嵌入中央孔内无需缝合。将前板层放置在顶部并用4根基本10-0尼龙缝线固定。"
+            },
+            {
+              "title": "最终缝合",
+              "description": "用双重连续10-0尼龙缝线或16根间断缝线完成。"
+            }
+          ]
+        }
+      },
+      "results": {
+        "title": "结果 - DALK转换为蘑菇形PK的结果",
+        "studyPopulation": {
+          "title": "研究人群",
+          "totalProcedures": "尝试的总手术数",
+          "eyesIncluded": "纳入分析的眼数",
+          "meanFollowUp": "平均随访（月）"
+        },
+        "visualOutcomes": {
+          "title": "视觉结果",
+          "meanBCVA1Year": "1年平均BCVA（logMAR）",
+          "meanBCVA2Years": "2年平均BCVA（logMAR）",
+          "meanBCVA5Years": "5年平均BCVA（logMAR）",
+          "eyes2040": "最后一次访问时≥20/40的眼数"
+        },
+        "refractiveOutcomes": {
+          "title": "屈光结果",
+          "astigmatism1Year": "1年屈光散光",
+          "astigmatism2Years": "2年屈光散光",
+          "astigmatism5Years": "5年屈光散光",
+          "eyes4D": "散光≤4D的眼数"
+        },
+        "endothelialAnalysis": {
+          "title": "内皮细胞密度",
+          "preoperativeECD": "术前ECD（细胞/mm²）",
+          "ecd1Year": "1年ECD（细胞/mm²）",
+          "ecd2Years": "2年ECD（细胞/mm²）",
+          "ecd5Years": "5年ECD（细胞/mm²）",
+          "cellLoss5Years": "5年内皮细胞丢失"
+        },
+        "graftSurvival": {
+          "title": "移植片存活",
+          "survival1Year": "1年存活率",
+          "survival2Years": "2年存活率",
+          "survival5Years": "5年存活率",
+          "graftFailures": "移植片失败",
+          "rejectionEpisodes": "内皮排斥发作"
+        },
+        "complications": {
+          "title": "并发症分析",
+          "tableHeaders": {
+            "complication": "并发症",
+            "dalkGroup": "DALK组",
+            "mushroomGroup": "蘑菇形PK组"
+          },
+          "intraoperativePerforation": "术中DM大穿孔",
+          "postoperativeRejection": "术后内皮排斥",
+          "graftFailureAll": "移植片失败（所有原因）",
+          "failureDueRejection": "因排斥导致的失败",
+          "meanTimeFailure": "平均失败时间"
+        }
+      },
+      "complications": {
+        "title": "并发症",
+        "intraoperative": {
+          "title": "术中并发症",
+          "items": [
+            {
+              "name": "计划DALK的转换",
+              "incidence": "DALK尝试的10-20%",
+              "management": "双片蘑菇形PK技术"
+            },
+            {
+              "name": "微角膜刀相关问题",
+              "incidence": "适当技术下罕见",
+              "management": "手动分离或新供体组织"
+            },
+            {
+              "name": "后板层错位",
+              "incidence": "1-2%",
+              "management": "手术中仔细重新定位"
+            }
+          ]
+        },
+        "postoperative": {
+          "title": "术后并发症",
+          "early": {
+            "title": "早期并发症（< 1个月）",
+            "items": [
+              "后板层脱离",
+              "界面积液",
+              "伤口渗漏",
+              "瞳孔阻滞",
+              "眼压升高",
+              "上皮缺陷",
+              "原发性移植片失败"
+            ]
+          },
+          "late": {
+            "title": "晚期并发症（> 1个月）",
+            "items": [
+              "内皮排斥",
+              "基质排斥",
+              "高度散光",
+              "界面混浊",
+              "继发性青光眼",
+              "伤口裂开",
+              "进行性内皮细胞丢失",
+              "晚期移植片失败"
+            ]
+          }
+        }
+      },
+      "postoperative": {
+        "title": "术后管理",
+        "corticosteroids": {
+          "title": "局部皮质类固醇",
+          "medication": "妥布霉素0.3% + 地塞米松0.1%复合制剂",
+          "dosing": [
+            "每2小时1次 × 2周",
+            "每3小时1次 × 2周",
+            "QID × 1个月",
+            "TID × 1个月",
+            "BID × 1个月",
+            "QD无限期（有晶体眼或类固醇反应者除外）"
+          ]
+        },
+        "followUp": {
+          "title": "随访计划",
+          "schedule": [
+            "根据机构协议定期监测",
+            "6个月内皮细胞计数，然后每年一次",
+            "6个月后每次就诊进行角膜地形图检查"
+          ]
+        },
+        "sutureManagement": {
+          "title": "缝线管理",
+          "allSuturesRemoved": "所有缝线在12个月内拆除",
+          "earlierRemoval": "由于伤口稳定性改善可能提前拆除",
+          "selectiveRemoval": "基于地形图散光的选择性拆除",
+          "noSutureBeyond": "12个月后无缝线"
+        }
+      }
     }
   },
   "home": {

@@ -1,7 +1,7 @@
 <!-- src/views/surgery/mushroompk/_Results.vue -->
 <template>
   <CollapsibleSection
-    :title="outcomesMetadata.title"
+    :title="t('surgery.mushroomPk.results.title')"
     :iconPath="outcomesMetadata.iconPath"
     :colorTheme="outcomesMetadata.colorTheme"
     :isExpanded="isExpanded"
@@ -11,16 +11,20 @@
     <OutcomesSection
       :mainTitle="sectionData.mainTitle"
       :mainTable="sectionData.mainTable"
+      :secondaryTitle="sectionData.secondaryTitle"
+      :secondaryTable="sectionData.secondaryTable"
       :keySummary="sectionData.keySummary"
-      :sourceCitation="sectionData.sourceCitation"
     />
   </CollapsibleSection>
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
+import { useI18n } from 'vue-i18n'
 import CollapsibleSection from '@/components/CollapsibleSection.vue'
 import OutcomesSection, { outcomesMetadata } from '@/components/surgery/ResultsComponent.vue'
+
+const { t } = useI18n()
 
 defineProps({
   isExpanded: {
@@ -31,106 +35,186 @@ defineProps({
 
 defineEmits(['toggle'])
 
-// All section data
-const sectionData = ref({
-  mainTitle: 'Mushroom PK Clinical Outcomes: Conversion Cases & Primary Indications',
+// All section data - From Myerscough et al. Am J Ophthalmol 2020
+const sectionData = computed(() => ({
+  mainTitle: `<div style="font-size: 0.9rem; line-height: 1.4;"><div>Myerscough J, Bovone C, Scorcia V, Ricci-Filipovic B, Moramarco A, Fontana L, Busin M.</div><div style="margin-top: 4px;">The role of microkeratome-assisted anterior lamellar keratoplasty in the management of keratoconus: a multicenter study.</div><div style="margin-top: 4px;">Am J Ophthalmol. 2020;220:82-90. [2]</div></div>`,
   mainTable: {
     parameterColumnTitle: 'Parameter',
-    comparisonColumns: ['Conventional PK', 'Mushroom PK<br/>(Converted from DALK)'],
+    comparisonColumns: ['Successful DALK', 'Mushroom PK<br/>(Converted from DALK)'],
     showPValue: true,
     headerColorTheme: 'purple',
     alternateRowColors: false,
     dataSections: [
       {
-        title: 'Visual Outcomes (5-year)',
+        title: t('surgery.mushroomPk.results.studyPopulation.title'),
+        colorTheme: 'gray',
+        rows: [
+          {
+            parameter: t('surgery.mushroomPk.results.studyPopulation.totalProcedures'),
+            values: ['416 DALK attempts', '68 conversions (16.4%)'],
+            pValue: '-',
+          },
+          {
+            parameter: t('surgery.mushroomPk.results.studyPopulation.eyesIncluded'),
+            values: ['348 eyes', '68 eyes'],
+            pValue: '-',
+          },
+          {
+            parameter: t('surgery.mushroomPk.results.studyPopulation.meanFollowUp'),
+            values: ['49 ± 21', '41 ± 22'],
+            pValue: '0.005',
+          },
+        ],
+      },
+      {
+        title: t('surgery.mushroomPk.results.visualOutcomes.title'),
         colorTheme: 'blue',
         rows: [
           {
-            parameter: 'Mean BCVA (logMAR)',
-            values: ['0.10-0.15', { text: '0.09 ± 0.15', highlight: true }],
+            parameter: t('surgery.mushroomPk.results.visualOutcomes.meanBCVA1Year'),
+            values: ['0.23 ± 0.21', '0.24 ± 0.16'],
+            pValue: '0.84',
+          },
+          {
+            parameter: t('surgery.mushroomPk.results.visualOutcomes.meanBCVA2Years'),
+            values: ['0.17 ± 0.13', '0.20 ± 0.16'],
+            pValue: '0.21',
+          },
+          {
+            parameter: t('surgery.mushroomPk.results.visualOutcomes.meanBCVA5Years'),
+            values: ['0.09 ± 0.11', '0.09 ± 0.15'],
             pValue: '0.88',
           },
           {
-            parameter: 'BCVA ≥20/40',
-            values: ['65-75%', { text: '95.85%', highlight: true }],
+            parameter: t('surgery.mushroomPk.results.visualOutcomes.eyes2040'),
+            values: ['96.23%', '95.85%'],
             pValue: '0.67',
-          },
-          {
-            parameter: 'BCVA ≥20/25',
-            values: ['45-55%', { text: '~60%', highlight: true }],
-            pValue: '-',
           },
         ],
       },
       {
-        title: 'Refractive Outcomes',
+        title: t('surgery.mushroomPk.results.refractiveOutcomes.title'),
         colorTheme: 'green',
         rows: [
           {
-            parameter: 'Mean astigmatism at 5 years',
-            values: ['4.5 ± 2.1 D', { text: '3.02 ± 0.89 D', highlight: true }],
+            parameter: t('surgery.mushroomPk.results.refractiveOutcomes.astigmatism1Year'),
+            values: ['3.36 ± 1.97 D', '4.23 ± 2.42 D'],
+            pValue: '0.002',
+          },
+          {
+            parameter: t('surgery.mushroomPk.results.refractiveOutcomes.astigmatism2Years'),
+            values: ['2.68 ± 1.59 D', '3.45 ± 2.27 D'],
+            pValue: '0.006',
+          },
+          {
+            parameter: t('surgery.mushroomPk.results.refractiveOutcomes.astigmatism5Years'),
+            values: ['2.16 ± 1.31 D', '3.02 ± 0.89 D'],
             pValue: '0.042',
           },
           {
-            parameter: 'Astigmatism ≤4D',
-            values: ['70-75%', { text: '92.65%', highlight: true }],
-            pValue: '-',
-          },
-          {
-            parameter: 'Astigmatism >8D',
-            values: ['5-10%', { text: '1.47%', highlight: true }],
-            pValue: '-',
+            parameter: t('surgery.mushroomPk.results.refractiveOutcomes.eyes4D'),
+            values: ['98.26%', '92.65%'],
+            pValue: '0.001',
           },
         ],
       },
       {
-        title: 'Endothelial Cell Loss',
+        title: t('surgery.mushroomPk.results.endothelialAnalysis.title'),
         colorTheme: 'orange',
         rows: [
           {
-            parameter: 'ECL at 1 year',
-            values: ['20-30%', { text: '33.53%', highlight: false }],
-            pValue: '-',
+            parameter: t('surgery.mushroomPk.results.endothelialAnalysis.preoperativeECD'),
+            values: ['2688 ± 209', '2685 ± 189'],
+            pValue: '0.93',
           },
           {
-            parameter: 'ECL at 2 years',
-            values: ['35-45%', { text: '46.24%', highlight: false }],
-            pValue: '-',
+            parameter: t('surgery.mushroomPk.results.endothelialAnalysis.ecd1Year'),
+            values: ['2160 ± 331', '1785 ± 375'],
+            pValue: '<0.001',
           },
           {
-            parameter: 'ECL at 5 years',
-            values: ['45-55%', { text: '56.61%', highlight: false }],
-            pValue: '-',
+            parameter: t('surgery.mushroomPk.results.endothelialAnalysis.ecd2Years'),
+            values: ['1908 ± 370', '1444 ± 364'],
+            pValue: '<0.001',
           },
           {
-            parameter: 'Annual ECL rate',
-            values: ['~9%', { text: '11.4%', highlight: false }],
-            pValue: '-',
+            parameter: t('surgery.mushroomPk.results.endothelialAnalysis.ecd5Years'),
+            values: ['1587 ± 312', '1166 ± 321'],
+            pValue: '<0.001',
+          },
+          {
+            parameter: t('surgery.mushroomPk.results.endothelialAnalysis.cellLoss5Years'),
+            values: ['40.97%', '56.61%'],
+            pValue: '<0.001',
           },
         ],
       },
       {
-        title: 'Complications & Survival',
+        title: t('surgery.mushroomPk.results.graftSurvival.title'),
         colorTheme: 'red',
         rows: [
           {
-            parameter: 'Wound dehiscence',
-            values: ['2.8-5.5%', { text: '2.94%', highlight: true }],
-            pValue: '-',
+            parameter: t('surgery.mushroomPk.results.graftSurvival.survival1Year'),
+            values: ['100%', '100%'],
+            pValue: '1.0',
           },
           {
-            parameter: 'Endothelial rejection',
-            values: ['10-20%', { text: '5.88%', highlight: true }],
-            pValue: '-',
+            parameter: t('surgery.mushroomPk.results.graftSurvival.survival2Years'),
+            values: ['100%', '98.53%'],
+            pValue: '0.04',
           },
           {
-            parameter: 'Graft survival at 5 years',
-            values: ['85-90%', { text: '94.12%', highlight: true }],
+            parameter: t('surgery.mushroomPk.results.graftSurvival.survival5Years'),
+            values: ['99.42%', '94.12%'],
             pValue: '<0.001',
           },
           {
-            parameter: 'All-cause failure rate',
-            values: ['10-15%', { text: '5.88%', highlight: true }],
+            parameter: t('surgery.mushroomPk.results.graftSurvival.graftFailures'),
+            values: ['2 eyes (0.57%)', '4 eyes (5.88%)'],
+            pValue: '0.002',
+          },
+          {
+            parameter: t('surgery.mushroomPk.results.graftSurvival.rejectionEpisodes'),
+            values: ['0 eyes', '4 eyes (5.88%)'],
+            pValue: '<0.001',
+          },
+        ],
+      },
+    ],
+  },
+  secondaryTitle: t('surgery.mushroomPk.results.complications.title'),
+  secondaryTable: {
+    parameterColumnTitle: t('surgery.mushroomPk.results.complications.tableHeaders.complication'),
+    comparisonColumns: [t('surgery.mushroomPk.results.complications.tableHeaders.dalkGroup'), t('surgery.mushroomPk.results.complications.tableHeaders.mushroomGroup')],
+    showPValue: true,
+    headerColorTheme: 'red',
+    alternateRowColors: true,
+    dataSections: [
+      {
+        rows: [
+          {
+            parameter: t('surgery.mushroomPk.results.complications.intraoperativePerforation'),
+            values: ['-', '68/416 (16.4%)'],
+            pValue: '-',
+          },
+          {
+            parameter: t('surgery.mushroomPk.results.complications.postoperativeRejection'),
+            values: ['0/348 (0%)', '4/68 (5.88%)'],
+            pValue: '<0.001',
+          },
+          {
+            parameter: t('surgery.mushroomPk.results.complications.graftFailureAll'),
+            values: ['2/348 (0.57%)', '4/68 (5.88%)'],
+            pValue: '0.002',
+          },
+          {
+            parameter: t('surgery.mushroomPk.results.complications.failureDueRejection'),
+            values: ['0/348 (0%)', '4/68 (5.88%)'],
+            pValue: '<0.001',
+          },
+          {
+            parameter: t('surgery.mushroomPk.results.complications.meanTimeFailure'),
+            values: ['-', '36 months (range 24-48)'],
             pValue: '-',
           },
         ],
@@ -139,27 +223,13 @@ const sectionData = ref({
   },
   keySummary: {
     keyFindings: {
-      title: 'Key Findings from 5-Year Follow-up',
-      items: [
-        'Excellent visual outcomes with 95.85% achieving 20/40 or better vision',
-        'Low astigmatism with 92.65% maintaining ≤4D',
-        'Superior graft survival of 94.12% at 5 years',
-        'Reduced wound dehiscence risk compared to conventional PK',
-        'Lower endothelial rejection rate (5.88%) despite larger anterior diameter',
-        '',
-        '**Conversion from DALK**:',
-        'No significant difference in BCVA compared to successful DALK',
-        'Slightly higher astigmatism (~0.86D more) but clinically manageable',
-        'Preserves benefit of large 9mm optical zone',
-      ],
+      title: t('surgery.mushroomPk.results.keySummary.title'),
+      items: t('surgery.mushroomPk.results.keySummary.findings'),
     },
     clinicalImpact: {
       title: 'Clinical Significance',
-      description:
-        'The two-piece microkeratome-assisted mushroom PK demonstrates excellent long-term outcomes, particularly when used as a conversion technique from intended DALK. The 9mm/6mm configuration provides optimal balance between visual quality and graft survival. Despite only transplanting 25% of donor endothelium centrally, the preserved peripheral host endothelium provides a reservoir that may contribute to the low endothelial failure rate. These results support mushroom PK as the technique of choice for DALK conversion and selected primary indications.',
+      description: t('surgery.mushroomPk.results.keySummary.clinicalSignificance'),
     },
   },
-  sourceCitation:
-    'Data compiled from: Myerscough et al. Am J Ophthalmol 2020; Busin et al. Trans Am Ophthalmol Soc 2015; Comparative studies of mushroom vs conventional PK outcomes',
-})
+}))
 </script>

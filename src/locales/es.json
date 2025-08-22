@@ -29,6 +29,223 @@
       "complications": "Complicaciones",
       "postop": "Postoperatorio",
       "references": "Referencias"
+    },
+    "mushroomPk": {
+      "title": "Mushroom PK",
+      "subtitle": "Queratoplastia Penetrante Mushroom Asistida por Microqueratomo de Dos Piezas",
+      "introduction": {
+        "title": "Introducción",
+        "paragraphs": [
+          "La Queratoplastia Penetrante Mushroom de dos piezas asistida por microqueratomo (PK) es una técnica de trasplante corneal que emplea un injerto en forma de hongo con una lamela anterior más grande de 9,0mm y una lamela posterior más pequeña de 6,0mm. Esta técnica está indicada para ojos con opacidades corneales centrales de espesor completo pero con endotelio periférico sano.",
+          "La técnica representa un cambio de paradigma en el trasplante corneal al abordar la limitación crítica de la PK convencional: la relación inversa entre el tamaño del injerto y el riesgo de rechazo inmunológico. Al trasplantar solo los 6mm centrales del endotelio mientras mantiene una zona óptica de 9mm, la Mushroom PK preserva aproximadamente el 75% del endotelio del receptor.",
+          "El enfoque asistido por microqueratomo implica dividir la córnea donante en lamelas anterior y posterior utilizando una cabeza de 200μm en un sistema automatizado de queratoplastia lamelar terapéutica (ALTK)."
+        ]
+      },
+      "indications": {
+        "title": "Indicaciones y Contraindicaciones",
+        "indications": {
+          "title": "Indicaciones",
+          "items": [
+            {
+              "title": "Conversión de DALK",
+              "description": "Cuando DALK no puede completarse debido a macroperforación de DM."
+            },
+            {
+              "title": "Queratocono Avanzado",
+              "description": "Queratocono severo con cicatrización central de espesor completo no apta para DALK."
+            },
+            {
+              "title": "Cicatrices Corneales de Espesor Completo",
+              "description": "Cicatrización corneal profunda que involucra todas las capas incluyendo el endotelio."
+            },
+            {
+              "title": "Perforaciones Corneales",
+              "description": "Perforaciones activas o inminentes que requieren intervención urgente."
+            }
+          ]
+        },
+        "contraindications": {
+          "title": "Contraindicaciones",
+          "absolute": {
+            "title": "Contraindicaciones Absolutas",
+            "items": [
+              {
+                "title": "Densidad de células endoteliales <1000 células/mm² en la periferia del receptor",
+                "description": "El endotelio periférico sano proporciona un reservorio para la migración celular."
+              },
+              {
+                "title": "Enfermedades endoteliales",
+                "description": "Estas condiciones requieren queratoplastia endotelial (DMEK/DSAEK)"
+              }
+            ]
+          }
+        }
+      },
+      "surgery": {
+        "title": "Técnica Quirúrgica",
+        "mainTechnique": {
+          "title": "Técnica Mushroom PK de Dos Piezas Asistida por Microqueratomo",
+          "steps": [
+            {
+              "title": "Trepanación Inicial",
+              "description": "Crear una incisión circular de 9,0mm de aproximadamente 250μm de profundidad usando un trépano de succión Barron, centrado en la córnea receptora."
+            },
+            {
+              "title": "Disección Lamelar",
+              "description": "Realizar disección lamelar manual circunferencialmente desde la base de la incisión, extendiéndose aproximadamente 3mm hacia el centro."
+            },
+            {
+              "title": "Excisión Central",
+              "description": "Remover el tejido disecado, dejando una isla central de tejido corneal de espesor completo de aproximadamente 3mm de diámetro."
+            },
+            {
+              "title": "Preparación del Donante",
+              "description": "Montar la córnea donante en la cámara anterior artificial del sistema ALTK (Moria SA). Usar una cabeza de 200μm para dividir el donante en lamelas anterior y posterior."
+            },
+            {
+              "title": "Ensamblaje del Injerto",
+              "description": "Ajustar el tallo donante (lamela posterior con endotelio) en el agujero central sin suturas. Colocar la lamela anterior encima y asegurar con 4 suturas cardinales de nylon 10-0."
+            },
+            {
+              "title": "Sutura Final",
+              "description": "Completar con sutura continua doble de nylon 10-0 o 16 suturas interrumpidas."
+            }
+          ]
+        }
+      },
+      "results": {
+        "title": "Resultados - Resultados de Conversión de DALK a Mushroom PK",
+        "studyPopulation": {
+          "title": "Población de Estudio",
+          "totalProcedures": "Total de procedimientos intentados",
+          "eyesIncluded": "Ojos incluidos en el análisis",
+          "meanFollowUp": "Seguimiento medio (meses)"
+        },
+        "visualOutcomes": {
+          "title": "Resultados Visuales",
+          "meanBCVA1Year": "BCVA medio a 1 año (logMAR)",
+          "meanBCVA2Years": "BCVA medio a 2 años (logMAR)",
+          "meanBCVA5Years": "BCVA medio a 5 años (logMAR)",
+          "eyes2040": "Ojos con ≥20/40 en la última visita"
+        },
+        "refractiveOutcomes": {
+          "title": "Resultados Refractivos",
+          "astigmatism1Year": "Astigmatismo refractivo a 1 año",
+          "astigmatism2Years": "Astigmatismo refractivo a 2 años",
+          "astigmatism5Years": "Astigmatismo refractivo a 5 años",
+          "eyes4D": "Ojos con ≤4D de astigmatismo"
+        },
+        "endothelialAnalysis": {
+          "title": "Densidad de Células Endoteliales",
+          "preoperativeECD": "ECD preoperatorio (células/mm²)",
+          "ecd1Year": "ECD a 1 año (células/mm²)",
+          "ecd2Years": "ECD a 2 años (células/mm²)",
+          "ecd5Years": "ECD a 5 años (células/mm²)",
+          "cellLoss5Years": "Pérdida de células endoteliales a 5 años"
+        },
+        "graftSurvival": {
+          "title": "Supervivencia del Injerto",
+          "survival1Year": "Supervivencia a 1 año",
+          "survival2Years": "Supervivencia a 2 años",
+          "survival5Years": "Supervivencia a 5 años",
+          "graftFailures": "Fallas del injerto",
+          "rejectionEpisodes": "Episodios de rechazo endotelial"
+        },
+        "complications": {
+          "title": "Análisis de Complicaciones",
+          "tableHeaders": {
+            "complication": "Complicación",
+            "dalkGroup": "Grupo DALK",
+            "mushroomGroup": "Grupo Mushroom PK"
+          },
+          "intraoperativePerforation": "Macroperforación intraoperatoria de DM",
+          "postoperativeRejection": "Rechazo endotelial postoperatorio",
+          "graftFailureAll": "Falla del injerto (todas las causas)",
+          "failureDueRejection": "Falla debida a rechazo",
+          "meanTimeFailure": "Tiempo medio hasta la falla"
+        }
+      },
+      "complications": {
+        "title": "Complicaciones",
+        "intraoperative": {
+          "title": "Complicaciones Intraoperatorias",
+          "items": [
+            {
+              "name": "Conversión de DALK planeado",
+              "incidence": "10-20% de intentos de DALK",
+              "management": "Técnica Mushroom PK de dos piezas"
+            },
+            {
+              "name": "Problemas relacionados con microqueratomo",
+              "incidence": "Raro con técnica adecuada",
+              "management": "Disección manual o nuevo tejido donante"
+            },
+            {
+              "name": "Malposición de lamela posterior",
+              "incidence": "1-2%",
+              "management": "Reposicionamiento cuidadoso durante la cirugía"
+            }
+          ]
+        },
+        "postoperative": {
+          "title": "Complicaciones Postoperatorias",
+          "early": {
+            "title": "Complicaciones Tempranas (< 1 mes)",
+            "items": [
+              "Desprendimiento de lamela posterior",
+              "Fluido en la interfaz",
+              "Fuga de herida",
+              "Bloqueo pupilar",
+              "Presión intraocular elevada",
+              "Defectos epiteliales",
+              "Falla primaria del injerto"
+            ]
+          },
+          "late": {
+            "title": "Complicaciones Tardías (> 1 mes)",
+            "items": [
+              "Rechazo endotelial",
+              "Rechazo estromal",
+              "Astigmatismo alto",
+              "Opacificación de la interfaz",
+              "Glaucoma secundario",
+              "Dehiscencia de herida",
+              "Pérdida progresiva de células endoteliales",
+              "Falla tardía del injerto"
+            ]
+          }
+        }
+      },
+      "postoperative": {
+        "title": "Manejo Postoperatorio",
+        "corticosteroids": {
+          "title": "Corticosteroides Tópicos",
+          "medication": "Combinación de Tobramicina 0,3% + Dexametasona 0,1%",
+          "dosing": [
+            "Cada 2 horas × 2 semanas",
+            "Cada 3 horas × 2 semanas",
+            "QID × 1 mes",
+            "TID × 1 mes",
+            "BID × 1 mes",
+            "QD indefinidamente (excepto fáquicos o respondedores a esteroides)"
+          ]
+        },
+        "followUp": {
+          "title": "Programa de Seguimiento",
+          "schedule": [
+            "Monitoreo regular según protocolo institucional",
+            "Conteos de células endoteliales a los 6 meses, luego anualmente",
+            "Topografía en cada visita después de 6 meses"
+          ]
+        },
+        "sutureManagement": {
+          "title": "Manejo de Suturas",
+          "allSuturesRemoved": "Todas las suturas removidas dentro de 12 meses",
+          "earlierRemoval": "Remoción más temprana posible debido a estabilidad mejorada de la herida",
+          "selectiveRemoval": "Remoción selectiva basada en astigmatismo topográfico",
+          "noSutureBeyond": "Ninguna sutura más allá de 12 meses"
+        }
+      }
     }
   },
   "home": {

@@ -16,11 +16,14 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
+import { useI18n } from 'vue-i18n'
 import CollapsibleSection from '@/components/CollapsibleSection.vue'
 import ComplicationsSection, {
   complicationsMetadata,
 } from '@/components/surgery/ComplicationsComponent.vue'
+
+const { t } = useI18n()
 
 defineProps({
   isExpanded: {
@@ -32,63 +35,47 @@ defineProps({
 defineEmits(['toggle'])
 
 // General DALK Complications
-const complicationsData = ref({
+const complicationsData = computed(() => ({
   intraoperative: {
-    title: 'Intraoperative Complications',
+    title: t('surgery.dalk.complications.intraoperative.title'),
     colorTheme: 'orange',
     complications: [
       {
-        name: 'Descemet Membrane Perforation',
+        name: t('surgery.dalk.complications.intraoperative.items.0.name'),
         details: [
-          { label: 'Incidence', value: '5-20% depending on technique' },
-          { label: 'Management', value: 'Air tamponade, conversion to PK if large' },
+          { label: t('surgery.dalk.labels.incidence'), value: t('surgery.dalk.complications.intraoperative.items.0.incidence') },
+          { label: t('surgery.dalk.labels.management'), value: t('surgery.dalk.complications.intraoperative.items.0.management') },
         ],
       },
       {
-        name: 'Failed Big Bubble',
+        name: t('surgery.dalk.complications.intraoperative.items.1.name'),
         details: [
-          { label: 'Incidence', value: '15-30% of cases' },
-          { label: 'Management', value: 'Manual dissection' },
+          { label: t('surgery.dalk.labels.incidence'), value: t('surgery.dalk.complications.intraoperative.items.1.incidence') },
+          { label: t('surgery.dalk.labels.management'), value: t('surgery.dalk.complications.intraoperative.items.1.management') },
         ],
       },
       {
-        name: 'Conversion to PK',
+        name: t('surgery.dalk.complications.intraoperative.items.2.name'),
         details: [
-          { label: 'Incidence', value: '0-15% depending on experience' },
-          { label: 'Management', value: 'Complete penetrating keratoplasty' },
+          { label: t('surgery.dalk.labels.incidence'), value: t('surgery.dalk.complications.intraoperative.items.2.incidence') },
+          { label: t('surgery.dalk.labels.management'), value: t('surgery.dalk.complications.intraoperative.items.2.management') },
         ],
       },
     ],
   },
   postoperative: {
-    title: 'Postoperative Complications',
+    title: t('surgery.dalk.complications.postoperative.title'),
     colorTheme: 'red',
     sections: [
       {
-        title: 'Early Complications (< 1 month)',
-        items: [
-          'Double anterior chamber',
-          'Interface haze',
-          'Epithelial defects',
-          'Pupillary block',
-          'Descemet membrane detachment',
-          'Wound leak',
-          'Elevated intraocular pressure',
-        ],
+        title: t('surgery.dalk.complications.postoperative.early.title'),
+        items: t('surgery.dalk.complications.postoperative.early.items'),
       },
       {
-        title: 'Late Complications (> 1 month)',
-        items: [
-          'Stromal rejection',
-          'Interface opacification',
-          'Secondary glaucoma',
-          'Late endothelial failure',
-          'Wound dehiscence',
-          'Recurrence of primary disease',
-          'Irregular astigmatism',
-        ],
+        title: t('surgery.dalk.complications.postoperative.late.title'),
+        items: t('surgery.dalk.complications.postoperative.late.items'),
       },
     ],
   },
-})
+}))
 </script>

@@ -18,9 +18,12 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { computed } from 'vue'
+import { useI18n } from 'vue-i18n'
 import CollapsibleSection from '@/components/CollapsibleSection.vue'
 import PostopSection, { postopMetadata } from '@/components/surgery/PostopComponent.vue'
+
+const { t } = useI18n()
 
 defineProps({
   isExpanded: {
@@ -31,45 +34,32 @@ defineProps({
 
 defineEmits(['toggle'])
 
-// Post-operative management data
-const postopData = ref({
+// Post-operative management data - Based on Busin et al. 2015
+const postopData = computed(() => ({
   corticosteroids: {
-    title: 'Topical Corticosteroids',
-    medication: 'Prednisolone 1% / Dexamethasone 0.1%',
-    dosing: [
-      'QID × 3 months',
-      'TID × 3 months',
-      'BID × 6 months',
-      'QD indefinitely (low-dose maintenance)',
-    ],
+    title: t('surgery.mushroomPk.postoperative.corticosteroids.title'),
+    medication: t('surgery.mushroomPk.postoperative.corticosteroids.medication'),
+    dosing: t('surgery.mushroomPk.postoperative.corticosteroids.dosing'),
   },
   antimicrobial: {
-    title: 'Antimicrobial Prophylaxis',
-    optionsLabel: 'Options:',
-    options: ['Moxifloxacin 0.5%', 'Gatifloxacin 0.5%', 'Tobramycin 0.3%'],
-    dosingLabel: 'Dosing',
-    dosing: 'QID × 1 month, then stop',
+    title: t('surgery.mushroomPk.postoperative.antimicrobial.title'),
+    optionsLabel: t('surgery.mushroomPk.postoperative.antimicrobial.initial'),
+    options: [t('surgery.mushroomPk.postoperative.antimicrobial.medication')],
+    dosingLabel: 'Additional',
+    dosing: ` ${t('surgery.mushroomPk.postoperative.antimicrobial.additional')}`,
   },
   followUp: {
-    title: 'Follow-up Schedule',
-    schedule: [
-      'Day 1, 3, 7',
-      'Weekly × 1 month',
-      'Monthly × 6 months',
-      'Every 3 months year 1',
-      'Every 6 months thereafter',
-    ],
+    title: t('surgery.mushroomPk.postoperative.followUp.title'),
+    schedule: t('surgery.mushroomPk.postoperative.followUp.schedule'),
   },
   sutureManagement: {
-    title: 'Suture Management',
+    title: t('surgery.mushroomPk.postoperative.sutureManagement.title'),
     timings: [
-      { text: 'Selective removal based on topography', isSubItem: false },
-      { text: 'Start at 3-4 months (earlier than conventional PK)', isSubItem: false },
-      { text: 'Remove tight sutures causing high astigmatism', isSubItem: true },
-      { text: 'Complete removal by 12 months (vs 12-18 months for PK)', isSubItem: false },
-      { text: 'Enhanced wound stability allows earlier removal', isSubItem: true },
-      { text: 'Monitor for wound stability at each removal', isSubItem: true },
+      { text: t('surgery.mushroomPk.postoperative.sutureManagement.allSuturesRemoved'), isSubItem: false },
+      { text: t('surgery.mushroomPk.postoperative.sutureManagement.earlierRemoval'), isSubItem: true },
+      { text: t('surgery.mushroomPk.postoperative.sutureManagement.selectiveRemoval'), isSubItem: false },
+      { text: t('surgery.mushroomPk.postoperative.sutureManagement.noSutureBeyond'), isSubItem: false },
     ],
   },
-})
+}))
 </script>

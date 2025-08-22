@@ -1,7 +1,7 @@
 <!-- src/views/surgery/dalk/_Outcomes.vue -->
 <template>
   <CollapsibleSection
-    :title="'Results - 9-mm DALK with 6-mm Optical Zone Clearance'"
+    :title="t('surgery.dalk.results.study1.title')"
     :iconPath="outcomesMetadata.iconPath"
     :colorTheme="outcomesMetadata.colorTheme"
     :isExpanded="isExpanded"
@@ -19,9 +19,12 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
+import { useI18n } from 'vue-i18n'
 import CollapsibleSection from '@/components/CollapsibleSection.vue'
 import OutcomesSection, { outcomesMetadata } from '@/components/surgery/ResultsComponent.vue'
+
+const { t } = useI18n()
 
 defineProps({
   isExpanded: {
@@ -33,113 +36,113 @@ defineProps({
 defineEmits(['toggle'])
 
 // All section data - From Busin et al. Ophthalmology 2017
-const sectionData = ref({
-  mainTitle: '<div style="font-size: 0.9rem; line-height: 1.4;"><div>Busin M, Leon P, Nahum Y, Scorcia V.</div><div style="margin-top: 4px;">Large (9 mm) Deep Anterior Lamellar Keratoplasty with Clearance of a 6-mm Optical Zone Optimizes Outcomes of Keratoconus Surgery.</div><div style="margin-top: 4px;">Ophthalmology. 2017;124(7):1072-1080.</div></div>',
+const sectionData = computed(() => ({
+  mainTitle: t('surgery.dalk.results.study1.citation'),
   mainTable: {
-    parameterColumnTitle: 'Parameter',
+    parameterColumnTitle: t('surgery.dalk.results.study1.tableHeaders.parameter'),
     comparisonColumns: [
-      'Preoperative',
-      'Postoperative',
+      t('surgery.dalk.results.study1.tableHeaders.preoperative'),
+      t('surgery.dalk.results.study1.tableHeaders.postoperative'),
     ],
     showPValue: true,
     headerColorTheme: 'blue',
     alternateRowColors: false,
     dataSections: [
       {
-        title: 'Surgical Technique Outcomes',
+        title: t('surgery.dalk.results.study1.sections.surgicalOutcomes.title'),
         colorTheme: 'orange',
         rows: [
           {
-            parameter: 'Big Bubble Success Rate',
+            parameter: t('surgery.dalk.results.study1.sections.surgicalOutcomes.bigBubbleSuccess'),
             values: ['-', '67/80 (83.7%)'],
             pValue: '-',
           },
           {
-            parameter: 'Type 1 Bubble',
+            parameter: t('surgery.dalk.results.study1.sections.surgicalOutcomes.type1Bubble'),
             values: ['-', '66/67 (98.5%)'],
             pValue: '-',
           },
           {
-            parameter: 'Average Bubble Diameter',
+            parameter: t('surgery.dalk.results.study1.sections.surgicalOutcomes.averageBubbleDiameter'),
             values: ['-', '7.7 ± 0.8 mm'],
             pValue: '-',
           },
         ],
       },
       {
-        title: 'Visual Acuity Analysis (After Complete Suture Removal)',
+        title: t('surgery.dalk.results.study1.sections.visualAcuity.title'),
         colorTheme: 'blue',
         rows: [
           {
-            parameter: 'Mean BSCVA (logMAR)',
+            parameter: t('surgery.dalk.results.study1.sections.visualAcuity.meanBSCVA'),
             values: ['0.54 ± 0.85', '0.09 ± 0.72'],
             pValue: 'P = 0.001',
           },
           {
-            parameter: 'BSCVA 20/20 or better',
+            parameter: t('surgery.dalk.results.study1.sections.visualAcuity.bscva2020'),
             values: ['-', '28 eyes (35%)'],
             pValue: '-',
           },
           {
-            parameter: 'BSCVA 20/25 or better',
+            parameter: t('surgery.dalk.results.study1.sections.visualAcuity.bscva2025'),
             values: ['-', '54 eyes (67.5%)'],
             pValue: '-',
           },
           {
-            parameter: 'BSCVA 20/40 or better',
+            parameter: t('surgery.dalk.results.study1.sections.visualAcuity.bscva2040'),
             values: ['-', '76 eyes (95%)'],
             pValue: '-',
           },
         ],
       },
       {
-        title: 'Refractive Outcomes (After Complete Suture Removal)',
+        title: t('surgery.dalk.results.study1.sections.refractiveOutcomes.title'),
         colorTheme: 'green',
         rows: [
           {
-            parameter: 'Mean Refractive Astigmatism',
+            parameter: t('surgery.dalk.results.study1.sections.refractiveOutcomes.meanAstigmatism'),
             values: ['7.2 ± 2.5 D', '3.10 ± 1.30 D'],
             pValue: '0.002',
           },
           {
-            parameter: 'Astigmatism ≤4.5 D',
+            parameter: t('surgery.dalk.results.study1.sections.refractiveOutcomes.astigmatism45'),
             values: ['-', '73 eyes (91%)'],
             pValue: '-',
           },
           {
-            parameter: 'Astigmatism >6 D',
+            parameter: t('surgery.dalk.results.study1.sections.refractiveOutcomes.astigmatism6'),
             values: ['-', '0 eyes (0%)'],
             pValue: '-',
           },
           {
-            parameter: 'Spherical Equivalent',
+            parameter: t('surgery.dalk.results.study1.sections.refractiveOutcomes.sphericalEquivalent'),
             values: ['-', '-1.55 ± 3.3 D'],
             pValue: '-',
           },
         ],
       },
       {
-        title: 'Anatomical Outcomes (After Complete Suture Removal)',
+        title: t('surgery.dalk.results.study1.sections.anatomicalOutcomes.title'),
         colorTheme: 'purple',
         rows: [
           {
-            parameter: 'Central Corneal Thickness',
+            parameter: t('surgery.dalk.results.study1.sections.anatomicalOutcomes.centralCornealThickness'),
             values: ['-', '492 ± 62.10 μm'],
             pValue: '-',
           },
         ],
       },
       {
-        title: 'Endothelial Cell Analysis (12 Months Postoperative)',
+        title: t('surgery.dalk.results.study1.sections.endothelialAnalysis.title'),
         colorTheme: 'teal',
         rows: [
           {
-            parameter: 'Endothelial Cell Density',
+            parameter: t('surgery.dalk.results.study1.sections.endothelialAnalysis.endothelialCellDensity'),
             values: ['-', '2026 ± 397 cells/mm²'],
             pValue: '-',
           },
           {
-            parameter: 'Mean Cell Loss from Baseline',
+            parameter: t('surgery.dalk.results.study1.sections.endothelialAnalysis.meanCellLoss'),
             values: ['-', '11.2%'],
             pValue: '-',
           },
@@ -147,10 +150,10 @@ const sectionData = ref({
       },
     ],
   },
-  secondaryTitle: 'Intraoperative and Postoperative Complications',
+  secondaryTitle: t('surgery.dalk.results.study1.complications.title'),
   secondaryTable: {
-    parameterColumnTitle: 'Complication',
-    comparisonColumns: ['Incidence', 'Management/Outcome'],
+    parameterColumnTitle: t('surgery.dalk.results.study1.complications.tableHeaders.complication'),
+    comparisonColumns: [t('surgery.dalk.results.study1.complications.tableHeaders.incidence'), t('surgery.dalk.results.study1.complications.tableHeaders.management')],
     showPValue: false,
     headerColorTheme: 'red',
     alternateRowColors: true,
@@ -158,27 +161,27 @@ const sectionData = ref({
       {
         rows: [
           {
-            parameter: 'Intraoperative Perforation',
+            parameter: t('surgery.dalk.results.study1.complications.items.intraoperativePerforation'),
             values: ['4 eyes (5%)', 'Completed with manual dissection, no PK conversion'],
           },
           {
-            parameter: 'Loss of Suction',
+            parameter: t('surgery.dalk.results.study1.complications.items.lossOfSuction'),
             values: ['1 eye (1.25%)', 'Procedure completed successfully'],
           },
           {
-            parameter: 'Conversion to PK',
+            parameter: t('surgery.dalk.results.study1.complications.items.conversionToPK'),
             values: ['0 eyes (0%)', 'No conversions required'],
           },
           {
-            parameter: 'Double Anterior Chamber',
+            parameter: t('surgery.dalk.results.study1.complications.items.doubleAnteriorChamber'),
             values: ['2 eyes (2.5%)', 'Successfully managed with air injection'],
           },
           {
-            parameter: 'Stromal Rejection',
+            parameter: t('surgery.dalk.results.study1.complications.items.stromalRejection'),
             values: ['6 eyes (7.5%)', 'All reversed with topical steroids'],
           },
           {
-            parameter: 'Inadvertent Suture Removal',
+            parameter: t('surgery.dalk.results.study1.complications.items.inadvertentSutureRemoval'),
             values: ['1 eye', 'Both sutures removed at 3 months, no dehiscence'],
           },
         ],
@@ -187,21 +190,13 @@ const sectionData = ref({
   },
   keySummary: {
     keyFindings: {
-      title: 'Statistical Analysis Summary',
-      items: [
-        'Visual acuity improved: 0.54±0.85 to 0.09±0.72 logMAR (P = 0.001)',
-        'Refractive astigmatism reduced from 7.2±2.5 D to 3.10±1.30 D',
-        '35% achieved 20/20, 67.5% achieved 20/25, 95% achieved 20/40',
-        'No significant difference in BSCVA between pneumatic and manual dissection (P = 0.12)',
-        'Endothelial cell loss 11.2% at 12 months',
-        'Zero conversion to PK (0/80 cases)',
-      ],
+      title: t('surgery.dalk.results.study1.keySummary.statisticalAnalysis'),
+      items: t('surgery.dalk.results.study1.keySummary.keyFindings'),
     },
     clinicalImpact: {
-      title: 'Statistical and Clinical Significance',
-      description:
-        'This prospective study demonstrates statistically significant improvements in all primary outcome measures (P=0.001 for visual acuity, P=0.002 for astigmatism). The 9-mm/6-mm technique shows superior outcomes compared to historical controls while maintaining excellent safety profile. The absence of PK conversion despite intraoperative complications validates the technique\'s reproducibility.',
+      title: t('surgery.dalk.results.study1.keySummary.clinicalSignificance'),
+      description: t('surgery.dalk.results.study1.keySummary.clinicalImpact'),
     },
   },
-})
+}))
 </script>

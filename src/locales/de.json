@@ -29,6 +29,223 @@
       "complications": "Komplikationen",
       "postop": "Postoperativ",
       "references": "Referenzen"
+    },
+    "mushroomPk": {
+      "title": "Mushroom PK",
+      "subtitle": "Zweiteilige mikrocheratom-assistierte Mushroom-Perforationscheratoplastik",
+      "introduction": {
+        "title": "Einführung",
+        "paragraphs": [
+          "Die zweiteilige mikrocheratom-assistierte Mushroom-Perforationscheratoplastik (PK) ist eine Hornhauttransplantationstechnik, die ein pilzförmiges Transplantat mit einer größeren 9,0mm anterioren Lamelle und einer kleineren 6,0mm posterioren Lamelle verwendet. Diese Technik ist für Augen mit zentralen Hornhauttrübungen in voller Dicke, aber ansonsten gesundem peripherem Endothel indiziert.",
+          "Die Technik stellt einen Paradigmenwechsel in der Hornhauttransplantation dar, indem sie die kritische Limitation der konventionellen PK adressiert: die umgekehrte Beziehung zwischen Transplantatgröße und immunologischem Abstoßungsrisiko. Durch die Transplantation nur der zentralen 6mm des Endothels bei Beibehaltung einer 9mm optischen Zone erhält die Mushroom PK etwa 75% des Empfänger-Endothels.",
+          "Der mikrocheratom-assistierte Ansatz beinhaltet die Spaltung der Spenderhornhaut in anteriore und posteriore Lamellen unter Verwendung eines 200μm-Kopfes an einem automatischen lamellären therapeutischen Keratoplastik (ALTK)-System."
+        ]
+      },
+      "indications": {
+        "title": "Indikationen und Kontraindikationen",
+        "indications": {
+          "title": "Indikationen",
+          "items": [
+            {
+              "title": "Konversion von DALK",
+              "description": "Wenn DALK aufgrund einer DM-Makroperforation nicht abgeschlossen werden kann."
+            },
+            {
+              "title": "Fortgeschrittener Keratokonus",
+              "description": "Schwerer Keratokonus mit zentraler Narbenbildung in voller Dicke, die für DALK nicht geeignet ist."
+            },
+            {
+              "title": "Hornhautnarben in voller Dicke",
+              "description": "Tiefe Hornhautvernarbung, die alle Schichten einschließlich des Endothels betrifft."
+            },
+            {
+              "title": "Hornhautperforationen",
+              "description": "Aktive oder drohende Perforationen, die eine dringende Intervention erfordern."
+            }
+          ]
+        },
+        "contraindications": {
+          "title": "Kontraindikationen",
+          "absolute": {
+            "title": "Absolute Kontraindikationen",
+            "items": [
+              {
+                "title": "Endothelzelldichte <1000 Zellen/mm² in der Empfängerperipherie",
+                "description": "Gesundes peripheres Endothel bietet ein Reservoir für Zellmigration."
+              },
+              {
+                "title": "Endothelerkrankungen",
+                "description": "Diese Zustände erfordern eine Endothelkeratoplastik (DMEK/DSAEK)"
+              }
+            ]
+          }
+        }
+      },
+      "surgery": {
+        "title": "Chirurgische Technik",
+        "mainTechnique": {
+          "title": "Zweiteilige mikrocheratom-assistierte Mushroom PK-Technik",
+          "steps": [
+            {
+              "title": "Initiale Trepanation",
+              "description": "Erstellen einer 9,0mm kreisförmigen Inzision von etwa 250μm Tiefe mit einem Barron-Saugtrepan, zentriert auf die Empfängerhornhaut."
+            },
+            {
+              "title": "Lamelläre Dissektion",
+              "description": "Durchführung einer manuellen lamellären Dissektion zirkumferenziell von der Basis der Inzision aus, sich etwa 3mm zur Mitte hin erstreckend."
+            },
+            {
+              "title": "Zentrale Exzision",
+              "description": "Entfernung des dissezierten Gewebes, wobei eine zentrale Insel aus Hornhautgewebe in voller Dicke von etwa 3mm Durchmesser verbleibt."
+            },
+            {
+              "title": "Spendervorbereitung",
+              "description": "Montage der Spenderhornhaut auf die künstliche Vorderkammer des ALTK-Systems (Moria SA). Verwendung eines 200μm-Kopfes zur Spaltung des Spenders in anteriore und posteriore Lamellen."
+            },
+            {
+              "title": "Transplantat-Zusammenbau",
+              "description": "Einpassen des Spenderstamms (posteriore Lamelle mit Endothel) in das zentrale Loch ohne Nähte. Platzierung der anterioren Lamelle darüber und Befestigung mit 4 kardinalen 10-0 Nylonnähten."
+            },
+            {
+              "title": "Abschließende Naht",
+              "description": "Vervollständigung mit entweder doppelt laufender 10-0 Nylonnaht oder 16 Einzelnähten."
+            }
+          ]
+        }
+      },
+      "results": {
+        "title": "Ergebnisse - DALK zu Mushroom PK Konversionsoutcomes",
+        "studyPopulation": {
+          "title": "Studienpopulation",
+          "totalProcedures": "Gesamte versuchte Verfahren",
+          "eyesIncluded": "In die Analyse eingeschlossene Augen",
+          "meanFollowUp": "Mittlere Nachbeobachtung (Monate)"
+        },
+        "visualOutcomes": {
+          "title": "Visuelle Ergebnisse",
+          "meanBCVA1Year": "Mittlere BCVA nach 1 Jahr (logMAR)",
+          "meanBCVA2Years": "Mittlere BCVA nach 2 Jahren (logMAR)",
+          "meanBCVA5Years": "Mittlere BCVA nach 5 Jahren (logMAR)",
+          "eyes2040": "Augen mit ≥20/40 beim letzten Besuch"
+        },
+        "refractiveOutcomes": {
+          "title": "Refraktive Ergebnisse",
+          "astigmatism1Year": "Refraktiver Astigmatismus nach 1 Jahr",
+          "astigmatism2Years": "Refraktiver Astigmatismus nach 2 Jahren",
+          "astigmatism5Years": "Refraktiver Astigmatismus nach 5 Jahren",
+          "eyes4D": "Augen mit ≤4D Astigmatismus"
+        },
+        "endothelialAnalysis": {
+          "title": "Endothelzelldichte",
+          "preoperativeECD": "Präoperative ECD (Zellen/mm²)",
+          "ecd1Year": "ECD nach 1 Jahr (Zellen/mm²)",
+          "ecd2Years": "ECD nach 2 Jahren (Zellen/mm²)",
+          "ecd5Years": "ECD nach 5 Jahren (Zellen/mm²)",
+          "cellLoss5Years": "Endothelzellverlust nach 5 Jahren"
+        },
+        "graftSurvival": {
+          "title": "Transplantatüberleben",
+          "survival1Year": "1-Jahres-Überleben",
+          "survival2Years": "2-Jahres-Überleben",
+          "survival5Years": "5-Jahres-Überleben",
+          "graftFailures": "Transplantatversagen",
+          "rejectionEpisodes": "Endothelabstoßungsepisoden"
+        },
+        "complications": {
+          "title": "Komplikationsanalyse",
+          "tableHeaders": {
+            "complication": "Komplikation",
+            "dalkGroup": "DALK-Gruppe",
+            "mushroomGroup": "Mushroom PK-Gruppe"
+          },
+          "intraoperativePerforation": "Intraoperative DM-Makroperforation",
+          "postoperativeRejection": "Postoperative Endothelabstoßung",
+          "graftFailureAll": "Transplantatversagen (alle Ursachen)",
+          "failureDueRejection": "Versagen aufgrund von Abstoßung",
+          "meanTimeFailure": "Mittlere Zeit bis zum Versagen"
+        }
+      },
+      "complications": {
+        "title": "Komplikationen",
+        "intraoperative": {
+          "title": "Intraoperative Komplikationen",
+          "items": [
+            {
+              "name": "Konversion von geplantem DALK",
+              "incidence": "10-20% der DALK-Versuche",
+              "management": "Zweiteilige Mushroom PK-Technik"
+            },
+            {
+              "name": "Mikrocheratom-bezogene Probleme",
+              "incidence": "Selten bei ordnungsgemäßer Technik",
+              "management": "Manuelle Dissektion oder neues Spendergewebe"
+            },
+            {
+              "name": "Fehlpositionierung der posterioren Lamelle",
+              "incidence": "1-2%",
+              "management": "Sorgfältige Repositionierung während der Operation"
+            }
+          ]
+        },
+        "postoperative": {
+          "title": "Postoperative Komplikationen",
+          "early": {
+            "title": "Frühe Komplikationen (< 1 Monat)",
+            "items": [
+              "Ablösung der posterioren Lamelle",
+              "Interface-Flüssigkeit",
+              "Wundleck",
+              "Pupillenblock",
+              "Erhöhter Augeninnendruck",
+              "Epitheldefekte",
+              "Primäres Transplantatversagen"
+            ]
+          },
+          "late": {
+            "title": "Späte Komplikationen (> 1 Monat)",
+            "items": [
+              "Endothelabstoßung",
+              "Stromale Abstoßung",
+              "Hoher Astigmatismus",
+              "Interface-Trübung",
+              "Sekundärglaukom",
+              "Wunddehiszenz",
+              "Progressiver Endothelzellverlust",
+              "Spätes Transplantatversagen"
+            ]
+          }
+        }
+      },
+      "postoperative": {
+        "title": "Postoperative Behandlung",
+        "corticosteroids": {
+          "title": "Topische Kortikoide",
+          "medication": "Tobramycin 0,3% + Dexamethason 0,1% Kombination",
+          "dosing": [
+            "Alle 2 Stunden × 2 Wochen",
+            "Alle 3 Stunden × 2 Wochen",
+            "QID × 1 Monat",
+            "TID × 1 Monat",
+            "BID × 1 Monat",
+            "QD unbegrenzt (außer phake oder Steroid-Responder)"
+          ]
+        },
+        "followUp": {
+          "title": "Nachuntersuchungsplan",
+          "schedule": [
+            "Regelmäßige Überwachung nach institutionellem Protokoll",
+            "Endothelzellzählungen nach 6 Monaten, dann jährlich",
+            "Topographie bei jedem Besuch nach 6 Monaten"
+          ]
+        },
+        "sutureManagement": {
+          "title": "Nahtmanagement",
+          "allSuturesRemoved": "Alle Nähte innerhalb von 12 Monaten entfernt",
+          "earlierRemoval": "Frühere Entfernung aufgrund verbesserter Wundstabilität möglich",
+          "selectiveRemoval": "Selektive Entfernung basierend auf topographischem Astigmatismus",
+          "noSutureBeyond": "Keine Naht über 12 Monate hinaus"
+        }
+      }
     }
   },
   "home": {

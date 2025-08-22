@@ -29,6 +29,223 @@
       "complications": "Complicații",
       "postop": "Postoperator",
       "references": "Referințe"
+    },
+    "mushroomPk": {
+      "title": "Mushroom PK",
+      "subtitle": "Keratoplastia Penetrantă Mushroom Asistată prin Microkeratom în Două Piese",
+      "introduction": {
+        "title": "Introducere",
+        "paragraphs": [
+          "Keratoplastia Penetrantă Mushroom în două piese asistată prin microkeratom (PK) este o tehnică de transplant cornean care folosește un grefon în formă de ciupercă cu o lamelă anterioară mai mare de 9,0mm și o lamelă posterioară mai mică de 6,0mm. Această tehnică este indicată pentru ochii cu opacități corneene centrale de grosime completă, dar cu endotheliu periferic sănătos.",
+          "Tehnica reprezintă o schimbare de paradigmă în transplantul cornean prin abordarea limitării critice a PK convențională: relația inversă între dimensiunea grefei și riscul de respingere imunologică. Prin transplantarea doar a 6mm centrali de endotheliu menținând o zonă optică de 9mm, Mushroom PK păstrează aproximativ 75% din endotheliul receptorului.",
+          "Abordarea asistată prin microkeratom implică împărțirea corneei donoare în lamele anterioară și posterioară folosind un cap de 200μm pe un sistem automatizat de keratoplastie lamelară terapeutică (ALTK)."
+        ]
+      },
+      "indications": {
+        "title": "Indicații și Contraindicații",
+        "indications": {
+          "title": "Indicații",
+          "items": [
+            {
+              "title": "Conversie din DALK",
+              "description": "Când DALK nu poate fi completată din cauza macroperforației DM."
+            },
+            {
+              "title": "Keratocon Avansat",
+              "description": "Keratocon sever cu cicatrizare centrală de grosime completă nepotrivită pentru DALK."
+            },
+            {
+              "title": "Cicatrici Corneene de Grosime Completă",
+              "description": "Cicatrizare corneeană profundă care implică toate straturile inclusiv endotheliul."
+            },
+            {
+              "title": "Perforații Corneene",
+              "description": "Perforații active sau iminente care necesită intervenție urgentă."
+            }
+          ]
+        },
+        "contraindications": {
+          "title": "Contraindicații",
+          "absolute": {
+            "title": "Contraindicații Absolute",
+            "items": [
+              {
+                "title": "Densitatea celulelor endoteliale <1000 celule/mm² în periferia receptorului",
+                "description": "Endotheliul periferic sănătos oferă un rezervor pentru migrația celulară."
+              },
+              {
+                "title": "Boli endoteliale",
+                "description": "Aceste condiții necesită keratoplastie endotelială (DMEK/DSAEK)"
+              }
+            ]
+          }
+        }
+      },
+      "surgery": {
+        "title": "Tehnica Chirurgicală",
+        "mainTechnique": {
+          "title": "Tehnica Mushroom PK în Două Piese Asistată prin Microkeratom",
+          "steps": [
+            {
+              "title": "Trepanarea Inițială",
+              "description": "Crearea unei incizii circulare de 9,0mm de aproximativ 250μm adâncime folosind un trepan cu aspirație Barron, centrat pe corneea receptoare."
+            },
+            {
+              "title": "Disecția Lamelară",
+              "description": "Efectuarea disecției lamelare manuale circumferențial de la baza inciziei, extinzându-se aproximativ 3mm către centru."
+            },
+            {
+              "title": "Excisia Centrală",
+              "description": "Îndepărtarea țesutului disecat, lăsând o insulă centrală de țesut cornean de grosime completă de aproximativ 3mm în diametru."
+            },
+            {
+              "title": "Prepararea Donorului",
+              "description": "Montarea corneei donoare pe camera anterioară artificială a sistemului ALTK (Moria SA). Folosirea unui cap de 200μm pentru împărțirea donorului în lamele anterioară și posterioară."
+            },
+            {
+              "title": "Asamblarea Grefei",
+              "description": "Potrivirea tulpinii donoare (lamela posterioară cu endotheliu) în gaura centrală fără suturi. Plasarea lamelei anterioare deasupra și fixarea cu 4 suturi cardinale de nylon 10-0."
+            },
+            {
+              "title": "Suturarea Finală",
+              "description": "Completarea cu sutură dublă continuă de nylon 10-0 sau 16 suturi întrerupte."
+            }
+          ]
+        }
+      },
+      "results": {
+        "title": "Rezultate - Rezultatele Conversiei DALK în Mushroom PK",
+        "studyPopulation": {
+          "title": "Populația de Studiu",
+          "totalProcedures": "Total proceduri încercate",
+          "eyesIncluded": "Ochi incluși în analiză",
+          "meanFollowUp": "Urmărirea medie (luni)"
+        },
+        "visualOutcomes": {
+          "title": "Rezultate Vizuale",
+          "meanBCVA1Year": "BCVA mediu la 1 an (logMAR)",
+          "meanBCVA2Years": "BCVA mediu la 2 ani (logMAR)",
+          "meanBCVA5Years": "BCVA mediu la 5 ani (logMAR)",
+          "eyes2040": "Ochi cu ≥20/40 la ultima vizită"
+        },
+        "refractiveOutcomes": {
+          "title": "Rezultate Refractive",
+          "astigmatism1Year": "Astigmatism refractiv la 1 an",
+          "astigmatism2Years": "Astigmatism refractiv la 2 ani",
+          "astigmatism5Years": "Astigmatism refractiv la 5 ani",
+          "eyes4D": "Ochi cu ≤4D astigmatism"
+        },
+        "endothelialAnalysis": {
+          "title": "Densitatea Celulelor Endoteliale",
+          "preoperativeECD": "ECD preoperator (celule/mm²)",
+          "ecd1Year": "ECD la 1 an (celule/mm²)",
+          "ecd2Years": "ECD la 2 ani (celule/mm²)",
+          "ecd5Years": "ECD la 5 ani (celule/mm²)",
+          "cellLoss5Years": "Pierderea celulelor endoteliale la 5 ani"
+        },
+        "graftSurvival": {
+          "title": "Supraviețuirea Grefei",
+          "survival1Year": "Supraviețuire la 1 an",
+          "survival2Years": "Supraviețuire la 2 ani",
+          "survival5Years": "Supraviețuire la 5 ani",
+          "graftFailures": "Eșecuri ale grefei",
+          "rejectionEpisodes": "Episoade de respingere endotelială"
+        },
+        "complications": {
+          "title": "Analiza Complicațiilor",
+          "tableHeaders": {
+            "complication": "Complicația",
+            "dalkGroup": "Grupa DALK",
+            "mushroomGroup": "Grupa Mushroom PK"
+          },
+          "intraoperativePerforation": "Macroperforația intraoperatorie DM",
+          "postoperativeRejection": "Respingerea endotelială postoperatorie",
+          "graftFailureAll": "Eșecul grefei (toate cauzele)",
+          "failureDueRejection": "Eșec din cauza respingerii",
+          "meanTimeFailure": "Timpul mediu până la eșec"
+        }
+      },
+      "complications": {
+        "title": "Complicații",
+        "intraoperative": {
+          "title": "Complicații Intraoperatorii",
+          "items": [
+            {
+              "name": "Conversie din DALK planificat",
+              "incidence": "10-20% din încercările DALK",
+              "management": "Tehnica Mushroom PK în două piese"
+            },
+            {
+              "name": "Probleme legate de microkeratom",
+              "incidence": "Rar cu tehnica adecvată",
+              "management": "Disecție manuală sau țesut donator nou"
+            },
+            {
+              "name": "Malpoziționarea lamelei posterioare",
+              "incidence": "1-2%",
+              "management": "Repoziționare atentă în timpul chirurgiei"
+            }
+          ]
+        },
+        "postoperative": {
+          "title": "Complicații Postoperatorii",
+          "early": {
+            "title": "Complicații Precoce (< 1 lună)",
+            "items": [
+              "Detașarea lamelei posterioare",
+              "Fluid la interfață",
+              "Scurgerea rănii",
+              "Blocul pupilar",
+              "Presiunea intraoculară ridicată",
+              "Defecte epiteliale",
+              "Eșecul primar al grefei"
+            ]
+          },
+          "late": {
+            "title": "Complicații Tardive (> 1 lună)",
+            "items": [
+              "Respingerea endotelială",
+              "Respingerea stromală",
+              "Astigmatism ridicat",
+              "Opacifierea interfeței",
+              "Glaucom secundar",
+              "Dehiscența rănii",
+              "Pierderea progresivă a celulelor endoteliale",
+              "Eșecul tardiv al grefei"
+            ]
+          }
+        }
+      },
+      "postoperative": {
+        "title": "Managementul Postoperator",
+        "corticosteroids": {
+          "title": "Corticosteroizi Topici",
+          "medication": "Combinația Tobramicină 0,3% + Dexametazonă 0,1%",
+          "dosing": [
+            "La fiecare 2 ore × 2 săptămâni",
+            "La fiecare 3 ore × 2 săptămâni",
+            "QID × 1 lună",
+            "TID × 1 lună",
+            "BID × 1 lună",
+            "QD pe termen nelimitat (except fazii sau răspunzători la steroizi)"
+          ]
+        },
+        "followUp": {
+          "title": "Programul de Urmărire",
+          "schedule": [
+            "Monitorizare regulată conform protocolului instituțional",
+            "Numărătorile celulelor endoteliale la 6 luni, apoi anual",
+            "Topografia la fiecare vizită după 6 luni"
+          ]
+        },
+        "sutureManagement": {
+          "title": "Managementul Suturilor",
+          "allSuturesRemoved": "Toate suturile îndepărtate în 12 luni",
+          "earlierRemoval": "Îndepărtarea mai timpurie posibilă datorită stabilității îmbunătățite a rănii",
+          "selectiveRemoval": "Îndepărtarea selectivă bazată pe astigmatismul topografic",
+          "noSutureBeyond": "Nicio sutură după 12 luni"
+        }
+      }
     }
   },
   "home": {

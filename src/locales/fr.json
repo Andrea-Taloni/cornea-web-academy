@@ -29,6 +29,223 @@
       "complications": "Complications",
       "postop": "Post-opératoire",
       "references": "Références"
+    },
+    "mushroomPk": {
+      "title": "Mushroom PK",
+      "subtitle": "Kératoplastie Pénétrante Mushroom Assistée par Microkératome en Deux Pièces",
+      "introduction": {
+        "title": "Introduction",
+        "paragraphs": [
+          "La Kératoplastie Pénétrante Mushroom assistée par microkératome en deux pièces (PK) est une technique de transplantation cornéenne qui utilise un greffon en forme de champignon avec une lamelle antérieure plus large de 9,0mm et une lamelle postérieure plus petite de 6,0mm. Cette technique est indiquée pour les yeux avec des opacités cornéennes centrales de pleine épaisseur mais avec un endothélium périphérique sain.",
+          "La technique représente un changement de paradigme dans la transplantation cornéenne en abordant la limitation critique de la PK conventionnelle : la relation inverse entre la taille du greffon et le risque de rejet immunologique. En transplantant seulement les 6mm centraux de l'endothélium tout en maintenant une zone optique de 9mm, la Mushroom PK préserve environ 75% de l'endothélium du receveur.",
+          "L'approche assistée par microkératome implique la division de la cornée donneuse en lamelles antérieure et postérieure en utilisant une tête de 200μm sur un système automatisé de kératoplastie lamellaire thérapeutique (ALTK)."
+        ]
+      },
+      "indications": {
+        "title": "Indications et Contre-indications",
+        "indications": {
+          "title": "Indications",
+          "items": [
+            {
+              "title": "Conversion de DALK",
+              "description": "Quand DALK ne peut être complétée en raison d'une macroperforation de DM."
+            },
+            {
+              "title": "Kératocône Avancé",
+              "description": "Kératocône sévère avec cicatrisation centrale de pleine épaisseur non adaptée pour DALK."
+            },
+            {
+              "title": "Cicatrices Cornéennes de Pleine Épaisseur",
+              "description": "Cicatrisation cornéenne profonde impliquant toutes les couches y compris l'endothélium."
+            },
+            {
+              "title": "Perforations Cornéennes",
+              "description": "Perforations actives ou imminentes nécessitant une intervention urgente."
+            }
+          ]
+        },
+        "contraindications": {
+          "title": "Contre-indications",
+          "absolute": {
+            "title": "Contre-indications Absolues",
+            "items": [
+              {
+                "title": "Densité des cellules endothéliales <1000 cellules/mm² dans la périphérie du receveur",
+                "description": "Un endothélium périphérique sain fournit un réservoir pour la migration cellulaire."
+              },
+              {
+                "title": "Maladies endothéliales",
+                "description": "Ces conditions nécessitent une kératoplastie endothéliale (DMEK/DSAEK)"
+              }
+            ]
+          }
+        }
+      },
+      "surgery": {
+        "title": "Technique Chirurgicale",
+        "mainTechnique": {
+          "title": "Technique Mushroom PK en Deux Pièces Assistée par Microkératome",
+          "steps": [
+            {
+              "title": "Trépanation Initiale",
+              "description": "Créer une incision circulaire de 9,0mm d'environ 250μm de profondeur en utilisant un trépan à aspiration Barron, centré sur la cornée receveuse."
+            },
+            {
+              "title": "Dissection Lamellaire",
+              "description": "Effectuer une dissection lamellaire manuelle de manière circonférentielle depuis la base de l'incision, s'étendant environ 3mm vers le centre."
+            },
+            {
+              "title": "Excision Centrale",
+              "description": "Retirer le tissu disséqué, laissant un îlot central de tissu cornéen de pleine épaisseur d'environ 3mm de diamètre."
+            },
+            {
+              "title": "Préparation du Donneur",
+              "description": "Monter la cornée donneuse sur la chambre antérieure artificielle du système ALTK (Moria SA). Utiliser une tête de 200μm pour diviser le donneur en lamelles antérieure et postérieure."
+            },
+            {
+              "title": "Assemblage du Greffon",
+              "description": "Ajuster la tige donneuse (lamelle postérieure avec endothélium) dans le trou central sans sutures. Placer la lamelle antérieure au-dessus et sécuriser avec 4 sutures cardinales en nylon 10-0."
+            },
+            {
+              "title": "Suture Finale",
+              "description": "Compléter avec soit une suture continue double en nylon 10-0 ou 16 sutures interrompues."
+            }
+          ]
+        }
+      },
+      "results": {
+        "title": "Résultats - Résultats de Conversion DALK vers Mushroom PK",
+        "studyPopulation": {
+          "title": "Population d'Étude",
+          "totalProcedures": "Total des procédures tentées",
+          "eyesIncluded": "Yeux inclus dans l'analyse",
+          "meanFollowUp": "Suivi moyen (mois)"
+        },
+        "visualOutcomes": {
+          "title": "Résultats Visuels",
+          "meanBCVA1Year": "BCVA moyen à 1 an (logMAR)",
+          "meanBCVA2Years": "BCVA moyen à 2 ans (logMAR)",
+          "meanBCVA5Years": "BCVA moyen à 5 ans (logMAR)",
+          "eyes2040": "Yeux avec ≥20/40 à la dernière visite"
+        },
+        "refractiveOutcomes": {
+          "title": "Résultats Réfractifs",
+          "astigmatism1Year": "Astigmatisme réfractif à 1 an",
+          "astigmatism2Years": "Astigmatisme réfractif à 2 ans",
+          "astigmatism5Years": "Astigmatisme réfractif à 5 ans",
+          "eyes4D": "Yeux avec ≤4D d'astigmatisme"
+        },
+        "endothelialAnalysis": {
+          "title": "Densité des Cellules Endothéliales",
+          "preoperativeECD": "ECD préopératoire (cellules/mm²)",
+          "ecd1Year": "ECD à 1 an (cellules/mm²)",
+          "ecd2Years": "ECD à 2 ans (cellules/mm²)",
+          "ecd5Years": "ECD à 5 ans (cellules/mm²)",
+          "cellLoss5Years": "Perte de cellules endothéliales à 5 ans"
+        },
+        "graftSurvival": {
+          "title": "Survie du Greffon",
+          "survival1Year": "Survie à 1 an",
+          "survival2Years": "Survie à 2 ans",
+          "survival5Years": "Survie à 5 ans",
+          "graftFailures": "Échecs du greffon",
+          "rejectionEpisodes": "Épisodes de rejet endothélial"
+        },
+        "complications": {
+          "title": "Analyse des Complications",
+          "tableHeaders": {
+            "complication": "Complication",
+            "dalkGroup": "Groupe DALK",
+            "mushroomGroup": "Groupe Mushroom PK"
+          },
+          "intraoperativePerforation": "Macroperforation intraopératoire de DM",
+          "postoperativeRejection": "Rejet endothélial postopératoire",
+          "graftFailureAll": "Échec du greffon (toutes causes)",
+          "failureDueRejection": "Échec dû au rejet",
+          "meanTimeFailure": "Temps moyen jusqu'à l'échec"
+        }
+      },
+      "complications": {
+        "title": "Complications",
+        "intraoperative": {
+          "title": "Complications Intraopératoires",
+          "items": [
+            {
+              "name": "Conversion de DALK prévu",
+              "incidence": "10-20% des tentatives de DALK",
+              "management": "Technique Mushroom PK en deux pièces"
+            },
+            {
+              "name": "Problèmes liés au microkératome",
+              "incidence": "Rare avec une technique appropriée",
+              "management": "Dissection manuelle ou nouveau tissu donneur"
+            },
+            {
+              "name": "Malposition de la lamelle postérieure",
+              "incidence": "1-2%",
+              "management": "Repositionnement soigneux pendant la chirurgie"
+            }
+          ]
+        },
+        "postoperative": {
+          "title": "Complications Postopératoires",
+          "early": {
+            "title": "Complications Précoces (< 1 mois)",
+            "items": [
+              "Détachement de la lamelle postérieure",
+              "Fluide à l'interface",
+              "Fuite de plaie",
+              "Bloc pupillaire",
+              "Pression intraoculaire élevée",
+              "Défauts épithéliaux",
+              "Échec primaire du greffon"
+            ]
+          },
+          "late": {
+            "title": "Complications Tardives (> 1 mois)",
+            "items": [
+              "Rejet endothélial",
+              "Rejet stromal",
+              "Astigmatisme élevé",
+              "Opacification de l'interface",
+              "Glaucome secondaire",
+              "Déhiscence de plaie",
+              "Perte progressive de cellules endothéliales",
+              "Échec tardif du greffon"
+            ]
+          }
+        }
+      },
+      "postoperative": {
+        "title": "Prise en Charge Postopératoire",
+        "corticosteroids": {
+          "title": "Corticostéroïdes Topiques",
+          "medication": "Combinaison Tobramycine 0,3% + Dexaméthasone 0,1%",
+          "dosing": [
+            "Toutes les 2 heures × 2 semaines",
+            "Toutes les 3 heures × 2 semaines",
+            "QID × 1 mois",
+            "TID × 1 mois",
+            "BID × 1 mois",
+            "QD indéfiniment (sauf phakes ou répondeurs aux stéroïdes)"
+          ]
+        },
+        "followUp": {
+          "title": "Programme de Suivi",
+          "schedule": [
+            "Surveillance régulière selon le protocole institutionnel",
+            "Comptages de cellules endothéliales à 6 mois, puis annuellement",
+            "Topographie à chaque visite après 6 mois"
+          ]
+        },
+        "sutureManagement": {
+          "title": "Gestion des Sutures",
+          "allSuturesRemoved": "Toutes les sutures retirées dans les 12 mois",
+          "earlierRemoval": "Retrait plus précoce possible en raison de la stabilité améliorée de la plaie",
+          "selectiveRemoval": "Retrait sélectif basé sur l'astigmatisme topographique",
+          "noSutureBeyond": "Aucune suture au-delà de 12 mois"
+        }
+      }
     }
   },
   "home": {

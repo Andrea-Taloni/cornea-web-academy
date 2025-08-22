@@ -23,9 +23,9 @@ const { t } = useI18n()
 const surgeryTypes = computed(() => [
   { name: t('surgery.types.dalk'), slug: 'dalk' },
   { name: t('surgery.types.mushroomPk'), slug: 'mushroom-pk' },
-  { name: t('surgery.types.dmek'), slug: 'dmek' },
   { name: t('surgery.types.dsaek'), slug: 'dsaek' },
   { name: t('surgery.types.utDsaek'), slug: 'ut-dsaek' },
+  { name: t('surgery.types.dmek'), slug: 'dmek' },
   { name: t('surgery.types.salk'), slug: 'salk' },
 ])
 </script>

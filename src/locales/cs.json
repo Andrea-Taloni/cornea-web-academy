@@ -29,6 +29,223 @@
       "complications": "Komplikace",
       "postop": "Pooperační péče",
       "references": "Reference"
+    },
+    "mushroomPk": {
+      "title": "Mushroom PK",
+      "subtitle": "Dvoukusová mikrocheratom-asistovaná houbová penetrující keratoplastika",
+      "introduction": {
+        "title": "Úvod",
+        "paragraphs": [
+          "Dvoukusová mikrocheratom-asistovaná houbová penetrující keratoplastika (PK) je technika transplantace rohovky, která používá houbovitý štěp s větší přední lamelou 9,0mm a menší zadní lamelou 6,0mm. Tato technika je indikována pro oči s centrálními neprůhlednostmi rohovky v plné tloušťce, ale se zdravým periferním endotelem.",
+          "Technika představuje paradigmatickou změnu v transplantaci rohovky řešením kritického omezení konvenční PK: nepřímý vztah mezi velikostí štěpu a rizikem imunologického odmítnutí. Transplantací pouze centrálních 6mm endotelu při zachování 9mm optické zóny zachovává Mushroom PK přibližně 75% endotelu příjemce.",
+          "Přístup asistovaný mikrocheratom zahrnuje rozdělení dárcovské rohovky na přední a zadní lamely pomocí 200μm hlavice na automatizovaném systému lamelární terapeutické keratoplastiky (ALTK)."
+        ]
+      },
+      "indications": {
+        "title": "Indikace a kontraindikace",
+        "indications": {
+          "title": "Indikace",
+          "items": [
+            {
+              "title": "Konverze z DALK",
+              "description": "Když DALK nelze dokončit kvůli makroperforaci DM."
+            },
+            {
+              "title": "Pokročilý keratokonus",
+              "description": "Těžký keratokonus s centrálním jizvením v plné tloušťce nevhodný pro DALK."
+            },
+            {
+              "title": "Jizvy rohovky v plné tloušťce",
+              "description": "Hluboké zjizvení rohovky zahrnující všechny vrstvy včetně endotelu."
+            },
+            {
+              "title": "Perforace rohovky",
+              "description": "Aktivní nebo hrozící perforace vyžadující urgentní zásah."
+            }
+          ]
+        },
+        "contraindications": {
+          "title": "Kontraindikace",
+          "absolute": {
+            "title": "Absolutní kontraindikace",
+            "items": [
+              {
+                "title": "Hustota endotheliálních buněk <1000 buněk/mm² v periférii příjemce",
+                "description": "Zdravý periferní endotel poskytuje rezervoár pro buněčnou migraci."
+              },
+              {
+                "title": "Endotheliální onemocnění",
+                "description": "Tyto stavy vyžadují endotheliální keratoplastiku (DMEK/DSAEK)"
+              }
+            ]
+          }
+        }
+      },
+      "surgery": {
+        "title": "Chirurgická technika",
+        "mainTechnique": {
+          "title": "Dvoukusová mikrocheratom-asistovaná technika Mushroom PK",
+          "steps": [
+            {
+              "title": "Počáteční trepanace",
+              "description": "Vytvoření kruhové incize 9,0mm o hloubce přibližně 250μm pomocí Barronova sacího trepánu, vystředěného na rohovce příjemce."
+            },
+            {
+              "title": "Lamelární disekce",
+              "description": "Provedení manuální lamelární disekce cirkulárně od základny incize, rozšiřující se přibližně 3mm směrem k centru."
+            },
+            {
+              "title": "Centrální excize",
+              "description": "Odstranění disekovány tkáně, ponechání centrálního ostrůvku tkáně rohovky v plné tloušťce o průměru přibližně 3mm."
+            },
+            {
+              "title": "Příprava dárce",
+              "description": "Montáž dárcovské rohovky na umělou přední komoru systému ALTK (Moria SA). Použití 200μm hlavice k rozdělení dárce na přední a zadní lamely."
+            },
+            {
+              "title": "Sestavení štěpu",
+              "description": "Vložení dárcovského kořene (zadní lamela s endotelem) do centrálního otvoru bez stehů. Umístění přední lamely na vrchol a zajištění 4 kardinálními stehy nylon 10-0."
+            },
+            {
+              "title": "Konečné sešití",
+              "description": "Dokončení dvojitým spojitým stehem nylon 10-0 nebo 16 přerušovanými stehy."
+            }
+          ]
+        }
+      },
+      "results": {
+        "title": "Výsledky - výsledky konverze DALK na Mushroom PK",
+        "studyPopulation": {
+          "title": "Studovaná populace",
+          "totalProcedures": "Celkový počet pokusů o procedury",
+          "eyesIncluded": "Oči zahrnuté v analýze",
+          "meanFollowUp": "Průměrné sledování (měsíce)"
+        },
+        "visualOutcomes": {
+          "title": "Vizuální výsledky",
+          "meanBCVA1Year": "Průměrná BCVA po 1 roce (logMAR)",
+          "meanBCVA2Years": "Průměrná BCVA po 2 letech (logMAR)",
+          "meanBCVA5Years": "Průměrná BCVA po 5 letech (logMAR)",
+          "eyes2040": "Oči s ≥20/40 při poslední návštěvě"
+        },
+        "refractiveOutcomes": {
+          "title": "Refrakční výsledky",
+          "astigmatism1Year": "Refrakční astigmatismus po 1 roce",
+          "astigmatism2Years": "Refrakční astigmatismus po 2 letech",
+          "astigmatism5Years": "Refrakční astigmatismus po 5 letech",
+          "eyes4D": "Oči s ≤4D astigmatismu"
+        },
+        "endothelialAnalysis": {
+          "title": "Hustota endotheliálních buněk",
+          "preoperativeECD": "Preoperativní ECD (buňky/mm²)",
+          "ecd1Year": "ECD po 1 roce (buňky/mm²)",
+          "ecd2Years": "ECD po 2 letech (buňky/mm²)",
+          "ecd5Years": "ECD po 5 letech (buňky/mm²)",
+          "cellLoss5Years": "Ztráta endotheliálních buněk po 5 letech"
+        },
+        "graftSurvival": {
+          "title": "Přežití štěpu",
+          "survival1Year": "1leté přežití",
+          "survival2Years": "2leté přežití",
+          "survival5Years": "5leté přežití",
+          "graftFailures": "Selhání štěpu",
+          "rejectionEpisodes": "Epizody endotheliálního odmítnutí"
+        },
+        "complications": {
+          "title": "Analýza komplikací",
+          "tableHeaders": {
+            "complication": "Komplikace",
+            "dalkGroup": "Skupina DALK",
+            "mushroomGroup": "Skupina Mushroom PK"
+          },
+          "intraoperativePerforation": "Intraoperativní makroperforace DM",
+          "postoperativeRejection": "Pooperativní endotheliální odmítnutí",
+          "graftFailureAll": "Selhání štěpu (všechny příčiny)",
+          "failureDueRejection": "Selhání kvůli odmítnutí",
+          "meanTimeFailure": "Průměrný čas do selhání"
+        }
+      },
+      "complications": {
+        "title": "Komplikace",
+        "intraoperative": {
+          "title": "Intraoperativní komplikace",
+          "items": [
+            {
+              "name": "Konverze z plánované DALK",
+              "incidence": "10-20% pokusů o DALK",
+              "management": "Dvoukusová technika Mushroom PK"
+            },
+            {
+              "name": "Problémy související s mikrocheratom",
+              "incidence": "Vzácné při správné technice",
+              "management": "Manuální disekce nebo nová dárcovská tkáň"
+            },
+            {
+              "name": "Malpoziční zadní lamely",
+              "incidence": "1-2%",
+              "management": "Pečlivé repozicování během chirurgie"
+            }
+          ]
+        },
+        "postoperative": {
+          "title": "Pooperativní komplikace",
+          "early": {
+            "title": "Časné komplikace (< 1 měsíc)",
+            "items": [
+              "Odpojení zadní lamely",
+              "Tekutina v rozhraní",
+              "Únik z rány",
+              "Pupilární blok",
+              "Zvýšený nitrooční tlak",
+              "Epiteliální defekty",
+              "Primární selhání štěpu"
+            ]
+          },
+          "late": {
+            "title": "Pozdní komplikace (> 1 měsíc)",
+            "items": [
+              "Endotheliální odmítnutí",
+              "Stromální odmítnutí",
+              "Vysoký astigmatismus",
+              "Opacifikace rozhraní",
+              "Sekundární glaukom",
+              "Dehiscence rány",
+              "Progresivní ztráta endotheliálních buněk",
+              "Pozdní selhání štěpu"
+            ]
+          }
+        }
+      },
+      "postoperative": {
+        "title": "Pooperativní péče",
+        "corticosteroids": {
+          "title": "Topické kortikosteroidy",
+          "medication": "Kombinace Tobramycin 0,3% + Dexametason 0,1%",
+          "dosing": [
+            "Každé 2 hodiny × 2 týdny",
+            "Každé 3 hodiny × 2 týdny",
+            "QID × 1 měsíc",
+            "TID × 1 měsíc",
+            "BID × 1 měsíc",
+            "QD neomezeně (kromě phakických nebo respondérů na steroidy)"
+          ]
+        },
+        "followUp": {
+          "title": "Plán sledování",
+          "schedule": [
+            "Pravidelné monitorování podle institucionálního protokolu",
+            "Počítání endotheliálních buněk po 6 měsících, poté ročně",
+            "Topografie při každé návštěvě po 6 měsících"
+          ]
+        },
+        "sutureManagement": {
+          "title": "Správa stehů",
+          "allSuturesRemoved": "Všechny stehy odstraněny do 12 měsíců",
+          "earlierRemoval": "Dřívější odstranění možné kvůli zlepšené stabilitě rány",
+          "selectiveRemoval": "Selektivní odstranění na základě topografického astigmatismu",
+          "noSutureBeyond": "Žádné stehy po 12 měsících"
+        }
+      }
     }
   },
   "home": {

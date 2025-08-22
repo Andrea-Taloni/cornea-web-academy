@@ -29,6 +29,560 @@
       "complications": "Complicanze",
       "postop": "Post-operatorio",
       "references": "Bibliografia"
+    },
+    "dalk": {
+      "title": "DALK",
+      "subtitle": "Cheratoplastica Lamellare Anteriore Profonda",
+      "introduction": {
+        "title": "Introduzione",
+        "paragraph1": "La Cheratoplastica Lamellare Anteriore Profonda (DALK) è una procedura chirurgica che prevede il trapianto selettivo dello stroma corneale preservando la membrana di Descemet e l'endotelio del ricevente.",
+        "paragraph2": "Per decenni, la cheratoplastica perforante (PK) è stata considerata il trattamento chirurgico principale per gli occhi affetti da malattie stromali corneali. Più recentemente, la cheratoplastica lamellare anteriore profonda (DALK) è diventata un'alternativa alla PK, con i vantaggi di eliminare il rischio di rigetto endoteliale (che si verifica in circa il 20-30% dei casi di cheratoplastica perforante in 10 anni) e di evitare le complicazioni associate alla chirurgia a cielo aperto [1].",
+        "paragraph3": "Nonostante questi indiscutibili vantaggi, l'adozione della DALK tra i chirurghi corneali è stata relativamente lenta [2]. I tempi chirurgici più lunghi, la curva di apprendimento ripida e il basso volume di pazienti sono stati riportati come le barriere più importanti all'adozione della DALK [3].",
+        "paragraph4": "Sono state proposte diverse tecniche per eseguire la DALK, inclusa la dissezione manuale strato per strato, la dissezione pneumatica e la dissezione assistita da viscoelastico. Il metodo di dissezione pneumatica attraverso l'iniezione di una \"big bubble\" descritto da Anwar rappresenta il metodo chirurgico più popolare [4].",
+        "paragraph5": "Nel 2017, Busin et al. hanno introdotto una tecnica modificata utilizzando innesti più grandi di 9 mm con clearance limitata a una zona ottica centrale di 6 mm, dimostrando risultati visivi e refrattivi superiori riducendo al minimo le complicazioni [5]."
+      },
+      "indications": {
+        "title": "Indicazioni e Controindicazioni",
+        "indications": {
+          "title": "Indicazioni",
+          "items": [
+            {
+              "title": "Cheratocono",
+              "description": "Malattia progressiva/avanzata, intolleranza alle lenti a contatto, cicatrici centrali."
+            },
+            {
+              "title": "Distrofie Stromali Corneali",
+              "description": "Distrofie granulare, lattice, maculare, Avellino."
+            },
+            {
+              "title": "Cicatrici Post-Infettive",
+              "description": "Sequele batteriche, virali (HSV/VZV), fungine, da Acanthamoeba. Le cicatrici profonde controindicano la tecnica modificata."
+            },
+            {
+              "title": "Trauma Non Perforante",
+              "description": "Lacerazioni corneali o lesioni che non penetrano attraverso la membrana di Descemet, permettendo la preservazione dell'endotelio durante la riparazione chirurgica."
+            }
+          ]
+        },
+        "contraindications": {
+          "title": "Controindicazioni",
+          "absolute": {
+            "title": "Controindicazioni Assolute",
+            "items": [
+              {
+                "title": "Disfunzione Endoteliale",
+                "description": "Densità cellulare endoteliale inferiore a 1000 cellule/mm². Una funzione endoteliale inadeguata comprometterebbe la sopravvivenza del trapianto e i risultati visivi."
+              },
+              {
+                "title": "Idrope Acuto",
+                "description": "Rottura della membrana di Descemet con edema stromale. Richiede risoluzione e stabilizzazione prima di considerare l'intervento chirurgico."
+              },
+              {
+                "title": "Cicatrici Stromali Profonde",
+                "description": "Cicatrici che si estendono alla membrana di Descemet che impediscono la dissezione sicura e la formazione della bolla durante la dissezione pneumatica."
+              }
+            ]
+          }
+        }
+      },
+      "surgery": {
+        "title": "Tecnica Chirurgica",
+        "largeDiameterTechnique": {
+          "title": "Tecnica Big-Bubble di Grande Diametro (DALK 9-mm con Zona Ottica 6-mm) [5]",
+          "steps": [
+            {
+              "title": "Trapanazione Profonda",
+              "description": "Anestesia peribulbare: 10ml di soluzione di ropivacaina 0,75%. Creare entrata laterale per il mantenimento della camera anteriore. Trapanazione a vuoto di 9mm di diametro a profondità di 450-550μm. Impostazione della lama calibrata con precisione: entro 100μm della misurazione AS-OCT più sottile al sito di trapanazione (diametro 9mm). Avanzamento misurabile della lama regolato in passi di 50μm per un controllo ottimale della profondità per minimizzare il rischio di perforazione."
+            },
+            {
+              "title": "Dissezione Pneumatica Modificata",
+              "description": "Avanzare la sonda dedicata poi la cannula fino a 2mm centripetalemente dal fondo della trapanazione profonda. L'iniezione controllata di aria crea la separazione della big bubble. Bolla di tipo 1 (pre-Descemetica) ottenuta nell'83,7% dei casi. Dimensione media della bolla: 7,7±0,8mm (range 6-9mm). Successo indipendente dall'estensione della bolla al bordo di trapanazione."
+            },
+            {
+              "title": "Debulking Anteriore Standardizzato",
+              "description": "Eseguire cheratectomia anteriore rimuovendo ~80% dello stroma anteriore uniformemente attraverso la zona di 9mm. Eseguire indipendentemente dal successo/fallimento della dissezione pneumatica. Utilizzare combinazione di dissezione tagliente con lama a mezzaluna e separazione smussata. Crea spessore uniforme del letto stromale per la fase di dissezione profonda successiva."
+            },
+            {
+              "title": "Dissezione Profonda Selettiva di 6-mm",
+              "description": "Marcare la zona ottica centrale di 6mm con trapano manuale monouso. Applicare viscoelastico adesivo (IAL-F) centralmente sul tetto della bolla per la protezione del tessuto. Entrare nella bolla con lama a 15°. Inserire il ramo inferiore delle forbici smussate di Vannas nello spazio pre-Descemetico, allargare la fessura. Completare l'escissione dello stroma profondo centrale seguendo il segno di 6mm usando forbici corneali. Preservare la corona stromale periferica di ~1,5mm di larghezza per la configurazione lap-joint."
+            },
+            {
+              "title": "Preparazione del Trapianto Assistita da Microcheratomo",
+              "description": "Montare la cornea donatrice su camera artificiale del sistema di cheratoplastica lamellare terapeutica automatizzata (ALTK). Dissezionare con testa del microcheratomo da 400μm creando lamella anteriore. Perforare la lamella a diametro di 9mm. Trapiantare nel letto ricevente. Fissare con tecnica di sutura doppia continua in nylon 10-0. Architettura finale: zona ottica centrale di 6mm con contatto diretto donatore-Descemet, sovrapposizione della corona periferica di 1,5mm creando configurazione della ferita lap-joint."
+            },
+            {
+              "title": "Formazione della Camera e Chiusura",
+              "description": "Riempire la camera anteriore con soluzione salina bilanciata attraverso l'entrata laterale creata prima della dissezione pneumatica. Verificare l'integrità della ferita. Iniezione sottocongiuntivale: triamcinolone acetonide e gentamicina solfato 0,3%. Bendaggio dell'occhio. Regime post-operatorio: desametasone fosfato 0,1% e tobramicina solfato 0,3% ogni 2h, ridotto a steroide giornaliero singolo entro 1 mese dalla rimozione parziale della sutura, sospeso al mese 8."
+            }
+          ],
+          "postoperative": {
+            "title": "Protocollo di Gestione delle Suture",
+            "description": "Prima rimozione della sutura continua: 2-3 mesi post-operatori. Timing della seconda rimozione della sutura dipendente dall'età: Pazienti <30 anni: entro 10 mesi dall'intervento. Pazienti ≥30 anni: entro 12 mesi dall'intervento. Monitorare i cambiamenti dell'astigmatismo tra le rimozioni. La rimozione completa delle suture consente la riabilitazione visiva finale."
+          }
+        },
+        "alternativeTechniques": {
+          "title": "Strategie di Dissezione Alternative",
+          "techniques": [
+            {
+              "title": "Manuale Strato-per-Strato",
+              "description": "Dissezione lamellare sequenziale quando la separazione pneumatica fallisce. Iniziare con piano superficiale usando lama a mezzaluna, progredire più profondamente con spatole specializzate. Identificare i piani tissutali per cambiamenti di colore/texture. Continuare fino a raggiungere l'aspetto caratteristico del piano pre-Descemetico. Richiede esperienza per evitare la perforazione."
+            },
+            {
+              "title": "Assistita da Laser Femtosecondo",
+              "description": "Tagli lamellari controllati dal computer a profondità/diametro predeterminati. Modelli a spirale o raster creano interfaccia liscia. Richiede aggancio con interfaccia paziente. Limitato dall'opacità corneale che impedisce la trasmissione laser. Spesso necessaria dissezione manuale post-laser per completare la separazione."
+            },
+            {
+              "title": "Dissezione Assistita da Viscoelastico",
+              "description": "Alternativa quando l'iniezione di aria non ha successo. Iniettare OVD ad alto peso molecolare attraverso piccola tasca stromale. Potrebbero essere necessari siti di iniezione multipli per la separazione completa. Crea piano di idrodissezione. Richiede irrigazione accurata per rimuovere tutto il materiale viscoelastico."
+            }
+          ]
+        }
+      },
+      "results": {
+        "study1": {
+          "title": "Risultati - DALK 9-mm con Clearance Zona Ottica 6-mm",
+          "citation": "<div style=\"font-size: 0.9rem; line-height: 1.4;\"><div>Busin M, Leon P, Nahum Y, Scorcia V.</div><div style=\"margin-top: 4px;\">Large (9 mm) Deep Anterior Lamellar Keratoplasty with Clearance of a 6-mm Optical Zone Optimizes Outcomes of Keratoconus Surgery.</div><div style=\"margin-top: 4px;\">Ophthalmology. 2017;124(7):1072-1080.</div></div>",
+          "tableHeaders": {
+            "parameter": "Parametro",
+            "preoperative": "Pre-operatorio",
+            "postoperative": "Post-operatorio"
+          },
+          "sections": {
+            "surgicalOutcomes": {
+              "title": "Risultati della Tecnica Chirurgica",
+              "bigBubbleSuccess": "Tasso di Successo Big Bubble",
+              "type1Bubble": "Bolla Tipo 1",
+              "averageBubbleDiameter": "Diametro Medio della Bolla"
+            },
+            "visualAcuity": {
+              "title": "Analisi dell'Acuità Visiva (Dopo Rimozione Completa delle Suture)",
+              "meanBSCVA": "BSCVA Media (logMAR)",
+              "bscva2020": "BSCVA 20/20 o migliore",
+              "bscva2025": "BSCVA 20/25 o migliore",
+              "bscva2040": "BSCVA 20/40 o migliore"
+            },
+            "refractiveOutcomes": {
+              "title": "Risultati Refrattivi (Dopo Rimozione Completa delle Suture)",
+              "meanAstigmatism": "Astigmatismo Refrattivo Medio",
+              "astigmatism45": "Astigmatismo ≤4,5 D",
+              "astigmatism6": "Astigmatismo >6 D",
+              "sphericalEquivalent": "Equivalente Sferico"
+            },
+            "anatomicalOutcomes": {
+              "title": "Risultati Anatomici (Dopo Rimozione Completa delle Suture)",
+              "centralCornealThickness": "Spessore Corneale Centrale"
+            },
+            "endothelialAnalysis": {
+              "title": "Analisi delle Cellule Endoteliali (12 Mesi Post-operatori)",
+              "endothelialCellDensity": "Densità Cellulare Endoteliale",
+              "meanCellLoss": "Perdita Cellulare Media dal Baseline"
+            }
+          },
+          "complications": {
+            "title": "Complicazioni Intraoperatorie e Post-operatorie",
+            "tableHeaders": {
+              "complication": "Complicazione",
+              "incidence": "Incidenza",
+              "management": "Gestione/Risultato"
+            },
+            "items": {
+              "intraoperativePerforation": "Perforazione Intraoperatoria",
+              "lossOfSuction": "Perdita di Aspirazione",
+              "conversionToPK": "Conversione a PK",
+              "doubleAnteriorChamber": "Doppia Camera Anteriore",
+              "stromalRejection": "Rigetto Stromale",
+              "inadvertentSutureRemoval": "Rimozione Accidentale della Sutura"
+            }
+          },
+          "keySummary": {
+            "statisticalAnalysis": "Riassunto dell'Analisi Statistica",
+            "clinicalSignificance": "Significatività Statistica e Clinica",
+            "keyFindings": [
+              "Acuità visiva migliorata: 0,54±0,85 a 0,09±0,72 logMAR (P = 0,001)",
+              "Astigmatismo refrattivo ridotto da 7,2±2,5 D a 3,10±1,30 D",
+              "35% ha raggiunto 20/20, 67,5% ha raggiunto 20/25, 95% ha raggiunto 20/40",
+              "Nessuna differenza significativa nella BSCVA tra dissezione pneumatica e manuale (P = 0,12)",
+              "Perdita di cellule endoteliali 11,2% a 12 mesi",
+              "Zero conversioni a PK (0/80 casi)"
+            ],
+            "clinicalImpact": "Questo studio prospettico dimostra miglioramenti statisticamente significativi in tutte le misure di risultato primarie (P=0,001 per l'acuità visiva, P=0,002 per l'astigmatismo). La tecnica 9-mm/6-mm mostra risultati superiori rispetto ai controlli storici mantenendo un eccellente profilo di sicurezza. L'assenza di conversione a PK nonostante le complicazioni intraoperatorie convalida la riproducibilità della tecnica."
+          }
+        }
+      },
+      "complications": {
+        "title": "Complicazioni",
+        "intraoperative": {
+          "title": "Complicazioni Intraoperatorie",
+          "items": [
+            {
+              "name": "Perforazione della Membrana di Descemet",
+              "incidence": "5-20% a seconda della tecnica",
+              "management": "Tamponamento con aria, conversione a PK se grande"
+            },
+            {
+              "name": "Fallimento della Big Bubble",
+              "incidence": "15-30% dei casi",
+              "management": "Dissezione manuale"
+            },
+            {
+              "name": "Conversione a PK",
+              "incidence": "0-15% a seconda dell'esperienza",
+              "management": "Cheratoplastica perforante completa"
+            }
+          ]
+        },
+        "postoperative": {
+          "title": "Complicazioni Post-operatorie",
+          "early": {
+            "title": "Complicazioni Precoci (< 1 mese)",
+            "items": [
+              "Doppia camera anteriore",
+              "Opacità dell'interfaccia",
+              "Difetti epiteliali",
+              "Blocco pupillare",
+              "Distacco della membrana di Descemet",
+              "Perdita dalla ferita",
+              "Pressione intraoculare elevata"
+            ]
+          },
+          "late": {
+            "title": "Complicazioni Tardive (> 1 mese)",
+            "items": [
+              "Rigetto stromale",
+              "Opacificazione dell'interfaccia",
+              "Glaucoma secondario",
+              "Fallimento endoteliale tardivo",
+              "Deiscenza della ferita",
+              "Recidiva della malattia primaria",
+              "Astigmatismo irregolare"
+            ]
+          }
+        }
+      },
+      "postoperative": {
+        "title": "Gestione Post-operatoria",
+        "corticosteroids": {
+          "title": "Corticosteroidi Topici",
+          "medication": "Desametasone fosfato 0,1%",
+          "dosing": [
+            "Ogni 2 ore inizialmente",
+            "Ridotto a dose giornaliera singola entro 1 mese dalla rimozione parziale della sutura",
+            "Sospeso al mese 8"
+          ]
+        },
+        "antimicrobial": {
+          "title": "Profilassi Antimicrobica",
+          "initial": "Iniziale:",
+          "medication": "Tobramicina solfato 0,3%",
+          "dosing": "Ogni 2 ore inizialmente (con corticosteroide)"
+        },
+        "followUp": {
+          "title": "Programma di Follow-up",
+          "schedule": [
+            "Monitoraggio regolare secondo protocollo standard"
+          ]
+        },
+        "sutureManagement": {
+          "title": "Protocollo di Gestione delle Suture",
+          "firstRemoval": "Prima rimozione della sutura continua: 2-3 mesi post-operatori",
+          "secondRemoval": "Seconda rimozione della sutura (dipendente dall'età):",
+          "underThirty": "Entro 10 mesi dall'intervento (pazienti <30 anni)",
+          "overThirty": "Entro 12 mesi dall'intervento (pazienti ≥30 anni)",
+          "monitoring": "Monitorare i cambiamenti dell'astigmatismo tra le rimozioni"
+        }
+      },
+      "labels": {
+        "bigBubble": "Big Bubble",
+        "manualDissection": "Dissezione Manuale",
+        "pneumaticDissection": "Dissezione Pneumatica",
+        "graftDiameter": "Diametro del Trapianto",
+        "opticalZone": "Zona Ottica",
+        "visualAcuity": "Acuità Visiva",
+        "endothelialCells": "Cellule Endoteliali",
+        "cornealThickness": "Spessore Corneale",
+        "astigmatism": "Astigmatismo",
+        "graftSurvival": "Sopravvivenza del Trapianto",
+        "complications": "Complicazioni",
+        "technique": "Tecnica",
+        "incidence": "Incidenza",
+        "management": "Gestione",
+        "preoperative": "Pre-operatorio",
+        "postoperative": "Post-operatorio",
+        "intraoperative": "Intraoperatorio",
+        "followUp": "Follow-up",
+        "sutureRemoval": "Rimozione Suture",
+        "medication": "Farmaco",
+        "dosing": "Dosaggio",
+        "cellDensity": "Densità Cellulare",
+        "cellLoss": "Perdita Cellulare",
+        "rejection": "Rigetto",
+        "perforation": "Perforazione",
+        "conversion": "Conversione",
+        "bubbleSuccess": "Successo della Bolla",
+        "years": "anni",
+        "months": "mesi",
+        "weeks": "settimane",
+        "days": "giorni",
+        "cells": "cellule",
+        "diameter": "diametro",
+        "thickness": "spessore",
+        "better": "o migliore",
+        "range": "range"
+      }
+    },
+    "mushroomPk": {
+      "title": "Mushroom PK",
+      "subtitle": "Cheratoplastica Perforante a Fungo con Microcheratomo a Due Pezzi",
+      "introduction": {
+        "title": "Introduzione",
+        "paragraphs": [
+          "La Cheratoplastica Perforante a Fungo (PK) assistita da microcheratomo a due pezzi è una tecnica di trapianto corneale che utilizza un innesto a forma di fungo con una lamella anteriore più grande di 9,0mm e una lamella posteriore più piccola di 6,0mm. Questa tecnica è indicata per occhi con opacità corneali centrali a tutto spessore ma con endotelio periferico altrimenti sano.",
+          "La tecnica rappresenta un cambio di paradigma nel trapianto corneale affrontando la limitazione critica della PK convenzionale: la relazione inversa tra dimensione dell'innesto e rischio di rigetto immunologico. Trapiantando solo i 6mm centrali dell'endotelio mantenendo una zona ottica di 9mm, la mushroom PK conserva circa il 75% dell'endotelio del ricevente. Questa strategia di sostituzione endoteliale minima riduce drammaticamente il carico antigenico e fornisce un serbatoio biologico per la migrazione delle cellule endoteliali, spiegando i tassi di rigetto eccezionalmente bassi (<5% a 5 anni) osservati anche nelle cornee vascolarizzate [1].",
+          "L'approccio assistito da microcheratomo comporta la divisione della cornea donatrice in lamelle anteriori e posteriori utilizzando una testa da 200μm su un sistema di cheratoplastica lamellare terapeutica automatizzata (ALTK). Questo metodo supera le limitazioni delle tecniche assistite da laser a femtosecondi, permettendo una dissezione di successo attraverso tessuto densamente cicatrizzato e vascolarizzato. Il letto ricevente viene preparato con una dissezione lamellare periferica di 9mm a 250μm di profondità, seguita da trapanazione centrale a tutto spessore di 6mm, creando la caratteristica configurazione a gradini della ferita [1]."
+        ]
+      },
+      "indications": {
+        "title": "Indicazioni e Controindicazioni",
+        "indications": {
+          "title": "Indicazioni",
+          "items": [
+            {
+              "title": "Conversione da DALK",
+              "description": "Quando la DALK non può essere completata a causa di macroperforazione della DM."
+            },
+            {
+              "title": "Cheratocono Avanzato",
+              "description": "Cheratocono severo con cicatrici centrali a tutto spessore non suscettibili di DALK."
+            },
+            {
+              "title": "Cicatrici Corneali a Tutto Spessore",
+              "description": "Cicatrici corneali profonde che coinvolgono tutti gli strati incluso l'endotelio."
+            },
+            {
+              "title": "Perforazioni Corneali",
+              "description": "Perforazioni attive o imminenti che richiedono intervento urgente."
+            }
+          ]
+        },
+        "contraindications": {
+          "title": "Controindicazioni",
+          "absolute": {
+            "title": "Controindicazioni Assolute",
+            "items": [
+              {
+                "title": "Densità cellulare endoteliale <1000 cellule/mm² nella periferia del ricevente",
+                "description": "L'endotelio periferico sano fornisce un serbatoio per la migrazione cellulare."
+              },
+              {
+                "title": "Malattie endoteliali",
+                "description": "Queste condizioni richiedono cheratoplastica endoteliale (DMEK/DSAEK)"
+              }
+            ]
+          }
+        }
+      },
+      "surgery": {
+        "title": "Tecnica Chirurgica",
+        "mainTechnique": {
+          "title": "Tecnica Mushroom PK a Due Pezzi Assistita da Microcheratomo",
+          "steps": [
+            {
+              "title": "Trapanazione Iniziale",
+              "description": "Creare un'incisione circolare di 9,0mm di circa 250μm di profondità usando un trapano a suzione Barron, centrato sulla cornea ricevente. Questo taglio a spessore parziale stabilisce il diametro esterno della configurazione a fungo."
+            },
+            {
+              "title": "Dissezione Lamellare",
+              "description": "Eseguire dissezione lamellare manuale circumferenzialmente dalla base dell'incisione, estendendosi circa 3mm verso il centro. La cauterizzazione al limbo viene eseguita solo quando il sanguinamento dai neovasi corneali non si ferma spontaneamente."
+            },
+            {
+              "title": "Escissione Centrale",
+              "description": "Rimuovere il tessuto dissezionato, lasciando un'isola centrale di tessuto corneale a tutto spessore di circa 3mm di diametro. Usare un trapano da 6,0mm per fare un'incisione circolare a tutto spessore centrata sulla pupilla. Escidere il bottone centrale con forbici corneali."
+            },
+            {
+              "title": "Preparazione del Donatore",
+              "description": "Montare la cornea donatrice sulla camera anteriore artificiale del sistema ALTK (Moria SA). Usare una testa da 200μm per dividere il donatore in lamelle anteriori e posteriori (taglia ~20% più profondo, ottenendo ~240μm). Perforare entrambe le lamelle alla dimensione appropriata: 9,0mm per l'anteriore e 6,0mm per la posteriore."
+            },
+            {
+              "title": "Assemblaggio dell'Innesto",
+              "description": "Inserire lo stelo del donatore (lamella posteriore con endotelio) nel foro centrale senza suture. Posizionare la lamella anteriore sopra e fissare con 4 punti cardinali in nylon 10-0. I morsi di sutura passano solo attraverso la lamella anteriore, lasciando quella posteriore libera di adattarsi."
+            },
+            {
+              "title": "Sutura Finale",
+              "description": "Completare con sutura doppia continua in nylon 10-0 o 16 suture interrotte. Riempire la camera anteriore con BSS attraverso una puntura limbale. Applicare gentamicina sottocongiuntivale (40mg) e metilprednisolone (40mg), più unguento topico tobramicina/desametasone."
+            }
+          ]
+        },
+        "alternativeTechniques": {
+          "title": "Procedure Aggiuntive e Modifiche",
+          "techniques": [
+            {
+              "title": "Procedure Combinate",
+              "description": "Quando necessario prima di riassemblare l'innesto a fungo, possono essere eseguite procedure intraoculari aggiuntive con tecnica a cielo aperto: estrazione extracapsulare della cataratta, impianto o scambio di IOL, pupilloplastica, o vitrectomia anteriore."
+            },
+            {
+              "title": "Gestione del Distacco della Lamella Posteriore",
+              "description": "Se si verifica il distacco (1,2% dei casi), gestire il primo giorno post-operatorio riposizionando il bottone distaccato e iniettando aria nella camera anteriore attraverso paracentesi temporale. Rimuovere l'aria 2 ore dopo l'intervento."
+            },
+            {
+              "title": "Revisione della Ferita per Alto Astigmatismo",
+              "description": "Per astigmatismo >4,5D dopo rimozione delle suture, aprire la ferita nel meridiano più ripido usando punte di pinze smussate per ~1 ora di orologio. Inserire spatola per ciclodialisi tra le lamelle fino al semi-meridiano opposto. Riduzione media di 4,52D ottenuta senza suture."
+            }
+          ]
+        }
+      },
+      "results": {
+        "title": "Risultati - Outcomes della Conversione da DALK a Mushroom PK",
+        "citation": "Myerscough J, Bovone C, Scorcia V, Ricci-Filipovic B, Moramarco A, Fontana L, Busin M. Il ruolo della cheratoplastica lamellare anteriore assistita da microcheratomo nella gestione del cheratocono: uno studio multicentrico. Am J Ophthalmol. 2020;220:82-90.",
+        "studyPopulation": {
+          "title": "Popolazione dello Studio",
+          "totalProcedures": "Procedure totali tentate",
+          "eyesIncluded": "Occhi inclusi nell'analisi",
+          "meanFollowUp": "Follow-up medio (mesi)"
+        },
+        "visualOutcomes": {
+          "title": "Risultati Visivi",
+          "meanBCVA1Year": "BCVA media a 1 anno (logMAR)",
+          "meanBCVA2Years": "BCVA media a 2 anni (logMAR)",
+          "meanBCVA5Years": "BCVA media a 5 anni (logMAR)",
+          "eyes2040": "Occhi con ≥20/40 all'ultima visita"
+        },
+        "refractiveOutcomes": {
+          "title": "Risultati Refrattivi",
+          "astigmatism1Year": "Astigmatismo refrattivo a 1 anno",
+          "astigmatism2Years": "Astigmatismo refrattivo a 2 anni",
+          "astigmatism5Years": "Astigmatismo refrattivo a 5 anni",
+          "eyes4D": "Occhi con ≤4D di astigmatismo"
+        },
+        "endothelialAnalysis": {
+          "title": "Densità Cellulare Endoteliale",
+          "preoperativeECD": "ECD pre-operatoria (cellule/mm²)",
+          "ecd1Year": "ECD a 1 anno (cellule/mm²)",
+          "ecd2Years": "ECD a 2 anni (cellule/mm²)",
+          "ecd5Years": "ECD a 5 anni (cellule/mm²)",
+          "cellLoss5Years": "Perdita cellulare endoteliale a 5 anni"
+        },
+        "graftSurvival": {
+          "title": "Sopravvivenza dell'Innesto",
+          "survival1Year": "Sopravvivenza a 1 anno",
+          "survival2Years": "Sopravvivenza a 2 anni",
+          "survival5Years": "Sopravvivenza a 5 anni",
+          "graftFailures": "Fallimenti dell'innesto",
+          "rejectionEpisodes": "Episodi di rigetto endoteliale"
+        },
+        "complications": {
+          "title": "Analisi delle Complicazioni",
+          "tableHeaders": {
+            "complication": "Complicazione",
+            "dalkGroup": "Gruppo DALK",
+            "mushroomGroup": "Gruppo Mushroom PK"
+          },
+          "intraoperativePerforation": "Macroperforazione DM intraoperatoria",
+          "postoperativeRejection": "Rigetto endoteliale post-operatorio",
+          "graftFailureAll": "Fallimento dell'innesto (tutte le cause)",
+          "failureDueRejection": "Fallimento dovuto a rigetto",
+          "meanTimeFailure": "Tempo medio al fallimento"
+        },
+        "keySummary": {
+          "title": "Risultati Chiave dello Studio Multicentrico",
+          "findings": [
+            "416 procedure DALK intenzionali con tasso di conversione del 16,4% a Mushroom PK",
+            "Nessuna differenza significativa nella BCVA finale tra i gruppi DALK e Mushroom PK (entrambi 0,09 logMAR a 5 anni)",
+            "Astigmatismo refrattivo più alto nel gruppo Mushroom PK (3,02D vs 2,16D a 5 anni, p=0,042)",
+            "Maggiore perdita cellulare endoteliale nella Mushroom PK (56,61% vs 40,97% a 5 anni)",
+            "Sopravvivenza dell'innesto a 5 anni: DALK 99,42% (2/348 falliti) vs Mushroom PK 94,12% (4/68 falliti)",
+            "Tutti i 4 fallimenti dell'innesto nel gruppo Mushroom PK erano dovuti a rigetto endoteliale",
+            "Nessun episodio di rigetto endoteliale osservato nel gruppo DALK"
+          ],
+          "clinicalSignificance": "Questo studio multicentrico dimostra che la conversione da DALK intenzionale a Mushroom PK ottiene risultati visivi comparabili alla DALK di successo, con BCVA media di 0,09 logMAR in entrambi i gruppi a 5 anni. Mentre la Mushroom PK mostra astigmatismo leggermente più alto (circa 0,86D in più) e aumentata perdita cellulare endoteliale, la tecnica mantiene eccellente sopravvivenza dell'innesto (94,12% a 5 anni) e fornisce un'opzione di salvataggio sicura quando la DALK non può essere completata a causa di macroperforazione della membrana di Descemet."
+        }
+      },
+      "complications": {
+        "title": "Complicazioni",
+        "intraoperative": {
+          "title": "Complicazioni Intraoperatorie",
+          "items": [
+            {
+              "name": "Conversione da DALK intenzionale",
+              "incidence": "10-20% dei tentativi di DALK",
+              "management": "Tecnica mushroom PK a due pezzi"
+            },
+            {
+              "name": "Problemi legati al microcheratomo",
+              "incidence": "Raro con tecnica appropriata",
+              "management": "Dissezione manuale o nuovo tessuto donatore"
+            },
+            {
+              "name": "Malposizionamento della lamella posteriore",
+              "incidence": "1-2%",
+              "management": "Attento riposizionamento durante l'intervento"
+            }
+          ]
+        },
+        "postoperative": {
+          "title": "Complicazioni Post-operatorie",
+          "early": {
+            "title": "Complicazioni Precoci (< 1 mese)",
+            "items": [
+              "Distacco della lamella posteriore",
+              "Fluido nell'interfaccia",
+              "Perdita dalla ferita",
+              "Blocco pupillare",
+              "Pressione intraoculare elevata",
+              "Difetti epiteliali",
+              "Fallimento primario dell'innesto"
+            ]
+          },
+          "late": {
+            "title": "Complicazioni Tardive (> 1 mese)",
+            "items": [
+              "Rigetto endoteliale",
+              "Rigetto stromale",
+              "Alto astigmatismo",
+              "Opacificazione dell'interfaccia",
+              "Glaucoma secondario",
+              "Deiscenza della ferita",
+              "Perdita progressiva delle cellule endoteliali",
+              "Fallimento tardivo dell'innesto"
+            ]
+          }
+        }
+      },
+      "postoperative": {
+        "title": "Gestione Post-operatoria",
+        "corticosteroids": {
+          "title": "Corticosteroidi Topici",
+          "medication": "Combinazione Tobramicina 0,3% + Desametasone 0,1%",
+          "dosing": [
+            "Ogni 2 ore × 2 settimane",
+            "Ogni 3 ore × 2 settimane",
+            "QID × 1 mese",
+            "TID × 1 mese",
+            "BID × 1 mese",
+            "QD indefinitamente (eccetto fachici o responders agli steroidi)"
+          ]
+        },
+        "antimicrobial": {
+          "title": "Profilassi Antimicrobica",
+          "initial": "Terapia iniziale:",
+          "medication": "Combinazione Tobramicina/Desametasone come sopra",
+          "additional": "Per cheratite erpetica aciclovir sistemico 400mg BID iniziando 3 mesi pre-op, continuato ≥1 anno"
+        },
+        "followUp": {
+          "title": "Programma di Follow-up",
+          "schedule": [
+            "Monitoraggio regolare secondo protocollo istituzionale",
+            "Conta delle cellule endoteliali a 6 mesi, poi annualmente",
+            "Topografia ad ogni visita dopo 6 mesi"
+          ]
+        },
+        "sutureManagement": {
+          "title": "Gestione delle Suture",
+          "allSuturesRemoved": "Tutte le suture rimosse entro 12 mesi",
+          "earlierRemoval": "Rimozione precoce possibile grazie alla maggiore stabilità della ferita",
+          "selectiveRemoval": "Rimozione selettiva basata sull'astigmatismo topografico",
+          "noSutureBeyond": "Nessuna sutura lasciata oltre i 12 mesi"
+        }
+      }
     }
   },
   "home": {

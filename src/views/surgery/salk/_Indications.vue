@@ -9,7 +9,6 @@
     @toggle="$emit('toggle')"
   >
     <IndicationsSection
-      :keyRequirements="keyRequirements"
       :indications="indications"
       :contraindications="contraindications"
     />
@@ -28,9 +27,6 @@ defineProps({
 })
 
 defineEmits(['toggle'])
-
-// Key requirements data based on Busin's criteria
-const keyRequirements = ['Pathology depth <220 μm', 'Healthy endothelium', 'Clear posterior stroma']
 
 // Indications data from Busin's studies
 const indications = [

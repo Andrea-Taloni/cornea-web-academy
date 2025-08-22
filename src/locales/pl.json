@@ -29,6 +29,223 @@
       "complications": "Powikłania",
       "postop": "Okres pooperacyjny",
       "references": "Bibliografia"
+    },
+    "mushroomPk": {
+      "title": "Mushroom PK",
+      "subtitle": "Dwuczęściowa keratoplastyka przeszczepiająca grzybkowa wspomagana mikrokeratom",
+      "introduction": {
+        "title": "Wprowadzenie",
+        "paragraphs": [
+          "Dwuczęściowa keratoplastyka przeszczepiająca grzybkowa wspomagana mikrokeratom (PK) to technika przeszczepu rogówki wykorzystująca przeszczep w kształcie grzyba z większą lamelą przednią 9,0mm i mniejszą lamelą tylną 6,0mm. Ta technika jest wskazana u oczu z centralnym zaćmieniem rogówki o pełnej grubości, ale ze zdrowym endotelem obwodowym.",
+          "Technika reprezentuje zmianę paradygmatu w transplantacji rogówki poprzez rozwiązanie krytycznego ograniczenia konwencjonalnej PK: odwrotnej zależności między rozmiarem przeszczepu a ryzykiem immunologicznego odrzucenia. Poprzez przeszczepienie tylko centralnych 6mm endotelu przy zachowaniu 9mm strefy optycznej, Mushroom PK zachowuje około 75% endotelu biorcy.",
+          "Podejście wspomagane mikrokeratom obejmuje podział rogówki dawcy na lamele przednią i tylną za pomocą głowicy 200μm na automatycznym systemie lamelowej keratoplastyki terapeutycznej (ALTK)."
+        ]
+      },
+      "indications": {
+        "title": "Wskazania i przeciwwskazania",
+        "indications": {
+          "title": "Wskazania",
+          "items": [
+            {
+              "title": "Konwersja z DALK",
+              "description": "Gdy DALK nie można ukończyć z powodu makroperforacji DM."
+            },
+            {
+              "title": "Zaawansowany stożek rogówki",
+              "description": "Ciężki stożek rogówki z centralnym bliznowaceniem o pełnej grubości nieodpowiedni dla DALK."
+            },
+            {
+              "title": "Blizny rogówki o pełnej grubości",
+              "description": "Głębokie bliznowacenie rogówki obejmujące wszystkie warstwy włącznie z endotelem."
+            },
+            {
+              "title": "Perforacje rogówki",
+              "description": "Aktywne lub grożące perforacje wymagające pilnej interwencji."
+            }
+          ]
+        },
+        "contraindications": {
+          "title": "Przeciwwskazania",
+          "absolute": {
+            "title": "Przeciwwskazania bezwzględne",
+            "items": [
+              {
+                "title": "Gęstość komórek endotelu <1000 komórek/mm² w obwodzie biorcy",
+                "description": "Zdrowe endotelium obwodowe zapewnia rezerwuar dla migracji komórkowej."
+              },
+              {
+                "title": "Choroby endotelu",
+                "description": "Te stany wymagają keratoplastyki endotelowej (DMEK/DSAEK)"
+              }
+            ]
+          }
+        }
+      },
+      "surgery": {
+        "title": "Technika chirurgiczna",
+        "mainTechnique": {
+          "title": "Dwuczęściowa technika Mushroom PK wspomagana mikrokeratom",
+          "steps": [
+            {
+              "title": "Początkowa trepanacja",
+              "description": "Utworzenie okrągłego nacięcia 9,0mm o głębokości około 250μm za pomocą trepanu ssącego Barron, wyśrodkowanego na rogówce biorcy."
+            },
+            {
+              "title": "Disekcja lamelowa",
+              "description": "Wykonanie ręcznej disekcji lamelowej obwodowo od podstawy nacięcia, rozciągającej się około 3mm w kierunku centrum."
+            },
+            {
+              "title": "Wycięcie centralne",
+              "description": "Usunięcie disekcjonowanej tkanki, pozostawiając centralną wysepkę tkanki rogówki o pełnej grubości około 3mm średnicy."
+            },
+            {
+              "title": "Przygotowanie dawcy",
+              "description": "Zamontowanie rogówki dawcy na sztucznej komorze przedniej systemu ALTK (Moria SA). Użycie głowicy 200μm do podziału dawcy na lamele przednią i tylną."
+            },
+            {
+              "title": "Montaż przeszczepu",
+              "description": "Dopasowanie trzonu dawcy (lamela tylna z endotelem) do centralnego otworu bez szwów. Umieszczenie lameli przedniej na górze i zabezpieczenie 4 podstawowymi szwami nylon 10-0."
+            },
+            {
+              "title": "Końcowe zszycie",
+              "description": "Zakończenie podwójnym ciągłym szwem nylon 10-0 lub 16 szwami przerywanymi."
+            }
+          ]
+        }
+      },
+      "results": {
+        "title": "Wyniki - wyniki konwersji DALK na Mushroom PK",
+        "studyPopulation": {
+          "title": "Populacja badana",
+          "totalProcedures": "Łączna liczba prób procedur",
+          "eyesIncluded": "Oczy włączone do analizy",
+          "meanFollowUp": "Średnia obserwacja (miesiące)"
+        },
+        "visualOutcomes": {
+          "title": "Wyniki wzrokowe",
+          "meanBCVA1Year": "Średnia BCVA po 1 roku (logMAR)",
+          "meanBCVA2Years": "Średnia BCVA po 2 latach (logMAR)",
+          "meanBCVA5Years": "Średnia BCVA po 5 latach (logMAR)",
+          "eyes2040": "Oczy z ≥20/40 przy ostatniej wizycie"
+        },
+        "refractiveOutcomes": {
+          "title": "Wyniki refrakcyjne",
+          "astigmatism1Year": "Astygmatyzm refrakcyjny po 1 roku",
+          "astigmatism2Years": "Astygmatyzm refrakcyjny po 2 latach",
+          "astigmatism5Years": "Astygmatyzm refrakcyjny po 5 latach",
+          "eyes4D": "Oczy z ≤4D astygmatyzmu"
+        },
+        "endothelialAnalysis": {
+          "title": "Gęstość komórek endotelu",
+          "preoperativeECD": "ECD przedoperacyjne (komórki/mm²)",
+          "ecd1Year": "ECD po 1 roku (komórki/mm²)",
+          "ecd2Years": "ECD po 2 latach (komórki/mm²)",
+          "ecd5Years": "ECD po 5 latach (komórki/mm²)",
+          "cellLoss5Years": "Utrata komórek endotelu po 5 latach"
+        },
+        "graftSurvival": {
+          "title": "Przeżycie przeszczepu",
+          "survival1Year": "Przeżycie 1-roczne",
+          "survival2Years": "Przeżycie 2-letnie",
+          "survival5Years": "Przeżycie 5-letnie",
+          "graftFailures": "Niepowodzenia przeszczepu",
+          "rejectionEpisodes": "Epizody odrzucenia endotelowego"
+        },
+        "complications": {
+          "title": "Analiza powikłań",
+          "tableHeaders": {
+            "complication": "Powikłanie",
+            "dalkGroup": "Grupa DALK",
+            "mushroomGroup": "Grupa Mushroom PK"
+          },
+          "intraoperativePerforation": "Śródoperacyjna makroperforacja DM",
+          "postoperativeRejection": "Pooperacyjne odrzucenie endotelowe",
+          "graftFailureAll": "Niepowodzenie przeszczepu (wszystkie przyczyny)",
+          "failureDueRejection": "Niepowodzenie z powodu odrzucenia",
+          "meanTimeFailure": "Średni czas do niepowodzenia"
+        }
+      },
+      "complications": {
+        "title": "Powikłania",
+        "intraoperative": {
+          "title": "Powikłania śródoperacyjne",
+          "items": [
+            {
+              "name": "Konwersja z planowanej DALK",
+              "incidence": "10-20% prób DALK",
+              "management": "Dwuczęściowa technika Mushroom PK"
+            },
+            {
+              "name": "Problemy związane z mikrokeratom",
+              "incidence": "Rzadkie przy właściwej technice",
+              "management": "Ręczna disekcja lub nowa tkanka dawcy"
+            },
+            {
+              "name": "Nieprawidłowe ułożenie lameli tylnej",
+              "incidence": "1-2%",
+              "management": "Ostrożne repozycjonowanie podczas operacji"
+            }
+          ]
+        },
+        "postoperative": {
+          "title": "Powikłania pooperacyjne",
+          "early": {
+            "title": "Powikłania wczesne (< 1 miesiąc)",
+            "items": [
+              "Odłączenie lameli tylnej",
+              "Płyn w interfejsie",
+              "Przeciek rany",
+              "Blok źreniczny",
+              "Podwyższone ciśnienie wewnątrzgałkowe",
+              "Defekty nabłonkowe",
+              "Pierwotna niewydolność przeszczepu"
+            ]
+          },
+          "late": {
+            "title": "Powikłania późne (> 1 miesiąc)",
+            "items": [
+              "Odrzucenie endotelowe",
+              "Odrzucenie zrębu",
+              "Wysoki astygmatyzm",
+              "Zmętnienie interfejsu",
+              "Wtórna jaskra",
+              "Rozejście się rany",
+              "Postępująca utrata komórek endotelu",
+              "Późna niewydolność przeszczepu"
+            ]
+          }
+        }
+      },
+      "postoperative": {
+        "title": "Postępowanie pooperacyjne",
+        "corticosteroids": {
+          "title": "Miejscowe kortykosteroidy",
+          "medication": "Kombinacja Tobramycyna 0,3% + Deksametazon 0,1%",
+          "dosing": [
+            "Co 2 godziny × 2 tygodnie",
+            "Co 3 godziny × 2 tygodnie",
+            "QID × 1 miesiąc",
+            "TID × 1 miesiąc",
+            "BID × 1 miesiąc",
+            "QD bezterminowo (oprócz fakijnych lub odpowiadających na steroidy)"
+          ]
+        },
+        "followUp": {
+          "title": "Plan obserwacji",
+          "schedule": [
+            "Regularne monitorowanie według protokołu instytucjonalnego",
+            "Liczenie komórek endotelu po 6 miesiącach, następnie rocznie",
+            "Topografia przy każdej wizycie po 6 miesiącach"
+          ]
+        },
+        "sutureManagement": {
+          "title": "Zarządzanie szwami",
+          "allSuturesRemoved": "Wszystkie szwy usunięte w ciągu 12 miesięcy",
+          "earlierRemoval": "Wcześniejsze usunięcie możliwe dzięki poprawionej stabilności rany",
+          "selectiveRemoval": "Selektywne usuwanie oparte na astygmatyzmie topograficznym",
+          "noSutureBeyond": "Brak szwów po 12 miesiącach"
+        }
+      }
     }
   },
   "home": {

@@ -98,11 +98,11 @@ const handleLinkClick = () => {
 
 const surgeryTypes = ref([
   { name: 'DALK', slug: 'dalk' },
-  { name: 'DMEK', slug: 'dmek' },
+  { name: 'Mushroom PK', slug: 'mushroom-pk' },
   { name: 'DSAEK', slug: 'dsaek' },
   { name: 'UT-DSAEK', slug: 'ut-dsaek' },
+  { name: 'DMEK', slug: 'dmek' },
   { name: 'SALK', slug: 'salk' },
-  { name: 'Mushroom PK', slug: 'mushroom-pk' },
 ])
 </script>
 

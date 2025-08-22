@@ -16,8 +16,12 @@
 </template>
 
 <script setup>
+import { computed } from 'vue'
+import { useI18n } from 'vue-i18n'
 import CollapsibleSection from '@/components/CollapsibleSection.vue'
 import IndicationsSection, { indicationsMetadata } from '@/components/surgery/IndicationsComponent.vue'
+
+const { t } = useI18n()
 
 defineProps({
   isExpanded: {
@@ -29,44 +33,40 @@ defineProps({
 defineEmits(['toggle'])
 
 // Indications data
-const indications = [
+const indications = computed(() => [
   {
-    title: 'Keratoconus',
-    description:
-      'Progressive/advanced disease, contact lens intolerance, central scarring.',
+    title: t('surgery.dalk.indications.keratoconus.title'),
+    description: t('surgery.dalk.indications.keratoconus.description'),
   },
   {
-    title: 'Corneal Stromal Dystrophies',
-    description:
-      'Granular, lattice, macular, Avellino dystrophies.',
+    title: t('surgery.dalk.indications.dystrophies.title'),
+    description: t('surgery.dalk.indications.dystrophies.description'),
   },
   {
-    title: 'Post-Infectious Scarring',
-    description:
-      'Bacterial, viral (HSV/VZV), fungal, Acanthamoeba sequelae. Deep scars contraindicate modified technique.',
+    title: t('surgery.dalk.indications.postInfectious.title'),
+    description: t('surgery.dalk.indications.postInfectious.description'),
   },
   {
-    title: 'Non-perforating Trauma',
-    description:
-      'Corneal lacerations or injuries that do not penetrate through Descemet membrane, allowing preservation of the endothelium during surgical repair.',
+    title: t('surgery.dalk.indications.trauma.title'),
+    description: t('surgery.dalk.indications.trauma.description'),
   },
-]
+])
 
 // Contraindications data
-const contraindications = {
+const contraindications = computed(() => ({
   absolute: [
     {
-      title: 'Endothelial Dysfunction',
-      description: 'Endothelial cell density less than 1000 cells/mm². Inadequate endothelial function would compromise graft survival and visual outcomes.',
+      title: t('surgery.dalk.indications.contraindications.endothelial.title'),
+      description: t('surgery.dalk.indications.contraindications.endothelial.description'),
     },
     {
-      title: 'Acute Hydrops',
-      description: 'Rupture of Descemet membrane with stromal edema. Requires resolution and stabilization before considering surgical intervention.',
+      title: t('surgery.dalk.indications.contraindications.hydrops.title'),
+      description: t('surgery.dalk.indications.contraindications.hydrops.description'),
     },
     {
-      title: 'Deep Stromal Scarring',
-      description: 'Scars extending to Descemet membrane that prevent safe dissection and bubble formation during pneumatic dissection.',
+      title: t('surgery.dalk.indications.contraindications.deepScarring.title'),
+      description: t('surgery.dalk.indications.contraindications.deepScarring.description'),
     },
   ],
-}
+}))
 </script>
