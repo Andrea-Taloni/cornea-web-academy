@@ -1,7 +1,7 @@
 <!-- src/views/surgery/ut-dsaek/_Results.vue -->
 <template>
   <CollapsibleSection
-    :title="outcomesMetadata.title"
+    :title="'Results - UT-DSAEK Clinical Outcomes'"
     :iconPath="outcomesMetadata.iconPath"
     :colorTheme="outcomesMetadata.colorTheme"
     :isExpanded="isExpanded"

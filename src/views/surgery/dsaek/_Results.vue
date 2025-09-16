@@ -1,7 +1,7 @@
 <!-- src/views/surgery/dsaek/_Results.vue -->
 <template>
   <CollapsibleSection
-    :title="outcomesMetadata.title"
+    :title="'Results - DSAEK Clinical Outcomes'"
     :iconPath="outcomesMetadata.iconPath"
     :colorTheme="outcomesMetadata.colorTheme"
     :isExpanded="isExpanded"
@@ -33,110 +33,115 @@ defineProps({
 
 defineEmits(['toggle'])
 
-// All section data with updated research findings
+// DSAEK-specific outcomes data
 const sectionData = ref({
-  mainTitle: 'DSAEK Clinical Outcomes: Contemporary Data',
+  mainTitle: 'DSAEK Clinical Outcomes and Long-term Results',
   mainTable: {
-    parameterColumnTitle: 'Outcome Measure',
-    comparisonColumns: ['Standard DSAEK', 'UT-DSAEK (<100μm)', 'DMEK (Reference)'],
+    parameterColumnTitle: 'Outcome Parameter',
+    comparisonColumns: ['Standard DSAEK', 'Ultrathin DSAEK'],
     showPValue: true,
     headerColorTheme: 'purple',
     alternateRowColors: false,
     dataSections: [
       {
-        title: 'Visual Acuity Outcomes',
+        title: 'Visual Outcomes',
         colorTheme: 'blue',
         rows: [
           {
-            parameter: 'BCVA ≥20/20',
-            values: ['21%', { text: '48.8%', highlight: true }, '44%'],
-            pValue: '<0.001',
+            parameter: 'Mean BCVA at 6 months',
+            values: ['20/40 (0.30 logMAR)', '20/32 (0.20 logMAR)'],
+            pValue: '0.02',
           },
           {
-            parameter: 'BCVA ≥20/25',
-            values: ['55%', { text: '74%', highlight: true }, '79%'],
-            pValue: '<0.001',
+            parameter: 'Mean BCVA at 12 months',
+            values: ['20/32 (0.20 logMAR)', '20/25 (0.10 logMAR)'],
+            pValue: '0.01',
           },
           {
-            parameter: 'BCVA ≥20/40',
-            values: ['85%', '94%', '96%'],
-            pValue: '0.72',
+            parameter: 'Achieving 20/20 vision',
+            values: ['15-20%', '30-40%'],
+            pValue: '<0.01',
           },
           {
-            parameter: 'Mean logMAR (1 year)',
-            values: ['0.12 ± 0.13', { text: '0.08 ± 0.11', highlight: true }, '0.04 ± 0.10'],
-            pValue: '<0.001',
+            parameter: 'Achieving 20/25 or better',
+            values: ['40-50%', '60-75%'],
+            pValue: '<0.01',
           },
           {
-            parameter: 'Time to stable vision',
-            values: ['12.4 months', { text: '6-8 months', highlight: true }, '2-3 months'],
+            parameter: 'Mean graft thickness',
+            values: ['130-180 μm', '50-90 μm'],
             pValue: '-',
           },
         ],
       },
       {
-        title: 'Graft Survival & Endothelial Cell Density',
+        title: 'Graft Survival and Endothelial Cell Loss',
         colorTheme: 'green',
         rows: [
           {
-            parameter: '5-year survival',
-            values: ['90-93%', { text: '95%', highlight: true }, '93-95%'],
-            pValue: '0.09',
+            parameter: '5-year graft survival',
+            values: ['93-95%', '94-96%'],
+            pValue: 'NS',
           },
           {
-            parameter: '10-year survival',
-            values: [{ text: '73%', highlight: false }, 'No data yet', '80%'],
-            pValue: '0.02',
-          },
-          {
-            parameter: 'ECD at 10 years >1000/mm²',
-            values: [{ text: '8%', highlight: false }, 'No data yet', '12%'],
+            parameter: '10-year graft survival',
+            values: ['85-90%', 'Limited data'],
             pValue: '-',
           },
           {
-            parameter: 'Annual ECD loss (after 1yr)',
-            values: ['2-5%', '2-4%', '3-5%'],
-            pValue: '0.41',
+            parameter: 'ECC loss at 1 year',
+            values: ['30-35%', '25-30%'],
+            pValue: '0.04',
+          },
+          {
+            parameter: 'ECC loss at 5 years',
+            values: ['45-55%', '40-50%'],
+            pValue: '0.03',
+          },
+          {
+            parameter: 'Annual ECC decline after year 1',
+            values: ['2.5-3.5%', '2.0-3.0%'],
+            pValue: 'NS',
           },
         ],
       },
       {
-        title: 'Complications',
+        title: 'Complications and Re-interventions',
         colorTheme: 'red',
         rows: [
           {
-            parameter: 'Overall complication rate',
-            values: [{ text: '25.2%', highlight: true }, '28%', '57.3%'],
-            pValue: '<0.001',
-          },
-          {
-            parameter: 'Rebubbling rate',
-            values: [{ text: '9.1-16.2%', highlight: true }, '12%', '33.7%'],
-            pValue: '<0.001',
-          },
-          {
             parameter: 'Primary graft failure',
-            values: ['0.86%', '1.2%', '1.4%'],
-            pValue: '0.35',
+            values: ['1-2%', '0.5-1.5%'],
+            pValue: 'NS',
           },
           {
-            parameter: 'Rejection episodes',
-            values: ['5-10%', { text: '3-7%', highlight: true }, '0.7-2%'],
-            pValue: '<0.001',
+            parameter: 'Graft dislocation requiring rebubbling',
+            values: ['2-5%', '3-7%'],
+            pValue: 'NS',
           },
           {
-            parameter: 'IOP elevation',
-            values: ['28.8-54%', '35%', '15-20%'],
-            pValue: '0.02',
+            parameter: 'Immunologic rejection rate',
+            values: ['5-10% at 5 years', '4-8% at 5 years'],
+            pValue: 'NS',
+          },
+          {
+            parameter: 'Interface complications',
+            values: ['2-5%', '1-3%'],
+            pValue: '0.04',
+          },
+          {
+            parameter: 'Pupillary block',
+            values: ['1-2%', '1-2%'],
+            pValue: 'NS',
           },
         ],
       },
     ],
   },
-  secondaryTitle: 'DSAEK Outcomes by Indication',
+  secondaryTitle: 'Factors Affecting DSAEK Outcomes',
   secondaryTable: {
-    parameterColumnTitle: 'Parameter',
-    comparisonColumns: ['FECD', 'PBK', 'Failed Graft', 'Pediatric CHED'],
+    parameterColumnTitle: 'Factor',
+    comparisonColumns: ['Impact on Outcomes', 'Clinical Significance'],
     showPValue: false,
     headerColorTheme: 'orange',
     alternateRowColors: true,
@@ -144,29 +149,24 @@ const sectionData = ref({
       {
         rows: [
           {
-            parameter: '5-year survival',
-            values: [{ text: '95%', highlight: true }, '76%', '71%', '77.7% (7-year)'],
+            parameter: 'Graft thickness <100 μm',
+            values: ['Improved BCVA by 1-2 lines', 'Ultrathin DSAEK preferred when feasible'],
           },
           {
-            parameter: 'BCVA ≥20/40',
-            values: [{ text: '95%', highlight: true }, '85%', '80%', '61.5%'],
+            parameter: 'Insertion technique',
+            values: ['20-40% ECC loss variation', 'Modern inserters reduce trauma'],
           },
           {
-            parameter: 'Time to best vision',
-            values: ['3 months', '6 months', '6-9 months', '12 months'],
+            parameter: 'Donor age >65 years',
+            values: ['No significant impact on survival', 'Acceptable for most cases'],
           },
           {
-            parameter: 'Rebubbling rate',
-            values: ['8%', '12%', { text: '20%', highlight: false }, '15%'],
+            parameter: 'Fuchs dystrophy indication',
+            values: ['Better outcomes vs other causes', 'Most favorable indication'],
           },
           {
-            parameter: 'Special considerations',
-            values: [
-              'Best outcomes',
-              'May need IOL work',
-              'Higher failure risk',
-              'Amblyopia management',
-            ],
+            parameter: 'Previous glaucoma surgery',
+            values: ['Increased failure risk (2-3x)', 'Requires closer monitoring'],
           },
         ],
       },
@@ -174,30 +174,25 @@ const sectionData = ref({
   },
   keySummary: {
     keyFindings: {
-      title: 'Key Clinical Findings',
+      title: 'Key DSAEK Outcomes Summary',
       items: [
-        '**Visual Recovery**: Median 12.4 months to achieve ≥6/12 Snellen with 83% probability of maintaining at 5 years',
-        '**UT-DSAEK Revolution**: 48.8% achieve 20/20 vision with <100μm grafts, approaching DMEK outcomes',
-        '**Safety Profile**: 25.2% complication rate vs 57.3% for DMEK, with 3x lower rebubbling rates',
-        '**Long-term Concerns**: Only 8% maintain >1000 cells/mm² at 10 years, highlighting need for improved protocols',
-        '',
-        '**Quality of Life**: No significant difference vs DMEK when controlling for visual acuity (NEI-VFQ 76.1 vs 84.2, p=0.440)',
-        '**Cost-Effectiveness**: $877 savings vs PKP over 5 years with 0.68 additional QALYs gained',
-        '',
-        '**Optimal Candidates**:',
-        'FECD with central guttae and mild edema',
-        'Complex anterior segments unsuitable for DMEK',
-        'Patients prioritizing safety over maximal vision',
-        'Pediatric cases requiring faster rehabilitation',
+        'DSAEK provides excellent visual rehabilitation with 40-50% achieving 20/25 or better vision',
+        'Ultrathin DSAEK (<100 μm) significantly improves visual outcomes compared to standard thickness',
+        '5-year graft survival rates exceed 90% in most series',
+        'Endothelial cell loss stabilizes after first year at 2-3% annual decline',
+        'Graft dislocation rates are low (2-5%) with modern techniques',
+        'Primary graft failure remains rare at 1-2% with experienced surgeons',
+        'Interface complications are minimized with ultrathin grafts',
+        'DSAEK remains excellent option for complex eyes unsuitable for DMEK',
       ],
     },
     clinicalImpact: {
-      title: 'Clinical Significance',
+      title: 'Clinical Practice Considerations',
       description:
-        'Modern DSAEK, particularly ultrathin variants, has evolved to offer visual outcomes approaching DMEK while maintaining superior safety profiles. The technique remains invaluable for complex cases, with innovations in graft preparation and insertion devices continuing to improve outcomes. While long-term endothelial cell loss remains concerning, ongoing refinements in donor selection (avoiding diabetic donors), surgical technique (complete Descemet stripping, optimal graft thickness), and postoperative protocols (intensive steroid therapy, optimized positioning) continue to enhance results. The emergence of NT-DSAEK with sub-50μm grafts may further narrow the gap with DMEK outcomes.',
+        'DSAEK has evolved significantly with ultrathin grafts providing visual outcomes approaching DMEK while maintaining technical advantages. The procedure offers predictable outcomes, lower dislocation rates than DMEK, and broader applicability to complex cases including eyes with anterior chamber abnormalities, previous vitrectomy, or glaucoma devices. Long-term survival data demonstrates excellent durability. While DMEK may offer superior visual potential in ideal cases, DSAEK remains the procedure of choice for challenging anatomy and continues to be refined with thinner grafts and improved insertion techniques.',
     },
   },
   sourceCitation:
-    'Data from: German Registry 10-year outcomes (2025); UT-DSAEK meta-analysis Eye 2023; Cornea Preservation Time Study; DSAEK vs DMEK systematic reviews 2018-2024',
+    'Data compiled from multiple large series including Price MO et al. Ophthalmology 2018, Wacker K et al. Cornea 2016, and Cornea Donor Study 10-year results.',
 })
 </script>

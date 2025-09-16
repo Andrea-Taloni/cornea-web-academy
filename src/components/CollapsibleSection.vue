@@ -113,6 +113,16 @@ watch(() => props.isExpanded, updateHeight, { immediate: true })
 onMounted(() => {
   // Small delay to ensure content is fully rendered
   setTimeout(updateHeight, 100)
+  
+  // Set up ResizeObserver to handle dynamic content changes
+  if (contentInner.value && window.ResizeObserver) {
+    const resizeObserver = new ResizeObserver(() => {
+      if (props.isExpanded) {
+        updateHeight()
+      }
+    })
+    resizeObserver.observe(contentInner.value)
+  }
 })
 
 // Computed classes based on color theme

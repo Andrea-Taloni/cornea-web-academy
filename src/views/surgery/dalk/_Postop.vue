@@ -11,7 +11,6 @@
     <PostopSection
       :corticosteroids="postopData.corticosteroids"
       :antimicrobial="postopData.antimicrobial"
-      :followUp="postopData.followUp"
       :sutureManagement="postopData.sutureManagement"
     />
   </CollapsibleSection>
@@ -36,16 +35,6 @@ defineEmits(['toggle'])
 
 // Post-operative management data - From Busin et al. 2017
 const postopData = computed(() => {
-  // Get the raw translation data
-  const followUpSchedule = t('surgery.dalk.postoperative.followUp.schedule')
-  
-  // Ensure schedule is an array
-  const scheduleArray = Array.isArray(followUpSchedule) 
-    ? followUpSchedule 
-    : typeof followUpSchedule === 'string' 
-      ? [followUpSchedule] 
-      : ['Regular monitoring as per standard protocol']
-  
   return {
     corticosteroids: {
       title: t('surgery.dalk.postoperative.corticosteroids.title'),
@@ -62,10 +51,6 @@ const postopData = computed(() => {
       options: [t('surgery.dalk.postoperative.antimicrobial.medication')],
       dosingLabel: t('surgery.dalk.labels.dosing'),
       dosing: t('surgery.dalk.postoperative.antimicrobial.dosing'),
-    },
-    followUp: {
-      title: t('surgery.dalk.postoperative.followUp.title'),
-      schedule: scheduleArray,
     },
     sutureManagement: {
       title: t('surgery.dalk.postoperative.sutureManagement.title'),

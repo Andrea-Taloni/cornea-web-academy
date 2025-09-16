@@ -3,7 +3,7 @@
   <CollapsibleSection
     :title="'Results - Conventional DALK Studies'"
     :iconPath="outcomesMetadata.iconPath"
-    :colorTheme="'purple'"
+    :colorTheme="outcomesMetadata.colorTheme"
     :isExpanded="isExpanded"
     :maxHeight="outcomesMetadata.maxHeight"
     @toggle="$emit('toggle')"

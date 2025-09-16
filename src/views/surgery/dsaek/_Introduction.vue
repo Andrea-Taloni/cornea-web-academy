@@ -36,6 +36,6 @@ const paragraphs = [
 
   "DSAEK offers significant advantages over full-thickness penetrating keratoplasty, including faster visual recovery, stronger wound integrity, and reduced risk of complications. The procedure involves transplanting a donor disc approximately 100-200 μm thick, containing healthy endothelium, Descemet's membrane, and a thin layer of posterior stroma.",
 
-  "With over 15 years of widespread clinical use, DSAEK has proven to be a reliable and reproducible technique with excellent long-term outcomes. The procedure maintains structural integrity of the eye, induces predictable refractive changes, and achieves 5-year graft survival rates exceeding 95% in appropriate candidates. The technique's forgiving nature and lower detachment rates compared to DMEK make it particularly suitable for complex cases and surgeons early in their endothelial keratoplasty learning curve.",
+  "With over 15 years of widespread clinical use, DSAEK has proven to be a reliable and reproducible technique with excellent long-term outcomes. The procedure maintains structural integrity of the eye, induces predictable refractive changes, and achieves 5-year graft survival rates exceeding 95% in appropriate candidates.",
 ]
 </script>

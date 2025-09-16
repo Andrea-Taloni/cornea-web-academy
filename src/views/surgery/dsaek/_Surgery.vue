@@ -29,110 +29,65 @@ defineProps({
 
 defineEmits(['toggle'])
 
-// DSAEK surgical technique data
+// DSAEK surgical technique data - Based on Cochrane Review 2018
 const dsaekTechnique = {
-  title: 'Standard DSAEK Surgical Technique with Modern Refinements',
+  title: 'Descemet Stripping Automated Endothelial Keratoplasty (DSAEK) Technique',
   steps: [
     {
-      title: 'Donor Graft Preparation',
+      title: 'Donor Tissue Preparation',
       description:
-        'Mount donor cornea on artificial anterior chamber (2500-3000 cells/mm² ideal). For ultrathin DSAEK: Use double-pass microkeratome technique - first pass with 350-400μm head, measure residual bed, second pass to achieve 50-100μm final thickness. Achieve 48.8% rate of 20/20 vision at 24 months with <100μm grafts. Punch to 8.0-8.5mm diameter. Mark orientation with asymmetric marks to prevent upside-down placement.',
+        'Mount donor cornea on artificial anterior chamber. Use automated microkeratome to create a 50-150 micron thick posterior lamellar graft containing stroma, Descemet membrane, and endothelium. Standard DSAEK thickness: 100-150μm. Ultrathin DSAEK: <100μm for improved visual outcomes. Punch graft to 8.0-8.5mm diameter. Mark orientation to prevent inverted placement.',
     },
     {
       title: 'Recipient Bed Preparation',
       description:
-        "Mark corneal center and planned graft diameter. Create 5mm scleral tunnel (4mm for advanced inserters) or clear corneal incision. Additional paracenteses at 3 and 9 o'clock. Score Descemet's membrane with reverse Sinskey hook - complete stripping critical (incomplete stripping increases rebubbling to 20%). Remove all diseased tissue within marked area. Avoid excessive manipulation to preserve peripheral endothelium.",
+        "Mark corneal center and measure graft diameter (typically 8.5-9.0mm). Create 5mm temporal scleral tunnel or 4.5mm clear corneal incision. Create paracenteses at 3 and 9 o'clock positions. Score and strip Descemet membrane and diseased endothelium using reverse Sinskey hook within marked zone. Complete removal critical to prevent interface haze and improve adherence.",
     },
     {
-      title: 'Advanced Graft Insertion',
+      title: 'Graft Insertion Techniques',
       description:
-        'Modern insertion options: NS Endo-Inserter (21.8% cell loss vs 33.7% traditional), Endosaver device (handles up to 8.5mm through 4mm incision), or Busin glide with pull-through technique. For complex anatomy: Modified Sheets glide technique. Fold graft 60/40 configuration. Insert with endothelial side down, verified by orientation marks.',
+        'Multiple insertion methods available: Forceps technique with 60/40 folding configuration (higher endothelial loss), Busin glide with pull-through suture (moderate cell loss), or modern inserters like NS Endo-Inserter (reduced cell loss ~20%). Insert graft with endothelial side down, maintaining orientation marks visible.',
     },
     {
-      title: 'Graft Unfolding & Positioning',
+      title: 'Graft Unfolding and Centering',
       description:
-        'Unfold using gentle BSS irrigation through paracentesis. "No-touch" technique: Use fluid waves and air positioning. Center over marked visual axis. For vitrectomized eyes: Continuous posterior infusion prevents chamber collapse. Remove all interface fluid - critical for adherence. Verify correct orientation (S-stamp should read correctly).',
+        'Unfold graft using balanced salt solution irrigation through paracentesis. Employ "no-touch" technique using fluid dynamics to minimize endothelial trauma. Center graft over pupillary axis. Remove all interface fluid between host and donor tissue - critical for adherence. Verify correct orientation using pre-placed marks.',
     },
     {
-      title: 'Optimized Air Tamponade',
+      title: 'Air Tamponade',
       description:
-        'Complete air fill for wound-assisted technique. 10-minute tamponade ensures initial adhesion. Glaucoma eyes: 90-100% fill vs standard 80%. Release air to 80-90% bubble, leaving 6-8mm diameter. Check for pupillary block - perform inferior PI if needed. Dilate pupil with tropicamide 1% to prevent block.',
+        'Inject sterile air bubble beneath graft to achieve complete anterior chamber fill. Maintain for 8-10 minutes to ensure initial adherence. Partially release air to leave 80-90% bubble (6-8mm diameter). Check for pupillary block - perform inferior peripheral iridotomy if needed. Studies show 7-20% graft dislocation rate requiring rebubbling.',
     },
     {
-      title: 'Final Steps & Positioning',
+      title: 'Postoperative Positioning',
       description:
-        'Verify all wounds sealed with fluorescein. Subconjunctival injection: Dexamethasone 2mg + Cefazolin 50mg. Modern positioning: When fully air-filled for 2 hours, strict supine positioning beyond day 1 may be unnecessary. Current protocol: Supine 2 hours continuously, then 45 min supine/15 min upright cycles on day 1.',
+        'Patient positioned supine for first 1-2 hours postoperatively. After initial period, intermittent supine positioning may be adequate. Studies show comparable outcomes with modified positioning protocols versus strict supine positioning. Monitor for graft dislocation in first 24-48 hours.',
     },
   ],
 }
 
-// Insertion methods data
+// Insertion methods data - Evidence-based approaches
 const insertionMethods = {
-  title: 'Contemporary Graft Insertion Devices & Techniques',
+  title: 'Graft Insertion Methods: Comparative Outcomes',
   techniques: [
     {
-      title: 'NS Endo-Inserter',
+      title: 'Forceps Insertion (Traditional)',
       description:
-        'Latest generation device showing superior outcomes. 21.8% endothelial cell loss vs 33.7% with Busin glide. Accommodates grafts up to 9mm. Controlled insertion with minimal manipulation. Requires 4mm incision. Ideal for surgeons transitioning from forceps technique.',
+        'Original technique using forceps to fold graft 60/40 or taco-fold configuration. Higher endothelial cell loss (30-40% at 6 months). Requires 5mm incision. Direct manipulation increases trauma risk. Still used but largely replaced by newer techniques.',
     },
     {
-      title: 'Endosaver Device',
+      title: 'Busin Glide Technique',
       description:
-        'Handles grafts up to 8.5mm through 4mm incision. Protective chamber design minimizes endothelial contact. Pre-loaded option available from eye banks. Particularly useful for UT-DSAEK grafts. Lower learning curve than pull-through techniques.',
+        'Pull-through technique using specialized glide and suture. Reduced endothelial loss compared to forceps (25-30%). Allows controlled insertion through 4.5mm incision. Learning curve moderate. Good option for standard DSAEK thickness.',
     },
     {
-      title: 'Modified Sheets Glide',
+      title: 'Insertion Devices (NS Endo-Inserter, Endosaver)',
       description:
-        'Specifically designed for altered anatomy cases. Accommodates irregular anterior chambers. Useful in aphakic eyes or with iris defects. Requires larger 5mm incision. Allows direct visualization during insertion.',
+        'Modern inserters significantly reduce endothelial trauma. Cell loss reduced to 20-25% at 6 months. Accommodate 8-9mm grafts through 4mm incision. Particularly beneficial for ultrathin DSAEK. Higher initial cost offset by improved outcomes.',
     },
   ],
 }
 
 // Additional techniques for complex cases
-const additionalTechniques = [
-  {
-    title: 'Ultrathin DSAEK Preparation Techniques',
-    numbered: false,
-    bgColor: 'blue',
-    items: [
-      {
-        title: 'Double-Pass Microkeratome (Busin Technique)',
-        description:
-          'First pass 300-350μm, measure residual bed with pachymetry, second pass calculated to achieve <100μm. Results in 48.8% achieving 20/20 vision.',
-      },
-      {
-        title: 'Single-Pass with Thin Head',
-        description:
-          'Using 90-130μm microkeratome heads. Less predictable than double-pass but faster. Requires careful donor pachymetry pre-cut.',
-      },
-      {
-        title: 'Femtosecond Laser',
-        description:
-          'Programmable depth cuts achieving consistent sub-50μm thickness. Reduced endothelial cell loss. Higher cost but superior precision.',
-      },
-    ],
-  },
-  {
-    title: 'Special Scenarios & Modified Techniques',
-    numbered: false,
-    bgColor: 'purple',
-    items: [
-      {
-        title: 'Vitrectomized Eyes',
-        description:
-          'Continuous posterior segment infusion maintains chamber stability. Consider sulcus IOL fixation if unstable. May need larger air fill (95-100%).',
-      },
-      {
-        title: 'Eyes with Glaucoma Devices',
-        description:
-          'Trim tube if protruding >2mm into AC. Larger air fills (90-100%) required. Higher rebubbling rate (26% with shunts). Consider concurrent tube revision.',
-      },
-      {
-        title: 'Triple Procedures (Phaco + IOL + DSAEK)',
-        description:
-          'Target -1.0 to -1.5D for expected hyperopic shift. Perform DSAEK after IOL is secure. Median visual improvement 0.99 to 0.36 logMAR at 12 months.',
-      },
-    ],
-  },
-]
+const additionalTechniques = []
 </script>

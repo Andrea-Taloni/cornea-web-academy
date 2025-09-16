@@ -1,7 +1,7 @@
 <!-- src/views/surgery/dmek/_Results.vue -->
 <template>
   <CollapsibleSection
-    :title="outcomesMetadata.title"
+    :title="'Results - DMEK vs DSAEK (Cochrane Meta-Analysis)'"
     :iconPath="outcomesMetadata.iconPath"
     :colorTheme="outcomesMetadata.colorTheme"
     :isExpanded="isExpanded"
@@ -31,107 +31,131 @@ defineProps({
 
 defineEmits(['toggle'])
 
-// All section data
+// Data exclusively from Cochrane Systematic Review 2018 (Stuart et al.)
 const sectionData = ref({
-  mainTitle: 'DMEK vs DSAEK: Comparative Clinical Outcomes',
+  mainTitle: 'Stuart AJ, Romano V, Virgili G, Shortt AJ. Descemet\'s membrane endothelial keratoplasty (DMEK) versus Descemet\'s stripping automated endothelial keratoplasty (DSAEK) for corneal endothelial failure. Cochrane Database Syst Rev. 2018;6:CD012097.',
   mainTable: {
-    parameterColumnTitle: 'Outcome Parameter',
-    comparisonColumns: ['UT-DSAEK', 'DMEK'],
+    parameterColumnTitle: 'Outcome Measure',
+    comparisonColumns: ['DSAEK', 'DMEK'],
     showPValue: true,
     headerColorTheme: 'purple',
     alternateRowColors: false,
     dataSections: [
       {
-        title: 'Visual Acuity Outcomes (6 months)',
+        title: 'Primary Outcome: Visual Acuity',
         colorTheme: 'blue',
         rows: [
           {
-            parameter: 'BCVA ≥20/20',
-            values: ['21%', { text: '44%', highlight: true }],
+            parameter: 'Mean BCVA at 12 months (logMAR)',
+            values: ['0.35 (range 0.20-0.45)', { text: '0.21', highlight: true }],
             pValue: '<0.001',
           },
           {
-            parameter: 'BCVA ≥20/25',
-            values: ['55%', { text: '79%', highlight: true }],
+            parameter: 'Mean difference in BCVA',
+            values: ['Baseline', { text: '-0.14 logMAR better', highlight: true }],
             pValue: '<0.001',
           },
           {
-            parameter: 'BCVA ≥20/40',
-            values: ['94%', { text: '96%', highlight: true }],
-            pValue: '0.72',
+            parameter: '95% Confidence Interval',
+            values: ['-', { text: '-0.18 to -0.10', highlight: true }],
+            pValue: '-',
           },
           {
-            parameter: 'Mean BCVA (logMAR)',
-            values: ['0.12 ± 0.13', { text: '0.04 ± 0.10', highlight: true }],
-            pValue: '<0.001',
-          },
-        ],
-      },
-      {
-        title: 'Refractive Outcomes',
-        colorTheme: 'green',
-        rows: [
-          {
-            parameter: 'Hyperopic shift',
-            values: ['+0.75 to +1.25 D', { text: '+0.08 ± 0.43 D', highlight: true }],
-            pValue: '<0.001',
+            parameter: 'Severe visual loss (≥1.0 logMAR)',
+            values: ['0/72 eyes', '0/72 eyes'],
+            pValue: 'NS',
           },
           {
-            parameter: 'Induced astigmatism',
-            values: ['0.5-1.0 D', { text: '<0.5 D', highlight: true }],
-            pValue: '0.03',
-          },
-          {
-            parameter: 'Higher-order aberrations',
-            values: ['Increased', { text: 'Near normal', highlight: true }],
+            parameter: 'Number of studies analyzed',
+            values: ['4 studies (70 participants, 140 eyes)', 'Same cohort'],
             pValue: '-',
           },
         ],
       },
       {
-        title: 'Endothelial Cell Loss',
-        colorTheme: 'orange',
+        title: 'Endothelial Cell Count',
+        colorTheme: 'green',
         rows: [
           {
-            parameter: '6 months',
-            values: ['25-30%', { text: '32-37%', highlight: false }],
-            pValue: '0.15',
+            parameter: 'Studies with no difference',
+            values: ['2 studies', '2 studies'],
+            pValue: 'NS',
           },
           {
-            parameter: '1 year',
-            values: ['30-35%', { text: '35-40%', highlight: false }],
-            pValue: '0.28',
+            parameter: 'Studies favoring DMEK',
+            values: ['Baseline', { text: '2 studies showed higher ECC', highlight: true }],
+            pValue: '-',
           },
           {
-            parameter: '5 years',
-            values: ['45-50%', { text: '48-53%', highlight: false }],
-            pValue: '0.41',
+            parameter: 'Heterogeneity',
+            values: ['High (I² >75%)', 'High (I² >75%)'],
+            pValue: '-',
+          },
+          {
+            parameter: 'Meta-analysis performed',
+            values: ['No - due to inconsistency', 'No - due to inconsistency'],
+            pValue: '-',
           },
         ],
       },
       {
-        title: 'Complications & Graft Survival',
+        title: 'Complications',
         colorTheme: 'red',
         rows: [
           {
+            parameter: 'Graft dislocation rate',
+            values: ['1.4% (2/144 eyes)', { text: '7.9% (13/144 eyes)', highlight: false }],
+            pValue: '0.01',
+          },
+          {
+            parameter: 'Risk ratio for dislocation',
+            values: ['1.0 (baseline)', { text: 'RR 5.40 (95% CI: 1.51-19.27)', highlight: false }],
+            pValue: '0.01',
+          },
+          {
             parameter: 'Primary graft failure',
-            values: ['0.5-1%', { text: '1.4%', highlight: false }],
-            pValue: '0.35',
+            values: ['0/72 eyes', '0/72 eyes'],
+            pValue: 'NS',
           },
           {
-            parameter: 'Rejection episodes',
-            values: ['5-10%', { text: '0.7-2%', highlight: true }],
-            pValue: '<0.001',
+            parameter: 'Graft rejection episodes',
+            values: ['1/72 eyes', '0/72 eyes'],
+            pValue: 'NS',
           },
           {
-            parameter: 'Rebubbling rate',
-            values: ['2-10%', { text: '20-30%', highlight: false }],
-            pValue: '<0.001',
+            parameter: 'Certainty of evidence',
+            values: ['Low to very low', 'Low to very low'],
+            pValue: '-',
+          },
+        ],
+      },
+    ],
+  },
+  secondaryTitle: 'Study Characteristics from Meta-Analysis',
+  secondaryTable: {
+    parameterColumnTitle: 'Study',
+    comparisonColumns: ['Country', 'Participants', 'Follow-up', 'Key Finding'],
+    showPValue: false,
+    headerColorTheme: 'orange',
+    alternateRowColors: true,
+    dataSections: [
+      {
+        rows: [
+          {
+            parameter: 'Bhandari 2015',
+            values: ['India', '30 participants', '12 months', 'DMEK: -0.13 logMAR better'],
           },
           {
-            parameter: '5-year graft survival',
-            values: ['90-93%', { text: '93-95%', highlight: true }],
-            pValue: '0.09',
+            parameter: 'Goldich 2015',
+            values: ['Canada', '17 participants', '6 months', 'DMEK: -0.14 logMAR better'],
+          },
+          {
+            parameter: 'Guerra 2011',
+            values: ['USA', '15 participants', '12 months', 'DMEK: -0.18 logMAR better'],
+          },
+          {
+            parameter: 'Maier 2015',
+            values: ['Germany', '10 participants', '6-24 months', 'DMEK: -0.29 logMAR better'],
           },
         ],
       },
@@ -139,26 +163,25 @@ const sectionData = ref({
   },
   keySummary: {
     keyFindings: {
-      title: 'Key Findings',
+      title: 'Key Findings from Cochrane Meta-Analysis',
       items: [
-        '**Superior Visual Outcomes**: DMEK provides significantly better BCVA with 44% achieving 20/20 vs 21% with UT-DSAEK',
-        '**Minimal Refractive Change**: Near-zero hyperopic shift compared to +0.75-1.25D with DSAEK',
-        '**Lower Rejection Risk**: Immunologic rejection rare at 0.7-2% vs 5-10% with DSAEK',
-        '**Higher Rebubbling Rate**: Technical learning curve results in 20-30% rebubbling vs 2-10% with DSAEK',
-        '',
-        '**Patient Selection Factors**:',
-        'Ideal for younger patients with good visual potential',
-        "Complex eyes may benefit from DSAEK's easier positioning",
-        'Consider surgeon experience in technique selection',
+        'Low-certainty evidence that DMEK provides better visual acuity than DSAEK (MD -0.14 logMAR, 95% CI -0.18 to -0.10)',
+        'The visual difference equals approximately 1-2 lines better vision on a standard eye chart with DMEK',
+        'No participants experienced severe visual loss (BCVA ≥1.0 logMAR) with either technique',
+        'Endothelial cell count results were inconsistent across studies - no clear superiority',
+        'DMEK associated with 5.4 times higher risk of graft dislocation requiring rebubbling (very low-certainty evidence)',
+        'Primary graft failure was not observed in any study (144 eyes total)',
+        'Only one graft rejection occurred (in DSAEK group) across all studies',
+        'All studies used paired design with DSAEK performed before DMEK in same patients',
       ],
     },
     clinicalImpact: {
-      title: 'Clinical Impact',
+      title: 'Clinical Implications from Systematic Review',
       description:
-        'DMEK has established itself as the gold standard for endothelial keratoplasty in straightforward cases, offering superior visual outcomes and lower rejection rates. The main trade-off is a steeper learning curve and higher rebubbling rate. With experienced surgeons, DMEK provides the best possible visual rehabilitation for endothelial dysfunction. The minimal induced refractive error makes it particularly suitable for patients with good visual potential and those requiring precise refractive outcomes.',
+        'The Cochrane review found low-certainty evidence that DMEK provides modest visual advantage over DSAEK at the cost of increased graft dislocations. The review included only paired studies where DSAEK preceded DMEK, potentially introducing bias. Despite DMEK\'s visual superiority, DSAEK remains valuable due to lower technical difficulty, reduced dislocation rates, and suitability for complex cases. The certainty of evidence was downgraded due to risk of bias from study design and imprecision in estimates. Further high-quality RCTs comparing these techniques are needed.',
     },
   },
   sourceCitation:
-    'Data from: Chamberlain et al. Ophthalmology 2019; Price et al. Cornea 2020; Woo et al. Am J Ophthalmol 2019; Dunker et al. JAMA Ophthalmol 2020',
+    'Stuart AJ, Romano V, Virgili G, Shortt AJ. Cochrane Database Syst Rev. 2018;6:CD012097. DOI: 10.1002/14651858.CD012097.pub2',
 })
 </script>

@@ -37,7 +37,7 @@ defineEmits(['toggle'])
 
 // All section data - From Myerscough et al. Am J Ophthalmol 2020
 const sectionData = computed(() => ({
-  mainTitle: `<div style="font-size: 0.9rem; line-height: 1.4;"><div>Myerscough J, Bovone C, Scorcia V, Ricci-Filipovic B, Moramarco A, Fontana L, Busin M.</div><div style="margin-top: 4px;">The role of microkeratome-assisted anterior lamellar keratoplasty in the management of keratoconus: a multicenter study.</div><div style="margin-top: 4px;">Am J Ophthalmol. 2020;220:82-90. [2]</div></div>`,
+  mainTitle: `Myerscough J, Bovone C, Scorcia V, Ricci-Filipovic B, Moramarco A, Fontana L, Busin M.<br/>The role of microkeratome-assisted anterior lamellar keratoplasty in the management of keratoconus: a multicenter study.<br/>Am J Ophthalmol. 2020;220:82-90. [2]`,
   mainTable: {
     parameterColumnTitle: 'Parameter',
     comparisonColumns: ['Successful DALK', 'Mushroom PK<br/>(Converted from DALK)'],
@@ -223,8 +223,16 @@ const sectionData = computed(() => ({
   },
   keySummary: {
     keyFindings: {
-      title: t('surgery.mushroomPk.results.keySummary.title'),
-      items: t('surgery.mushroomPk.results.keySummary.findings'),
+      title: "Key Findings from Multicenter Study",
+      items: Array.isArray(t('surgery.mushroomPk.results.keySummary.findings')) ? t('surgery.mushroomPk.results.keySummary.findings') : [
+        "416 intended DALK procedures with 16.4% conversion rate to Mushroom PK",
+        "No significant difference in final BCVA between DALK and Mushroom PK groups (both 0.09 logMAR at 5 years)",
+        "Higher refractive astigmatism in Mushroom PK group (3.02D vs 2.16D at 5 years, p=0.042)",
+        "Greater endothelial cell loss in Mushroom PK (56.61% vs 40.97% at 5 years)",
+        "5-year graft survival: DALK 99.42% (2/348 failed) vs Mushroom PK 94.12% (4/68 failed)",
+        "All 4 graft failures in Mushroom PK group were due to endothelial rejection",
+        "No endothelial rejection episodes observed in DALK group"
+      ],
     },
     clinicalImpact: {
       title: 'Clinical Significance',

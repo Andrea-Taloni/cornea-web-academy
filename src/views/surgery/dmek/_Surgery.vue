@@ -25,61 +25,61 @@ defineProps({
 
 defineEmits(['toggle'])
 
-// DMEK surgical technique data
+// DMEK surgical technique data - Based on Busin et al. 2015 technique
 const dmekTechnique = {
-  title: 'Tri-folded Endothelium-in DMEK with Bimanual Pull-through Technique',
+  title: 'Contact Lens-Assisted Pull-Through DMEK Technique (Busin et al.)',
   steps: [
     {
-      title: 'Graft Preparation (5.9 ± 1.1 minutes)',
+      title: 'Donor Tissue Preparation',
       description:
-        'Prepare DMEK graft in standard fashion with appropriate diameter trephination. Configure graft in tri-folded, endothelium-in orientation. Load into disposable cartridge system designed for bimanual delivery. The tri-folded configuration protects endothelium while facilitating rapid unfolding.',
+        'Use pre-stripped donor tissue from eye bank (9.5mm strip, 1 clock hour hinge marked). Punch tissue to 8.25mm diameter using Barron punch with trypan blue staining. Tri-fold graft with endothelium INWARD using dedicated forceps. Place tri-folded graft onto sterile soft contact lens as scaffold. Contact lens maintains tri-fold architecture during loading.',
     },
     {
-      title: 'Recipient Preparation',
+      title: 'Recipient Bed Preparation',
       description:
-        'Mark central cornea for graft centration. Create main incision and two paracenteses positioned for bimanual technique. Score and strip central Descemet membrane matching graft size. Remove all central DM fragments completely. Prepare anterior chamber for graft insertion.',
+        'Create 2.75mm clear corneal tunnel (inferotemporal OD, supranasal OS). Score and remove central 9mm Descemet membrane under air. Perform inferior peripheral iridotomy with vitreoretinal scissors. Insert anterior chamber maintainer (ACM) at 12 o\'clock with lateral port design. The lateral port prevents direct fluid jet against graft.',
     },
     {
-      title: 'Bimanual Pull-through Delivery',
+      title: 'Graft Loading into Cartridge',
       description:
-        'Insert loaded cartridge through main incision. Use bimanual pull-through technique with second instrument through paracentesis. Controlled delivery of tri-folded graft into anterior chamber. The endothelium-in configuration prevents endothelial touch during insertion.',
+        'Move contact lens with tri-folded graft onto IOL cartridge funnel entrance. Fill cartridge with BSS from distal end. Insert microincision forceps through cartridge to grasp graft center. Pull graft into funnel - unfolded edge slides on funnel floor. Graft opens partially in BSS, endothelium remains protected inward. Seal cartridge back with silicone plug on handle.',
     },
     {
-      title: 'Rapid Graft Unfolding (2.9 ± 0.9 minutes)',
+      title: 'Bimanual Pull-Through Delivery',
       description:
-        'Tri-folded configuration allows predictable, rapid unfolding sequence. Minimal manipulation required due to pre-configured orientation. Use standardized unfolding technique specific to tri-fold design. Complete unfolding achieved in under 3 minutes average.',
+        'Rotate cartridge 180° (floor becomes ceiling). Insert cartridge into main wound. Create second paracentesis for microincision forceps (supranasal OD, inferotemporal OS). Deliver graft bimanually under continuous low-flow irrigation from ACM. Descemetic surface of unfolded part now faces recipient cornea correctly.',
     },
     {
-      title: 'Graft Centration & Attachment',
+      title: 'Graft Unfolding (Average 2.9 minutes)',
       description:
-        'Center graft over marked visual axis. Fill anterior chamber with air for graft attachment. Standard air tamponade protocol for 8-10 minutes. Perform air-liquid exchange as per standard DMEK technique. Ensure complete graft apposition without edge folds.',
+        'Natural tendency of tissue to roll endothelium-outward facilitates spontaneous unfolding. Gentle corneal tapping helps unfold lateral edges. May use forceps twisting or gentle graft movement if needed. Minimal manipulation required - tissue unfolds predictably. Stop ACM flow once unfolding complete.',
     },
     {
-      title: 'Closure & Positioning',
+      title: 'Air Injection and Attachment',
       description:
-        'Standard wound closure and leak testing. Dilate pupil to prevent pupillary block. Patient positioning supine for optimal graft attachment. Face-up positioning for 24-48 hours recommended. Check graft attachment before discharge.',
+        'Insert 27-gauge cannula through paracentesis to graft center. Inject air beneath graft for complete anterior chamber fill. Maintain full air fill for proper attachment. Suture main wound and paracenteses with 10-0 nylon. Final air injection through limbus with 32-gauge needle. Apply pressure patch, position patient supine 2 hours.',
     },
   ],
 }
 
-// Alternative approaches data
+// Alternative approaches and key outcomes data
 const alternativeApproaches = {
-  title: 'Technical Modifications & Pearls',
+  title: 'Key Advantages of Contact Lens-Assisted Technique',
   techniques: [
     {
-      title: 'Pre-loaded DMEK',
+      title: 'Reduced Surgical Time',
       description:
-        'Eye bank prepared tissue in viewing chamber. Reduces surgical time and learning curve. Maintains endothelial viability during transport. Higher cost but standardized quality. Useful for surgeons during learning phase.',
+        'Average DMEK procedure time only 17.1 ± 1.6 minutes (never exceeding 20 minutes). Graft preparation averages 5.9 ± 1.1 minutes. Unfolding completed in 2.9 ± 0.9 minutes. Standardized technique reduces variability. Significantly faster than conventional DMEK approaches.',
     },
     {
-      title: 'Hemi-DMEK/Quarter-DMEK',
+      title: 'Minimal Endothelial Cell Loss',
       description:
-        'Uses partial Descemet grafts for localized pathology. Reduces donor tissue requirement. Useful for failed DMEK with partial graft detachment. Technically challenging with specific unfolding requirements.',
+        'Cell loss at 6 months only 9.9 ± 2.1% (range 4.1-11.9%). Superior to conventional DMEK techniques reporting 15-30% loss. Endothelium-in configuration protects cells during delivery. Contact lens scaffold prevents tissue damage during loading. Bimanual technique minimizes graft manipulation.',
     },
     {
-      title: 'DMEK-S (with stromal rim)',
+      title: 'Excellent Visual Outcomes',
       description:
-        'Leaves thin peripheral stromal rim on graft. Easier handling and unfolding. S-stamp visible for orientation. Slightly thicker graft but minimal optical impact. Good transition technique from DSAEK.',
+        'All patients achieved BCVA 20/25 or better at 6 months. Average endothelial cell density 2363 ± 82.7 cells/mm² at 6 months. Comparable to best reported DMEK outcomes. Graft detachment rate 23.8%, all successfully rebubbled once. No primary graft failures in series.',
     },
   ],
 }

@@ -18,7 +18,9 @@
       "Bash(npm start)",
       "WebFetch(domain:pubmed.ncbi.nlm.nih.gov)",
       "Bash(curl:*)",
-      "Bash(rg:*)"
+      "Bash(rg:*)",
+      "Bash(start http://localhost:5173/surgery/mushroom-pk)",
+      "Bash(start http://localhost:5174/surgery/mushroom-pk)"
     ],
     "deny": [],
     "ask": [],

@@ -61,8 +61,7 @@ const references = [
   },
   {
     authors: 'Busin M, Leon P, Nahum Y, Scorcia V.',
-    title:
-      'Large (9 mm) Deep Anterior Lamellar Keratoplasty with Clearance of a 6-mm Optical Zone Optimizes Outcomes of Keratoconus Surgery.',
+    title: 'Large (9 mm) Deep Anterior Lamellar Keratoplasty with Clearance of a 6-mm Optical Zone Optimizes Outcomes of Keratoconus Surgery.',
     journal: 'Ophthalmology.',
     year: '2017',
     volume: '124(7)',

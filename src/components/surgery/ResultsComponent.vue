@@ -2,7 +2,7 @@
 <template>
   <div class="max-w-6xl mx-auto">
     <!-- Main Title -->
-    <h3 v-if="mainTitle" class="text-2xl font-bold mb-6 text-gray-800 text-center" v-html="mainTitle">
+    <h3 v-if="mainTitle" class="text-base font-medium mb-6 text-gray-700 text-center italic" v-html="mainTitle">
     </h3>
 
     <!-- Main Comparison Table -->

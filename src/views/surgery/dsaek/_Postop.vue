@@ -11,7 +11,6 @@
     <PostopSection
       :corticosteroids="postopData.corticosteroids"
       :antimicrobial="postopData.antimicrobial"
-      :followUp="postopData.followUp"
       :sutureManagement="postopData.sutureManagement"
     />
   </CollapsibleSection>
@@ -50,17 +49,6 @@ const postopData = ref({
     options: ['Moxifloxacin 0.5%', 'Gatifloxacin 0.5%', 'Tobramycin 0.3%'],
     dosingLabel: 'Duration',
     dosing: 'QID × 1-2 weeks',
-  },
-  followUp: {
-    title: 'Follow-up Schedule',
-    schedule: [
-      'Day 1 (critical)',
-      'Week 1',
-      'Week 2, 4',
-      'Month 2, 3, 6',
-      'Every 6 months thereafter',
-      'Annual endothelial cell counts',
-    ],
   },
   sutureManagement: {
     title: 'Special Considerations',

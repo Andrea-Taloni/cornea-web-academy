@@ -1,7 +1,7 @@
 <!-- src/views/surgery/salk/_Results.vue -->
 <template>
   <CollapsibleSection
-    :title="outcomesMetadata.title"
+    :title="'Results - SALK Clinical Outcomes'"
     :iconPath="outcomesMetadata.iconPath"
     :colorTheme="outcomesMetadata.colorTheme"
     :isExpanded="isExpanded"

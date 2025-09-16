@@ -191,7 +191,14 @@ const sectionData = computed(() => ({
   keySummary: {
     keyFindings: {
       title: t('surgery.dalk.results.study1.keySummary.statisticalAnalysis'),
-      items: t('surgery.dalk.results.study1.keySummary.keyFindings'),
+      items: [
+        t('surgery.dalk.results.study1.keySummary.keyFindings.0'),
+        t('surgery.dalk.results.study1.keySummary.keyFindings.1'),
+        t('surgery.dalk.results.study1.keySummary.keyFindings.2'),
+        t('surgery.dalk.results.study1.keySummary.keyFindings.3'),
+        t('surgery.dalk.results.study1.keySummary.keyFindings.4'),
+        t('surgery.dalk.results.study1.keySummary.keyFindings.5'),
+      ],
     },
     clinicalImpact: {
       title: t('surgery.dalk.results.study1.keySummary.clinicalSignificance'),

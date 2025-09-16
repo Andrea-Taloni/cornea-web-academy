@@ -35,31 +35,79 @@ defineProps({
 defineEmits(['toggle'])
 
 // General Mushroom PK Complications
-const complicationsData = computed(() => ({
-  intraoperative: {
-    title: t('surgery.mushroomPk.complications.intraoperative.title'),
-    colorTheme: 'orange',
-    complications: t('surgery.mushroomPk.complications.intraoperative.items').map(item => ({
-      name: item.name,
-      details: [
-        { label: 'Incidence', value: item.incidence },
-        { label: 'Management', value: item.management },
+const complicationsData = computed(() => {
+  const intraoperativeItems = t('surgery.mushroomPk.complications.intraoperative.items')
+  let intraoperativeArray = []
+  
+  if (typeof intraoperativeItems === 'string' && intraoperativeItems === 'surgery.mushroomPk.complications.intraoperative.items') {
+    // Fallback content
+    intraoperativeArray = [
+      {
+        name: "Conversion from intended DALK",
+        incidence: "10-20% of DALK attempts",
+        management: "Two-piece mushroom PK technique"
+      },
+      {
+        name: "Microkeratome-related issues",
+        incidence: "Rare with proper technique",
+        management: "Manual dissection or new donor tissue"
+      },
+      {
+        name: "Posterior lamella malpositioning",
+        incidence: "1-2%",
+        management: "Careful repositioning during surgery"
+      }
+    ]
+  } else {
+    intraoperativeArray = Array.isArray(intraoperativeItems) ? intraoperativeItems : []
+  }
+  
+  const earlyItems = t('surgery.mushroomPk.complications.postoperative.early.items')
+  const lateItems = t('surgery.mushroomPk.complications.postoperative.late.items')
+  
+  return {
+    intraoperative: {
+      title: "Intraoperative Complications",
+      colorTheme: 'orange',
+      complications: intraoperativeArray.map(item => ({
+        name: item.name,
+        details: [
+          { label: 'Incidence', value: item.incidence },
+          { label: 'Management', value: item.management },
+        ],
+      })),
+    },
+    postoperative: {
+      title: "Postoperative Complications",
+      colorTheme: 'red',
+      sections: [
+        {
+          title: "Early Complications (less than 1 month)",
+          items: Array.isArray(earlyItems) ? earlyItems : [
+            "Posterior lamella detachment",
+            "Interface fluid",
+            "Wound leak",
+            "Pupillary block",
+            "Elevated intraocular pressure",
+            "Epithelial defects",
+            "Primary graft failure"
+          ],
+        },
+        {
+          title: "Late Complications (more than 1 month)",
+          items: Array.isArray(lateItems) ? lateItems : [
+            "Endothelial rejection",
+            "Stromal rejection",
+            "High astigmatism",
+            "Interface opacification",
+            "Secondary glaucoma",
+            "Wound dehiscence",
+            "Progressive endothelial cell loss",
+            "Late graft failure"
+          ],
+        },
       ],
-    })),
-  },
-  postoperative: {
-    title: t('surgery.mushroomPk.complications.postoperative.title'),
-    colorTheme: 'red',
-    sections: [
-      {
-        title: t('surgery.mushroomPk.complications.postoperative.early.title'),
-        items: t('surgery.mushroomPk.complications.postoperative.early.items'),
-      },
-      {
-        title: t('surgery.mushroomPk.complications.postoperative.late.title'),
-        items: t('surgery.mushroomPk.complications.postoperative.late.items'),
-      },
-    ],
-  },
-}))
+    },
+  }
+})
 </script>

@@ -11,7 +11,6 @@
     <PostopSection
       :corticosteroids="postopData.corticosteroids"
       :antimicrobial="postopData.antimicrobial"
-      :followUp="postopData.followUp"
       :sutureManagement="postopData.sutureManagement"
     />
   </CollapsibleSection>
@@ -35,31 +34,41 @@ defineProps({
 defineEmits(['toggle'])
 
 // Post-operative management data - Based on Busin et al. 2015
-const postopData = computed(() => ({
-  corticosteroids: {
-    title: t('surgery.mushroomPk.postoperative.corticosteroids.title'),
-    medication: t('surgery.mushroomPk.postoperative.corticosteroids.medication'),
-    dosing: t('surgery.mushroomPk.postoperative.corticosteroids.dosing'),
-  },
-  antimicrobial: {
-    title: t('surgery.mushroomPk.postoperative.antimicrobial.title'),
-    optionsLabel: t('surgery.mushroomPk.postoperative.antimicrobial.initial'),
-    options: [t('surgery.mushroomPk.postoperative.antimicrobial.medication')],
-    dosingLabel: 'Additional',
-    dosing: ` ${t('surgery.mushroomPk.postoperative.antimicrobial.additional')}`,
-  },
-  followUp: {
-    title: t('surgery.mushroomPk.postoperative.followUp.title'),
-    schedule: t('surgery.mushroomPk.postoperative.followUp.schedule'),
-  },
-  sutureManagement: {
-    title: t('surgery.mushroomPk.postoperative.sutureManagement.title'),
-    timings: [
-      { text: t('surgery.mushroomPk.postoperative.sutureManagement.allSuturesRemoved'), isSubItem: false },
-      { text: t('surgery.mushroomPk.postoperative.sutureManagement.earlierRemoval'), isSubItem: true },
-      { text: t('surgery.mushroomPk.postoperative.sutureManagement.selectiveRemoval'), isSubItem: false },
-      { text: t('surgery.mushroomPk.postoperative.sutureManagement.noSutureBeyond'), isSubItem: false },
-    ],
-  },
-}))
+const postopData = computed(() => {
+  const dosingTrans = t('surgery.mushroomPk.postoperative.corticosteroids.dosing')
+  const dosing = typeof dosingTrans === 'string' && dosingTrans === 'surgery.mushroomPk.postoperative.corticosteroids.dosing' 
+    ? [
+        "Every 2 hours × 2 weeks",
+        "Every 3 hours × 2 weeks",
+        "QID × 1 month",
+        "TID × 1 month",
+        "BID × 1 month",
+        "QD indefinitely (except phakic or steroid responders)"
+      ]
+    : dosingTrans
+    
+  return {
+    corticosteroids: {
+      title: "Topical Corticosteroids",
+      medication: "Tobramycin 0.3% + Dexamethasone 0.1% combination",
+      dosing: dosing,
+    },
+    antimicrobial: {
+      title: "Antimicrobial Prophylaxis",
+      optionsLabel: "Initial therapy:",
+      options: ["Tobramycin/Dexamethasone combination as above"],
+      dosingLabel: 'Additional',
+      dosing: "For herpetic keratitis: systemic acyclovir 400mg BID starting 3 months pre-op, continued ≥1 year",
+    },
+    sutureManagement: {
+      title: "Suture Management",
+      timings: [
+        { text: "All sutures removed within 12 months", isSubItem: false },
+        { text: "Earlier removal possible due to enhanced wound stability", isSubItem: true },
+        { text: "Selective removal based on topographic astigmatism", isSubItem: false },
+        { text: "No suture left beyond 12 months", isSubItem: false },
+      ],
+    },
+  }
+})
 </script>

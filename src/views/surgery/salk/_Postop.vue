@@ -11,7 +11,6 @@
     <PostopSection
       :corticosteroids="postopData.corticosteroids"
       :antimicrobial="postopData.antimicrobial"
-      :followUp="postopData.followUp"
       :sutureManagement="postopData.sutureManagement"
     />
   </CollapsibleSection>
@@ -49,17 +48,6 @@ const postopData = ref({
     options: ['Moxifloxacin 0.5%', 'Ofloxacin 0.3%'],
     dosingLabel: 'Duration',
     dosing: 'QID × 1 week only',
-  },
-  followUp: {
-    title: 'Busin\'s Follow-up Schedule',
-    schedule: [
-      'Day 1 - confirm graft position',
-      'Day 2-3 - SUTURE REMOVAL',
-      'Day 7 - epithelial check',
-      'Weekly × 1 month',
-      'Monthly × 3 months',
-      'Then as needed',
-    ],
   },
   sutureManagement: {
     title: 'Suture Management - Critical',
