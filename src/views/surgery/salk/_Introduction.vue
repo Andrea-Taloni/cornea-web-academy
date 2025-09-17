@@ -32,8 +32,8 @@ const overviewImage = {
 }
 
 const paragraphs = [
-  'Photorefractive keratectomy (PRK) is a well-established treatment modality in the management of refractive errors. Progress has been made in reducing the associated complications, evidenced in particular by a reduction in the incidence of postoperative corneal haze. Superficial keratectomy with or without phototherapeutic keratectomy (PTK), and PTK alone or augmented by mitomycin C (MMC) have all been described in the treatment of visually significant corneal haze following PRK.',
-  'However, this complication can recur following these treatments requiring further re-treatment. The aim of this study was to investigate the efficacy and safety of sutureless superficial anterior lamellar keratoplasty (SALK) in the treatment of corneal haze secondary to PRK, recurring after at least one PTK treatment with or without MMC.',
-  'Sutureless SALK provides a useful treatment option in patients with recurrent haze after excimer laser treatment. It can eliminate haze recurrence for at least a period of 5 years and can improve BSCVA, although there may be significant surgically induced astigmatism.',
+  'Photorefractive keratectomy (PRK) is a well-established technique for correcting refractive errors such as myopia, hyperopia, and astigmatism. Despite significant progress in reducing complications, some patients may develop corneal haze that compromises visual quality.',
+  'Traditional treatment options include superficial keratectomy, PTK (phototherapeutic keratectomy) alone or enhanced with Mitomycin C. Unfortunately, haze can recur even after these treatments, requiring repeated interventions that can be frustrating for patients and may further compromise visual quality.',
+  'Sutureless SALK (Superficial Anterior Lamellar Keratoplasty) represents an innovative solution for patients with recurrent haze. This technique can eliminate recurrences for at least 5 years and significantly improve visual acuity, offering a long-lasting solution for those who have undergone PTK treatments without definitive success.',
 ]
 </script>
