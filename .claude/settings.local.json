@@ -20,7 +20,8 @@
       "Bash(curl:*)",
       "Bash(rg:*)",
       "Bash(start http://localhost:5173/surgery/mushroom-pk)",
-      "Bash(start http://localhost:5174/surgery/mushroom-pk)"
+      "Bash(start http://localhost:5174/surgery/mushroom-pk)",
+      "Bash(dir:*)"
     ],
     "deny": [],
     "ask": [],

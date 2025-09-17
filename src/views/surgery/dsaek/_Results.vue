@@ -33,140 +33,156 @@ defineProps({
 
 defineEmits(['toggle'])
 
-// DSAEK-specific outcomes data
+// DSAEK-specific outcomes data from Cornea Donor Study 3-year Results
 const sectionData = ref({
-  mainTitle: 'DSAEK Clinical Outcomes and Long-term Results',
+  mainTitle: 'Price MO, Gorovoy M, Price FW Jr, Benetz BA, Menegay HJ, Lass JH.<br/>Descemet stripping automated endothelial keratoplasty 3-year graft and endothelial cell survival compared with penetrating keratoplasty.<br/>Ophthalmology. 2013;120(2):246-251.',
   mainTable: {
     parameterColumnTitle: 'Outcome Parameter',
-    comparisonColumns: ['Standard DSAEK', 'Ultrathin DSAEK'],
+    comparisonColumns: ['DSAEK (n=173)', 'PKP (n=1101)'],
     showPValue: true,
     headerColorTheme: 'purple',
     alternateRowColors: false,
     dataSections: [
       {
-        title: 'Visual Outcomes',
-        colorTheme: 'blue',
-        rows: [
-          {
-            parameter: 'Mean BCVA at 6 months',
-            values: ['20/40 (0.30 logMAR)', '20/32 (0.20 logMAR)'],
-            pValue: '0.02',
-          },
-          {
-            parameter: 'Mean BCVA at 12 months',
-            values: ['20/32 (0.20 logMAR)', '20/25 (0.10 logMAR)'],
-            pValue: '0.01',
-          },
-          {
-            parameter: 'Achieving 20/20 vision',
-            values: ['15-20%', '30-40%'],
-            pValue: '<0.01',
-          },
-          {
-            parameter: 'Achieving 20/25 or better',
-            values: ['40-50%', '60-75%'],
-            pValue: '<0.01',
-          },
-          {
-            parameter: 'Mean graft thickness',
-            values: ['130-180 μm', '50-90 μm'],
-            pValue: '-',
-          },
-        ],
-      },
-      {
-        title: 'Graft Survival and Endothelial Cell Loss',
+        title: '3-Year Graft Survival',
         colorTheme: 'green',
         rows: [
           {
-            parameter: '5-year graft survival',
-            values: ['93-95%', '94-96%'],
+            parameter: 'Overall 3-year survival',
+            values: ['94%', '93%'],
             pValue: 'NS',
           },
           {
-            parameter: '10-year graft survival',
-            values: ['85-90%', 'Limited data'],
-            pValue: '-',
+            parameter: "Fuchs' dystrophy survival",
+            values: ['96%', '96%'],
+            pValue: '0.81',
           },
           {
-            parameter: 'ECC loss at 1 year',
-            values: ['30-35%', '25-30%'],
-            pValue: '0.04',
-          },
-          {
-            parameter: 'ECC loss at 5 years',
-            values: ['45-55%', '40-50%'],
-            pValue: '0.03',
-          },
-          {
-            parameter: 'Annual ECC decline after year 1',
-            values: ['2.5-3.5%', '2.0-3.0%'],
-            pValue: 'NS',
+            parameter: "Non-Fuchs' cases survival",
+            values: ['86%', '84%'],
+            pValue: '0.41',
           },
         ],
       },
       {
-        title: 'Complications and Re-interventions',
+        title: 'Endothelial Cell Density and Loss',
+        colorTheme: 'blue',
+        rows: [
+          {
+            parameter: 'Baseline ECD (cells/mm²)',
+            values: ['2754 (2568-2983)', '2731 (2513-2895)'],
+            pValue: '0.049',
+          },
+          {
+            parameter: '1-year ECD (cells/mm²)',
+            values: ['1759 (1236-2295)', '2243 (1732-2646)'],
+            pValue: '<0.0001',
+          },
+          {
+            parameter: '3-year ECD (cells/mm²)',
+            values: ['1447 (947-2125)', '1238 (767-1900)'],
+            pValue: '0.11',
+          },
+          {
+            parameter: '1-year cell loss (%)',
+            values: ['36% (17-55)', '18% (3-36)'],
+            pValue: '<0.0001',
+          },
+          {
+            parameter: '3-year cell loss (%)',
+            values: ['48% (26-65)', '53% (27-72)'],
+            pValue: '0.17',
+          },
+          {
+            parameter: "3-year cell loss in Fuchs'",
+            values: ['46%', '51%'],
+            pValue: '0.33',
+          },
+          {
+            parameter: "3-year cell loss in non-Fuchs'",
+            values: ['59%', '61%'],
+            pValue: '0.70',
+          },
+        ],
+      },
+      {
+        title: 'Causes of Graft Failure Within 3 Years',
         colorTheme: 'red',
         rows: [
           {
-            parameter: 'Primary graft failure',
-            values: ['1-2%', '0.5-1.5%'],
-            pValue: 'NS',
+            parameter: 'Primary donor failure',
+            values: ['0%', '0.3%'],
+            pValue: '-',
           },
           {
-            parameter: 'Graft dislocation requiring rebubbling',
-            values: ['2-5%', '3-7%'],
-            pValue: 'NS',
+            parameter: 'Immunologic rejection',
+            values: ['0.6%', '3.1%'],
+            pValue: '-',
           },
           {
-            parameter: 'Immunologic rejection rate',
-            values: ['5-10% at 5 years', '4-8% at 5 years'],
-            pValue: 'NS',
+            parameter: 'Endothelial decompensation',
+            values: ['1.7%', '2.1%'],
+            pValue: '-',
           },
           {
-            parameter: 'Interface complications',
-            values: ['2-5%', '1-3%'],
-            pValue: '0.04',
+            parameter: 'Unsatisfactory vision',
+            values: ['1.7%', '0%'],
+            pValue: '-',
           },
           {
-            parameter: 'Pupillary block',
-            values: ['1-2%', '1-2%'],
-            pValue: 'NS',
+            parameter: 'Infection',
+            values: ['0%', '1.1%'],
+            pValue: '-',
+          },
+          {
+            parameter: 'Epithelial defects',
+            values: ['0%', '0.5%'],
+            pValue: '-',
+          },
+        ],
+      },
+      {
+        title: 'Rejection Episodes',
+        colorTheme: 'orange',
+        rows: [
+          {
+            parameter: 'Predicted probability at 3 years',
+            values: ['9%', '20%'],
+            pValue: '0.0005',
+          },
+          {
+            parameter: 'Total rejection episodes',
+            values: ['11 (6.4%)', '220 (20%)'],
+            pValue: '<0.001',
           },
         ],
       },
     ],
   },
-  secondaryTitle: 'Factors Affecting DSAEK Outcomes',
+  secondaryTitle: 'Effect of DSAEK Incision Width on Outcomes',
   secondaryTable: {
-    parameterColumnTitle: 'Factor',
-    comparisonColumns: ['Impact on Outcomes', 'Clinical Significance'],
-    showPValue: false,
-    headerColorTheme: 'orange',
+    parameterColumnTitle: 'Parameter',
+    comparisonColumns: ['5.0 mm incision', '3.2 mm incision'],
+    showPValue: true,
+    headerColorTheme: 'teal',
     alternateRowColors: true,
     dataSections: [
       {
         rows: [
           {
-            parameter: 'Graft thickness <100 μm',
-            values: ['Improved BCVA by 1-2 lines', 'Ultrathin DSAEK preferred when feasible'],
+            parameter: '3-year cell loss',
+            values: ['33%', '60%'],
+            pValue: '0.0007',
           },
           {
-            parameter: 'Insertion technique',
-            values: ['20-40% ECC loss variation', 'Modern inserters reduce trauma'],
+            parameter: '3-year graft survival',
+            values: ['97%', '92%'],
+            pValue: '0.45',
           },
           {
-            parameter: 'Donor age >65 years',
-            values: ['No significant impact on survival', 'Acceptable for most cases'],
-          },
-          {
-            parameter: 'Fuchs dystrophy indication',
-            values: ['Better outcomes vs other causes', 'Most favorable indication'],
-          },
-          {
-            parameter: 'Previous glaucoma surgery',
-            values: ['Increased failure risk (2-3x)', 'Requires closer monitoring'],
+            parameter: 'Recommendation',
+            values: ['Associated with less cell loss', 'Higher endothelial trauma'],
+            pValue: '-',
           },
         ],
       },
@@ -174,25 +190,25 @@ const sectionData = ref({
   },
   keySummary: {
     keyFindings: {
-      title: 'Key DSAEK Outcomes Summary',
+      title: 'Key Study Findings',
       items: [
-        'DSAEK provides excellent visual rehabilitation with 40-50% achieving 20/25 or better vision',
-        'Ultrathin DSAEK (<100 μm) significantly improves visual outcomes compared to standard thickness',
-        '5-year graft survival rates exceed 90% in most series',
-        'Endothelial cell loss stabilizes after first year at 2-3% annual decline',
-        'Graft dislocation rates are low (2-5%) with modern techniques',
-        'Primary graft failure remains rare at 1-2% with experienced surgeons',
-        'Interface complications are minimized with ultrathin grafts',
-        'DSAEK remains excellent option for complex eyes unsuitable for DMEK',
+        '3-year graft survival comparable between DSAEK (94%) and PKP (93%)',
+        "Excellent outcomes in Fuchs' dystrophy: 96% survival for both procedures",
+        'Higher initial cell loss with DSAEK (36% at 1 year) but comparable at 3 years (48% vs 53%)',
+        'Significantly lower rejection risk with DSAEK (9% vs 20% at 3 years, P=0.0005)',
+        'No primary donor failures observed in DSAEK group',
+        'No infections or epithelial defects in DSAEK vs 1.1% and 0.5% in PKP',
+        '5 mm incision width associated with significantly less cell loss than 3.2 mm (33% vs 60%)',
+        'Study included 173 DSAEK eyes from 2 experienced surgeons vs 1101 PKP eyes from 68 surgeons',
       ],
     },
     clinicalImpact: {
-      title: 'Clinical Practice Considerations',
+      title: 'Clinical Implications',
       description:
-        'DSAEK has evolved significantly with ultrathin grafts providing visual outcomes approaching DMEK while maintaining technical advantages. The procedure offers predictable outcomes, lower dislocation rates than DMEK, and broader applicability to complex cases including eyes with anterior chamber abnormalities, previous vitrectomy, or glaucoma devices. Long-term survival data demonstrates excellent durability. While DMEK may offer superior visual potential in ideal cases, DSAEK remains the procedure of choice for challenging anatomy and continues to be refined with thinner grafts and improved insertion techniques.',
+        'This prospective multicenter study demonstrates that DSAEK performed by experienced surgeons achieves 3-year graft survival comparable to PKP with similar long-term endothelial cell loss. DSAEK shows advantages including significantly lower rejection risk, absence of wound-related complications, and the ability to address unsatisfactory vision through regrafting. The study emphasizes the importance of surgical technique, particularly incision width, with 5 mm incisions showing superior endothelial preservation compared to 3.2 mm incisions. These findings support DSAEK as an effective alternative to PKP for endothelial dysfunction.',
     },
   },
   sourceCitation:
-    'Data compiled from multiple large series including Price MO et al. Ophthalmology 2018, Wacker K et al. Cornea 2016, and Cornea Donor Study 10-year results.',
+    'Data from the Cornea Donor Study and Specular Microscopy Ancillary Study',
 })
 </script>

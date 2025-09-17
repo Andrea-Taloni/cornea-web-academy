@@ -31,86 +31,78 @@ defineProps({
 
 defineEmits(['toggle'])
 
-// Updated complications data with evidence-based rates
+// Complications data from Cornea Donor Study 3-year Results
 const complicationsData = ref({
   intraoperative: {
-    title: 'Intraoperative Complications',
+    title: 'Intraoperative Considerations',
     colorTheme: 'orange',
     complications: [
       {
-        name: 'Difficult graft insertion',
+        name: 'Surgical Technique Impact',
         details: [
-          { label: 'Incidence', value: '5-10%' },
-          { label: 'Risk factors', value: 'Shallow AC, small incision, thick graft >150μm' },
-          { label: 'Prevention', value: 'Use insertion devices (21.8% vs 33.7% cell loss)' },
+          { label: 'Study surgeons', value: '2 experienced DSAEK surgeons' },
+          { label: 'Incision sizes used', value: '3.2 mm (n=103) and 5.0 mm (n=70)' },
+          { label: 'Insertion method', value: 'Forceps (n=167) or funnel glide (n=6)' },
           {
-            label: 'Management',
-            value: 'Enlarge incision to 5mm, use Sheets glide for complex anatomy',
+            label: 'Key finding',
+            value: '5 mm incision significantly reduces cell loss vs 3.2 mm',
           },
         ],
       },
       {
-        name: 'Upside-down graft',
+        name: 'Graft Preparation',
         details: [
-          { label: 'Incidence', value: '2-5%' },
-          { label: 'S-stamp grafts', value: '20% rebubbling rate', highlight: false },
-          { label: 'Prevention', value: 'Asymmetric orientation marks, verify S-stamp readable' },
-          { label: 'Management', value: 'Immediate repositioning before air injection' },
-        ],
-      },
-      {
-        name: 'Incomplete Descemet stripping',
-        details: [
-          { label: 'Impact', value: 'Increases rebubbling to 20%', highlight: false },
-          { label: 'Detection', value: 'Trypan blue staining of residual DM' },
-          { label: 'Prevention', value: 'Systematic stripping pattern, adequate visualization' },
-          { label: 'Management', value: 'Complete removal before graft insertion' },
+          { label: 'Donor criteria', value: 'Age 10-75 years' },
+          { label: 'ECD requirement', value: '2300-3300 cells/mm²' },
+          { label: 'Death to surgery', value: '≤5 days (mean 4 days in study)' },
+          { label: 'Graft diameter', value: '8.25-9.0 mm depending on recipient' },
         ],
       },
     ],
   },
   postoperative: {
-    title: 'Postoperative Complications & Management',
+    title: 'Postoperative Complications from 3-Year Study',
     colorTheme: 'red',
     sections: [
       {
-        title: 'Early (&lt;1 month)',
+        title: 'Graft Failure Causes (Within 3 Years)',
         items: [
-          '**Graft detachment**: 9.1-16.2% (surgeon-cut lower than preloaded)',
-          'Management: Rebubble if >1/3 detached or central zone - 96% success rate',
-          '**Primary graft failure**: 0.86% overall, 7-11% failure at 2 years',
-          '**IOP elevation**: 51.9% incidence, 91.2% medical control, 8.8% surgical',
-          '**Pupillary block**: 2-5% (prevent with PI/adequate mydriasis)',
+          '**Primary donor failure**: 0% in DSAEK vs 0.3% in PKP',
+          '**Immunologic rejection failure**: 0.6% in DSAEK vs 3.1% in PKP',
+          '**Endothelial decompensation**: 1.7% in DSAEK vs 2.1% in PKP',
+          '**Unsatisfactory vision**: 1.7% in DSAEK (wrinkles/haze) vs 0% in PKP',
+          '**Infection**: 0% in DSAEK vs 1.1% in PKP',
+          '**Epithelial defects**: 0% in DSAEK vs 0.5% in PKP',
+          '**Overall 3-year failure rate**: 4% in DSAEK (7/173 grafts)',
         ],
       },
       {
-        title: 'Intermediate (1-6 months)',
+        title: 'Rejection Episodes',
         items: [
-          '**Interface haze**: 10-20% (usually clears spontaneously)',
-          '**Rejection episodes**: 33% present asymptomatically',
-          'Treatment: Hourly prednisolone 1% - >90% success with early detection',
-          '**Glaucoma development**: 13.6% incidence',
-          'Risk factors: Steroid response, pre-existing glaucoma, retained viscoelastic',
+          '**Total rejection episodes**: 6.4% (11/173) in DSAEK',
+          '**3-year predicted probability**: 9% DSAEK vs 20% PKP (P=0.0005)',
+          '**Significantly lower risk**: Less than half the rejection rate of PKP',
+          '**Note**: Only 1 rejection led to graft failure (0.6%)',
         ],
       },
       {
-        title: 'Late (&gt;6 months)',
+        title: 'Endothelial Cell Loss Patterns',
         items: [
-          '**Progressive ECD loss**: 25-35% at 6 months, then 2-5% annually',
-          'Accelerates after 5 years to 2-4% loss',
-          '**Late failure**: Only 8% maintain >1000 cells/mm² at 10 years',
-          '**Interface deposits**: 5-10% (may require enhancement)',
-          '**Hyperopic shift**: 0.5-1.5D (account in IOL calculations)',
+          '**1-year cell loss**: 36% DSAEK vs 18% PKP (higher initial loss)',
+          '**3-year cell loss**: 48% DSAEK vs 53% PKP (comparable)',
+          "**Fuchs' dystrophy**: 46% DSAEK vs 51% PKP at 3 years",
+          "**Non-Fuchs' cases**: 59% DSAEK vs 61% PKP at 3 years",
+          '**Incision width effect**: 60% loss (3.2mm) vs 33% loss (5.0mm) at 3 years',
         ],
       },
       {
-        title: 'High-Risk Scenarios',
+        title: 'Study-Specific Outcomes',
         items: [
-          '**Glaucoma shunts**: 26% dislocation, 40% vs 95% 5-year survival',
-          'Management: Larger air fills, consider tube trimming',
-          '**Diabetic donors**: 47% vs 43% ECD loss at 3 years',
-          '**Failed grafts**: 71% 5-year survival for repeat DSAEK',
-          '**Vitrectomized eyes**: Higher detachment risk, need continuous infusion',
+          '**No wound complications**: Zero cases of dehiscence or trauma',
+          '**No suprachoroidal hemorrhage**: Eliminated risk vs PKP',
+          '**Visual dissatisfaction regrafts**: 1.7% (unique to DSAEK)',
+          '**Follow-up rate**: 64% examined at 3 years, 25% clear but lost to follow-up',
+          '**Death rate**: 6.4% died during 3-year study period',
         ],
       },
     ],

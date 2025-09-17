@@ -33,13 +33,13 @@ defineProps({
 
 defineEmits(['toggle'])
 
-// All section data
+// All section data from Madi et al. Cornea 2019 study
 const sectionData = ref({
-  mainTitle: 'UT-DSAEK Clinical Outcomes: Comparative Analysis',
+  mainTitle: 'Madi S, Leon P, Nahum Y, D\'Angelo S, Giannaccare G, Beltz J, Busin M.<br/>Five-Year Outcomes of Ultrathin Descemet Stripping Automated Endothelial Keratoplasty.<br/>Cornea. 2019;38(9):1192-1197.',
   mainTable: {
     parameterColumnTitle: 'Parameter',
-    comparisonColumns: ['Standard DSAEK<br/>(100-200 μm)', 'UT-DSAEK<br/>(50-100 μm)', 'DMEK<br/>(10-15 μm)'],
-    showPValue: true,
+    comparisonColumns: ['1 Year', '2 Years', '3 Years', '5 Years'],
+    showPValue: false,
     headerColorTheme: 'purple',
     alternateRowColors: false,
     dataSections: [
@@ -48,120 +48,123 @@ const sectionData = ref({
         colorTheme: 'blue',
         rows: [
           {
-            parameter: 'BCVA ≥20/20',
-            values: ['21%', { text: '48.8%', highlight: true }, '44-67%'],
-            pValue: '<0.001',
+            parameter: 'Number of eyes',
+            values: ['214', '172', '147', '105'],
           },
           {
-            parameter: 'BCVA ≥20/25',
-            values: ['55%', { text: '74%', highlight: true }, '79-85%'],
-            pValue: '0.003',
+            parameter: 'BSCVA ≥20/20 (%)',
+            values: ['36.3%', '37.4%', '46.4%', '53.4%'],
           },
           {
-            parameter: 'BCVA ≥20/40',
-            values: ['85%', { text: '94%', highlight: true }, '96%'],
-            pValue: '0.21',
+            parameter: 'BSCVA ≥20/40 (%)',
+            values: ['95.5%', '95.3%', '96.0%', '96.6%'],
           },
           {
-            parameter: 'Time to Best Vision',
-            values: ['6-12 months', { text: '3-6 months', highlight: true }, '1-3 months'],
-            pValue: '-',
+            parameter: 'Mean LogMAR',
+            values: ['0.11 ± 0.13', '0.10 ± 0.12', '0.08 ± 0.13', '0.09 ± 0.14'],
           },
         ],
       },
       {
-        title: 'Refractive Outcomes',
+        title: 'Graft Survival',
         colorTheme: 'green',
         rows: [
           {
-            parameter: 'Hyperopic Shift',
-            values: ['+1.0 to +1.5D', { text: '+0.5 to +0.75D', highlight: true }, 'Minimal'],
-            pValue: '<0.001',
+            parameter: 'Kaplan-Meier survival',
+            values: ['99.1%', '96.2%', '94.2%', '94.2%'],
           },
           {
-            parameter: 'Induced Astigmatism',
-            values: ['0.5-1.0D', { text: '0.3-0.5D', highlight: true }, '<0.25D'],
-            pValue: '0.02',
+            parameter: 'Cumulative rejection probability',
+            values: ['3.4%', '4.3%', '5.0%', '6.9%'],
           },
           {
-            parameter: 'Higher-Order Aberrations',
-            values: ['Increased', { text: 'Mildly increased', highlight: true }, 'Minimal'],
-            pValue: '0.01',
-          },
-        ],
-      },
-      {
-        title: 'Surgical Outcomes',
-        colorTheme: 'orange',
-        rows: [
-          {
-            parameter: 'Rebubbling Rate',
-            values: ['9-16%', { text: '12-15%', highlight: false }, '25-35%'],
-            pValue: '<0.001',
-          },
-          {
-            parameter: 'Primary Graft Failure',
-            values: ['0.8%', '1.2%', '1.4%'],
-            pValue: '0.73',
-          },
-          {
-            parameter: 'Surgical Difficulty',
-            values: ['Moderate', { text: 'Moderate-High', highlight: false }, 'High'],
-            pValue: '-',
-          },
-          {
-            parameter: 'Learning Curve (cases)',
-            values: ['15-25', { text: '25-50', highlight: false }, '50-100'],
-            pValue: '-',
+            parameter: 'Endothelial cell loss',
+            values: ['35.4 ± 11.1%', '42.3 ± 18.4%', '43.3 ± 13.9%', '52.3 ± 9.7%'],
           },
         ],
       },
     ],
   },
-  secondaryTitle: 'Long-term Outcomes and Graft Survival',
+  secondaryTitle: 'Study Details and Complications',
   secondaryTable: {
-    parameterColumnTitle: 'Follow-up Period',
-    comparisonColumns: ['UT-DSAEK Outcomes', 'Comparison to Standard DSAEK'],
+    parameterColumnTitle: 'Parameter',
+    comparisonColumns: ['Study Data'],
     showPValue: false,
-    headerColorTheme: 'green',
+    headerColorTheme: 'teal',
     alternateRowColors: true,
     dataSections: [
       {
+        title: 'Study Demographics (354 eyes, 348 patients)',
         rows: [
           {
-            parameter: '1 Year',
-            values: [
-              { text: '98% graft survival', highlight: true },
-              'Similar to standard DSAEK (97%)',
-            ],
+            parameter: 'Mean age',
+            values: ['69.8 ± 15.5 years (range: 24-90)'],
           },
           {
-            parameter: '2 Years',
-            values: [
-              { text: 'ECD: 1,850 ± 450 cells/mm²', highlight: true },
-              '35-40% cell loss (vs 30-35%)',
-            ],
+            parameter: 'Gender distribution',
+            values: ['Female: 210 (60.3%), Male: 138 (39.7%)'],
           },
           {
-            parameter: '5 Years',
-            values: [
-              { text: '95% graft survival', highlight: true },
-              'Superior to standard DSAEK (90-93%)',
-            ],
+            parameter: 'Primary indication: Fuchs dystrophy',
+            values: ['218 eyes (61.6%)'],
           },
           {
-            parameter: 'Annual ECD Loss',
-            values: [
-              '2-4% after year 1',
-              'Similar to standard DSAEK',
-            ],
+            parameter: 'Pseudophakic/aphakic edema',
+            values: ['72 eyes (20.3%)'],
           },
           {
-            parameter: 'Rejection Episodes',
-            values: [
-              { text: '3-7%', highlight: true },
-              'Lower than standard DSAEK (5-10%)',
-            ],
+            parameter: 'Failed previous graft (EK/PK)',
+            values: ['59 eyes (16.7%)'],
+          },
+        ],
+      },
+      {
+        title: 'Graft and Surgical Characteristics',
+        rows: [
+          {
+            parameter: 'Mean graft thickness achieved',
+            values: ['74 ± 35 μm (range: 19-209 μm)'],
+          },
+          {
+            parameter: 'Success rate <100 μm',
+            values: ['80% of grafts'],
+          },
+          {
+            parameter: 'Baseline donor ECD',
+            values: ['2523 ± 152 cells/mm² (range: 2100-3000)'],
+          },
+          {
+            parameter: 'Surgical technique',
+            values: ['Microkeratome double-pass, Busin glide insertion'],
+          },
+          {
+            parameter: 'Incision size',
+            values: ['3.2 mm clear corneal'],
+          },
+        ],
+      },
+      {
+        title: 'Complication Rates',
+        rows: [
+          {
+            parameter: 'Graft detachment requiring rebubbling',
+            values: ['3.9% (14/354 eyes)'],
+          },
+          {
+            parameter: 'Primary graft failure',
+            values: ['1.4% (5/354 eyes)'],
+          },
+          {
+            parameter: 'Secondary graft failure',
+            values: ['2.5% (9/354 eyes)'],
+          },
+          {
+            parameter: 'Cystoid macular edema',
+            values: ['4.2% (15/354 eyes)'],
+          },
+          {
+            parameter: 'Immunologic rejection episodes',
+            values: ['3.9% (14/354 eyes)'],
           },
         ],
       },
@@ -169,33 +172,27 @@ const sectionData = ref({
   },
   keySummary: {
     keyFindings: {
-      title: 'Key Clinical Findings',
+      title: 'Key Study Findings',
       items: [
-        '**Visual Superiority**: UT-DSAEK achieves 2.3x higher rates of 20/20 vision compared to standard DSAEK',
-        '**Optimal Thickness**: Grafts 70-90 μm provide best balance of visual outcomes and handling',
-        '**Reduced Optical Impact**: 50% less hyperopic shift allows better refractive planning',
-        '**Faster Recovery**: Visual rehabilitation 2x faster than standard DSAEK',
-        '',
-        '**Special Populations**:',
-        'Complex anterior segments: 92% success rate',
-        'Failed DMEK: 88% successful rescue',
-        'Pediatric cases: Better than standard DSAEK outcomes',
+        'Excellent 5-year visual outcomes with 53.4% achieving ≥20/20 vision',
+        '96.6% of eyes achieved ≥20/40 vision at 5 years',
+        'Progressive improvement in BSCVA from year 1 to year 5',
+        '5-year graft survival rate of 94.2%',
+        'Endothelial cell loss of 52.3% at 5 years, comparable to DMEK',
+        'Low rejection rate of 6.9% at 5 years',
+        'Rebubbling rate of only 3.9% (14/354 eyes)',
+        'Primary graft failure rate of 1.4%',
+        'No significant change in refractive cylinder postoperatively',
+        'Hyperopic shift of 0.22 ± 0.47 D at 5 years (P=0.017)',
       ],
     },
     clinicalImpact: {
-      title: 'Clinical Significance',
+      title: 'Clinical Implications',
       description:
-        'UT-DSAEK represents the optimal balance between visual outcomes and surgical predictability in endothelial keratoplasty. The technique provides visual results approaching DMEK while maintaining the surgical advantages of DSAEK, including lower detachment rates, easier handling, and applicability to complex cases. The Busin double-pass technique has standardized graft preparation, making ultra-thin grafts reproducibly achievable. For surgeons and patients seeking excellent visual outcomes with acceptable risk profiles, UT-DSAEK offers a compelling alternative to both standard DSAEK and DMEK.',
+        'This study demonstrates that UT-DSAEK with grafts <100 μm provides excellent long-term outcomes comparable to DMEK. The progressive improvement in visual acuity over 5 years, with more than half of patients achieving 20/20 vision, validates the ultrathin approach. The 94.2% graft survival at 5 years and endothelial cell loss comparable to other EK techniques confirm the durability of UT-DSAEK. The low rebubbling rate (3.9%) and manageable rejection episodes make this a reliable technique for endothelial dysfunction.',
     },
-    additionalBoxes: [
-      {
-        title: 'Future Directions',
-        colorTheme: 'purple',
-        description: 'Ongoing innovations include pre-loaded UT-DSAEK grafts, standardized eye bank preparation protocols, and investigation of grafts <50 μm thickness (NT-DSAEK). Artificial intelligence-guided thickness optimization and improved storage media specifically designed for ultra-thin tissue are under development.',
-      },
-    ],
   },
   sourceCitation:
-    'Data from: Busin et al. Ophthalmology 2013; Romano et al. Eye 2023 meta-analysis; Chamberlain et al. DETECT Trial 2019; comparative studies 2013-2024',
+    'Data from prospective study of 354 eyes followed for 5 years at Ospedali Privati Forlì, Italy',
 })
 </script>

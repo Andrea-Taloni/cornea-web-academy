@@ -30,37 +30,43 @@ defineProps({
 
 defineEmits(['toggle'])
 
-// Post-operative management data
+// Post-operative management from Cornea Donor Study
 const postopData = ref({
   corticosteroids: {
-    title: 'Topical Corticosteroids',
-    medication: 'Prednisolone 1%',
+    title: 'Study Protocol Management',
+    medication: 'Surgical Technique',
     dosing: [
-      'Q2H while awake × 1 week',
-      'QID × 1 month',
-      'TID × 1 month',
-      'BID × 2 months',
-      'QD long-term',
+      '2 experienced DSAEK surgeons (FWP and MG)',
+      'Topical anesthesia with IV sedation',
+      'Descemet membrane removal from planned graft area',
+      'Donor dissection with microkeratome (8.25-9.0 mm)',
+      'Graft insertion: Forceps (n=167) or funnel glide (n=6)',
     ],
   },
   antimicrobial: {
-    title: 'Antimicrobial Prophylaxis',
-    optionsLabel: 'Antibiotic choices:',
-    options: ['Moxifloxacin 0.5%', 'Gatifloxacin 0.5%', 'Tobramycin 0.3%'],
-    dosingLabel: 'Duration',
-    dosing: 'QID × 1-2 weeks',
+    title: 'Key Study Findings at 3 Years',
+    optionsLabel: 'Graft survival rates:',
+    options: [
+      'Overall: 94% DSAEK vs 93% PKP',
+      "Fuchs' dystrophy: 96% both procedures",
+      "Non-Fuchs': 86% DSAEK vs 84% PKP"
+    ],
+    dosingLabel: 'Cell loss comparison',
+    dosing: '48% DSAEK vs 53% PKP (P=0.17)',
   },
   sutureManagement: {
-    title: 'Special Considerations',
+    title: 'Clinical Recommendations from Study',
     timings: [
-      { text: 'Positioning: Supine × 1 hour post-op', isSubItem: false },
-      { text: 'Face-up as much as possible × 24 hours', isSubItem: true },
-      { text: 'Air bubble management:', isSubItem: false },
-      { text: 'Should resolve in 2-5 days', isSubItem: true },
-      { text: 'Partial release if >90% at day 1', isSubItem: true },
-      { text: 'Graft checks:', isSubItem: false },
-      { text: 'Daily until attached', isSubItem: true },
-      { text: 'Consider rebubble if detached >1/3', isSubItem: true },
+      { text: 'Incision width selection:', isSubItem: false },
+      { text: '5 mm incision: 33% cell loss at 3 years', isSubItem: true },
+      { text: '3.2 mm incision: 60% cell loss at 3 years', isSubItem: true },
+      { text: 'Recommendation: Use 5 mm when feasible', isSubItem: true },
+      { text: 'Rejection monitoring:', isSubItem: false },
+      { text: 'Lower risk vs PKP (9% vs 20%)', isSubItem: true },
+      { text: 'Most rejections manageable without failure', isSubItem: true },
+      { text: 'Follow-up schedule:', isSubItem: false },
+      { text: 'Regular ECD monitoring recommended', isSubItem: true },
+      { text: 'Long-term surveillance for cell loss', isSubItem: true },
     ],
   },
 })

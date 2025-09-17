@@ -30,40 +30,43 @@ defineProps({
 
 defineEmits(['toggle'])
 
-// Post-operative management data for UT-DSAEK
+// Post-operative management from Cornea Donor Study
 const postopData = ref({
   corticosteroids: {
-    title: 'Topical Corticosteroids',
-    medication: 'Prednisolone 1% or Dexamethasone 0.1%',
+    title: 'Study Protocol Management',
+    medication: 'Surgical Technique',
     dosing: [
-      'Q1H while awake × 1 week',
-      'Q2H × 1 week',
-      'QID × 1 month',
-      'TID × 2 months',
-      'BID × 3 months',
-      'QD indefinitely',
+      '2 experienced DSAEK surgeons (FWP and MG)',
+      'Topical anesthesia with IV sedation',
+      'Descemet membrane removal from planned graft area',
+      'Donor dissection with microkeratome (8.25-9.0 mm)',
+      'Graft insertion: Forceps (n=167) or funnel glide (n=6)',
     ],
   },
   antimicrobial: {
-    title: 'Antimicrobial Prophylaxis',
-    optionsLabel: 'Fourth-generation fluoroquinolone:',
-    options: ['Moxifloxacin 0.5%', 'Besifloxacin 0.6%', 'Gatifloxacin 0.5%'],
-    dosingLabel: 'Duration',
-    dosing: 'QID × 2 weeks, then stop',
+    title: 'Key Study Findings at 3 Years',
+    optionsLabel: 'Graft survival rates:',
+    options: [
+      'Overall: 94% DSAEK vs 93% PKP',
+      "Fuchs' dystrophy: 96% both procedures",
+      "Non-Fuchs': 86% DSAEK vs 84% PKP"
+    ],
+    dosingLabel: 'Cell loss comparison',
+    dosing: '48% DSAEK vs 53% PKP (P=0.17)',
   },
   sutureManagement: {
-    title: 'UT-DSAEK Specific Care',
+    title: 'Clinical Recommendations from Study',
     timings: [
-      { text: 'Positioning:', isSubItem: false },
-      { text: 'Strict supine × 1 hour immediately post-op', isSubItem: true },
-      { text: 'Face-up 50% of time × 48 hours', isSubItem: true },
-      { text: 'Less critical than DMEK due to better adherence', isSubItem: true },
-      { text: 'Air bubble management:', isSubItem: false },
-      { text: 'Check size day 1 - should be 50-70%', isSubItem: true },
-      { text: 'Release if >80% to prevent pupil block', isSubItem: true },
-      { text: 'Special considerations:', isSubItem: false },
-      { text: 'Higher rebubbling threshold (>40% detached)', isSubItem: true },
-      { text: 'Interface fluid more common - may resolve', isSubItem: true },
+      { text: 'Incision width selection:', isSubItem: false },
+      { text: '5 mm incision: 33% cell loss at 3 years', isSubItem: true },
+      { text: '3.2 mm incision: 60% cell loss at 3 years', isSubItem: true },
+      { text: 'Recommendation: Use 5 mm when feasible', isSubItem: true },
+      { text: 'Rejection monitoring:', isSubItem: false },
+      { text: 'Lower risk vs PKP (9% vs 20%)', isSubItem: true },
+      { text: 'Most rejections manageable without failure', isSubItem: true },
+      { text: 'Follow-up schedule:', isSubItem: false },
+      { text: 'Regular ECD monitoring recommended', isSubItem: true },
+      { text: 'Long-term surveillance for cell loss', isSubItem: true },
     ],
   },
 })

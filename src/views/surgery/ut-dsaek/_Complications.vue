@@ -31,83 +31,77 @@ defineProps({
 
 defineEmits(['toggle'])
 
-// Complications data specific to UT-DSAEK
+// Complications data from Madi et al. Cornea 2019 study
 const complicationsData = ref({
   intraoperative: {
     title: 'Intraoperative Complications',
     colorTheme: 'orange',
     complications: [
       {
-        name: 'Graft Preparation Challenges',
+        name: 'Microkeratome-related Complications',
         details: [
-          { label: 'Perforation during double-pass', value: '2-3%' },
-          { label: 'Irregular thickness', value: '5-8%' },
-          { label: 'Prevention', value: 'Careful pachymetry between passes' },
-          { label: 'Management', value: 'Convert to standard DSAEK or use backup tissue' },
+          { label: 'Total incidence', value: '8.2% (29/354 eyes)' },
+          { label: 'Tissue loss', value: '2.5% (9 eyes)' },
+          { label: 'Hand refinement needed', value: '5.6% (20 eyes)' },
+          { label: 'Learning curve effect', value: 'Most occurred in first year' },
         ],
       },
       {
-        name: 'Difficult Graft Handling',
+        name: 'Surgical Technique',
         details: [
-          { label: 'Incidence', value: '15-20% in early experience' },
-          { label: 'Risk factors', value: 'Grafts <70 μm, excessive manipulation' },
-          { label: 'Prevention', value: 'Specialized UT-DSAEK instruments, gentle technique' },
-          { label: 'Tips', value: 'Use Busin glide, avoid folding >60°', highlight: true },
-        ],
-      },
-      {
-        name: 'Increased Endothelial Damage',
-        details: [
-          { label: 'Cell loss during prep', value: '5-10% higher than standard' },
-          { label: 'Insertion trauma', value: '35-40% at 1 year' },
-          { label: 'Mitigation', value: 'Dispersive viscoelastic coating', highlight: true },
-          { label: 'Modern devices', value: 'NS Endo-Inserter reduces loss to 25%' },
+          { label: 'Graft thickness achieved', value: '74 ± 35 μm (range 19-209)' },
+          { label: '<100 μm achieved', value: '80% of grafts' },
+          { label: '<130 μm achieved', value: '94% of grafts' },
+          { label: 'Insertion method', value: 'Pull-through with Busin glide' },
         ],
       },
     ],
   },
   postoperative: {
-    title: 'Postoperative Complications',
+    title: 'Postoperative Complications (354 eyes)',
     colorTheme: 'red',
     sections: [
       {
-        title: 'Early (&lt;1 month)',
+        title: 'Early Complications',
         items: [
-          'Graft detachment: 12-15% (slightly higher than standard DSAEK)',
-          'Rebubbling success: 95% with single attempt',
-          'Interface fluid: More common with ultra-thin grafts',
-          'Pupillary block: 3-5% (similar to standard DSAEK)',
-          'Primary graft failure: 1.2% (acceptable rate)',
+          '**Graft detachment**: 3.9% (14/354 eyes)',
+          'Management: Air injection rebubbling',
+          'Success rate: 13/14 with single injection, 1/14 needed triple injection',
+          '**Persistent epithelial defect**: 0.5% (2 eyes)',
+          '**Interface infection**: 0.5% (2 eyes)',
+          '**Urrets-Zavalia syndrome**: 0.2% (1 eye)',
         ],
       },
       {
-        title: 'Intermediate (1-6 months)',
+        title: 'Late Complications',
         items: [
-          'Interface haze: 5-10% (less than standard DSAEK)',
-          'Faster visual recovery: 80% achieve best vision by 3 months',
-          'Hyperopic shift stabilization: +0.5-0.75D by 3 months',
-          'Rejection episodes: 3-7% (lower than standard)',
-          'Need for enhancement: <2% require PRK/LASIK',
+          '**Cystoid macular edema**: 4.2% (15 eyes)',
+          'Treatment: Conservative medical management with acetazolamide',
+          'Resolution: All cases resolved',
+          '**Primary graft failure**: 1.4% (5/354 eyes)',
+          '**Secondary graft failure**: 2.5% (9/354 eyes)',
+          '**Total graft failure**: 3.9% (14/354 eyes)',
         ],
       },
       {
-        title: 'Long-term (&gt;6 months)',
+        title: 'Immunologic Rejection',
         items: [
-          'Progressive ECD loss: Similar to standard DSAEK',
-          '5-year survival: 95% (excellent outcomes)',
-          'Late detachment: <1% after 6 months',
-          'Graft clarity: Maintained in >98% at 5 years',
-          'Visual regression: Minimal if ECD >800 cells/mm²',
+          '**Total rejection episodes**: 3.9% (14/354 eyes)',
+          '**Successfully reversed**: 13/14 eyes (92.9%)',
+          '**Failed despite treatment**: 1/14 eyes (7.1%)',
+          '**Cumulative probability**:',
+          '1 year: 3.4%',
+          '3 years: 5.0%',
+          '5 years: 6.9%',
         ],
       },
       {
-        title: 'Technical Considerations',
+        title: 'Other Complications',
         items: [
-          '**Thickness-related issues**:',
-          '<50 μm: High manipulation difficulty, increased trauma',
-          '50-70 μm: Optimal for experienced surgeons',
-          '70-100 μm: Best balance for most surgeons',
-          '>100 μm: Reduced visual benefit vs standard DSAEK',
+          '**Posterior capsule opacification**: 2.5% (9 eyes)',
+          '**Postoperative cataract**: 1.1% overall',
+          'In phakic eyes: 12.1% (4/33 eyes)',
+          '**Persistent interface haze**: 0.5% (2 eyes)',
         ],
       },
     ],

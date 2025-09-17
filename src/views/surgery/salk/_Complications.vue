@@ -31,83 +31,74 @@ defineProps({
 
 defineEmits(['toggle'])
 
-// Complications data from Busin's studies
+// Complications data from Myerscough et al. study
 const complicationsData = ref({
   intraoperative: {
-    title: 'Intraoperative Complications (Busin Data)',
+    title: 'Intraoperative Complications',
     colorTheme: 'orange',
     complications: [
       {
-        name: 'Overall Intraoperative Complications',
+        name: 'Study Results',
         details: [
-          { label: 'Busin original series (n=20)', value: '0%', highlight: true },
-          { label: 'Post-PK series (n=9)', value: '0%', highlight: true },
-          { label: '5-year PRK series (n=10)', value: '0%', highlight: true },
-          { label: 'Total across all studies', value: '0-5%', highlight: true },
+          { label: 'Total intraoperative complications', value: '0%', highlight: true },
+          { label: 'Number of eyes', value: '10 eyes' },
+          { label: 'Microkeratome complications', value: 'None reported' },
+          { label: 'Graft preparation issues', value: 'None reported' },
         ],
       },
       {
-        name: 'Technical Challenges',
+        name: 'Technical Details',
         details: [
-          { label: 'Microkeratome malfunction', value: 'Rare (<1%)' },
-          { label: 'Inadequate donor thickness', value: 'Preventable with measurement' },
-          { label: 'Interface debris', value: 'Manageable with irrigation' },
-          { label: 'Graft decentration', value: 'Correctable immediately' },
-        ],
-      },
-      {
-        name: 'Busin\'s Preventive Measures',
-        details: [
-          { label: 'Proper microkeratome maintenance', value: 'Critical', highlight: true },
-          { label: 'Standardized head selection', value: '130-160 μm optimal' },
-          { label: 'Extraocular technique', value: 'Eliminates open-sky risks' },
-          { label: 'Topical anesthesia only', value: 'Reduces complications' },
+          { label: 'Recipient cap thickness', value: '130 μm' },
+          { label: 'Donor lamella thickness', value: '90 μm' },
+          { label: 'Graft diameter', value: '9 mm' },
+          { label: 'Sutures used', value: 'None (sutureless technique)' },
         ],
       },
     ],
   },
   postoperative: {
-    title: 'Postoperative Complications (Busin Series)',
+    title: 'Postoperative Complications',
     colorTheme: 'red',
     sections: [
       {
-        title: 'Early (&lt;1 month)',
+        title: 'Visual Outcomes',
         items: [
-          'Epithelial defects: Minimal, heal within days',
-          'Interface haze: Transient, resolves spontaneously',
-          'Loose sutures: Not applicable if removed at 2-3 days per protocol',
-          'Graft displacement: 0% with proper technique',
-          'Infection: 0% reported across all series',
+          'Haze recurrence: 0% in any eye postoperatively',
+          'Primary graft failure: 0% during 5-year follow-up',
+          'Late graft failure: 0% during 5-year follow-up',
+          'Mean BSCVA improvement: From 0.46 to 0.12 logMAR (p=0.0001)',
+          'All patients achieved ≥20/50 vision at 5 years',
         ],
       },
       {
-        title: 'Intermediate (1-6 months)',
+        title: 'Refractive Complications',
         items: [
-          'Astigmatism >4D: 0% (all cases ≤4D per Busin)',
-          'Interface opacity: Rare, does not affect final vision',
-          'Epithelial ingrowth: Most common issue but manageable',
-          'Haze recurrence (PRK cases): 0% at 5 years',
-          'Visual regression: Not observed with proper selection',
+          'Surgically induced astigmatism: 2.50±1.04D at 6 months',
+          'SIA at 5 years: 2.53±1.39D (no significant change, p=0.95)',
+          'All astigmatism correctable with spectacles',
+          'No significant change in spherical equivalent (p=0.46)',
+          'No significant change in astigmatism vectors',
         ],
       },
       {
-        title: 'Late (&gt;6 months)',
+        title: 'Other Complications',
         items: [
-          'Graft failure: 0% reported in all Busin series',
-          'Endothelial decompensation: 0% (extraocular procedure)',
-          'Stromal rejection: 0% documented',
-          'Recurrent dystrophy: Possible but manageable with re-SALK',
-          'Vision-threatening complications: 0% across all studies',
+          'Secondary ocular hypertension: 20% (2/10 eyes)',
+          'IOP elevation transient, normalized after steroid cessation',
+          'No medical or surgical intervention required for IOP',
+          'One patient with diabetic macular edema (limited vision to 0.40 logMAR)',
+          'Bandage contact lens removed after re-epithelialization',
         ],
       },
       {
-        title: 'Busin\'s Management Strategies',
+        title: 'Long-term Outcomes',
         items: [
-          'Epithelial ingrowth: Mechanical debridement if symptomatic',
-          'Interface debris: Irrigation at time of surgery prevents',
-          'Astigmatism: Prevented by early suture removal (2-3 days)',
-          'Delayed healing: Rare with microkeratome technique',
-          'All complications: Lower rate than DALK or PK',
+          '5-year follow-up: No haze recurrence',
+          '90% achieved ≥20/40 vision at 5 years',
+          '50% achieved ≥20/25 vision at 5 years',
+          '30% achieved 20/20 vision at 5 years',
+          'Graft-host apposition confirmed by AS-OCT',
         ],
       },
     ],

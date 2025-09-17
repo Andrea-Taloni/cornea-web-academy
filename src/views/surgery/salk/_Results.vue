@@ -33,47 +33,43 @@ defineProps({
 
 defineEmits(['toggle'])
 
-// All section data from Busin's research
+// All section data from Myerscough et al. study
 const sectionData = ref({
-  mainTitle: 'Busin\'s SALK Clinical Outcomes',
+  mainTitle: 'Myerscough J, Bovone C, Thomas PBM, Mimouni M, Aljassar F, Padroni S, Busin M.<br/>Sutureless superficial anterior lamellar keratoplasty for recurrent corneal haze after repeat excimer laser surface ablation.<br/>Br J Ophthalmol. 2019;0:1-4.',
   mainTable: {
-    parameterColumnTitle: 'Time Point',
-    comparisonColumns: [
-      'Original Series<br/>(n=20)',
-      'Post-PK Series<br/>(n=9)',
-      '5-Year PRK Haze<br/>(n=10)',
-    ],
+    parameterColumnTitle: 'Parameter',
+    comparisonColumns: ['6 Months', '18 Months', '5 Years'],
     showPValue: false,
     headerColorTheme: 'purple',
     alternateRowColors: false,
     dataSections: [
       {
-        title: 'Visual Acuity Outcomes (BCVA)',
+        title: 'Visual Acuity Outcomes',
         colorTheme: 'blue',
         rows: [
           {
-            parameter: 'Preoperative ≥20/40',
-            values: ['5%', '22.2%', 'Not reported'],
+            parameter: 'Mean BSCVA (logMAR)',
+            values: ['0.21 ± 0.12', '0.15 ± 0.13', '0.12 ± 0.12'],
           },
           {
-            parameter: '1 Month ≥20/40',
-            values: [{ text: '100%', highlight: true }, { text: '77.8%', highlight: true }, 'Improved'],
+            parameter: 'BSCVA ≥20/20',
+            values: ['0/10 (0%)', '2/10 (20%)', '3/10 (30%)'],
           },
           {
-            parameter: '1 Month ≥20/30',
-            values: [{ text: '70%', highlight: true }, 'Not reported', 'Significant improvement'],
+            parameter: 'BSCVA ≥20/25',
+            values: ['4/10 (40%)', '5/10 (50%)', '5/10 (50%)'],
           },
           {
-            parameter: '6 Months ≥20/30',
-            values: [{ text: '77.8%', highlight: true }, 'Not reported', 'Sustained'],
+            parameter: 'BSCVA ≥20/40',
+            values: ['10/10 (100%)', '9/10 (90%)', '9/10 (90%)'],
           },
           {
-            parameter: '12 Months ≥20/30',
-            values: [{ text: '76.9%', highlight: true }, { text: '77.8%', highlight: true }, 'Maintained'],
+            parameter: 'BSCVA ≥20/50',
+            values: ['10/10 (100%)', '10/10 (100%)', '10/10 (100%)'],
           },
           {
-            parameter: 'Final ≥20/25',
-            values: ['44.4%', '35%', 'Not specified'],
+            parameter: 'Improvement from preop',
+            values: ['p=0.0004', 'p=0.0002', 'p=0.0001'],
           },
         ],
       },
@@ -82,76 +78,46 @@ const sectionData = ref({
         colorTheme: 'green',
         rows: [
           {
-            parameter: 'Postop Astigmatism ≤4D',
-            values: [{ text: '100%', highlight: true }, 'Not reported', { text: '100%', highlight: true }],
+            parameter: 'Mean Spherical Equivalent',
+            values: ['-2.67 ± 3.73D', '-2.46 ± 4.60D', '-2.85 ± 4.85D'],
           },
           {
-            parameter: 'Mean Astigmatism Change',
-            values: ['Not reported', { text: '-0.7D', highlight: true }, 'Minimal'],
+            parameter: 'Change from preop',
+            values: ['p=0.65', 'p=0.82', 'p=0.46'],
           },
           {
-            parameter: 'Refractive Stability',
-            values: [{ text: '1 month', highlight: true }, '3 months', '1 month'],
+            parameter: 'Surgically Induced Astigmatism',
+            values: ['2.50 ± 1.04D', '2.05 ± 0.84D', '2.53 ± 1.39D'],
+          },
+          {
+            parameter: 'J0 vector (vs preop)',
+            values: ['p=0.31', 'p=0.43', 'p=0.34'],
+          },
+          {
+            parameter: 'J45 vector (vs preop)',
+            values: ['p=0.63', 'p=0.27', 'p=0.27'],
           },
         ],
       },
       {
-        title: 'Surgical Outcomes',
+        title: 'Clinical Outcomes',
         colorTheme: 'purple',
         rows: [
           {
-            parameter: 'Technical Success',
-            values: [{ text: '100%', highlight: true }, { text: '100%', highlight: true }, { text: '100%', highlight: true }],
-          },
-          {
             parameter: 'Haze Recurrence',
-            values: ['0%', 'N/A', { text: '0%', highlight: true }],
+            values: [{ text: '0%', highlight: true }, { text: '0%', highlight: true }, { text: '0%', highlight: true }],
           },
           {
-            parameter: 'Graft Clarity',
-            values: [{ text: '100%', highlight: true }, { text: '100%', highlight: true }, { text: '100%', highlight: true }],
+            parameter: 'Graft Failure',
+            values: ['0%', '0%', '0%'],
           },
           {
-            parameter: 'Follow-up (months)',
-            values: ['12-24', '28±3.9', '60'],
-          },
-        ],
-      },
-    ],
-  },
-  secondaryTitle: 'Busin\'s Technique Evolution: Sutured vs Sutureless SALK',
-  secondaryTable: {
-    parameterColumnTitle: 'Parameter',
-    comparisonColumns: ['Original Sutured SALK', 'Sutureless SALK'],
-    showPValue: false,
-    headerColorTheme: 'green',
-    alternateRowColors: true,
-    dataSections: [
-      {
-        rows: [
-          {
-            parameter: 'Suture Technique',
-            values: ['16 interrupted or Star of David', 'None - fibrin glue or BCL'],
+            parameter: 'Intraoperative Complications',
+            values: [{ text: '0%', highlight: true }, '-', '-'],
           },
           {
-            parameter: 'Suture Removal',
-            values: [{ text: '2-3 days (max 7)', highlight: true }, 'Not applicable'],
-          },
-          {
-            parameter: 'Visual Recovery',
-            values: ['1 month', { text: '2-4 weeks', highlight: true }],
-          },
-          {
-            parameter: 'Patient Comfort',
-            values: ['Good after suture removal', { text: 'Excellent from day 1', highlight: true }],
-          },
-          {
-            parameter: 'Astigmatism',
-            values: ['Minimal if early removal', { text: 'None induced', highlight: true }],
-          },
-          {
-            parameter: 'Best Indication',
-            values: ['All SALK cases', { text: 'Post-refractive, selected cases', highlight: true }],
+            parameter: 'Mean preop BSCVA (logMAR)',
+            values: ['0.46 ± 0.12', '-', '-'],
           },
         ],
       },
@@ -159,48 +125,27 @@ const sectionData = ref({
   },
   keySummary: {
     keyFindings: {
-      title: 'Busin\'s Key Clinical Findings',
+      title: 'Key Study Findings',
       items: [
-        '**100% achieve 20/40 or better vision at 1 month** in original series',
-        '70-77.8% achieve 20/30 or better (sustained at 1 year)',
-        '44.4% achieve 20/25 or better in long-term follow-up',
-        'Zero endothelial rejection risk (extraocular procedure)',
-        '0% haze recurrence at 5 years for post-PRK cases',
-        'Suture removal at 2-3 days critical for outcomes',
-        '100% graft clarity maintained throughout all follow-up periods',
+        'No recurrence of haze in any eye postoperatively over 5 years',
+        'BSCVA improved significantly at all postoperative time points',
+        'Mean visual acuity improved from 0.46 logMAR to 0.12 logMAR at 5 years (p=0.0001)',
+        '30% achieved 20/20, 50% achieved 20/25, 90% achieved 20/40 at 5 years',
+        'All patients (100%) achieved 20/50 or better at 5 years',
+        'SIA of 2.50±1.04D at 6 months, stable at 5 years (2.53±1.39D)',
+        'No significant change in mean spherical equivalent',
+        'No significant difference in astigmatism vectors from preoperative values',
+        'No intraoperative complications observed',
+        'No primary or late graft failure during 5-year follow-up',
       ],
     },
     clinicalImpact: {
-      title: 'Clinical Significance',
+      title: 'Clinical Implications',
       description:
-        'Busin\'s SALK studies demonstrate that this targeted superficial keratoplasty achieves visual outcomes superior to penetrating keratoplasty for anterior pathology, with 100% of patients achieving functional vision (≥20/40) by 1 month. The technique\'s evolution from sutured to sutureless approaches maintains these excellent outcomes while further reducing recovery time. With zero endothelial rejection risk and sustained long-term results, SALK represents a paradigm shift in corneal surgery for superficial pathologies.',
+        'This study demonstrates that sutureless SALK provides an effective treatment option for patients with recurrent haze after excimer laser treatment. The technique eliminates haze recurrence for at least 5 years and significantly improves BSCVA. Although there is significant surgically induced astigmatism (mean 2.5D), all astigmatism was correctable with spectacles. The absence of any haze recurrence or graft failure over 5 years validates this approach for managing PRK-related corneal haze that has failed PTK treatment.',
     },
-    additionalBoxes: [
-      {
-        title: 'Indication-Specific Outcomes (Busin Data)',
-        colorTheme: 'orange',
-        items: [
-          '**Corneal dystrophies (60%):** 12/20 eyes, excellent outcomes',
-          '**Post-refractive complications (30%):** 6/20 eyes, 0% haze recurrence',
-          '**Keratitis scars (10%):** 2/20 eyes, complete visual rehabilitation',
-          '**Post-PK opacities:** 77.8% achieve ≥20/40, astigmatism reduced',
-        ],
-      },
-      {
-        title: 'Busin\'s Technical Innovations',
-        colorTheme: 'teal',
-        items: [
-          'Standardized microkeratome parameters (130-160 μm)',
-          'Extraocular procedure enabling topical anesthesia',
-          'Early suture removal protocol (2-3 days maximum 7)',
-          'Evolution to completely sutureless technique',
-          'Two-stage approach for recurrent dystrophies',
-          'Validated triple procedure with phacoemulsification',
-        ],
-      },
-    ],
   },
   sourceCitation:
-    'Data from: Busin M et al. Ophthalmology 2005;112(6):987-97; Patel AK et al. Cornea 2012;31(1):101-5; Myerscough J et al. Br J Ophthalmol 2021;105(12):1651-1655; German Ophthalmic Surgeons Meeting 2002',
+    'Data from prospective interventional study at Villa Igea Hospital, Forli, Italy. All procedures performed by single surgeon (M.B.)',
 })
 </script>

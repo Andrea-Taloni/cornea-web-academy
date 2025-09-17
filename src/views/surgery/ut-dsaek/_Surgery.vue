@@ -29,108 +29,103 @@ defineProps({
 
 defineEmits(['toggle'])
 
-// Busin UT-DSAEK technique data
+// UT-DSAEK surgical technique from Madi et al. study
 const businTechnique = {
-  title: 'The Busin Method: Double-Pass Microkeratome UT-DSAEK Technique',
+  title: 'Microkeratome-Assisted Double-Pass UT-DSAEK Technique',
   steps: [
     {
-      title: 'Donor Preparation - First Pass',
+      title: 'Donor Tissue Preparation',
       description:
-        'Mount donor cornea on artificial anterior chamber with pressure 65-75 mmHg. Measure central corneal thickness with ultrasonic pachymetry. Perform first microkeratome pass using 300-350 μm head to remove anterior lamella. This creates a smooth stromal bed and removes epithelium/Bowman layer. Store anterior cap in medium if needed for future use.',
+        'Donor corneas from donors aged 10-75 years with eye-bank determined ECD of 2300-3300 cells/mm². Death to surgery time ≤5 days, death to preservation ≤12 hours if refrigerated or ≤8 hours if not. Tissue prepared using microkeratome-assisted double-pass technique aiming at graft thickness <100 μm.',
     },
     {
-      title: 'Thickness Calculation',
+      title: 'Graft Dissection',
       description:
-        'Measure residual stromal bed thickness with pachymetry at multiple points. Calculate depth for second pass to achieve target 50-100 μm final thickness. Account for 10-15 μm compression during cutting. For 80 μm target: if bed measures 280 μm, set second pass for 200 μm cut. Document all measurements for quality control.',
+        'Donor tissue dissected with microkeratome using double-pass technique. First pass to remove anterior lamella, second pass to create ultrathin graft. Final graft thickness measured (achieved mean: 74 ± 35 μm, range 19-209 μm). Cut to diameter of 8.25-9.0 mm depending on recipient corneal diameter.',
     },
     {
-      title: 'Second Pass - Ultra-thin Cut',
+      title: 'Anesthesia and Incision',
       description:
-        'Replace microkeratome head with calculated cutting depth (typically 90-130 μm head). Ensure proper blade engagement and smooth gliding surface. Perform second pass at consistent speed to create ultra-thin posterior lamella. The double-pass technique allows precise thickness control impossible with single pass. Final graft contains endothelium, Descemet membrane, and minimal stroma.',
+        'Topical anesthesia with monitored intravenous sedation. Create 3.2 mm clear corneal incision. Additional paracenteses as needed for manipulation and air injection.',
     },
     {
-      title: 'Recipient Bed Preparation',
+      title: 'Descemet Stripping',
       description:
-        'Mark visual axis and 8.0-8.5 mm graft diameter. Create 4-5 mm scleral tunnel or clear corneal incision. Score and strip Descemet membrane completely within marked area - incomplete removal increases rebubbling to 20%. Use cohesive viscoelastic to maintain chamber. Create additional paracenteses for manipulation.',
+        'Strip Descemet membrane under air within the planned graft area. Complete removal is critical to minimize rebubbling risk. Stripping performed under air to maintain anterior chamber depth and protect crystalline lens.',
     },
     {
-      title: 'Graft Insertion - Busin Glide',
+      title: 'Graft Insertion',
       description:
-        'Punch donor tissue to 8.0-8.5 mm using specialized UT-DSAEK punch. Load onto Busin glide with endothelial side down. The ultra-thin tissue requires delicate handling - avoid excessive manipulation. Insert through incision using pull-through technique with specialized UT-DSAEK forceps. The thinner tissue unfolds more readily than standard DSAEK.',
+        'Graft delivered into anterior chamber using pull-through technique through 3.2 mm incision using modified Busin glide. Graft folded into "taco" configuration with endothelial side protected. Single-point fixation forceps used for controlled insertion.',
     },
     {
-      title: 'Positioning and Attachment',
+      title: 'Graft Positioning and Air Tamponade',
       description:
-        'Center graft over visual axis using gentle BSS irrigation. Ultra-thin grafts conform better to posterior corneal curvature. Inject air for 8-10 minute tamponade - shorter than standard DSAEK due to faster adherence. Leave 80-90% air bubble. Verify orientation and centration. Check for interface fluid - critical for thin grafts.',
+        'Center graft over visual axis. Inject air bubble for tamponade. Verify proper orientation and absence of interface fluid. Leave adequate air bubble at end of procedure. Patient positioned supine postoperatively.',
     },
   ],
 }
 
-// Graft preparation methods
+// Study-specific surgical details
 const graftPreparationMethods = {
-  title: 'Alternative UT-DSAEK Preparation Methods',
+  title: 'Surgical Procedures Performed in Study',
   techniques: [
     {
-      title: 'Single-Pass Thin Head',
+      title: 'Stand-alone UT-DSAEK',
       description:
-        'Uses specialized 90-130 μm microkeratome heads for single-pass preparation. Less predictable than double-pass but faster. Requires careful pre-cut pachymetry to ensure adequate thickness. Risk of irregular cuts with very thin heads. Best for experienced technicians with consistent technique.',
+        '39 eyes underwent UT-DSAEK alone. Hyperopic shift observed: +0.69 ± 1.39 D at 1 year, decreasing to +0.22 ± 0.47 D at 5 years (P=0.017).',
     },
     {
-      title: 'Femtosecond Laser',
+      title: 'Combined with Phacoemulsification',
       description:
-        'Programmable depth cuts achieve consistent sub-100 μm thickness. Superior precision with smooth interfaces. Reduced endothelial trauma compared to mechanical cutting. Higher cost but excellent for high-volume centers. Can create customized graft profiles for specific cases.',
+        '114 eyes underwent UT-DSAEK combined with phacoemulsification and PC-IOL implantation. This was the most common combined procedure in the study.',
     },
     {
-      title: 'Pre-cut Tissue from Eye Bank',
+      title: 'Other Combined Procedures',
       description:
-        'Increasingly available from specialized eye banks. Standardized preparation protocols ensure quality. Reduces surgical time and equipment needs. Important to verify thickness and endothelial counts. Transport in specialized media to preserve ultra-thin tissue.',
+        'UT-DSAEK with pupilloplasty (6 eyes), anterior vitrectomy (3 eyes), AC-IOL removal with PC-IOL implantation (3 eyes), and pIOL removal with phaco and PC-IOL (1 eye).',
     },
   ],
 }
 
-// Additional techniques
+// Key findings from the study
 const additionalTechniques = [
   {
-    title: 'Critical Factors for UT-DSAEK Success',
+    title: 'Key Technical Outcomes from Study',
     numbered: false,
     bgColor: 'blue',
     items: [
       {
-        title: 'Endothelial Protection',
+        title: 'Graft Thickness Achievement',
         description:
-          'Ultra-thin grafts more susceptible to trauma. Use dispersive viscoelastic coating, minimize manipulation, gentle irrigation only. Specialized instruments designed for thin tissue. Avoid folding >60 degrees.',
+          'Mean thickness: 74 ± 35 μm (range 19-209 μm). 80% of grafts <100 μm, 94% <130 μm. Thickness measured at 6 months postoperatively using anterior segment OCT.',
       },
       {
-        title: 'Thickness Verification',
+        title: 'Microkeratome Complications',
         description:
-          'Pachymetry at multiple points pre and post-cut. Document for outcomes analysis. Target 70-90 μm for optimal results. Consider OCT verification in complex cases.',
+          '8.2% microkeratome-related complications (29/354 eyes). Tissue loss in 2.5% (9 eyes), hand refinement needed in 5.6% (20 eyes). Most occurred during learning curve.',
       },
       {
-        title: 'Interface Management',
+        title: 'Rebubbling Rate',
         description:
-          'Complete fluid removal critical with thin grafts. Use dry Weck-cel through paracentesis. Interface fluid causes detachment. May need repeat air injection day 1.',
+          '3.9% graft detachment rate (14/354 eyes). Successfully managed with air injection: 13/14 with single injection, 1/14 needed triple injection.',
       },
     ],
   },
   {
-    title: 'Comparison with Other Techniques',
+    title: 'Refractive Changes Observed',
     numbered: false,
     bgColor: 'purple',
     items: [
       {
-        title: 'vs Standard DSAEK',
+        title: 'Cylinder Changes',
         description:
-          'Better visual outcomes (48.8% vs 21% achieve 20/20). Less hyperopic shift (+0.75D vs +1.25D). Slightly higher rebubbling (12% vs 9%). More technical skill required but similar surgical time.',
+          'Mean refractive cylinder: 1.2 ± 1.3 D preoperatively to 1.3 ± 1.1 D at 1 year (P=0.377). At 5 years: 1.1 ± 0.7 D (P=0.249). No significant change observed.',
       },
       {
-        title: 'vs DMEK',
+        title: 'Spherical Equivalent',
         description:
-          'Easier unfolding and positioning. Lower detachment rate (12% vs 35%). Slightly inferior vision (74% vs 79% ≥20/25). Better for complex anatomy. No scrolling tendency.',
-      },
-      {
-        title: 'Triple Procedures',
-        description:
-          'Ideal for combined phaco-EK. Less hyperopic shift allows better IOL planning. Target -0.75D for expected +0.75D shift. Stable refraction by 3 months vs 6 months standard DSAEK.',
+          'In stand-alone cases (n=39): -0.58 ± 2.45 D preoperatively to 0.19 ± 2.61 D at 1 year. Hyperopic shift of 0.69 ± 1.39 D, decreasing to 0.22 ± 0.47 D at 5 years.',
       },
     ],
   },

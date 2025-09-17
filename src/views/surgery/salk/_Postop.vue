@@ -30,35 +30,43 @@ defineProps({
 
 defineEmits(['toggle'])
 
-// Post-operative management data from Busin's protocol
+// Post-operative management from Myerscough et al. SALK study
 const postopData = ref({
   corticosteroids: {
-    title: 'Topical Corticosteroids (Busin Protocol)',
-    medication: 'Fluorometholone 0.1% (mild steroid only)',
+    title: 'Postoperative Medication Protocol',
+    medication: 'Corticosteroid Regimen',
     dosing: [
-      'QID × 2 weeks',
-      'TID × 1 week',
-      'BID × 1 week',
-      'Stop at 1 month'
+      'Dexamethasone 0.1% every 2 hours during daytime for 1 week',
+      'Then QID for 1 month',
+      'Continued on slowly tapering dose to once daily by 4 months',
+      'Discontinued completely at 1 year',
+      'Secondary ocular hypertension in 20% (2/10 eyes) - resolved after steroid cessation',
     ],
   },
   antimicrobial: {
-    title: 'Antimicrobial Prophylaxis',
-    optionsLabel: 'Busin\'s choice:',
-    options: ['Moxifloxacin 0.5%', 'Ofloxacin 0.3%'],
-    dosingLabel: 'Duration',
-    dosing: 'QID × 1 week only',
+    title: 'Antimicrobial and Follow-up Protocol',
+    optionsLabel: 'Antibiotic regimen:',
+    options: [
+      'Tobramycin 0.3% every 2 hours during daytime for 1 week',
+      'Then QID for 1 month',
+      'Stopped after 1 month'
+    ],
+    dosingLabel: 'Bandage contact lens',
+    dosing: 'Soft 16mm BCL removed after re-epithelialization',
   },
   sutureManagement: {
-    title: 'Suture Management - Critical',
+    title: 'Follow-up Schedule and Monitoring',
     timings: [
-      { text: 'Busin\'s KEY INNOVATION:', isSubItem: false },
-      { text: 'Remove ALL sutures at 2-3 days', isSubItem: true },
-      { text: 'Maximum 7 days (never longer)', isSubItem: true },
-      { text: 'Early removal prevents astigmatism', isSubItem: true },
-      { text: 'Sutureless technique:', isSubItem: false },
-      { text: 'No sutures to manage', isSubItem: true },
-      { text: 'BCL removal at 1 week if used', isSubItem: true },
+      { text: 'Early follow-up:', isSubItem: false },
+      { text: 'Examined twice weekly until re-epithelialization', isSubItem: true },
+      { text: 'BCL removed once epithelium healed', isSubItem: true },
+      { text: 'No sutures used (sutureless technique)', isSubItem: true },
+      { text: 'Scheduled assessments:', isSubItem: false },
+      { text: 'Refraction and BSCVA at 3, 6, 12, 18 months', isSubItem: true },
+      { text: 'Then annually thereafter', isSubItem: true },
+      { text: 'Special monitoring:', isSubItem: false },
+      { text: 'AS-OCT for graft-host apposition', isSubItem: true },
+      { text: 'Vector analysis for astigmatism evaluation', isSubItem: true },
     ],
   },
 })

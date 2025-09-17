@@ -32,10 +32,10 @@ const overviewImage = {
 }
 
 const paragraphs = [
-  'Ultra-Thin Descemet\'s Stripping Automated Endothelial Keratoplasty (UT-DSAEK) is an advanced variation of standard DSAEK that utilizes significantly thinner donor grafts, typically 50-100 μm in thickness. This innovative refinement was pioneered by Prof. Massimo Busin in 2013, bridging the gap between conventional DSAEK and DMEK.',
+  'Endothelial keratoplasty (EK) represents the gold standard for surgical treatment of eyes with endothelial failure because of undisputed advantages over penetrating keratoplasty, including faster visual recovery, minimal postoperative refractive error, and lower rates of immunologic rejection.',
 
-  'The technique combines the superior visual outcomes approaching those of DMEK with the surgical control and lower detachment rates of standard DSAEK. By reducing graft thickness to less than 100 μm, UT-DSAEK minimizes optical interface irregularities and reduces the hyperopic shift commonly seen with thicker grafts, while maintaining the structural support that makes the procedure more forgiving than DMEK.',
+  'Since its introduction in 1999, EK has evolved into two types: Descemet stripping automated endothelial keratoplasty (DSAEK) and Descemet membrane endothelial keratoplasty (DMEK). Although DSAEK was still the more popular type of EK in 2016, mainly because it is relatively easy to master, the number of DMEK procedures being performed has been increasing constantly since the first report in 2006 because this procedure allows faster visual recovery and a higher percentage of eyes with 20/20 vision, at least in the short to medium term.',
 
-  'The evolution from standard DSAEK (150-200 μm) to UT-DSAEK represents a significant advancement in endothelial keratoplasty. Clinical studies have demonstrated that UT-DSAEK achieves 20/20 vision rates of 48.8% compared to 21% with standard DSAEK, while maintaining similar safety profiles and complication rates. This makes UT-DSAEK particularly valuable for complex cases where DMEK might be technically challenging, such as eyes with anterior chamber abnormalities, aphakia, or previous glaucoma surgery.'
+  'In 2009, ultrathin DSAEK (UT-DSAEK) was proposed as a "middle way" between the two techniques, combining the technical ease of DSAEK with the better visual outcomes of DMEK. Theoretically, minimizing the stromal component to a thin pre-Descemetic layer could eliminate its possibly detrimental effect on vision by optimizing the shape and regularity of the graft as well as the transparency of the interface. The microkeratome-assisted double-pass technique aims at a graft thickness <100 μm.'
 ]
 </script>

@@ -29,74 +29,74 @@ defineProps({
 
 defineEmits(['toggle'])
 
-// Busin's Microkeratome-Assisted SALK Technique
+// Sutureless SALK Technique from Myerscough et al. study
 const businTechnique = {
-  title: 'Busin\'s Microkeratome-Assisted SALK Technique',
+  title: 'Sutureless Superficial Anterior Lamellar Keratoplasty Technique',
   steps: [
     {
-      title: 'Preoperative Assessment',
-      description: `AS-OCT measurement of pathology depth (must be <220 μm). Central corneal thickness evaluation. Endothelial cell count confirmation. Mark corneal center and 9.0-9.5 mm diameter zone. Topical anesthesia preparation as this is an extraocular procedure per Busin's technique.`,
+      title: 'Anesthesia',
+      description: `Intravenous droperidol 3 mL administered. Peribulbar anesthesia with 50% mixture of 2% lidocaine and 0.5% bupivacaine. Complete preoperative ophthalmological evaluation including slit-lamp examination, BSCVA, refraction, tonometry, funduscopy, endothelial specular microscopy, and AS-OCT.`,
     },
     {
-      title: 'Donor Tissue Preparation (Extraocular)',
-      description: `Mount donor cornea on artificial anterior chamber (Busin uses ALTK system). Initial microkeratome pass with 250 μm head for 9 mm diameter cut. For SALK grafts, use 130-160 μm head (Busin's optimal range) or up to 200 μm maximum. Create donor lenticule matching recipient bed depth. Typical final graft thickness: 130-160 μm per Busin's standard.`,
+      title: 'Recipient Corneal Cap Creation',
+      description: `A superficial free cap 9 mm in diameter cut from recipient cornea. Employ a 130 μm microkeratome head (Moria, Antony, France) with a 'zero' suction ring on intact epithelium. Continuous slow advancement of microkeratome with counter rotation of fixation ring performed to achieve planar cut of correct diameter.`,
     },
     {
-      title: 'Recipient Bed Preparation',
-      description: `Apply matching microkeratome head depth to recipient cornea. Create 9.0-9.5 mm diameter lamellar cut (Busin's standard). Remove anterior lamella completely. Ensure smooth, uniform bed surface. No manual dissection required with proper microkeratome technique. Irrigate interface thoroughly.`,
+      title: 'Donor Tissue Preparation',
+      description: `Donor cornea mounted on artificial chamber of automated lamellar therapeutic keratoplasty system (Moria). Anterior donor lamella dissected using a 90 μm microkeratome head. Donor tissue punched to 9 mm using Hessburg-Baron punch (Katena Products, Denville, New Jersey, USA).`,
     },
     {
-      title: 'Graft Placement - Original Sutured Technique',
-      description: `Transfer donor lenticule to recipient bed using Busin glide. Ensure proper orientation and centration. Original technique: 16 interrupted 10-0 nylon sutures. Alternative "Star of David" pattern: 2 continuous sutures creating 6-pointed star. Busin's key innovation: Remove ALL sutures at 2-3 days, never beyond 1 week.`,
+      title: 'Graft Placement',
+      description: `Graft laid onto host stromal bed without sutures. No sutures used in this technique. Soft 16 mm diameter bandage contact lens inserted for stabilization.`,
     },
     {
-      title: 'Sutureless Modification (Busin\'s Evolution)',
-      description: `After graft positioning, apply fibrin glue to edges. Alternative: Use bandage contact lens only for fixation. No sutures required in selected cases. Particularly effective for post-PRK haze cases. Reduces recovery time and eliminates suture-related astigmatism. Monitor for 10-15 minutes to ensure adhesion.`,
+      title: 'Postoperative Management',
+      description: `Tobramycin (0.3%) and dexamethasone (0.1%) eye drops every 2 hours during daytime for 1 week. Then four times daily for 1 month, at which point tobramycin stopped. Dexamethasone continued on slowly tapering dose to once daily by 4 months, discontinued completely at 1 year. Patients examined twice weekly until re-epithelialization, then bandage contact lens removed.`,
     },
     {
-      title: 'Postoperative Protocol',
-      description: `Immediate examination to confirm graft position. Topical antibiotics (moxifloxacin 0.5% QID). Mild steroids only (fluorometholone 0.1% QID × 2 weeks). Suture removal at 2-3 days if sutured technique used. Follow-up: Day 1, 3, 7, then weekly × 1 month. Visual recovery typically complete by 1 month per Busin's data.`,
+      title: 'Follow-up Schedule',
+      description: `Refraction and BSCVA assessed at 3, 6, 12, and 18 months, then annually. AS-OCT performed to evaluate graft-host apposition. Endothelial cell counts monitored throughout follow-up period. Vector analysis performed for astigmatism evaluation.`,
     },
   ],
 }
 
-// Alternative techniques mentioned in Busin's work
+// Study patient characteristics
 const alternativeTechniquesData = {
-  title: 'Busin\'s Technique Variations',
+  title: 'Study Population and Indications',
   techniques: [
     {
-      title: 'Two-Stage Technique for Reis-Bücklers',
-      description: `Busin's innovation for recurrent dystrophies. First stage: Create 9 mm flap with microkeratome. Second stage: Replace central 7 mm with donor tissue. Completely sutureless approach. Prevents peripheral recurrence while maintaining stability.`,
+      title: 'Patient Demographics',
+      description: `10 consecutive eyes undergoing sutureless SALK for recurrent post-excimer laser corneal haze. Mean age: 48.8 ± 10.2 years. 5/10 patients were female. All had grade 3 corneal haze (according to Fantes et al) with moderate obscuration of iris detail.`,
     },
     {
-      title: 'Combined SALK with Phacoemulsification',
-      description: `Triple procedure validated by Busin. Perform SALK first, then phacoemulsification through clear cornea. 100% visual improvement reported in combined cases. No increased complications versus staged approach. Ideal for patients >50 years with cataract.`,
+      title: 'Inclusion Criteria',
+      description: `Corneal haze secondary to PRK, recurring after at least one PTK treatment with or without MMC. Patients not satisfied with their BSCVA were included. All cases had at least one PRK treatment and one PTK treatment with or without MMC at least 12 months prior to referral.`,
     },
     {
-      title: 'SALK for Failed PK',
-      description: `Busin's 2012 series on post-PK opacities. Uses same microkeratome technique on previous graft. 77.8% achieve ≥20/40 vision. Reduces pre-existing astigmatism by average 0.7D. Avoids risks of repeat full-thickness transplant.`,
+      title: 'Preoperative Assessments',
+      description: `Complete ophthalmological evaluation including slit-lamp examination, BSCVA in logMAR, refraction, tonometry, funduscopy. Endothelial specular microscopy (EM-3000; Tomey, Erlangen, Germany). Anterior segment OCT (Casia; Tomey, Tokyo, Japan) for structural assessment.`,
     },
   ],
 }
 
-// Additional surgical pearls from Busin
+// Key technical details from study
 const additionalSections = [
   {
-    title: 'Busin\'s Key Technical Points',
+    title: 'Technical Considerations from Study',
     numbered: false,
     bgColor: 'blue',
     items: [
       {
-        title: 'Microkeratome Selection',
-        description: 'Always use 130-160 μm head for optimal results. 250 μm only for initial donor pass. Match recipient and donor depths precisely. Regular maintenance critical for consistent cuts.',
+        title: 'Microkeratome Technique',
+        description: 'Recipient: 130 μm head with zero suction ring for 9 mm diameter cut. Donor: 90 μm head (40 μm less than recipient) for uniform apposition. Continuous slow advancement with counter rotation ensures planar cut.',
       },
       {
-        title: 'Timing is Critical',
-        description: 'Suture removal MUST occur at 2-3 days, maximum 7 days. Early removal prevents suture-induced astigmatism. Epithelium provides sufficient adhesion by day 2. Delayed removal compromises visual outcomes.',
+        title: 'Sutureless Approach Benefits',
+        description: 'No sutures required, only bandage contact lens for fixation. Eliminates suture-related astigmatism. Faster visual recovery compared to sutured techniques. Particularly effective for post-PRK haze cases.',
       },
       {
-        title: 'Anesthesia Advantage',
-        description: 'Topical anesthesia sufficient for entire procedure. No retrobulbar block needed (extraocular technique). Reduces surgical time and patient discomfort. Allows immediate postoperative assessment.',
+        title: 'Postoperative Steroid Protocol',
+        description: 'Dexamethasone 0.1% tapered over 1 year. Initial intensive dosing (every 2 hours) for 1 week. Gradual tapering to once daily by 4 months. Complete discontinuation at 1 year.',
       },
     ],
   },

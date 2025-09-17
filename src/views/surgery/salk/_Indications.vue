@@ -28,44 +28,41 @@ defineProps({
 
 defineEmits(['toggle'])
 
-// Indications data from Busin's studies
+// Indications data for SALK
 const indications = [
   {
-    title: 'Anterior Stromal Corneal Dystrophies',
-    subtitle: '(60% of Busin\'s cases)',
+    title: 'Recurrent Post-Excimer Laser Corneal Haze',
     description:
-      'Granular, lattice, macular, Reis-Bücklers dystrophies. Busin reported 12/20 eyes in original study. Excellent outcomes with 100% achieving 20/40 or better vision. Two-stage technique developed for Reis-Bücklers.',
+      'Corneal haze following PRK or LASIK, recurring after PTK treatment with or without MMC. Grade 3 haze with moderate obscuration of iris detail. Patients not satisfied with visual acuity despite previous treatments.',
+  },
+  {
+    title: 'Anterior Stromal Corneal Dystrophies',
+    description:
+      'Granular, lattice, macular, Reis-Bücklers dystrophies limited to anterior stroma. Pathology must be confined to superficial 220 μm on AS-OCT. Clear deep stroma and healthy endothelium required.',
   },
   {
     title: 'Post-Refractive Surgery Complications',
-    subtitle: '(30% of cases)',
     description:
-      'PRK/LASIK complications including haze, irregular astigmatism, central islands. 6/20 eyes in Busin\'s original series. 5-year follow-up shows 0% haze recurrence with sutureless SALK.',
+      'PRK/LASIK complications including persistent haze, irregular astigmatism, central islands. Failed conservative management including PTK. Excellent results with sutureless technique showing no haze recurrence.',
   },
   {
     title: 'Anterior Corneal Scars',
-    subtitle: '(10% of cases)',
     description:
-      'Post-infectious or traumatic scars limited to anterior 220 μm. Includes keratitis sequelae (2/20 in original study). AS-OCT essential for depth assessment.',
+      'Post-infectious or traumatic scars limited to anterior 220 μm. Includes healed keratitis sequelae with residual scarring. AS-OCT essential for precise depth assessment before surgery.',
   },
   {
     title: 'Post-Penetrating Keratoplasty Opacities',
     description:
-      'Anterior stromal opacities in previous PK grafts. Busin\'s 2012 study showed 77.8% achieving ≥20/40 vision. Average 0.7D reduction in astigmatism. 100% improvement in BCVA.',
+      'Anterior stromal opacities developing in previous PK grafts. Can improve visual acuity and reduce pre-existing astigmatism. Avoids risks associated with repeat full-thickness transplantation.',
   },
   {
     title: 'Salzmann\'s Nodular Degeneration',
     description:
-      'Elevated nodular opacities causing visual disturbance. Superficial location ideal for SALK. Can be combined with phacoemulsification as triple procedure.',
-  },
-  {
-    title: 'Recurrent Erosion Syndrome',
-    description:
-      'Severe cases with anterior basement membrane dystrophy. Failed conservative treatment. Microkeratome removes abnormal epithelium and Bowman\'s layer effectively.',
+      'Elevated nodular opacities causing visual disturbance and irregular astigmatism. Superficial location makes it ideal for SALK treatment. Can be combined with cataract surgery when indicated.',
   },
 ]
 
-// Contraindications data from Busin's selection criteria
+// Contraindications for SALK
 const contraindications = {
   absolute: [
     {
