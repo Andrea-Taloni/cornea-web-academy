@@ -55,7 +55,7 @@ const postopData = ref({
     dosing: 'Soft 16mm BCL removed after re-epithelialization',
   },
   sutureManagement: {
-    title: 'Follow-up Schedule and Monitoring',
+    title: 'Follow-up Schedule',
     timings: [
       { text: 'Early follow-up:', isSubItem: false },
       { text: 'Examined twice weekly until re-epithelialization', isSubItem: true },
@@ -64,9 +64,6 @@ const postopData = ref({
       { text: 'Scheduled assessments:', isSubItem: false },
       { text: 'Refraction and BSCVA at 3, 6, 12, 18 months', isSubItem: true },
       { text: 'Then annually thereafter', isSubItem: true },
-      { text: 'Special monitoring:', isSubItem: false },
-      { text: 'AS-OCT for graft-host apposition', isSubItem: true },
-      { text: 'Vector analysis for astigmatism evaluation', isSubItem: true },
     ],
   },
 })

@@ -1,0 +1,18 @@
+{
+  "build": {
+    "command": "npm run build",
+    "output": "dist",
+    "root_dir": "/",
+    "environment_variables": {
+      "NODE_VERSION": "18"
+    }
+  },
+  "deploy": {
+    "routes": [
+      {
+        "pattern": "/api/*",
+        "destination": "$BACKEND_URL"
+      }
+    ]
+  }
+}

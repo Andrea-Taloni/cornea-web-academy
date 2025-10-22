@@ -52,12 +52,12 @@ const sectionData = ref({
             values: ['0.21 ± 0.12', '0.15 ± 0.13', '0.12 ± 0.12'],
           },
           {
-            parameter: 'BSCVA ≥20/20',
-            values: ['0/10 (0%)', '2/10 (20%)', '3/10 (30%)'],
+            parameter: 'Eyes achieving 20/20',
+            values: ['2/10 (20%)', '1/10 (10%)', '3/10 (30%)'],
           },
           {
-            parameter: 'BSCVA ≥20/25',
-            values: ['4/10 (40%)', '5/10 (50%)', '5/10 (50%)'],
+            parameter: 'Eyes achieving ≥20/25',
+            values: ['5/10 (50%)', '4/10 (40%)', '5/10 (50%)'],
           },
           {
             parameter: 'BSCVA ≥20/40',
@@ -130,7 +130,7 @@ const sectionData = ref({
         'No recurrence of haze in any eye postoperatively over 5 years',
         'BSCVA improved significantly at all postoperative time points',
         'Mean visual acuity improved from 0.46 logMAR to 0.12 logMAR at 5 years (p=0.0001)',
-        '30% achieved 20/20, 50% achieved 20/25, 90% achieved 20/40 at 5 years',
+        '3/10 eyes (30%) achieved 20/20, 5/10 eyes (50%) achieved ≥20/25, 9/10 eyes (90%) achieved ≥20/40 at 5 years',
         'All patients (100%) achieved 20/50 or better at 5 years',
         'SIA of 2.50±1.04D at 6 months, stable at 5 years (2.53±1.39D)',
         'No significant change in mean spherical equivalent',
