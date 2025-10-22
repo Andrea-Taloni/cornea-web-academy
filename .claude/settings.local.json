@@ -21,7 +21,14 @@
       "Bash(rg:*)",
       "Bash(start http://localhost:5173/surgery/mushroom-pk)",
       "Bash(start http://localhost:5174/surgery/mushroom-pk)",
-      "Bash(dir:*)"
+      "Bash(dir:*)",
+      "Bash(git restore:*)",
+      "Bash(findstr:*)",
+      "Bash(where:*)",
+      "Bash(python:*)",
+      "Bash(npm run build:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)"
     ],
     "deny": [],
     "ask": [],
