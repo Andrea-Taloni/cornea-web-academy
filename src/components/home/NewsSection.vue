@@ -196,7 +196,7 @@ import angelichristyyu from '@/assets/images/surgeons/angelichristyyu.png'
 // Import sponsor logos
 import apollohospitals from '@/assets/images/sponsors/apollohospitals.png'
 import irfo from '@/assets/images/sponsors/irfo.png'
-import unife from '@/assets/images/sponsors/unife.png'
+import unife from '@/assets/images/sponsors/UniFe.png'
 import aiims from '@/assets/images/sponsors/aiims.png'
 import moria from '@/assets/images/sponsors/moria.jpg'
 import opf from '@/assets/images/sponsors/opf.jpg'
