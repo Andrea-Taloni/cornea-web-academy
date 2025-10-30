@@ -10,7 +10,12 @@ const app = express();
 
 // Middleware
 app.use(cors({
-  origin: process.env.CLIENT_URL || 'http://localhost:5173',
+  origin: [
+    'http://localhost:5173', // Sviluppo locale
+    'https://cornea-web-academy-1.onrender.com', // Frontend Render
+    'https://corneawebacademy.org', // Dominio produzione
+    'https://www.corneawebacademy.org' // Dominio produzione con www
+  ],
   credentials: true
 }));
 app.use(express.json());
