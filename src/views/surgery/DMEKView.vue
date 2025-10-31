@@ -23,8 +23,6 @@
 
       <ResultsSection :isExpanded="expandedSections.results" @toggle="toggleSection('results')" />
 
-      <ResultsSection2 :isExpanded="expandedSections.results2" @toggle="toggleSection('results2')" />
-
       <ComplicationsSection
         :isExpanded="expandedSections.complications"
         @toggle="toggleSection('complications')"
@@ -53,7 +51,6 @@ import IntroductionSection from './dmek/_Introduction.vue'
 import IndicationsSection from './dmek/_Indications.vue'
 import SurgerySection from './dmek/_Surgery.vue'
 import ResultsSection from './dmek/_Results.vue'
-import ResultsSection2 from './dmek/_Results2.vue'
 import ComplicationsSection from './dmek/_Complications.vue'
 import PostopSection from './dmek/_Postop.vue'
 import ReferencesSection from './dmek/_References.vue'
@@ -64,7 +61,6 @@ const expandedSections = ref({
   indications: false,
   surgery: false,
   results: false,
-  results2: false,
   complications: false,
   postop: false,
   references: false,
