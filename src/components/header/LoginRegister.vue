@@ -41,8 +41,8 @@
       </div>
     </template>
     
-    <!-- If user is not authenticated -->
-    <template v-else>
+    <!-- If user is not authenticated AND auth is enabled -->
+    <template v-else-if="features.enableAuth">
       <router-link
         to="/login"
         :class="mobile ? 'mobile-login-button' : 'login-button'"
@@ -62,6 +62,7 @@
 <script setup>
 import { useAuthStore } from '@/stores/auth'
 import { useRouter } from 'vue-router'
+import { features } from '@/config/features'
 
 const authStore = useAuthStore()
 const router = useRouter()
