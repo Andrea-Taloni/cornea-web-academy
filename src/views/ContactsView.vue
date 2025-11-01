@@ -16,42 +16,34 @@
           <div class="bg-white rounded-lg shadow-lg p-8">
             <h2 class="text-2xl font-bold mb-6">{{ t('contacts.sendMessage') }}</h2>
 
-            <div class="space-y-6">
-              <div class="flex items-start">
-                <svg
-                  class="w-8 h-8 text-blue-600 mr-4 mt-1 flex-shrink-0"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                  ></path>
-                </svg>
-                <div>
-                  <h3 class="font-semibold text-lg mb-2">Email Us</h3>
-                  <p class="text-gray-600 mb-4">
-                    For any inquiries, questions, or feedback, please feel free to contact us via email:
-                  </p>
-                  <a
-                    href="mailto:corneawebacademy@gmail.com"
-                    class="inline-flex items-center text-blue-600 hover:text-blue-700 font-semibold text-lg transition"
-                  >
-                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
-                    </svg>
-                    corneawebacademy@gmail.com
-                  </a>
-                </div>
-              </div>
-
-              <div class="border-t pt-6">
-                <p class="text-gray-600 text-sm leading-relaxed">
-                  We strive to respond to all inquiries within 24-48 hours. Please include as much detail as possible in your message to help us assist you better.
+            <div class="flex items-start">
+              <svg
+                class="w-8 h-8 text-blue-600 mr-4 mt-1 flex-shrink-0"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                ></path>
+              </svg>
+              <div>
+                <h3 class="font-semibold text-lg mb-2">Email Us</h3>
+                <p class="text-gray-600 mb-4">
+                  For any inquiries, questions, or feedback, please feel free to contact us via email:
                 </p>
+                <a
+                  href="mailto:corneawebacademy@gmail.com"
+                  class="inline-flex items-center text-blue-600 hover:text-blue-700 font-semibold text-lg transition"
+                >
+                  <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                  </svg>
+                  corneawebacademy@gmail.com
+                </a>
               </div>
             </div>
           </div>
