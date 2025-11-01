@@ -40,7 +40,7 @@
                   target="_blank"
                   class="inline-block mt-4 px-6 py-3 bg-white text-blue-900 font-semibold rounded-lg hover:bg-gray-100 transition-colors"
                 >
-                  Scan QR and Register! →
+                  Register Here →
                 </a>
               </div>
               <div>
