@@ -17,7 +17,7 @@
                       d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
                     ></path>
                   </svg>
-                  <span class="text-xl">June 4, 2025</span>
+                  <span class="text-xl">November 5, 2025</span>
                 </div>
                 <div class="flex items-center gap-3">
                   <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -34,7 +34,14 @@
                   Live surgical demonstrations featuring advanced DALK procedures performed by
                   experienced surgeons.
                 </p>
-                <p class="text-lg">No registration fee required.</p>
+                <p class="text-lg">Participation is free.</p>
+                <a
+                  href="https://bit.ly/DALKxVajpayee"
+                  target="_blank"
+                  class="inline-block mt-4 px-6 py-3 bg-white text-blue-900 font-semibold rounded-lg hover:bg-gray-100 transition-colors"
+                >
+                  Scan QR and Register! →
+                </a>
               </div>
               <div>
                 <p class="text-sm opacity-90 mb-4">In collaboration with:</p>
@@ -104,76 +111,66 @@
           <!-- Surgeons Section -->
           <div class="mt-8">
             <h5 class="text-2xl font-semibold mb-6">Participating Surgeons</h5>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
               <div class="text-center">
-                <div class="w-24 h-24 rounded-full mx-auto mb-2 overflow-hidden bg-white">
+                <div class="w-32 h-32 rounded-full mx-auto mb-3 overflow-hidden bg-white">
                   <img
                     :src="surgeonImages.massimobusin"
                     alt="Massimo Busin"
                     class="w-full h-full object-cover"
                   />
                 </div>
-                <p class="text-sm font-semibold">Massimo Busin, MD</p>
+                <p class="text-base font-semibold">Massimo Busin, MD</p>
               </div>
               <div class="text-center">
-                <div class="w-24 h-24 rounded-full mx-auto mb-2 overflow-hidden bg-white">
+                <div class="w-32 h-32 rounded-full mx-auto mb-3 overflow-hidden bg-white">
                   <img
-                    :src="surgeonImages.namratasharma"
-                    alt="Namrata Sharma"
+                    :src="surgeonImages.rasikvajpayee"
+                    alt="Rasik Vajpayee"
                     class="w-full h-full object-cover"
                   />
                 </div>
-                <p class="text-sm font-semibold">Namrata Sharma, MD</p>
+                <p class="text-base font-semibold">Rasik Vajpayee, MD</p>
               </div>
               <div class="text-center">
-                <div class="w-24 h-24 rounded-full mx-auto mb-2 overflow-hidden bg-white">
-                  <img
-                    :src="surgeonImages.rajeshfogla"
-                    alt="Rajesh Fogla"
-                    class="w-full h-full object-cover"
-                  />
-                </div>
-                <p class="text-sm font-semibold">Rajesh Fogla, MD</p>
-              </div>
-              <div class="text-center">
-                <div class="w-24 h-24 rounded-full mx-auto mb-2 overflow-hidden bg-white">
+                <div class="w-32 h-32 rounded-full mx-auto mb-3 overflow-hidden bg-white">
                   <img
                     :src="surgeonImages.cristinabovone"
                     alt="Cristina Bovone"
                     class="w-full h-full object-cover"
                   />
                 </div>
-                <p class="text-sm font-semibold">Cristina Bovone, MD</p>
+                <p class="text-base font-semibold">Cristina Bovone, MD</p>
               </div>
               <div class="text-center">
-                <div class="w-24 h-24 rounded-full mx-auto mb-2 overflow-hidden bg-white">
+                <div class="w-32 h-32 rounded-full mx-auto mb-3 overflow-hidden bg-white">
                   <img
                     :src="surgeonImages.vincenzoscorcia"
                     alt="Vincenzo Scorcia"
                     class="w-full h-full object-cover"
                   />
                 </div>
-                <p class="text-sm font-semibold">Vincenzo Scorcia, MD</p>
+                <p class="text-base font-semibold">Vincenzo Scorcia, MD</p>
               </div>
               <div class="text-center">
-                <div class="w-24 h-24 rounded-full mx-auto mb-2 overflow-hidden bg-white">
+                <div class="w-32 h-32 rounded-full mx-auto mb-3 overflow-hidden bg-white">
                   <img
                     :src="surgeonImages.niccolosalgari"
                     alt="Niccolò Salgari"
                     class="w-full h-full object-cover"
                   />
                 </div>
-                <p class="text-sm font-semibold">Niccolò Salgari, MD</p>
+                <p class="text-base font-semibold">Niccolò Salgari, MD</p>
               </div>
               <div class="text-center">
-                <div class="w-24 h-24 rounded-full mx-auto mb-2 overflow-hidden bg-white">
+                <div class="w-32 h-32 rounded-full mx-auto mb-3 overflow-hidden bg-white">
                   <img
                     :src="surgeonImages.angelichristyyu"
                     alt="Angeli Christy Yu"
                     class="w-full h-full object-cover"
                   />
                 </div>
-                <p class="text-sm font-semibold">Angeli Christy Yu, MD, PhD</p>
+                <p class="text-base font-semibold">Angeli Christy Yu, MD</p>
               </div>
             </div>
           </div>
@@ -186,8 +183,7 @@
 <script setup>
 // Import surgeon images
 import massimobusin from '@/assets/images/surgeons/massimobusin.png'
-import namratasharma from '@/assets/images/surgeons/namratasharma.png'
-import rajeshfogla from '@/assets/images/surgeons/rajeshfogla.png'
+import rasikvajpayee from '@/assets/images/surgeons/rasikvajpayee.jpg'
 import cristinabovone from '@/assets/images/surgeons/cristinabovone.png'
 import vincenzoscorcia from '@/assets/images/surgeons/vincenzoscorcia.png'
 import niccolosalgari from '@/assets/images/surgeons/niccolosalgari.png'
@@ -208,8 +204,7 @@ import qrCode from '@/assets/images/qrcodes/qrcode-dalkday-040625.png'
 // Group surgeon images for easier reference
 const surgeonImages = {
   massimobusin,
-  namratasharma,
-  rajeshfogla,
+  rasikvajpayee,
   cristinabovone,
   vincenzoscorcia,
   niccolosalgari,
