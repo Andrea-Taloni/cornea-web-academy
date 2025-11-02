@@ -198,9 +198,6 @@ import moria from '@/assets/images/sponsors/moria.jpg'
 import opf from '@/assets/images/sponsors/opf.jpg'
 import umg from '@/assets/images/sponsors/umg.png'
 
-// Import QR code
-import qrCode from '@/assets/images/qrcodes/qrcode-dalkday-040625.png'
-
 // Group surgeon images for easier reference
 const surgeonImages = {
   massimobusin,
