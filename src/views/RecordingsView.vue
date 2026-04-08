@@ -10,19 +10,6 @@
 
     <!-- Main Content Container -->
     <div class="container mx-auto px-4 py-8 max-w-7xl">
-      <!-- Error Alert -->
-      <div v-if="error && !isLoading" class="bg-yellow-50 border border-yellow-200 text-yellow-800 px-4 py-3 rounded-lg mb-6">
-        <div class="flex items-center">
-          <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
-            <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/>
-          </svg>
-          <span>{{ error }}</span>
-          <button @click="refreshVideos" class="ml-auto text-yellow-600 hover:text-yellow-800 font-semibold">
-            {{ t('recordings.retry') }}
-          </button>
-        </div>
-      </div>
-
       <!-- Video Player Section -->
       <div class="mb-8">
         <div class="bg-white rounded-lg shadow-lg overflow-hidden max-w-6xl mx-auto">
@@ -128,24 +115,8 @@
 
       <!-- Video Library Section (Full Width Below Player) -->
       <div class="bg-white rounded-lg shadow-lg p-6">
-        <div class="flex justify-between items-center mb-6">
+        <div class="mb-6">
           <h3 class="text-xl font-bold text-gray-800">{{ t('recordings.videoLibrary') }}</h3>
-          <button
-            @click="refreshVideos"
-            :disabled="isLoading"
-            class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors flex items-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
-          >
-            <svg 
-              class="w-4 h-4"
-              :class="{ 'animate-spin': isLoading }"
-              fill="none" 
-              stroke="currentColor" 
-              viewBox="0 0 24 24"
-            >
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
-            </svg>
-            {{ isLoading ? t('recordings.refreshing') : t('recordings.refreshVideos') }}
-          </button>
         </div>
 
         <!-- Loading State -->
@@ -245,7 +216,6 @@ const sortBy = ref('title')
 const currentVideo = ref(null)
 const videos = ref([])
 const isLoading = ref(true)
-const error = ref(null)
 
 // Filtered and sorted videos
 const filteredVideos = computed(() => {
@@ -318,62 +288,14 @@ const getCategoryLabel = (category) => {
   return labels[category] || category
 }
 
-// Load videos from YouTube API
-const loadVideos = async () => {
-  try {
-    isLoading.value = true
-    error.value = null
-    
-    const result = await youtubeService.getChannelVideos()
-    
-    if (result.error) {
-      error.value = result.error
-      // Use fallback sample data if API fails
-      videos.value = getFallbackVideos()
-    } else if (result.videos && result.videos.length > 0) {
-      videos.value = result.videos
-    } else {
-      videos.value = result
-    }
-    
-    // Set initial video
-    if (filteredVideos.value.length > 0) {
-      currentVideo.value = filteredVideos.value[0]
-    }
-  } catch (err) {
-    console.error('Error loading videos:', err)
-    error.value = 'Failed to load videos. Please try again later.'
-    // Use fallback data
-    videos.value = getFallbackVideos()
-  } finally {
-    isLoading.value = false
+// Load videos
+const loadVideos = () => {
+  videos.value = youtubeService.getChannelVideos()
+  isLoading.value = false
+
+  if (filteredVideos.value.length > 0) {
+    currentVideo.value = filteredVideos.value[0]
   }
-}
-
-// Fallback video data when API is not available
-const getFallbackVideos = () => [
-  {
-    id: 1,
-    youtubeId: 'dQw4w9WgXcQ',
-    title: 'DMEK Surgery - Complex Case Management',
-    description: 'Detailed demonstration of DMEK surgery on a patient with Fuchs endothelial dystrophy.',
-    surgeon: 'Prof. Massimo Busin',
-    category: 'dmek',
-  },
-  {
-    id: 2,
-    youtubeId: 'dQw4w9WgXcQ',
-    title: 'Large Diameter DALK with Big Bubble Technique',
-    description: 'Step-by-step demonstration of the modified big bubble technique for DALK.',
-    surgeon: 'Prof. Massimo Busin',
-    category: 'dalk',
-  },
-]
-
-// Refresh videos (bypasses cache)
-const refreshVideos = () => {
-  youtubeService.clearCache()
-  loadVideos()
 }
 
 // Set initial video on mount

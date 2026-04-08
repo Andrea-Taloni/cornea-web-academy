@@ -31,7 +31,9 @@
       "Bash(git commit:*)",
       "Bash(timeout:*)",
       "Bash(netstat:*)",
-      "Bash(git push:*)"
+      "Bash(git push:*)",
+      "WebSearch",
+      "WebFetch(domain:www.googleapis.com)"
     ],
     "deny": [],
     "ask": [],
